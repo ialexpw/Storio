@@ -44,13 +44,18 @@
 		Storio::LoadView($_GET['page']);
 	}
 
-	$ex = array(
-		"upload" => true,
-		"share" => true,
-		"delete" => false,
-		"edit" => true,
-		"admin" => false
-	);
+	/*
+		example
 
-	Storio::AddUser("alex", "Al3xWhit3", "5000", $ex);
+
+		$ex = array(
+			"upload" => true,
+			"share" => true,
+			"delete" => false,
+			"edit" => true,
+			"admin" => false
+		);
+
+		Storio::AddUser("alex", "Al3xWhit3", "5000", $ex);
+	*/
 ?>

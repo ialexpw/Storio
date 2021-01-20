@@ -61,27 +61,33 @@
 
 			// Create the user directory
 			if(mkdir('users/' . $user)) {
-				// Create the user config
-				$usrCfg = array(
-					"userName" => $user,
-					"passWord" => $usrPass,
-					"maxStorage" => $size_mb,
-					"canUpload" => $settings['upload'],
-					"canShare" => $settings['share'],
-					"canDelete" => $settings['delete'],
-					"canEdit" => $settings['edit'],
-					"isAdmin" => $settings['admin']
-				);
+				if(chmod('users/' . $user, 0777)) {
+					// Create the user config
+					$usrCfg = array(
+						"userName" => $user,
+						"passWord" => $usrPass,
+						"maxStorage" => $size_mb,
+						"canUpload" => $settings['upload'],
+						"canShare" => $settings['share'],
+						"canDelete" => $settings['delete'],
+						"canEdit" => $settings['edit'],
+						"isAdmin" => $settings['admin']
+					);
 
-				// JSON encode the configuration
-				$jsonCfg = json_encode($usrCfg);
+					// JSON encode the configuration
+					$jsonCfg = json_encode($usrCfg);
 
-				// Create the json configuration file and write the contents
-				$usrFile = fopen('users/configs/' . $user . '-cfg.json','w+');
-				fwrite($usrFile, $jsonCfg);
-				fclose($usrFile);
+					// Create the json configuration file and write the contents
+					$usrFile = fopen('users/configs/' . $user . '-cfg.json','w+');
+					fwrite($usrFile, $jsonCfg);
+					fclose($usrFile);
 
-				return true;
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
 			}
 		}
 
