@@ -12,7 +12,7 @@ echo 'a';
 		}
 
 		// Check the configs dir permissions
-		if(is_writable('users/configs')) {
+		if(!is_writable('users/configs')) {
 			$dirCheck .= '<p>Please ensure the users/configs/ folder is writable</p>';
 			echo 'd';
 		}
