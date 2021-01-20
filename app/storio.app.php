@@ -39,9 +39,9 @@
 			$jsonCfg = json_encode($siteCfg);
 
 			// Create the json configuration file and write the contents
-			$usrFile = fopen('users/configs/site-settings.json','w+');
-			fwrite($usrFile, $jsonCfg);
-			fclose($usrFile);
+			$siteFile = fopen('users/configs/site-settings.json','w+');
+			fwrite($siteFile, $jsonCfg);
+			fclose($siteFile);
 
 			return true;
 		}

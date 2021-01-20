@@ -1,4 +1,5 @@
 <?php
+echo 'a';
 	$dirCheck = '';
 
 	// Check for the install file
