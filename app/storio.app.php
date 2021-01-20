@@ -32,7 +32,10 @@
 				"adminUser" => "admin",
 				"adminPassword" => $usrPass,
 				"allowRegistration" => false,
-				"expireFiles" => false
+				"defaultAllowance" => 5000,
+				"expireFiles" => false,
+				"expiryDays" => 31,
+				"uploadMaxMB" => 500
 			);
 
 			// JSON encode the configuration
@@ -67,6 +70,7 @@
 						"userName" => $user,
 						"passWord" => $usrPass,
 						"maxStorage" => $size_mb,
+						"canView" => $settings['view'],
 						"canUpload" => $settings['upload'],
 						"canShare" => $settings['share'],
 						"canDelete" => $settings['delete'],

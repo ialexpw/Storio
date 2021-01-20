@@ -1,0 +1,31 @@
+Users
+	* Create user
+		* Specify username
+		* Option to generate or specify password
+		* Choose storage space
+		* Choose permissions via checkboxes
+			* Uploading files
+			* Editing files
+			* Sharing files
+			* Deleting files
+	* Disable a user (keep files in-tact)
+	* Delete a user
+
+Site Settings
+	* Change site title/information
+	* Alter if files expire or not
+	* Option to allow registration
+		* Default storage amount for new users
+
+General Features
+	* Zip files together
+	* Ability to move files
+	* Create folders/sub folders
+	* Edit/view certain types of files
+	* Share with unique links
+		* Password option
+		* Force download option
+	* Track information about files
+		* Viewed
+		* Downloaded
+		* File size

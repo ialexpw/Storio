@@ -49,6 +49,7 @@
 
 
 		$ex = array(
+			"view" => true,
 			"upload" => true,
 			"share" => true,
 			"delete" => false,
