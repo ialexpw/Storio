@@ -18,20 +18,39 @@
 	 * Storio Class
 	 */
 	class Storio {
-
 		/**
-		 * Storio::Connect()
-		 * Connect to the SQL database and return the database query
+		 * Storio::AddUser($user, $password, $size_mb, $settings)
+		 * Add a user to Storio, user information and permissions are passed through with the array
 		 */
-		public static function Connect($host, $database, $user, $password) {
-			try {
-				$db = new PDO("mysql:host=$host;dbname=$database", $user, $password);
-				// set the PDO error mode to exception
-				$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				return $db;
+		public static function AddUser($user, $password, $size_mb, $settings) {
+			// Check if a user already exists
+			if(file_exists('users/' . $user)) {
+				return false;
 			}
-			catch(PDOException $e) {
-				echo "Connection failed: " . $e->getMessage();
+
+			// Create the user directory
+			if(mkdir('users/' . $user)) {
+				// Create the user config
+				$usrCfg = array(
+					"userName" => $user,
+					"passWord" => $password,
+					"maxStorage" => $size_mb,
+					"canUpload" => $settings['upload'],
+					"canShare" => $settings['share'],
+					"canDelete" => $settings['delete'],
+					"canEdit" => $settings['edit'],
+					"isAdmin" => $settings['admin']
+				);
+
+				// JSON encode the configuration
+				$jsonCfg = json_encode($usrCfg);
+
+				// Create the json configuration file and write the contents
+				$usrFile = fopen('users/' . $user . '-cfg.json','w+');
+				fwrite($usrFile, $jsonCfg);
+				fclose($usrFile);
+
+				return true;
 			}
 		}
 
