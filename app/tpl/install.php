@@ -6,13 +6,13 @@ echo 'a';
 	if(!file_exists('users/configs/site-settings.json')) {
 		echo 'b';
 		// Check the users dir permissions
-		if(!is_writable('users/')) {
+		if(!is_writable('users')) {
 			$dirCheck .= '<p>Please ensure the users/ folder is writable</p>';
 			echo 'c';
 		}
 
 		// Check the configs dir permissions
-		if(is_writable('users/configs/')) {
+		if(is_writable('users/configs')) {
 			$dirCheck .= '<p>Please ensure the users/configs/ folder is writable</p>';
 			echo 'd';
 		}
