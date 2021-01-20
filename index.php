@@ -16,6 +16,21 @@
 
 	include 'app/storio.app.php';
 
+	// Check for the install file
+	if(!file_exists('users/configs/site-settings.json')) {
+		// Check the users dir permissions
+		if(is_writable('users/')) {
+			// Check the configs dir permissions
+			if(is_writable('users/configs/')) {
+				Storio::Install();
+			}else{
+				exit(Storio::LoadView('install'));
+			}
+		}else{
+			exit(Storio::LoadView('install'));
+		}
+	}
+
 	// Logout
 	if(Storio::LoggedIn() && isset($_GET['logout'])) {
 		session_destroy();

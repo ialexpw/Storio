@@ -22,18 +22,49 @@
 		 * Storio::AddUser($user, $password, $size_mb, $settings)
 		 * Add a user to Storio, user information and permissions are passed through with the array
 		 */
+		public static function Install() {
+			// Hash the admin password
+			$usrPass = password_hash("AdminUser123", PASSWORD_DEFAULT);
+
+			// Set up the default settings
+			$siteCfg = array(
+				"siteName" => "Storio File Management",
+				"adminUser" => "admin",
+				"adminPassword" => $usrPass,
+				"allowRegistration" => false,
+				"expireFiles" => false
+			);
+
+			// JSON encode the configuration
+			$jsonCfg = json_encode($siteCfg);
+
+			// Create the json configuration file and write the contents
+			$usrFile = fopen('users/configs/site-settings.json','w+');
+			fwrite($usrFile, $jsonCfg);
+			fclose($usrFile);
+
+			return true;
+		}
+
+		/**
+		 * Storio::AddUser($user, $password, $size_mb, $settings)
+		 * Add a user to Storio, user information and permissions are passed through with the array
+		 */
 		public static function AddUser($user, $password, $size_mb, $settings) {
 			// Check if a user already exists
 			if(file_exists('users/' . $user)) {
 				return false;
 			}
 
+			// Hash the password
+			$usrPass = password_hash($password, PASSWORD_DEFAULT);
+
 			// Create the user directory
 			if(mkdir('users/' . $user)) {
 				// Create the user config
 				$usrCfg = array(
 					"userName" => $user,
-					"passWord" => $password,
+					"passWord" => $usrPass,
 					"maxStorage" => $size_mb,
 					"canUpload" => $settings['upload'],
 					"canShare" => $settings['share'],
@@ -46,7 +77,7 @@
 				$jsonCfg = json_encode($usrCfg);
 
 				// Create the json configuration file and write the contents
-				$usrFile = fopen('users/' . $user . '-cfg.json','w+');
+				$usrFile = fopen('users/configs/' . $user . '-cfg.json','w+');
 				fwrite($usrFile, $jsonCfg);
 				fclose($usrFile);
 
