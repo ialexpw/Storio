@@ -4,10 +4,6 @@
 
 	// Validate and create a new user
 	if(!empty($_POST)) {
-		echo '<pre>';
-		print_r($_POST);
-		echo '</pre>';
-		die;
 		// If user validates/creates, reload page (avoid re-post)
 		if(Storio::ValidateUserData($_POST)) {
 			header("Location: ?page=ad-users");
