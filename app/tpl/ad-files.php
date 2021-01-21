@@ -120,7 +120,7 @@
 											$strRep = 'users/' . $_GET['browse'] . '/';
 
 											// Save the arrays
-											$fldArr = dirlist('users/' . $_GET['browse']);
+											$fldArr = Storio::DirList('users/' . $_GET['browse']);
 
 											// Start the row
 											echo '<div class="row">';
@@ -228,50 +228,3 @@
 		<script src="app/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
-<?php
-	function dirlist($dir){
-		if(!file_exists($dir)){ return $dir.' does not exists'; }
-		$list = array('path' => $dir, 'dirview' => array(), 'dirlist' => array(), 'files' => array(), 'folders' => array());
-	
-		$dirs = array($dir);
-		while(null !== ($dir = array_pop($dirs))){
-			if($dh = opendir($dir)){
-				while(false !== ($file = readdir($dh))){
-					if($file == '.' || $file == '..') continue;
-					$path = $dir.DIRECTORY_SEPARATOR.$file;
-					$list['dirlist_natural'][] = $path;
-					if(is_dir($path)){
-						$list['dirview'][$dir]['folders'][] = $path;
-						// Bos klasorler while icerisine tekrar girmeyecektir. Klasorun oldugundan emin olalım.
-						if(!isset($list['dirview'][$path])){ $list['dirview'][$path] = array(); }
-						$dirs[] = $path;
-					}
-					else{
-						$list['dirview'][$dir]['files'][] = $path;
-					}
-				}
-				closedir($dh);
-			}
-		}
-	
-		if(!empty($list['dirview'])) ksort($list['dirview']);
-	
-		// Dosyaları dogru sıralama yaptırıyoruz. Deniz P. - info[at]netinial.com
-		foreach($list['dirview'] as $path => $file){
-			if(isset($file['files'])){
-				$list['dirlist'][] = $path;
-				$list['files'] = array_merge($list['files'], $file['files']);
-				$list['dirlist'] = array_merge($list['dirlist'], $file['files']);
-			}
-			// Add empty folders to the list
-			if(is_dir($path) && array_search($path, $list['dirlist']) === false){
-				$list['dirlist'][] = $path;
-			}
-			if(isset($file['folders'])){
-				$list['folders'] = array_merge($list['folders'], $file['folders']);
-			}
-		}
-	
-		return $list;
-	}
-?>
