@@ -102,9 +102,10 @@
 						<br />
 						<h4 class="card-title">System Logs</h4>
 						<p class="card-text" style="margin-top:15px;">
-<textarea id="w3review" name="w3review" rows="4" cols="50">
-Test
-</textarea>
+						<div class="mb-3">
+<label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+<textarea class="form-control" id="exampleFormControlTextarea1" rows="3">aaa</textarea>
+</div>
 							<?php
 								
 							?>
