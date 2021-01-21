@@ -255,10 +255,10 @@
 								</select>
 							</div>
 
-<!--<div class="col-12">
+<div class="col-12">
 <button type="submit" class="btn btn-primary">Sign in</button>
-</div>-->
-						</form>
+</div>
+</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
