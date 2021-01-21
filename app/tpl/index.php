@@ -59,7 +59,9 @@
 					<div class="card-header">
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="true" href="#"><i class="bi bi-house"></i>Dashboard</a>
+								<a class="nav-link active" aria-current="true" href="#">
+									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>Dashboard
+								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">File Manager</a>
