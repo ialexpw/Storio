@@ -115,10 +115,15 @@
 											continue;
 										}
 
+										// Try and get the config
+										if(file_exists('users/configs/' . $usr . '-cfg.json')) {
+											$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
+										}
+
 										// Add table row
 										echo '<tr>';
 										echo '<td>' . $usr . '</td>';
-										echo '<td>todo</td>';
+										echo '<td>' . $usrCfg['maxStorage'] . ' MB</td>';
 										echo '<td>Browse Files</td>';
 										echo '</tr>';
 									}
