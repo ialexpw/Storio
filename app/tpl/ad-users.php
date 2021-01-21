@@ -180,6 +180,7 @@
 </div>
 <div class="col-md-3">
 <div class="form-check">
+<label for="inputEmail" class="form-label"></label>
 <input class="form-check-input" type="checkbox" id="gridCheck">
 <label class="form-check-label" for="gridCheck">
 Check me out
