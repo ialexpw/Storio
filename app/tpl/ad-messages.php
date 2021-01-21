@@ -75,14 +75,14 @@
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link" href="?page=ad-messages">
-									<i class="bi bi-chat" style="font-size: 2rem; color: cornflowerblue;"></i>
+								<a class="nav-link active" aria-current="true" href="?page=ad-messages">
+									<i class="bi bi-chat" style="font-size: 2rem;"></i>
 									<br />Messages
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link active" aria-current="true" href="?page=ad-logs">
-									<i class="bi bi-archive" style="font-size: 2rem;"></i>
+								<a class="nav-link" href="?page=ad-logs">
+									<i class="bi bi-archive" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Logs
 								</a>
 							</li>
