@@ -122,13 +122,19 @@
 											// Save the arrays
 											$fldArr = dirlist('users/' . $_GET['browse']);
 
+											// Start the row
+											echo '<div class="row">';
+
 											// Check if there are subfolders first (avoid warnings)
 											if(!empty($fldArr['dirview'][$strPath]['folders'])) {
 												// Loop the folders first
 												foreach($fldArr['dirview'][$strPath]['folders'] as $dir) {
 													// Replace the beginning of the path
 													$dir = str_replace($strRep, "", $dir);
-													echo $dir . '<br />';
+
+													echo '<div class="col-md-4">' . $dir . '</div>';
+													echo '<div class="col-md-4">Size</div>';
+													echo '<div class="col-md-4">Actions</div>';
 												}
 											}
 											
@@ -138,14 +144,19 @@
 												foreach($fldArr['dirview'][$strPath]['files'] as $file) {
 													// Replace the beginning of the path
 													$file = str_replace($strRep, "", $file);
-													echo $file . '<br />';
+
+													echo '<div class="col-md-4">' . $file . '</div>';
+													echo '<div class="col-md-4">Size</div>';
+													echo '<div class="col-md-4">Actions</div>';
 												}
 											}
 											
+											// End the row
+											echo '</div>';
 
-											echo '<pre>';
-											print_r(dirlist('users/' . $_GET['browse']));
-											echo '</pre>';
+											//echo '<pre>';
+											//print_r(dirlist('users/' . $_GET['browse']));
+											//echo '</pre>';
 										}
 									}else{
 										// Gen the table start
