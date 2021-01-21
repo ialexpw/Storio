@@ -180,7 +180,7 @@
 
 							<!-- Password -->
 							<div class="col-md-3">
-								<label for="inputPass" class="form-label">Password</label>
+								<label for="inputPass" class="form-label">Password <i class="float-end bi bi-arrow-repeat"></i></label>
 								<input type="password" class="form-control" id="inputPass" required>
 							</div>
 
@@ -207,7 +207,7 @@
 							<!-- Storage allowance -->
 							<div class="col-md-2">
 								<label for="inputCity" class="form-label">Storage (MB)</label>
-								<input type="text" class="form-control" id="inputCity">
+								<input type="text" class="form-control" id="inputCity" value="1000">
 							</div>
 
 							<!-- Can view files -->
