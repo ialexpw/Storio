@@ -113,6 +113,19 @@
 									if(isset($_GET['browse']) && !empty($_GET['browse'])) {
 										// Check the folder exists
 										if(is_dir('users/' . $_GET['browse'])) {
+											// Save the arrays
+											$fldArr = dirlist('users/' . $_GET['browse']);
+
+											// Loop the folders first
+											foreach($fldArr as $dir) {
+												echo $dir['folders'] . '<br />';
+											}
+
+											// Loop the files after
+											foreach($fldArr as $file) {
+												echo $file['files'] . '<br />';
+											}
+
 											echo '<pre>';
 											print_r(dirlist('users/' . $_GET['browse']));
 											echo '</pre>';
@@ -185,7 +198,6 @@
 						// Bos klasorler while icerisine tekrar girmeyecektir. Klasorun oldugundan emin olalım.
 						if(!isset($list['dirview'][$path])){ $list['dirview'][$path] = array(); }
 						$dirs[] = $path;
-						//if($path == 'D:\Xampp\htdocs\exclusiveyachtcharter.localhost\wp-content\upgrade'){ press($path); press($list['dirview']); die; }
 					}
 					else{
 						$list['dirview'][$dir]['files'][] = $path;
@@ -194,8 +206,6 @@
 				closedir($dh);
 			}
 		}
-	
-		// if(!empty($dirlist['dirlist_natural']))  sort($dirlist['dirlist_natural'], SORT_LOCALE_STRING); // delete safe ama gerek kalmadı.
 	
 		if(!empty($list['dirview'])) ksort($list['dirview']);
 	
@@ -214,8 +224,6 @@
 				$list['folders'] = array_merge($list['folders'], $file['folders']);
 			}
 		}
-	
-		//press(array_diff($list['dirlist_natural'], $list['dirlist'])); press($list['dirview']); die;
 	
 		return $list;
 	}
