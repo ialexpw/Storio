@@ -44,7 +44,7 @@
 		Storio::LoadView($_GET['page']);
 	}
 
-	/*
+	
 		example
 
 
@@ -58,5 +58,5 @@
 		);
 
 		Storio::AddUser("alex", "Al3xWhit3", "5000", $ex);
-	*/
+	
 ?>

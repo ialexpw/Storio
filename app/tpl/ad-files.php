@@ -96,7 +96,7 @@
 								if(count($dirs) > 1) {
 
 								}else{
-									echo 'Storio does not have any users, would you like to <a href="?page=users">create one</a>?';
+									echo 'Storio does not have any users, would you like to <a href="?page=ad-users">create one</a>?';
 								}
 							?>
 						</p>
