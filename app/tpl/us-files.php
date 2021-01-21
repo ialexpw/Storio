@@ -18,6 +18,9 @@
 	// Get the user dir structure
 	if(is_dir('users/' . $_SESSION['Username'])) {
 		$dirs = array_filter(glob('users/' . $_SESSION['Username'] . '/*'), 'is_dir');
+
+		// Keep the browse dir
+		$usrDir = 'users/' . $_SESSION['Username'] . '/';
 	}
 	
 ?>
@@ -100,9 +103,9 @@
 								// Are there users?
 								//if(count($dirs) > 1) {
 									// Attempting to browse a users files
-									if(isset($_GET['browse']) && !empty($_GET['browse'])) {
+									//if(isset($_GET['browse']) && !empty($_GET['browse'])) {
 										// Check the folder exists
-										if(is_dir('users/' . $_GET['browse'])) {
+										//if(is_dir('users/' . $_GET['browse'])) {
 											// Use for the path
 											$strPath = 'users/' . $_GET['browse'];
 
@@ -110,7 +113,7 @@
 											$strRep = 'users/' . $_GET['browse'] . '/';
 
 											// Save the arrays
-											$fldArr = Storio::DirList('users/' . $_GET['browse']);
+											$fldArr = Storio::DirList($usrDir);
 
 											// Start the row
 											echo '<div class="row">';
@@ -166,48 +169,8 @@
 											//echo '<pre>';
 											//print_r(dirlist('users/' . $_GET['browse']));
 											//echo '</pre>';
-										}
-									}else{
-										// Gen the table start
-										echo '<table class="table table-hover">';
-										echo '<thead>';
-										echo '<tr>';
-										echo '<th scope="col">User</th>';
-										echo '<th scope="col">Storage</th>';
-										echo '<th scope="col">Controls</th>';
-										echo '</tr>';
-										echo '</thead>';
-										echo '<tbody>';
-
-										// Loop users
-										foreach($dirs as $usr) {
-											// Remove the users/ prefix
-											$usr = str_replace("users/", "", $usr);
-
-											// Skip the configs dir
-											if($usr == 'configs') {
-												continue;
-											}
-
-											// Try and get the config
-											if(file_exists('users/configs/' . $usr . '-cfg.json')) {
-												$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
-											}
-
-											// Add table row
-											echo '<tr>';
-											echo '<td>' . $usr . '</td>';
-											echo '<td>' . number_format($usrCfg['usedStorage']) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
-											echo '<td><a href="?page=ad-files&browse=' . $usr . '/">Browse Files</a></td>';
-											echo '</tr>';
-										}
-
-										echo '</tbody>';
-										echo '</table>';
-									}
-								//}else{
-								//	echo 'Storio does not have any users, would you like to <a href="?page=ad-users">create one</a>?';
-								//}
+										//}
+									//}
 							?>
 						</p>
 					</div>
