@@ -130,6 +130,11 @@
 										echo '<td>' . $usr . '</td>';
 										echo '<td>' . $usrCfg['usedStorage'] . ' / ' . $usrCfg['maxStorage'] . ' MB</td>';
 										echo '<td>' . $usrCfg['canView'] . '</td>';
+										echo '<td>' . $usrCfg['canUpload'] . '</td>';
+										echo '<td>' . $usrCfg['canEdit'] . '</td>';
+										echo '<td>' . $usrCfg['canShare'] . '</td>';
+										echo '<td>' . $usrCfg['canDelete'] . '</td>';
+										echo '<td>' . $usrCfg['isAdmin'] . '</td>';
 										echo '</tr>';
 									}
 
