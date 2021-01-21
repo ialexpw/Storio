@@ -1,6 +1,10 @@
 <?php
 	// Get the user list from the dir structure
 	$dirs = array_filter(glob('users/*'), 'is_dir');
+
+	if(!empty($_POST)) {
+		print_r($_POST);
+	}
 ?>
 <!doctype html>
 <html lang="en">
@@ -165,43 +169,40 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<form class="row g-3">
+						<form class="row g-3" method="post" action="?page=ad-users">
 							<!-- Username -->
 							<div class="col-md-2">
 								<label for="inputUser" class="form-label">Username</label>
-								<input type="text" class="form-control" id="inputUser" required>
+								<input type="text" class="form-control" id="inputUser" name="inputUser" required>
 							</div>
 
 							<!-- Email address -->
 							<div class="col-md-3">
 								<label for="inputEmail" class="form-label">Email (optional)</label>
-								<input type="email" class="form-control" id="inputEmail">
+								<input type="email" class="form-control" id="inputEmail" name="inputEmail">
 							</div>
 
 							<!-- Password -->
 							<div class="col-md-3">
-								<label for="inputPass" class="form-label">Password <svg style="margin-left:10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
-  <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
-</svg></label>
-								<input type="password" class="form-control" id="inputPass" required>
+								<label for="inputPass" class="form-label">Password</label>
+								<input type="password" class="form-control" id="inputPass" name="inputPass" required>
 							</div>
 
 							<!-- Welcome email -->
 							<div class="col-md-2">
-								<label for="inputState" class="form-label">Welcome email</label>
-								<select id="inputState" class="form-select">
-									<option selected>true</option>
-									<option>false</option>
+								<label for="inputWelcome" class="form-label">Welcome email</label>
+								<select id="inputWelcome" name="inputWelcome" class="form-select">
+									<option value="1" selected>true</option>
+									<option value="0">false</option>
 								</select>
 							</div>
 
 							<!-- Admin user -->
 							<div class="col-md-2">
-								<label for="inputState" class="form-label">Admin user</label>
-								<select id="inputState" class="form-select">
-									<option selected>false</option>
-									<option>true</option>
+								<label for="inputAdmin" class="form-label">Admin user</label>
+								<select id="inputAdmin" class="form-select">
+									<option value="0" selected>false</option>
+									<option value="1">true</option>
 								</select>
 							</div>
 
@@ -209,52 +210,52 @@
 
 							<!-- Storage allowance -->
 							<div class="col-md-2">
-								<label for="inputCity" class="form-label">Storage (MB)</label>
-								<input type="text" class="form-control" id="inputCity" value="1000">
+								<label for="inputStorage" class="form-label">Storage (MB)</label>
+								<input type="number" class="form-control" id="inputStorage" value="1000">
 							</div>
 
 							<!-- Can view files -->
 							<div class="col-md-2">
-								<label for="inputState" class="form-label">Can view</label>
-								<select id="inputState" class="form-select">
-									<option selected>true</option>
-									<option>false</option>
+								<label for="inputView" class="form-label">Can view</label>
+								<select id="inputView" class="form-select">
+									<option value="1" selected>true</option>
+									<option value="0">false</option>
 								</select>
 							</div>
 
 							<!-- Can upload files -->
 							<div class="col-md-2">
-								<label for="inputState" class="form-label">Can upload</label>
-								<select id="inputState" class="form-select">
-									<option selected>true</option>
-									<option>false</option>
+								<label for="inputUpload" class="form-label">Can upload</label>
+								<select id="inputUpload" class="form-select">
+									<option value="1" selected>true</option>
+									<option value="0">false</option>
 								</select>
 							</div>
 
 							<!-- Can edit files -->
 							<div class="col-md-2">
-								<label for="inputState" class="form-label">Can edit</label>
-								<select id="inputState" class="form-select">
-									<option selected>true</option>
-									<option>false</option>
+								<label for="inputEdit" class="form-label">Can edit</label>
+								<select id="inputEdit" class="form-select">
+									<option value="1" selected>true</option>
+									<option value="0">false</option>
 								</select>
 							</div>
 
 							<!-- Can share files -->
 							<div class="col-md-2">
-								<label for="inputState" class="form-label">Can share</label>
-								<select id="inputState" class="form-select">
-									<option selected>true</option>
-									<option>false</option>
+								<label for="inputShare" class="form-label">Can share</label>
+								<select id="inputShare" class="form-select">
+									<option value="1" selected>true</option>
+									<option value="0">false</option>
 								</select>
 							</div>
 
 							<!-- Can delete files -->
 							<div class="col-md-2">
-								<label for="inputState" class="form-label">Can delete</label>
-								<select id="inputState" class="form-select">
-									<option selected>true</option>
-									<option>false</option>
+								<label for="inputDelete" class="form-label">Can delete</label>
+								<select id="inputDelete" class="form-select">
+									<option value="1" selected>true</option>
+									<option value="0">false</option>
 								</select>
 							</div>
 
