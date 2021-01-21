@@ -189,6 +189,7 @@
 				// Load the configuration
 				$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
 
+				echo $user . ' ' . $pass . ' ' . $usrCfg['passWord'] . ' ';
 				// Verify password
 				if(password_verify($pass, $usrCfg['passWord'])) {
 					// Admin user?
