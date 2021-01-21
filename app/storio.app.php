@@ -187,7 +187,7 @@
 			// Check directory and config file
 			if(is_dir('users/' . $user) && file_exists('users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration
-				$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
+				$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
 
 				// Verify password
 				if(password_verify($pass, $usrCfg['passWord'])) {
