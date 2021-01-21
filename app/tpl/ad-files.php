@@ -23,6 +23,10 @@
 			* {
 				font-family: 'Nunito', sans-serif;
 			}
+
+			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+				height:94px;
+			}
 		</style>
 
 		<!-- Custom styles -->
@@ -33,7 +37,7 @@
 			<div class="container-fluid">
 				<i class="bi bi-droplet" style="font-size: 2rem; margin-right:12px; margin-bottom:6px; color: cornflowerblue;"></i>
 				<a class="navbar-brand" href="?page=ad-dashboard"> Storio File Management</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 			</div>
@@ -83,7 +87,7 @@
 						</ul>
 					</div>
 					<div class="card-body">
-						<!-- Intro to the dashboard -->
+						<!-- File management -->
 						<br />
 						<h4 class="card-title">File Management</h4>
 						<p class="card-text" style="margin-top:15px;">
