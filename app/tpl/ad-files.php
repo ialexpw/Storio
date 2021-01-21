@@ -123,7 +123,7 @@
 										// Add table row
 										echo '<tr>';
 										echo '<td>' . $usr . '</td>';
-										echo '<td>' . $usrCfg['usedStorage'] . ' / ' . $usrCfg['maxStorage'] . ' MB</td>';
+										echo '<td>' . number_format($usrCfg['usedStorage']) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
 										echo '<td>Browse Files</td>';
 										echo '</tr>';
 									}

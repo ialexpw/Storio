@@ -140,7 +140,7 @@
 										// Add table row
 										echo '<tr>';
 										echo '<td style="width:14%;">' . $usr . '</td>';
-										echo '<td style="width:14%;">' . $usrCfg['usedStorage'] . ' / ' . $usrCfg['maxStorage'] . ' MB</td>';
+										echo '<td style="width:14%;">' . number_format($usrCfg['usedStorage']) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
 										echo '<td style="width:12%;">' . $usrCfg['canView'] . '</td>';
 										echo '<td style="width:12%;">' . $usrCfg['canUpload'] . '</td>';
 										echo '<td style="width:12%;">' . $usrCfg['canEdit'] . '</td>';
