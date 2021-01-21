@@ -97,25 +97,39 @@
 						</ul>
 					</div>
 					<div class="card-body">
+						<!-- Site stats -->
+						<h5 class="card-title">Statistics</h5>
 						<div class="row">
-						<div class="col-sm">
-						One of three columns
+							<div class="col-sm">
+								One of three columns
+							</div>
+							<div class="col-sm">
+								One of three columns
+							</div>
+							<div class="col-sm">
+								One of three columns
+							</div>
 						</div>
-						<div class="col-sm">
-						One of three columns
+
+						<hr>
+
+						<!-- System stats -->
+						<h5 class="card-title">System</h5>
+						<div class="row">
+							<div class="col-sm">
+								One of three columns
+							</div>
+							<div class="col-sm">
+								One of three columns
+							</div>
+							<div class="col-sm">
+								One of three columns
+							</div>
 						</div>
-						<div class="col-sm">
-						One of three columns
-						</div>
-						</div>
-						<h5 class="card-title">Special title treatment</h5>
-						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
 					</div>
 				</div>
 			</div>
 		</main>
-
 
 		<script src="app/js/bootstrap.bundle.min.js"></script>
 	</body>
