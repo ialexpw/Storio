@@ -11,9 +11,9 @@
 	 */
 
 	// Redirect if not logged in
-	//if(!Storio::LoggedIn('admin')) {
-	//	header("Location: ?page=login");
-	//}
+	if(!Storio::LoggedIn('admin')) {
+		header("Location: ?page=login");
+	}
 
 	// Get the user list from the dir structure
 	$dirs = array_filter(glob('users/*'), 'is_dir');
