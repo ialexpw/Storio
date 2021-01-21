@@ -91,12 +91,14 @@
 						<br />
 						<h4 class="card-title">File Management</h4>
 						<p class="card-text" style="margin-top:15px;">
-							<pre>
-								<?php
-									print_r($dirs);
-									echo count($dirs);
-								?>
-							</pre>
+							<?php
+								// Are there users?
+								if(count($dirs) > 1) {
+
+								}else{
+									echo 'Storio does not have any users, would you like to <a href="?page=users">create one</a>?';
+								}
+							?>
 						</p>
 					</div>
 				</div>
