@@ -20,7 +20,7 @@
 		$dirs = array_filter(glob('users/' . $_SESSION['Username'] . '/*'), 'is_dir');
 
 		// Keep the browse dir
-		$usrDir = 'users/' . $_SESSION['Username'] . '/';
+		$usrDir = 'users/' . $_SESSION['Username'];
 	}
 	
 ?>
@@ -107,10 +107,10 @@
 										// Check the folder exists
 										//if(is_dir('users/' . $_GET['browse'])) {
 											// Use for the path
-											$strPath = 'users/' . $_GET['browse'];
+											$strPath = $usrDir;
 
 											// Use for str_replace
-											$strRep = 'users/' . $_GET['browse'] . '/';
+											$strRep = $usrDir . '/';
 
 											// Save the arrays
 											$fldArr = Storio::DirList($usrDir);
