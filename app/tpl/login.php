@@ -29,7 +29,6 @@
 			$_SESSION['UserID'] = sha1($_POST['userInput'] . 'Storio');
 			$_SESSION['Username'] = $_POST['userInput'];
 
-			exit($logUsr);
 			// For admin users
 			if($logUsr == 2) {
 				$_SESSION['isAdmin'] = $_POST['userInput'];
