@@ -178,7 +178,7 @@
 
 			// Check the user
 			if(!ctype_alnum($user)) {
-				return -1;
+				return false;
 			}
 
 			// Check directory and config file
@@ -190,15 +190,17 @@
 				if(password_verify($pass, $usrCfg['passWord'])) {
 					// Admin user?
 					if($usrCfg['isAdmin']) {
-						return 2;
+						// Set the session
+						$_SESSION['isAdmin'] = $user;
+						return true;
 					}else{
-						return 1;
+						return true;
 					}
 				}else{
-					// todo
+					return false;
 				}
 			}else{
-				return -2;
+				return false;
 			}
 		}
 

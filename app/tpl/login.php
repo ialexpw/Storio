@@ -31,9 +31,7 @@
 			$_SESSION['Username'] = $_POST['userInput'];
 
 			// For admin users
-			if($logUsr == 2) {
-				$_SESSION['isAdmin'] = $_POST['userInput'];
-
+			if(isset($_SESSION['isAdmin'])) {
 				// Go to the admin dashboard
 				header("Location: ?page=ad-dashboard");
 			}else{
