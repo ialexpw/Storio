@@ -189,7 +189,7 @@
 				// Verify password
 				if(password_verify($pass, $usrCfg['passWord'])) {
 					// Admin user?
-					if($usrCfg['isAdmin']) {
+					if($usrCfg['isAdmin'] == "true") {
 						// Set the session
 						$_SESSION['isAdmin'] = $user;
 						return true;
