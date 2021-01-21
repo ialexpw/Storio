@@ -24,7 +24,7 @@
 				font-family: 'Nunito', sans-serif;
 			}
 
-			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+			.nav-tabs .nav-item.show .nav-link, .nav-tabs {
 				height:94px;
 			}
 		</style>
