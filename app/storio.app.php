@@ -67,9 +67,6 @@
 				return false;
 			}
 
-			// Hash the password
-			$usrPass = password_hash($password, PASSWORD_DEFAULT);
-
 			// Create the user directory
 			if(mkdir('users/' . $user)) {
 				if(chmod('users/' . $user, 0777)) {
@@ -77,7 +74,7 @@
 					$usrCfg = array(
 						"userName" => $user,
 						"usrEmail" => $email,
-						"passWord" => $usrPass,
+						"passWord" => $password,
 						"usedStorage" => 0,
 						"maxStorage" => $size_mb,
 						"canView" => $settings['view'],
