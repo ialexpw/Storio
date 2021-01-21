@@ -1,4 +1,15 @@
 <?php
+	/**
+	 * ad-users.php
+	 *
+	 * User management page for administrators
+	 *
+	 * @package    Storio
+	 * @author     Alex White
+	 * @copyright  2021 Storio
+	 * @link       https://storio.aw0.uk
+	 */
+
 	// Get the user list from the dir structure
 	$dirs = array_filter(glob('users/*'), 'is_dir');
 
