@@ -60,11 +60,15 @@
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item">
 								<a class="nav-link active" aria-current="true" href="#">
-									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>Dashboard
+									<i class="bi bi-house" style="font-size: 3rem; color: cornflowerblue;"></i>
+									<br />Dashboard
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">File Manager</a>
+								<a class="nav-link" href="#">
+									<i class="bi bi-house" style="font-size: 3rem; color: cornflowerblue;"></i>
+									<br />File Manager
+								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">Users</a>
