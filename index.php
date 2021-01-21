@@ -45,7 +45,7 @@
 	}
 
 	
-		
+		/*
 		// Example user creation
 		$ex = array(
 			"view" => true,
@@ -57,5 +57,5 @@
 		);
 
 		Storio::AddUser("alex", "Al3xWhit3", "5000", $ex);
-	
+		*/
 ?>
