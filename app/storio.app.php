@@ -53,7 +53,7 @@
 		 * Storio::AddUser($user, $password, $size_mb, $settings)
 		 * Add a user to Storio, user information and permissions are passed through with the array
 		 */
-		public static function AddUser($user, $password, $size_mb, $settings) {
+		public static function AddUser($user, $email="", $password, $size_mb, $settings) {
 			// Check if a user already exists
 			if(file_exists('users/' . $user)) {
 				return false;
@@ -68,6 +68,7 @@
 					// Create the user config
 					$usrCfg = array(
 						"userName" => $user,
+						"usrEmail" => $email,
 						"passWord" => $usrPass,
 						"usedStorage" => 0,
 						"maxStorage" => $size_mb,
@@ -150,7 +151,7 @@
 			);
 
 			// Add the user
-			if(Storio::AddUser($post['inputUser'], $usrPass, $post['inputStorage'], $usrAr)) {
+			if(Storio::AddUser($post['inputUser'], $post['inputEmail'], $usrPass, $post['inputStorage'], $usrAr)) {
 				return true;
 			}
 		}
