@@ -122,6 +122,40 @@
 		}
 
 		/**
+		 * Storio::ValidateUserData()
+		 * Validate the user data when adding a user
+		 */
+		public static function ValidateUserData($post) {
+			// Check the user
+			if(!ctype_alnum($post['inputUser'])) {
+				return -1;
+			}
+
+			// Hash the password
+			$usrPass = password_hash($post['inputPass'], PASSWORD_DEFAULT);
+
+			// Check the storage value
+			if(!is_numeric($post['inputStorage'])) {
+				return -2;
+			}
+
+			// Create the array
+			$usrAr = array(
+				"view" => $post['inputView'],
+				"upload" => $post['inputUpload'],
+				"share" => $post['inputShare'],
+				"delete" => $post['inputDelete'],
+				"edit" => $post['inputEdit'],
+				"admin" => $post['inputAdmin']
+			);
+
+			// Add the user
+			if(Storio::AddUser($post['inputUser'], $usrPass, $post['inputStorage'], $usrAr)) {
+				return true;
+			}
+		}
+
+		/**
 		 * Storio::CheckLicence()
 		 * Function to check the licence code
 		 */

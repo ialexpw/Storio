@@ -2,8 +2,12 @@
 	// Get the user list from the dir structure
 	$dirs = array_filter(glob('users/*'), 'is_dir');
 
+	// Validate and create a new user
 	if(!empty($_POST)) {
-		print_r($_POST);
+		// If user validates/creates, reload page (avoid re-post)
+		if(Storio::ValidateUserData($_POST)) {
+			header("Location: ?page=ad-users");
+		}
 	}
 ?>
 <!doctype html>
