@@ -10,7 +10,8 @@
 		<link rel="canonical" href="https://storio.aw0.uk">
 
 		<!-- Bootstrap core CSS -->
-		<link href="app/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="app/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 		<style>
 			
@@ -58,14 +59,26 @@
 					<div class="card-header">
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="true" href="#">Active</a>
+								<a class="nav-link active" aria-current="true" href="#"><i class="bi bi-house"></i>Dashboard</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Link</a>
+								<a class="nav-link" href="#">File Manager</a>
 							</li>
 							<li class="nav-item">
+								<a class="nav-link" href="#">Users</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Messages</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Logs</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Settings</a>
+							</li>
+							<!--<li class="nav-item">
 								<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-							</li>
+							</li>-->
 						</ul>
 					</div>
 					<div class="card-body">
