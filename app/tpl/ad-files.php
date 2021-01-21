@@ -137,9 +137,12 @@
 													// Replace the beginning of the path
 													$dir = str_replace($strRep, "", $dir);
 
-													echo '<div class="col-md-4">' . $dir . '</div>';
+													// Generate a link to subfolder
+													$subLink = $_GET['browse'] . $dir . '/';
+
+													echo '<div class="col-md-4"><a href="?page=ad-files&browse=' . $subLink . '">' . $dir . '</a></div>';
 													echo '<div class="col-md-4">n/a</div>';
-													echo '<div class="col-md-4">Actions</div>';
+													echo '<div class="col-md-4">n/a</div>';
 												}
 											}
 											
