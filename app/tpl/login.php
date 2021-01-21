@@ -9,6 +9,11 @@
 	 * @copyright  2021 Storio
 	 * @link       https://storio.aw0.uk
 	 */
+
+	// Log in to Storio
+	if(!empty($_POST)) {
+		print_r($_POST);
+	}
 ?>
 <!doctype html>
 <html lang="en">
@@ -69,7 +74,7 @@
 						<br />
 						<h4 class="card-title">Log in to Storio</h4>
 						<p class="card-text" style="margin-top:15px;">
-							<form>
+							<form method="post" action="?page=login">
 								<div class="mb-3">
 									<label for="userInput" class="form-label">User name</label>
 									<input type="text" class="form-control" id="userInput" name="userInput">
