@@ -12,8 +12,13 @@
 
 	 // Auto direct if already logged in
 	if(Storio::LoggedIn()) {
-		// Go to the dashboard
-		header("Location: ?page=us-dashboard");
+		if(Storio::LoggedIn('admin')) {
+			// Go to admin dashboard
+			header("Location: ?page=ad-dashboard");
+		}else{
+			// Go to user dashboard
+			header("Location: ?page=us-dashboard");
+		}
 	}
 
 	// Log in to Storio
@@ -26,7 +31,7 @@
 
 			// For admin users
 			if($logUsr == 2) {
-				$_SESSION['isAdmin'] = true;
+				$_SESSION['isAdmin'] = $_POST['userInput'];
 
 				// Go to the admin dashboard
 				header("Location: ?page=ad-dashboard");
