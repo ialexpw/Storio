@@ -10,6 +10,12 @@
 	 * @link       https://storio.aw0.uk
 	 */
 
+	 // Auto direct if already logged in
+	if(Storio::LoggedIn()) {
+		// Go to the dashboard
+		header("Location: ?page=us-dashboard");
+	}
+
 	// Log in to Storio
 	if(!empty($_POST)) {
 		if(Storio::LoginUser($_POST)) {
