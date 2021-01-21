@@ -153,7 +153,7 @@
 									echo '</tbody>';
 									echo '</table>';
 								}else{
-									echo 'Storio does not have any users, would you like to <a href="?page=ad-users">create one</a>?';
+									echo 'Storio does not have any users, you can create one with the link above.';
 								}
 							?>
 						</p>
