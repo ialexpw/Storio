@@ -94,12 +94,20 @@
 									<br />Settings
 								</a>
 							</li>
-							<!--<li class="nav-item">
-								<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-							</li>-->
 						</ul>
 					</div>
 					<div class="card-body">
+						<div class="row">
+						<div class="col-sm">
+						One of three columns
+						</div>
+						<div class="col-sm">
+						One of three columns
+						</div>
+						<div class="col-sm">
+						One of three columns
+						</div>
+						</div>
 						<h5 class="card-title">Special title treatment</h5>
 						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 						<a href="#" class="btn btn-primary">Go somewhere</a>
