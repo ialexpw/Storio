@@ -179,8 +179,6 @@
 			$user = strtolower($post['userInput']);
 			$pass = $post['passInput'];
 
-			echo $user . ' ' . $pass;
-
 			// Check the user
 			if(!ctype_alnum($user)) {
 				return -1;
@@ -201,6 +199,8 @@
 						exit('b');
 						return 1;
 					}
+				}else{
+					exit('d');
 				}
 			}else{
 				exit('c');
