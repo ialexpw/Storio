@@ -122,19 +122,26 @@
 											// Save the arrays
 											$fldArr = dirlist('users/' . $_GET['browse']);
 
-											// Loop the folders first
-											foreach($fldArr['dirview'][$strPath]['folders'] as $dir) {
-												// Replace the beginning of the path
-												$dir = str_replace($strRep, "", $dir);
-												echo $dir . '<br />';
+											// Check if there are subfolders first (avoid warnings)
+											if(!empty($fldArr['dirview'][$strPath]['folders'])) {
+												// Loop the folders first
+												foreach($fldArr['dirview'][$strPath]['folders'] as $dir) {
+													// Replace the beginning of the path
+													$dir = str_replace($strRep, "", $dir);
+													echo $dir . '<br />';
+												}
 											}
-
-											// Loop the files after
-											foreach($fldArr['dirview'][$strPath]['files'] as $file) {
-												// Replace the beginning of the path
-												$file = str_replace($strRep, "", $file);
-												echo $file . '<br />';
+											
+											// Check if there are files first (avoid warnings)
+											if(!empty($fldArr['dirview'][$strPath]['files'])) {
+												// Loop the files after
+												foreach($fldArr['dirview'][$strPath]['files'] as $file) {
+													// Replace the beginning of the path
+													$file = str_replace($strRep, "", $file);
+													echo $file . '<br />';
+												}
 											}
+											
 
 											echo '<pre>';
 											print_r(dirlist('users/' . $_GET['browse']));
