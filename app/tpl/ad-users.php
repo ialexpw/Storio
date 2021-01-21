@@ -258,13 +258,12 @@
 <!--<div class="col-12">
 <button type="submit" class="btn btn-primary">Sign in</button>
 </div>-->
-						</div>
-					
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary">Create</button>
-						</div>
-					</form>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Create</button>
+					</div>
 				</div>
 			</div>
 		</div>
