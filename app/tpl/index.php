@@ -17,8 +17,8 @@
 		</style>
 
 
-		<!-- Custom styles for this template -->
-		<link href="app/css/starter-template.css" rel="stylesheet">
+		<!-- Custom styles -->
+		<link href="app/css/custom.css" rel="stylesheet">
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
