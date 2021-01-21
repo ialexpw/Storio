@@ -38,6 +38,10 @@
 			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
 				height:94px;
 			}
+
+			a {
+				text-decoration:none;
+			}
 		</style>
 
 		<!-- Custom styles -->
