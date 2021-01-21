@@ -180,11 +180,12 @@
 </div>
 <div class="col-md-3">
 <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-      <label class="form-check-label" for="autoSizingCheck">
-        Remember me
-      </label>
-    </div>
+<label for="gridCheck" class="form-label"> </label>
+<input class="form-check-input" type="checkbox" id="gridCheck">
+<label class="form-check-label" for="gridCheck">
+Check me out
+</label>
+</div>
 </div>
 <div class="col-12">
 <label for="inputAddress" class="form-label">Address</label>
