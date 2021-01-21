@@ -200,7 +200,7 @@
 							<!-- Admin user -->
 							<div class="col-md-2">
 								<label for="inputAdmin" class="form-label">Admin user</label>
-								<select id="inputAdmin" class="form-select">
+								<select id="inputAdmin" name="inputAdmin" class="form-select">
 									<option value="false" selected>false</option>
 									<option value="true">true</option>
 								</select>
@@ -211,13 +211,13 @@
 							<!-- Storage allowance -->
 							<div class="col-md-2">
 								<label for="inputStorage" class="form-label">Storage (MB)</label>
-								<input type="number" class="form-control" id="inputStorage" value="1000">
+								<input type="number" class="form-control" id="inputStorage" name="inputStorage" value="1000">
 							</div>
 
 							<!-- Can view files -->
 							<div class="col-md-2">
 								<label for="inputView" class="form-label">Can view</label>
-								<select id="inputView" class="form-select">
+								<select id="inputView" name="inputView" class="form-select">
 									<option value="true" selected>true</option>
 									<option value="false">false</option>
 								</select>
@@ -226,7 +226,7 @@
 							<!-- Can upload files -->
 							<div class="col-md-2">
 								<label for="inputUpload" class="form-label">Can upload</label>
-								<select id="inputUpload" class="form-select">
+								<select id="inputUpload" name="inputUpload" class="form-select">
 									<option value="true" selected>true</option>
 									<option value="false">false</option>
 								</select>
@@ -235,7 +235,7 @@
 							<!-- Can edit files -->
 							<div class="col-md-2">
 								<label for="inputEdit" class="form-label">Can edit</label>
-								<select id="inputEdit" class="form-select">
+								<select id="inputEdit" name="inputEdit" class="form-select">
 									<option value="true" selected>true</option>
 									<option value="false">false</option>
 								</select>
@@ -244,7 +244,7 @@
 							<!-- Can share files -->
 							<div class="col-md-2">
 								<label for="inputShare" class="form-label">Can share</label>
-								<select id="inputShare" class="form-select">
+								<select id="inputShare" name="inputShare" class="form-select">
 									<option value="true" selected>true</option>
 									<option value="false">false</option>
 								</select>
@@ -253,7 +253,7 @@
 							<!-- Can delete files -->
 							<div class="col-md-2">
 								<label for="inputDelete" class="form-label">Can delete</label>
-								<select id="inputDelete" class="form-select">
+								<select id="inputDelete" name="inputDelete" class="form-select">
 									<option value="true" selected>true</option>
 									<option value="false">false</option>
 								</select>
