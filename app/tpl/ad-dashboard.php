@@ -98,15 +98,18 @@
 					</div>
 					<div class="card-body">
 						<!-- Site stats -->
-						<h5 class="card-title">Statistics</h5>
+						<h4 class="card-title text-left">System Statistics</h4>
 						<div class="row">
 							<div class="col-sm">
+								<h5 class="card-title">Today</h5>
 								One of three columns
 							</div>
 							<div class="col-sm">
+								<h5 class="card-title">This Month</h5>
 								One of three columns
 							</div>
 							<div class="col-sm">
+								<h5 class="card-title">All Time</h5>
 								One of three columns
 							</div>
 						</div>
@@ -114,15 +117,18 @@
 						<hr>
 
 						<!-- System stats -->
-						<h5 class="card-title">System</h5>
+						<h4 class="card-title text-left">System Information</h4>
 						<div class="row">
 							<div class="col-sm">
+								<h5 class="card-title">Today</h5>
 								One of three columns
 							</div>
 							<div class="col-sm">
+								<h5 class="card-title">This Month</h5>
 								One of three columns
 							</div>
 							<div class="col-sm">
+								<h5 class="card-title">All Time</h5>
 								One of three columns
 							</div>
 						</div>
