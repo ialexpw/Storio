@@ -37,7 +37,7 @@
 
 		<main class="container">
 			<div class="starter-template text-center py-5 px-3">
-				<div class="card">
+				<div class="card text-center">
 					<div class="card-header">
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item" style="width:12%;">
@@ -78,7 +78,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="card-body">
+					<div class="card-body float-start">
 						<!-- Intro to the dashboard -->
 						<br />
 						<h4 class="card-title float-start">Welcome to your Dashboard</h4>
