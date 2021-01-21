@@ -64,33 +64,33 @@
 									<br />Dashboard
 								</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" style="width:15%;">
 								<a class="nav-link" href="#">
-									<i class="bi bi-files" style="font-size: 2.2rem; color: cornflowerblue;"></i>
+									<i class="bi bi-files" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />File Manager
 								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">
-									<i class="bi bi-people" style="font-size: 2.2rem; color: cornflowerblue;"></i>
+									<i class="bi bi-people" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Users
 								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">
-									<i class="bi bi-chat" style="font-size: 2.2rem; color: cornflowerblue;"></i>
+									<i class="bi bi-chat" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Messages
 								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">
-									<i class="bi bi-archive" style="font-size: 2.2rem; color: cornflowerblue;"></i>
+									<i class="bi bi-archive" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Logs
 								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">
-									<i class="bi bi-gear" style="font-size: 2.2rem; color: cornflowerblue;"></i>
+									<i class="bi bi-gear" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Settings
 								</a>
 							</li>
