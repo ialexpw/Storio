@@ -35,10 +35,10 @@
 
 				// Go to the admin dashboard
 				header("Location: ?page=ad-dashboard");
+			}else{
+				// Go to the dashboard
+				header("Location: ?page=us-dashboard");
 			}
-
-			// Go to the dashboard
-			header("Location: ?page=us-dashboard");
 		}
 	}
 ?>
