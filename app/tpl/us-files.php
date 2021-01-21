@@ -98,7 +98,7 @@
 						<p class="card-text" style="margin-top:15px;">
 							<?php
 								// Are there users?
-								if(count($dirs) > 1) {
+								//if(count($dirs) > 1) {
 									// Attempting to browse a users files
 									if(isset($_GET['browse']) && !empty($_GET['browse'])) {
 										// Check the folder exists
@@ -205,9 +205,9 @@
 										echo '</tbody>';
 										echo '</table>';
 									}
-								}else{
-									echo 'Storio does not have any users, would you like to <a href="?page=ad-users">create one</a>?';
-								}
+								//}else{
+								//	echo 'Storio does not have any users, would you like to <a href="?page=ad-users">create one</a>?';
+								//}
 							?>
 						</p>
 					</div>
