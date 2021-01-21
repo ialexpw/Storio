@@ -15,6 +15,7 @@
 		header("Location: ?page=login");
 	}
 
+	echo $_SESSION['Username'];
 	echo $_SESSION['isAdmin'];
 ?>
 <!doctype html>
