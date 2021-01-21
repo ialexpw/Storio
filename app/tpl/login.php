@@ -24,7 +24,8 @@
 	// Log in to Storio
 	if(!empty($_POST)) {
 		$logUsr = Storio::LoginUser($_POST);
-		exit($logUsr);
+
+		// If success
 		if($logUsr) {
 			// Set sessions
 			$_SESSION['UserID'] = sha1($_POST['userInput'] . 'Storio');
