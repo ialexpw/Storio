@@ -164,20 +164,27 @@
 						<h5 class="modal-title" id="userModalLabel">Add new user</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body">
-						<form class="row g-3">
+					<form class="row g-3">
+						<div class="modal-body">
+							<!-- Username -->
 							<div class="col-md-2">
 								<label for="inputUser" class="form-label">Username</label>
 								<input type="text" class="form-control" id="inputUser" required>
 							</div>
+
+							<!-- Email address -->
 							<div class="col-md-3">
 								<label for="inputEmail" class="form-label">Email (optional)</label>
 								<input type="email" class="form-control" id="inputEmail">
 							</div>
+
+							<!-- Password -->
 							<div class="col-md-3">
 								<label for="inputPass" class="form-label">Password</label>
 								<input type="password" class="form-control" id="inputPass" required>
 							</div>
+
+							<!-- Welcome email -->
 							<div class="col-md-2">
 								<label for="inputState" class="form-label">Welcome email</label>
 								<select id="inputState" class="form-select">
@@ -186,6 +193,7 @@
 								</select>
 							</div>
 
+							<!-- Admin user -->
 							<div class="col-md-2">
 								<label for="inputState" class="form-label">Admin user</label>
 								<select id="inputState" class="form-select">
@@ -195,11 +203,14 @@
 							</div>
 
 							<!-- Second line -->
+
+							<!-- Storage allowance -->
 							<div class="col-md-2">
 								<label for="inputCity" class="form-label">Storage (MB)</label>
 								<input type="text" class="form-control" id="inputCity">
 							</div>
 
+							<!-- Can view files -->
 							<div class="col-md-2">
 								<label for="inputState" class="form-label">Can view</label>
 								<select id="inputState" class="form-select">
@@ -208,6 +219,7 @@
 								</select>
 							</div>
 
+							<!-- Can upload files -->
 							<div class="col-md-2">
 								<label for="inputState" class="form-label">Can upload</label>
 								<select id="inputState" class="form-select">
@@ -216,6 +228,7 @@
 								</select>
 							</div>
 
+							<!-- Can edit files -->
 							<div class="col-md-2">
 								<label for="inputState" class="form-label">Can edit</label>
 								<select id="inputState" class="form-select">
@@ -224,6 +237,7 @@
 								</select>
 							</div>
 
+							<!-- Can share files -->
 							<div class="col-md-2">
 								<label for="inputState" class="form-label">Can share</label>
 								<select id="inputState" class="form-select">
@@ -232,6 +246,7 @@
 								</select>
 							</div>
 
+							<!-- Can delete files -->
 							<div class="col-md-2">
 								<label for="inputState" class="form-label">Can delete</label>
 								<select id="inputState" class="form-select">
@@ -240,26 +255,16 @@
 								</select>
 							</div>
 
-<div class="col-md-2">
-<label for="inputState" class="form-label">State</label>
-<select id="inputState" class="form-select">
-<option selected>Choose...</option>
-<option>...</option>
-</select>
-</div>
-<div class="col-md-2">
-<label for="inputZip" class="form-label">Zip</label>
-<input type="text" class="form-control" id="inputZip">
-</div>
-<div class="col-12">
+<!--<div class="col-12">
 <button type="submit" class="btn btn-primary">Sign in</button>
-</div>
-</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Create</button>
-					</div>
+</div>-->
+						</div>
+					
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary">Create</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
