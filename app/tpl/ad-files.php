@@ -125,6 +125,11 @@
 											// Start the row
 											echo '<div class="row">';
 
+											echo '<div class="col-md-4"><b>File name</b></div>';
+											echo '<div class="col-md-4"><b>Size</b></div>';
+											echo '<div class="col-md-4"><b>Actions</b></div>';
+											echo '<hr>';
+
 											// Check if there are subfolders first (avoid warnings)
 											if(!empty($fldArr['dirview'][$strPath]['folders'])) {
 												// Loop the folders first
@@ -133,7 +138,7 @@
 													$dir = str_replace($strRep, "", $dir);
 
 													echo '<div class="col-md-4">' . $dir . '</div>';
-													echo '<div class="col-md-4">Size</div>';
+													echo '<div class="col-md-4">n/a</div>';
 													echo '<div class="col-md-4">Actions</div>';
 												}
 											}
@@ -146,8 +151,8 @@
 													$file = str_replace($strRep, "", $file);
 
 													echo '<div class="col-md-4">' . $file . '</div>';
-													echo '<div class="col-md-4">Size</div>';
-													echo '<div class="col-md-4">Actions</div>';
+													echo '<div class="col-md-4">20kb</div>';
+													echo '<div class="col-md-4">Download - Delete</div>';
 												}
 											}
 											
