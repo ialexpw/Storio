@@ -99,7 +99,7 @@
 						<br />
 						<h4 class="card-title">System Settings</h4>
 						<p class="card-text" style="margin-top:15px;">
-							
+							Coming soon.
 						</p>
 					</div>
 				</div>

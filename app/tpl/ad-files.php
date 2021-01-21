@@ -135,7 +135,7 @@
 										echo '<tr>';
 										echo '<td>' . $usr . '</td>';
 										echo '<td>' . number_format($usrCfg['usedStorage']) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
-										echo '<td>Browse Files</td>';
+										echo '<td><a href="?page=ad-files&browse=' . $usr . '/">Browse Files</a></td>';
 										echo '</tr>';
 									}
 
