@@ -27,6 +27,14 @@
 			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
 				height:94px;
 			}
+
+			a {
+				text-decoration:none;
+			}
+
+			a:hover {
+				text-decoration:underline;
+			}
 		</style>
 
 		<!-- Custom styles -->
