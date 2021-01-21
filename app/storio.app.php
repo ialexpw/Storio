@@ -185,7 +185,7 @@
 			}
 
 			// Check directory and config file
-			if(is_dir('user/' . $user) && file_exists('users/configs/' . $user . '-cfg.json')) {
+			if(is_dir('users/' . $user) && file_exists('users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration
 				$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
 
