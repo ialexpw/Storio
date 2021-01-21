@@ -166,7 +166,7 @@
 					</div>
 					<div class="modal-body">
 						<form class="row g-3">
-							<div class="col-md-3">
+							<div class="col-md-2">
 								<label for="inputUser" class="form-label">Username</label>
 								<input type="text" class="form-control" id="inputUser" required>
 							</div>
@@ -178,11 +178,19 @@
 								<label for="inputPass" class="form-label">Password</label>
 								<input type="password" class="form-control" id="inputPass" required>
 							</div>
-							<div class="col-md-3">
-								<label for="inputState" class="form-label">Send welcome email</label>
+							<div class="col-md-2">
+								<label for="inputState" class="form-label">Welcome email</label>
 								<select id="inputState" class="form-select">
 									<option selected>true</option>
 									<option>false</option>
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="inputState" class="form-label">Admin user</label>
+								<select id="inputState" class="form-select">
+									<option selected>false</option>
+									<option>true</option>
 								</select>
 							</div>
 
