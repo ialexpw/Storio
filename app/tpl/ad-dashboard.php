@@ -12,9 +12,13 @@
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="app/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
 
 		<style>
-			
+			* {
+				font-family: 'Nunito', sans-serif;
+			}
 		</style>
 
 
