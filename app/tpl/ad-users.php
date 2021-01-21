@@ -181,11 +181,12 @@
 							<div class="col-md-3">
 								<label for="inputState" class="form-label">Send welcome email</label>
 								<select id="inputState" class="form-select">
-									<option selected>yes</option>
-									<option>no</option>
+									<option selected>true</option>
+									<option>false</option>
 								</select>
 							</div>
 
+							<!-- Second line -->
 							<div class="col-md-2">
 								<label for="inputCity" class="form-label">Storage (MB)</label>
 								<input type="text" class="form-control" id="inputCity">
@@ -193,6 +194,38 @@
 
 							<div class="col-md-2">
 								<label for="inputState" class="form-label">Can view</label>
+								<select id="inputState" class="form-select">
+									<option selected>true</option>
+									<option>false</option>
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="inputState" class="form-label">Can upload</label>
+								<select id="inputState" class="form-select">
+									<option selected>true</option>
+									<option>false</option>
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="inputState" class="form-label">Can edit</label>
+								<select id="inputState" class="form-select">
+									<option selected>true</option>
+									<option>false</option>
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="inputState" class="form-label">Can share</label>
+								<select id="inputState" class="form-select">
+									<option selected>true</option>
+									<option>false</option>
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="inputState" class="form-label">Can delete</label>
 								<select id="inputState" class="form-select">
 									<option selected>true</option>
 									<option>false</option>
