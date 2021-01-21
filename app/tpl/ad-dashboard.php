@@ -27,7 +27,8 @@
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="?page=ad-dashboard"><i class="bi bi-droplet" style="margin-right:12px; color: cornflowerblue;"></i> Storio File Management</a>
+				<i class="bi bi-droplet" style="margin-right:12px; color: cornflowerblue;"></i>
+				<a class="navbar-brand" href="?page=ad-dashboard"> Storio File Management</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -78,9 +79,11 @@
 						</ul>
 					</div>
 					<div class="card-body">
-						<!-- Site stats -->
+						<!-- Intro to the dashboard -->
+						<br />
 						<h4 class="card-title float-start">Welcome to your Dashboard</h4>
 						<br />
+						<p>This is Storio!</p>
 						<!--
 						<div class="row">
 							<div class="col-sm">
