@@ -95,14 +95,11 @@
 						</ul>
 					</div>
 					<div class="card-body">
-						<!-- System Logs -->
+						<!-- System Settings -->
 						<br />
-						<h4 class="card-title">System Logs</h4>
+						<h4 class="card-title">System Settings</h4>
 						<p class="card-text" style="margin-top:15px;">
-							<div class="mb-3">
-								<label for="exampleFormControlTextarea1" class="form-label">Storio logs</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="8"><?php echo $logFile; ?></textarea>
-							</div>
+							
 						</p>
 					</div>
 				</div>

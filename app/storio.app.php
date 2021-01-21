@@ -35,7 +35,15 @@
 				"defaultAllowance" => 5000,
 				"expireFiles" => false,
 				"expiryDays" => 31,
-				"uploadMaxMB" => 500
+				"uploadMaxMB" => 500,
+				"mailProc" => "mail", // "mail" or "smtp"
+				"smtpServer" => "",
+				"smtpPort" => "587",
+				"smtpSec" => "tls",
+				"smtpAuth" => true,
+				"smtpUsername" => "",
+				"smtpPassword" => "",
+				"smtpFromAddr" => ""
 			);
 
 			// JSON encode the configuration

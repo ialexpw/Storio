@@ -1,15 +1,15 @@
 Users
 	* Create user
-		* Specify username
-		* Optional email
+		* Specify username x
+		* Optional email x
 			* Option to send email with account info to new user
 		* Option to generate or specify password
-		* Choose storage space
-		* Choose permissions via checkboxes
-			* Uploading files
-			* Editing files
-			* Sharing files
-			* Deleting files
+		* Choose storage space x
+		* Choose permissions via checkboxes x
+			* Uploading files x
+			* Editing files x
+			* Sharing files x
+			* Deleting files x
 	* Disable a user (keep files in-tact)
 	* Delete a user
 	* Share folders between users
