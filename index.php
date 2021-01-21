@@ -45,9 +45,8 @@
 	}
 
 	
-		example
-
-
+		
+		// Example user creation
 		$ex = array(
 			"view" => true,
 			"upload" => true,
