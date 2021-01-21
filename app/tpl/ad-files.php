@@ -109,42 +109,52 @@
 							<?php
 								// Are there users?
 								if(count($dirs) > 1) {
-									// Gen the table start
-									echo '<table class="table table-hover">';
-									echo '<thead>';
-									echo '<tr>';
-									echo '<th scope="col">User</th>';
-									echo '<th scope="col">Storage</th>';
-									echo '<th scope="col">Controls</th>';
-									echo '</tr>';
-									echo '</thead>';
-									echo '<tbody>';
-
-									// Loop users
-									foreach($dirs as $usr) {
-										// Remove the users/ prefix
-										$usr = str_replace("users/", "", $usr);
-
-										// Skip the configs dir
-										if($usr == 'configs') {
-											continue;
+									// Attempting to browse a users files
+									if(isset($_GET['browse']) && !empty($_GET['browse'])) {
+										// Check the folder exists
+										if(is_dir('users/' . $_GET['browse'])) {
+											echo '<pre>';
+											print_r(dirlist('users/' . $_GET['browse']));
+											echo '</pre>';
 										}
-
-										// Try and get the config
-										if(file_exists('users/configs/' . $usr . '-cfg.json')) {
-											$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
-										}
-
-										// Add table row
+									}else{
+										// Gen the table start
+										echo '<table class="table table-hover">';
+										echo '<thead>';
 										echo '<tr>';
-										echo '<td>' . $usr . '</td>';
-										echo '<td>' . number_format($usrCfg['usedStorage']) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
-										echo '<td><a href="?page=ad-files&browse=' . $usr . '/">Browse Files</a></td>';
+										echo '<th scope="col">User</th>';
+										echo '<th scope="col">Storage</th>';
+										echo '<th scope="col">Controls</th>';
 										echo '</tr>';
-									}
+										echo '</thead>';
+										echo '<tbody>';
 
-									echo '</tbody>';
-									echo '</table>';
+										// Loop users
+										foreach($dirs as $usr) {
+											// Remove the users/ prefix
+											$usr = str_replace("users/", "", $usr);
+
+											// Skip the configs dir
+											if($usr == 'configs') {
+												continue;
+											}
+
+											// Try and get the config
+											if(file_exists('users/configs/' . $usr . '-cfg.json')) {
+												$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
+											}
+
+											// Add table row
+											echo '<tr>';
+											echo '<td>' . $usr . '</td>';
+											echo '<td>' . number_format($usrCfg['usedStorage']) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
+											echo '<td><a href="?page=ad-files&browse=' . $usr . '/">Browse Files</a></td>';
+											echo '</tr>';
+										}
+
+										echo '</tbody>';
+										echo '</table>';
+									}
 								}else{
 									echo 'Storio does not have any users, would you like to <a href="?page=ad-users">create one</a>?';
 								}
@@ -158,3 +168,55 @@
 		<script src="app/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
+<?php
+	function dirlist($dir){
+		if(!file_exists($dir)){ return $dir.' does not exists'; }
+		$list = array('path' => $dir, 'dirview' => array(), 'dirlist' => array(), 'files' => array(), 'folders' => array());
+	
+		$dirs = array($dir);
+		while(null !== ($dir = array_pop($dirs))){
+			if($dh = opendir($dir)){
+				while(false !== ($file = readdir($dh))){
+					if($file == '.' || $file == '..') continue;
+					$path = $dir.DIRECTORY_SEPARATOR.$file;
+					$list['dirlist_natural'][] = $path;
+					if(is_dir($path)){
+						$list['dirview'][$dir]['folders'][] = $path;
+						// Bos klasorler while icerisine tekrar girmeyecektir. Klasorun oldugundan emin olalım.
+						if(!isset($list['dirview'][$path])){ $list['dirview'][$path] = array(); }
+						$dirs[] = $path;
+						//if($path == 'D:\Xampp\htdocs\exclusiveyachtcharter.localhost\wp-content\upgrade'){ press($path); press($list['dirview']); die; }
+					}
+					else{
+						$list['dirview'][$dir]['files'][] = $path;
+					}
+				}
+				closedir($dh);
+			}
+		}
+	
+		// if(!empty($dirlist['dirlist_natural']))  sort($dirlist['dirlist_natural'], SORT_LOCALE_STRING); // delete safe ama gerek kalmadı.
+	
+		if(!empty($list['dirview'])) ksort($list['dirview']);
+	
+		// Dosyaları dogru sıralama yaptırıyoruz. Deniz P. - info[at]netinial.com
+		foreach($list['dirview'] as $path => $file){
+			if(isset($file['files'])){
+				$list['dirlist'][] = $path;
+				$list['files'] = array_merge($list['files'], $file['files']);
+				$list['dirlist'] = array_merge($list['dirlist'], $file['files']);
+			}
+			// Add empty folders to the list
+			if(is_dir($path) && array_search($path, $list['dirlist']) === false){
+				$list['dirlist'][] = $path;
+			}
+			if(isset($file['folders'])){
+				$list['folders'] = array_merge($list['folders'], $file['folders']);
+			}
+		}
+	
+		//press(array_diff($list['dirlist_natural'], $list['dirlist'])); press($list['dirview']); die;
+	
+		return $list;
+	}
+?>
