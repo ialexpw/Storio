@@ -165,40 +165,41 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-<form class="row g-3">
-<div class="col-md-3">
-<label for="inputUser" class="form-label">Username</label>
-<input type="text" class="form-control" id="inputUser">
-</div>
-<div class="col-md-3">
-<label for="inputEmail" class="form-label">Email (optional)</label>
-<input type="email" class="form-control" id="inputEmail">
-</div>
-<div class="col-md-3">
-<label for="inputPass" class="form-label">Password</label>
-<input type="password" class="form-control" id="inputPass">
-</div>
-<div class="col-md-3">
-<div class="form-check" style="margin-top:12px;">
-<input class="form-check-input" type="checkbox" id="gridCheck">
-<label class="form-check-label" for="gridCheck">
-Send welcome email
-</label>
-</div>
-</div>
-<div class="col-12">
-<label for="inputAddress" class="form-label">Address</label>
-<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-</div>
-<div class="col-12">
-<label for="inputAddress2" class="form-label">Address 2</label>
-<input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-</div>
-<div class="col-md-6">
-<label for="inputCity" class="form-label">City</label>
-<input type="text" class="form-control" id="inputCity">
-</div>
-<div class="col-md-4">
+						<form class="row g-3">
+							<div class="col-md-3">
+								<label for="inputUser" class="form-label">Username</label>
+								<input type="text" class="form-control" id="inputUser" required>
+							</div>
+							<div class="col-md-3">
+								<label for="inputEmail" class="form-label">Email (optional)</label>
+								<input type="email" class="form-control" id="inputEmail">
+							</div>
+							<div class="col-md-3">
+								<label for="inputPass" class="form-label">Password</label>
+								<input type="password" class="form-control" id="inputPass" required>
+							</div>
+							<div class="col-md-3">
+								<label for="inputState" class="form-label">Send welcome email</label>
+								<select id="inputState" class="form-select">
+									<option selected>yes</option>
+									<option>no</option>
+								</select>
+							</div>
+
+							<div class="col-md-2">
+								<label for="inputCity" class="form-label">Storage (MB)</label>
+								<input type="text" class="form-control" id="inputCity">
+							</div>
+
+							<div class="col-md-2">
+								<label for="inputState" class="form-label">Can view</label>
+								<select id="inputState" class="form-select">
+									<option selected>true</option>
+									<option>false</option>
+								</select>
+							</div>
+
+<div class="col-md-2">
 <label for="inputState" class="form-label">State</label>
 <select id="inputState" class="form-select">
 <option selected>Choose...</option>
@@ -208,14 +209,6 @@ Send welcome email
 <div class="col-md-2">
 <label for="inputZip" class="form-label">Zip</label>
 <input type="text" class="form-control" id="inputZip">
-</div>
-<div class="col-12">
-<div class="form-check">
-<input class="form-check-input" type="checkbox" id="gridCheck">
-<label class="form-check-label" for="gridCheck">
-Check me out
-</label>
-</div>
 </div>
 <div class="col-12">
 <button type="submit" class="btn btn-primary">Sign in</button>
