@@ -181,7 +181,12 @@
 
 				// Verify password
 				if(password_verify($pass, $usrCfg['passWord'])) {
-					return true;
+					// Admin user?
+					if($usrCfg['isAdmin']) {
+						return 2;
+					}else{
+						return 1;
+					}
 				}
 			}else{
 				return -2;

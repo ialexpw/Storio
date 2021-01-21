@@ -18,10 +18,19 @@
 
 	// Log in to Storio
 	if(!empty($_POST)) {
-		if(Storio::LoginUser($_POST)) {
+		$logUsr = Storio::LoginUser($_POST);
+		if($logUsr) {
 			// Set sessions
 			$_SESSION['UserID'] = sha1($_POST['userInput'] . 'Storio');
 			$_SESSION['Username'] = $_POST['userInput'];
+
+			// For admin users
+			if($logUsr == 2) {
+				$_SESSION['isAdmin'] = true;
+
+				// Go to the admin dashboard
+				header("Location: ?page=ad-dashboard");
+			}
 
 			// Go to the dashboard
 			header("Location: ?page=us-dashboard");
