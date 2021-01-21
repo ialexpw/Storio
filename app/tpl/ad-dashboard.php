@@ -28,7 +28,7 @@
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="?page=ad-dashboard"><i class="bi bi-droplet" style="color: cornflowerblue;"></i> <span style="margin-top:4px;">Storio File Management</span></a>
+				<a class="navbar-brand" href="?page=ad-dashboard"><i class="bi bi-droplet" style="margin-right:12px; color: cornflowerblue;"></i> Storio File Management</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -71,7 +71,7 @@
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link" href="?page=ad-filemanager">
+								<a class="nav-link" href="?page=ad-files">
 									<i class="bi bi-folder" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Files
 								</a>
