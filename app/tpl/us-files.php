@@ -115,6 +115,8 @@
 											// Save the arrays
 											$fldArr = Storio::DirList($usrDir);
 
+											print_r($fldArr);
+
 											// Start the row
 											echo '<div class="row">';
 
