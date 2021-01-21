@@ -94,6 +94,7 @@
 							<pre>
 								<?php
 									print_r($dirs);
+									echo count($dirs);
 								?>
 							</pre>
 						</p>
