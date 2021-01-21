@@ -69,6 +69,7 @@
 					$usrCfg = array(
 						"userName" => $user,
 						"passWord" => $usrPass,
+						"usedStorage" => 0,
 						"maxStorage" => $size_mb,
 						"canView" => $settings['view'],
 						"canUpload" => $settings['upload'],
