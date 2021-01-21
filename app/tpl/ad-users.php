@@ -179,11 +179,10 @@
 <input type="password" class="form-control" id="inputPass">
 </div>
 <div class="col-md-3">
-<div class="form-check">
-<label for="gridCheck" class="form-label"> </label>
+<div class="form-check" style="margin-top:12px;">
 <input class="form-check-input" type="checkbox" id="gridCheck">
 <label class="form-check-label" for="gridCheck">
-Check me out
+Send welcome email
 </label>
 </div>
 </div>
