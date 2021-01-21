@@ -10,8 +10,12 @@
 	 * @link       https://storio.aw0.uk
 	 */
 
-	// Get the user list from the dir structure
-	$dirs = array_filter(glob('users/*'), 'is_dir');
+	// Check for logfile
+	if(file_exists('users/configs/site-logs.txt')) {
+		$logFile = file_get_contents('users/configs/site-logs.txt');
+	}else{
+		$logFile = 'Storio logs are currently empty!';
+	}
 ?>
 <!doctype html>
 <html lang="en">
@@ -102,13 +106,14 @@
 						<br />
 						<h4 class="card-title">System Logs</h4>
 						<p class="card-text" style="margin-top:15px;">
-						<div class="mb-3">
-<label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-<textarea class="form-control" id="exampleFormControlTextarea1" rows="3">aaa</textarea>
-</div>
-							<?php
-								
-							?>
+							<div class="mb-3">
+								<label for="exampleFormControlTextarea1" class="form-label">Storio logs (new to old)</label>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="8">
+									<?php
+										echo $logFile;
+									?>
+								</textarea>
+							</div>
 						</p>
 					</div>
 				</div>
