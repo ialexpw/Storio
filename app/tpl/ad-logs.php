@@ -108,11 +108,7 @@
 						<p class="card-text" style="margin-top:15px;">
 							<div class="mb-3">
 								<label for="exampleFormControlTextarea1" class="form-label">Storio logs (new to old)</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="8">
-									<?php
-										echo $logFile;
-									?>
-								</textarea>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="8"><?php echo $logFile; ?></textarea>
 							</div>
 						</p>
 					</div>
