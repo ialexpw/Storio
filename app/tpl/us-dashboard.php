@@ -11,9 +11,8 @@
 	 */
 
 	// Redirect if not logged in
-	if(Storio::LoggedIn()) {
+	if(!Storio::LoggedIn()) {
 		header("Location: ?page=login");
-		echo 'a';
 	}
 ?>
 <!doctype html>
