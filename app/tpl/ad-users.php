@@ -192,8 +192,8 @@
 							<div class="col-md-2">
 								<label for="inputWelcome" class="form-label">Welcome email</label>
 								<select id="inputWelcome" name="inputWelcome" class="form-select">
-									<option value="1" selected>true</option>
-									<option value="0">false</option>
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
 								</select>
 							</div>
 
@@ -201,8 +201,8 @@
 							<div class="col-md-2">
 								<label for="inputAdmin" class="form-label">Admin user</label>
 								<select id="inputAdmin" class="form-select">
-									<option value="0" selected>false</option>
-									<option value="1">true</option>
+									<option value="false" selected>false</option>
+									<option value="true">true</option>
 								</select>
 							</div>
 
@@ -218,8 +218,8 @@
 							<div class="col-md-2">
 								<label for="inputView" class="form-label">Can view</label>
 								<select id="inputView" class="form-select">
-									<option value="1" selected>true</option>
-									<option value="0">false</option>
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
 								</select>
 							</div>
 
@@ -227,8 +227,8 @@
 							<div class="col-md-2">
 								<label for="inputUpload" class="form-label">Can upload</label>
 								<select id="inputUpload" class="form-select">
-									<option value="1" selected>true</option>
-									<option value="0">false</option>
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
 								</select>
 							</div>
 
@@ -236,8 +236,8 @@
 							<div class="col-md-2">
 								<label for="inputEdit" class="form-label">Can edit</label>
 								<select id="inputEdit" class="form-select">
-									<option value="1" selected>true</option>
-									<option value="0">false</option>
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
 								</select>
 							</div>
 
@@ -245,8 +245,8 @@
 							<div class="col-md-2">
 								<label for="inputShare" class="form-label">Can share</label>
 								<select id="inputShare" class="form-select">
-									<option value="1" selected>true</option>
-									<option value="0">false</option>
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
 								</select>
 							</div>
 
@@ -254,8 +254,8 @@
 							<div class="col-md-2">
 								<label for="inputDelete" class="form-label">Can delete</label>
 								<select id="inputDelete" class="form-select">
-									<option value="1" selected>true</option>
-									<option value="0">false</option>
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
 								</select>
 							</div>
 
