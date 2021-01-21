@@ -127,7 +127,7 @@
 											}
 
 											// Loop the files after
-											foreach($fldArr$fldArr['dirview'][$strRep]['files'] as $file) {
+											foreach($fldArr['dirview'][$strRep]['files'] as $file) {
 												// Replace the beginning of the path
 												//$file = str_replace($strRep, "", $file);
 												echo $file . '<br />';
