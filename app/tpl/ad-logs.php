@@ -10,6 +10,11 @@
 	 * @link       https://storio.aw0.uk
 	 */
 
+	// Redirect if not logged in
+	if(Storio::LoggedIn('admin')) {
+		header("Location: ?page=login");
+	}
+
 	// Check for logfile
 	if(file_exists('users/configs/site-logs.txt')) {
 		$logFile = file_get_contents('users/configs/site-logs.txt');

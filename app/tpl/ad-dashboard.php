@@ -9,6 +9,11 @@
 	 * @copyright  2021 Storio
 	 * @link       https://storio.aw0.uk
 	 */
+
+	// Redirect if not logged in
+	if(Storio::LoggedIn('admin')) {
+		header("Location: ?page=login");
+	}
 ?>
 <!doctype html>
 <html lang="en">

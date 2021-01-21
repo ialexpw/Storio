@@ -122,11 +122,21 @@
 		 * Storio::LoggedIn()
 		 * Check logged in status by looking at the sessions
 		 */
-		public static function LoggedIn() {
-			if(!isset($_SESSION['UserID']) || !isset($_SESSION['Username'])) {
-				return 0;
-			}else{
-				return 1;
+		public static function LoggedIn($type='') {
+			// Standard user log in
+			if(empty($type)) {
+				if(!isset($_SESSION['UserID']) || !isset($_SESSION['Username'])) {
+					return 0;
+				}else{
+					return 1;
+				}
+			// Admin log in
+			}else if($type == 'admin') {
+				if(!isset($_SESSION['UserID']) || !isset($_SESSION['Username']) || !isset($_SESSION['isAdmin'])) {
+					return 0;
+				}else{
+					return 1;
+				}
 			}
 		}
 
