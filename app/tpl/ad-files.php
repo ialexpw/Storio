@@ -117,13 +117,13 @@
 											$fldArr = dirlist('users/' . $_GET['browse']);
 
 											// Loop the folders first
-											foreach($fldArr as $dir) {
-												echo $dir['folders'] . '<br />';
+											foreach($fldArr['folders'] as $dir) {
+												echo $dir . '<br />';
 											}
 
 											// Loop the files after
-											foreach($fldArr as $file) {
-												echo $file['files'] . '<br />';
+											foreach($fldArr['files'] as $file) {
+												echo $file . '<br />';
 											}
 
 											echo '<pre>';
