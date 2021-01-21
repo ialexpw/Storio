@@ -14,6 +14,8 @@
 	if(!Storio::LoggedIn()) {
 		header("Location: ?page=login");
 	}
+
+	echo $_SESSION['isAdmin'];
 ?>
 <!doctype html>
 <html lang="en">
