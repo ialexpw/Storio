@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Storio - File Management</title>
+		<title>Storio - User Management</title>
 
 		<link rel="canonical" href="https://storio.aw0.uk">
 
@@ -56,13 +56,13 @@
 							</li>
 							<li class="nav-item" style="width:12%;">
 								<a class="nav-link active" aria-current="true" href="?page=ad-files">
-									<i class="bi bi-folder" style="font-size: 2rem;"></i>
+									<i class="bi bi-folder" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Files
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
 								<a class="nav-link" href="?page=ad-users">
-									<i class="bi bi-people" style="font-size: 2rem; color: cornflowerblue;"></i>
+									<i class="bi bi-people" style="font-size: 2rem;"></i>
 									<br />Users
 								</a>
 							</li>
@@ -89,7 +89,7 @@
 					<div class="card-body">
 						<!-- File management -->
 						<br />
-						<h4 class="card-title">File Management</h4>
+						<h4 class="card-title">User Management</h4>
 						<p class="card-text" style="margin-top:15px;">
 							<?php
 								// Are there users?
@@ -100,7 +100,12 @@
 									echo '<tr>';
 									echo '<th scope="col">User</th>';
 									echo '<th scope="col">Storage</th>';
-									echo '<th scope="col">Controls</th>';
+									echo '<th scope="col">View</th>';
+									echo '<th scope="col">Upload</th>';
+									echo '<th scope="col">Edit</th>';
+									echo '<th scope="col">Share</th>';
+									echo '<th scope="col">Delete</th>';
+									echo '<th scope="col">Admin</th>';
 									echo '</tr>';
 									echo '</thead>';
 									echo '<tbody>';
@@ -124,7 +129,7 @@
 										echo '<tr>';
 										echo '<td>' . $usr . '</td>';
 										echo '<td>' . $usrCfg['usedStorage'] . ' / ' . $usrCfg['maxStorage'] . ' MB</td>';
-										echo '<td>Browse Files</td>';
+										echo '<td>' . $usrCfg['canView'] . '</td>';
 										echo '</tr>';
 									}
 
