@@ -55,13 +55,13 @@
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link active" aria-current="true" href="?page=ad-files">
+								<a class="nav-link" href="?page=ad-files">
 									<i class="bi bi-folder" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Files
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link" href="?page=ad-users">
+								<a class="nav-link active" aria-current="true" href="?page=ad-users">
 									<i class="bi bi-people" style="font-size: 2rem;"></i>
 									<br />Users
 								</a>
