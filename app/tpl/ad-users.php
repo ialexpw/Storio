@@ -145,12 +145,12 @@
 										echo '<tr>';
 										echo '<td style="width:14%;">' . $usr . '</td>';
 										echo '<td style="width:14%;">' . $usrCfg['usedStorage'] . ' / ' . $usrCfg['maxStorage'] . ' MB</td>';
-										echo '<td style="width:12%;">' . ($usrCfg['canView'] ? 'true' : 'false') . '</td>';
-										echo '<td style="width:12%;">' . ($usrCfg['canUpload'] ? 'true' : 'false') . '</td>';
-										echo '<td style="width:12%;">' . ($usrCfg['canEdit'] ? 'true' : 'false') . '</td>';
-										echo '<td style="width:12%;">' . ($usrCfg['canShare'] ? 'true' : 'false') . '</td>';
-										echo '<td style="width:12%;">' . ($usrCfg['canDelete'] ? 'true' : 'false') . '</td>';
-										echo '<td style="width:12%;">' . ($usrCfg['isAdmin'] ? 'true' : 'false') . '</td>';
+										echo '<td style="width:12%;">' . $usrCfg['canView'] . '</td>';
+										echo '<td style="width:12%;">' . $usrCfg['canUpload'] . '</td>';
+										echo '<td style="width:12%;">' . $usrCfg['canEdit'] . '</td>';
+										echo '<td style="width:12%;">' . $usrCfg['canShare'] . '</td>';
+										echo '<td style="width:12%;">' . $usrCfg['canDelete'] . '</td>';
+										echo '<td style="width:12%;">' . $usrCfg['isAdmin'] . '</td>';
 										echo '</tr>';
 									}
 
