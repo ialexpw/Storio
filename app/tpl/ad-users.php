@@ -31,10 +31,6 @@
 			a {
 				text-decoration:none;
 			}
-
-			a:hover {
-				text-decoration:underline;
-			}
 		</style>
 
 		<!-- Custom styles -->
@@ -97,7 +93,7 @@
 					<div class="card-body">
 						<!-- File management -->
 						<br />
-						<h4 class="card-title">User Management<a class="float-end" href="#">new</a></h4>
+						<h4 class="card-title">User Management (<a href="#">new</a>)</h4>
 						<p class="card-text" style="margin-top:15px;">
 							<?php
 								// Are there users?
