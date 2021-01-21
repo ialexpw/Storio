@@ -38,7 +38,7 @@
 		<main class="container">
 			<div class="starter-template py-5 px-3">
 				<div class="card">
-					<div class="card-header">
+					<div class="card-header text-center">
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item" style="width:12%;">
 								<a class="nav-link active" aria-current="true" href="?page=ad-dashboard">
