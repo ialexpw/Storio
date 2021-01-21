@@ -15,8 +15,11 @@
 		header("Location: ?page=login");
 	}
 
-	// Get the user list from the dir structure
-	$dirs = array_filter(glob('users/*'), 'is_dir');
+	// Get the user dir structure
+	if(is_dir('users/' . $_SESSION['Username'])) {
+		$dirs = array_filter(glob('users/' . $_SESSION['Username'] . '/*'), 'is_dir');
+	}
+	
 ?>
 <!doctype html>
 <html lang="en">
