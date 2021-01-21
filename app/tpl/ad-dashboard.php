@@ -82,8 +82,7 @@
 						<!-- Intro to the dashboard -->
 						<br />
 						<h4 class="card-title">Welcome to your Dashboard</h4>
-						<br />
-						<p class="card-text">This is Storio!</p>
+						<p class="card-text" style="margin-top:6px;">This is Storio!</p>
 						<!--
 						<div class="row">
 							<div class="col-sm">
