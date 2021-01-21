@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * login.php
+	 * us-dashboard.php
 	 *
-	 * Log in page for users
+	 * The user dashboard
 	 *
 	 * @package    Storio
 	 * @author     Alex White
@@ -17,7 +17,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Storio - Log in</title>
+		<title>Storio - Dashboard</title>
 
 		<link rel="canonical" href="https://storio.aw0.uk">
 
@@ -57,9 +57,39 @@
 					<div class="card-header text-center">
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link active" aria-current="true" href="?page=login">
-									<i class="bi bi-door-open" style="font-size: 2rem;"></i>
-									<br />Log in
+								<a class="nav-link active" aria-current="true" href="?page=ad-dashboard">
+									<i class="bi bi-house" style="font-size: 2rem;"></i>
+									<br />Dashboard
+								</a>
+							</li>
+							<li class="nav-item" style="width:12%;">
+								<a class="nav-link" href="?page=ad-files">
+									<i class="bi bi-folder" style="font-size: 2rem; color: cornflowerblue;"></i>
+									<br />Files
+								</a>
+							</li>
+							<li class="nav-item" style="width:12%;">
+								<a class="nav-link" href="?page=ad-users">
+									<i class="bi bi-people" style="font-size: 2rem; color: cornflowerblue;"></i>
+									<br />Users
+								</a>
+							</li>
+							<li class="nav-item" style="width:12%;">
+								<a class="nav-link" href="?page=ad-messages">
+									<i class="bi bi-chat" style="font-size: 2rem; color: cornflowerblue;"></i>
+									<br />Messages
+								</a>
+							</li>
+							<li class="nav-item" style="width:12%;">
+								<a class="nav-link" href="?page=ad-logs">
+									<i class="bi bi-archive" style="font-size: 2rem; color: cornflowerblue;"></i>
+									<br />Logs
+								</a>
+							</li>
+							<li class="nav-item" style="width:12%;">
+								<a class="nav-link" href="?page=ad-settings">
+									<i class="bi bi-gear" style="font-size: 2rem; color: cornflowerblue;"></i>
+									<br />Settings
 								</a>
 							</li>
 						</ul>
@@ -67,7 +97,7 @@
 					<div class="card-body">
 						<!-- Intro to the dashboard -->
 						<br />
-						<h4 class="card-title">Log in to Storio</h4>
+						<h4 class="card-title">Welcome to your Dashboard</h4>
 						<p class="card-text" style="margin-top:15px;">This is Storio!</p>
 					</div>
 				</div>
