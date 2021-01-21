@@ -59,37 +59,37 @@
 					<div class="card-header">
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link active" aria-current="true" href="?page=ad-dashboard.php">
+								<a class="nav-link active" aria-current="true" href="?page=ad-dashboard">
 									<i class="bi bi-house" style="font-size: 2.2rem;"></i>
 									<br />Dashboard
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link" href="?page=ad-filemanager.php">
+								<a class="nav-link" href="?page=ad-filemanager">
 									<i class="bi bi-files" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />File Manager
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link" href="?page=ad-users.php">
+								<a class="nav-link" href="?page=ad-users">
 									<i class="bi bi-people" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Users
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link" href="?page=ad-messages.php">
+								<a class="nav-link" href="?page=ad-messages">
 									<i class="bi bi-chat" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Messages
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link" href="?page=ad-logs.php">
+								<a class="nav-link" href="?page=ad-logs">
 									<i class="bi bi-archive" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Logs
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link" href="?page=ad-settings.php">
+								<a class="nav-link" href="?page=ad-settings">
 									<i class="bi bi-gear" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Settings
 								</a>
