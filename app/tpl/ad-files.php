@@ -113,23 +113,26 @@
 									if(isset($_GET['browse']) && !empty($_GET['browse'])) {
 										// Check the folder exists
 										if(is_dir('users/' . $_GET['browse'])) {
+											// Use for the path
+											$strPath = 'users/' . $_GET['browse'];
+
 											// Use for str_replace
-											$strRep = 'users/' . $_GET['browse'];
+											$strRep = 'users/' . $_GET['browse'] . '/';
 
 											// Save the arrays
 											$fldArr = dirlist('users/' . $_GET['browse']);
 
 											// Loop the folders first
-											foreach($fldArr['dirview'][$strRep]['folders'] as $dir) {
+											foreach($fldArr['dirview'][$strPath]['folders'] as $dir) {
 												// Replace the beginning of the path
-												//$dir = str_replace($strRep, "", $dir);
+												$dir = str_replace($strRep, "", $dir);
 												echo $dir . '<br />';
 											}
 
 											// Loop the files after
-											foreach($fldArr['dirview'][$strRep]['files'] as $file) {
+											foreach($fldArr['dirview'][$strPath]['files'] as $file) {
 												// Replace the beginning of the path
-												//$file = str_replace($strRep, "", $file);
+												$file = str_replace($strRep, "", $file);
 												echo $file . '<br />';
 											}
 
