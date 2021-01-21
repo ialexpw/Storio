@@ -50,13 +50,13 @@
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item" style="width:12%;">
 								<a class="nav-link" href="?page=ad-dashboard">
-									<i class="bi bi-house" style="font-size: 2.2rem;"></i>
+									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Dashboard
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
 								<a class="nav-link active" aria-current="true" href="?page=ad-files">
-									<i class="bi bi-folder" style="font-size: 2rem; color: cornflowerblue;"></i>
+									<i class="bi bi-folder" style="font-size: 2rem;"></i>
 									<br />Files
 								</a>
 							</li>
