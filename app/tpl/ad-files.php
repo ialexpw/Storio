@@ -94,15 +94,37 @@
 							<?php
 								// Are there users?
 								if(count($dirs) > 1) {
+									// Gen the table start
+									echo '<table class="table table-hover">';
+									echo '<thead>';
+									echo '<tr>';
+									echo '<th scope="col">User</th>';
+									echo '<th scope="col">Storage</th>';
+									echo '<th scope="col">Controls</th>';
+									echo '</tr>';
+									echo '</thead>';
+									echo '<tbody>';
+
 									// Loop users
 									foreach($dirs as $usr) {
+										// Remove the users/ prefix
+										$usr = str_replace("users/", "", $usr);
+
 										// Skip the configs dir
-										if($usr == 'users/configs') {
+										if($usr == 'configs') {
 											continue;
 										}
 
-										echo $usr;
+										// Add table row
+										echo '<tr>';
+										echo '<td>' . $usr . '</td>';
+										echo '<td>todo</td>';
+										echo '<td>Browse Files</td>';
+										echo '</tr>';
 									}
+
+									echo '</tbody>';
+									echo '</table>';
 								}else{
 									echo 'Storio does not have any users, would you like to <a href="?page=ad-users">create one</a>?';
 								}
