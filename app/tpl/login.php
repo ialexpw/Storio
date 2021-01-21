@@ -12,7 +12,14 @@
 
 	// Log in to Storio
 	if(!empty($_POST)) {
-		print_r($_POST);
+		if(Storio::LoginUser($_POST)) {
+			// Set sessions
+			$_SESSION['UserID'] = sha1($_POST['userInput'] . 'Storio');
+			$_SESSION['Username'] = $_POST['userInput'];
+
+			// Go to the dashboard
+			header("Location: ?page=us-dashboard");
+		}
 	}
 ?>
 <!doctype html>

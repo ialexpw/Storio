@@ -159,8 +159,32 @@
 			);
 
 			// Add the user
-			if(Storio::AddUser($post['inputUser'], $post['inputEmail'], $usrPass, $post['inputStorage'], $usrAr)) {
+			if(Storio::AddUser(strtolower($post['inputUser']), $post['inputEmail'], $usrPass, $post['inputStorage'], $usrAr)) {
 				return true;
+			}
+		}
+
+		public static function LoginUser($post) {
+			// Store the data
+			$user = strtolower($post['userInput']);
+			$pass = $post['passInput'];
+
+			// Check the user
+			if(!ctype_alnum($user)) {
+				return -1;
+			}
+
+			// Check directory and config file
+			if(is_dir('user/' . $user) && file_exists('users/configs/' . $user . '-cfg.json')) {
+				// Load the configuration
+				$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
+
+				// Verify password
+				if(password_verify($pass, $usrCfg['passWord'])) {
+					return true;
+				}
+			}else{
+				return -2;
 			}
 		}
 
