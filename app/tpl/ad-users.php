@@ -164,8 +164,8 @@
 						<h5 class="modal-title" id="userModalLabel">Add new user</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<form class="row g-3">
-						<div class="modal-body">
+					<div class="modal-body">
+						<form class="row g-3">
 							<!-- Username -->
 							<div class="col-md-2">
 								<label for="inputUser" class="form-label">Username</label>
@@ -255,15 +255,17 @@
 								</select>
 							</div>
 
-<div class="col-12">
-<button type="submit" class="btn btn-primary">Sign in</button>
-</div>
-</form>
-					</div>
-					<div class="modal-footer">
+							<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-primary">Create</button>
 					</div>
+
+<!--<div class="col-12">
+<button type="submit" class="btn btn-primary">Sign in</button>
+</div>-->
+</form>
+					</div>
+					
 				</div>
 			</div>
 		</div>
