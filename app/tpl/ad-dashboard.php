@@ -83,7 +83,7 @@
 						<br />
 						<h4 class="card-title float-start">Welcome to your Dashboard</h4>
 						<br />
-						<p>This is Storio!</p>
+						<p class="float-start">This is Storio!</p>
 						<!--
 						<div class="row">
 							<div class="col-sm">
