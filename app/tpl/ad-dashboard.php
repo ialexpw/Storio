@@ -78,12 +78,12 @@
 							</li>
 						</ul>
 					</div>
-					<div class="card-body float-start">
+					<div class="card-body">
 						<!-- Intro to the dashboard -->
 						<br />
-						<h4 class="card-title float-start">Welcome to your Dashboard</h4>
+						<h4 class="card-title">Welcome to your Dashboard</h4>
 						<br /><br />
-						<p class="card-text float-start">This is Storio!</p>
+						<p class="card-text">This is Storio!</p>
 						<!--
 						<div class="row">
 							<div class="col-sm">
