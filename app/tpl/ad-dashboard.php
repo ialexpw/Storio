@@ -21,9 +21,8 @@
 			}
 		</style>
 
-
 		<!-- Custom styles -->
-		<link href="app/css/custom.css" rel="stylesheet">
+		<link rel="stylesheet" href="app/css/custom.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -32,30 +31,6 @@
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-
-				<!--
-				<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-					<ul class="navbar-nav me-auto mb-2 mb-md-0">
-						<li class="nav-item active">
-							<a class="nav-link" aria-current="page" href="#">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Link</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-							<ul class="dropdown-menu" aria-labelledby="dropdown01">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li><a class="dropdown-item" href="#">Something else here</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				-->
 			</div>
 		</nav>
 
@@ -104,8 +79,9 @@
 					</div>
 					<div class="card-body">
 						<!-- Site stats -->
-						<h4 class="card-title text-left">System Statistics</h4>
+						<h4 class="card-title float-start">Welcome to your Dashboard</h4>
 						<br />
+						<!--
 						<div class="row">
 							<div class="col-sm">
 								<h5 class="card-title">Today</h5>
@@ -122,8 +98,10 @@
 						</div>
 
 						<hr>
+						-->
 
 						<!-- System stats -->
+						<!--
 						<h4 class="card-title text-left">System Information</h4>
 						<br />
 						<div class="row">
@@ -140,6 +118,7 @@
 								One of three columns
 							</div>
 						</div>
+						-->
 					</div>
 				</div>
 			</div>
