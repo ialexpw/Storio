@@ -94,7 +94,15 @@
 							<?php
 								// Are there users?
 								if(count($dirs) > 1) {
+									// Loop users
+									foreach($dirs as $usr) {
+										// Skip the configs dir
+										if($usr == 'users/configs') {
+											continue;
+										}
 
+										echo $usr;
+									}
 								}else{
 									echo 'Storio does not have any users, would you like to <a href="?page=ad-users">create one</a>?';
 								}
