@@ -1,6 +1,8 @@
 Users
 	* Create user
 		* Specify username
+		* Optional email
+			* Option to send email with account info to new user
 		* Option to generate or specify password
 		* Choose storage space
 		* Choose permissions via checkboxes
@@ -10,6 +12,8 @@ Users
 			* Deleting files
 	* Disable a user (keep files in-tact)
 	* Delete a user
+	* Share folders between users
+		* Both users "approve" it
 
 Site Settings
 	* Change site title/information
@@ -20,7 +24,7 @@ Site Settings
 General Features
 	* Zip files together
 	* Ability to move files
-	* Create folders/sub folders
+	* Create folders/sub-folders
 	* Edit/view certain types of files
 	* Share with unique links
 		* Password option
@@ -29,3 +33,16 @@ General Features
 		* Viewed
 		* Downloaded
 		* File size
+	* Daily log file
+		* User uploads
+		* Deleting files
+		* Logging in
+	* Data tracking
+		* Total uploaded/downloaded
+			* Per day
+			* Per month
+			* All time
+		* Total files uploaded
+	* Basic API to upload/remove files
+		* Generate/regenerate the API key from dashboard
+			* Based off username + time, saved to their json configuration

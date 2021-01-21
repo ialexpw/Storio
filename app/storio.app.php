@@ -119,5 +119,13 @@
 				return 1;
 			}
 		}
+
+		/**
+		 * Storio::CheckLicence()
+		 * Function to check the licence code
+		 */
+		public static function CheckLicence($user, $code) {
+			return true;
+		}
 	}
 ?>
