@@ -165,7 +165,7 @@
 													</svg>';
 
 													echo '<div class="col-md-4">' . $fileIco . ' ' . $file . '</div>';
-													echo '<div class="col-md-4">20kb</div>';
+													echo '<div class="col-md-4">' . filesize('users/' . $_GET['browse'] . $file) . '</div>';
 													echo '<div class="col-md-4">Download - Delete</div>';
 												}
 											}
