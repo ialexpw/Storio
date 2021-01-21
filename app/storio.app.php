@@ -164,6 +164,11 @@
 			}
 		}
 
+		public static function ReadableSize($bytes) {
+			$i = floor(log($bytes, 1024));
+			return round($bytes / pow(1024, $i), [0,0,2,2,3][$i]).['B','kB','MB','GB','TB'][$i];
+		}
+
 		public static function DirList($dir){
 			if(!file_exists($dir)){ return $dir.' does not exists'; }
 			$list = array('path' => $dir, 'dirview' => array(), 'dirlist' => array(), 'files' => array(), 'folders' => array());
