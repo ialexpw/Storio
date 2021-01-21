@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Storio</title>
+		<title>Storio - Admin Dashboard</title>
 
 		<link rel="canonical" href="https://storio.aw0.uk">
 
@@ -82,45 +82,7 @@
 						<!-- Intro to the dashboard -->
 						<br />
 						<h4 class="card-title">Welcome to your Dashboard</h4>
-						<p class="card-text" style="margin-top:6px;">This is Storio!</p>
-						<!--
-						<div class="row">
-							<div class="col-sm">
-								<h5 class="card-title">Today</h5>
-								One of three columns
-							</div>
-							<div class="col-sm">
-								<h5 class="card-title">This Month</h5>
-								One of three columns
-							</div>
-							<div class="col-sm">
-								<h5 class="card-title">All Time</h5>
-								One of three columns
-							</div>
-						</div>
-
-						<hr>
-						-->
-
-						<!-- System stats -->
-						<!--
-						<h4 class="card-title text-left">System Information</h4>
-						<br />
-						<div class="row">
-							<div class="col-sm">
-								<h5 class="card-title">Today</h5>
-								One of three columns
-							</div>
-							<div class="col-sm">
-								<h5 class="card-title">This Month</h5>
-								One of three columns
-							</div>
-							<div class="col-sm">
-								<h5 class="card-title">All Time</h5>
-								One of three columns
-							</div>
-						</div>
-						-->
+						<p class="card-text" style="margin-top:15px;">This is Storio!</p>
 					</div>
 				</div>
 			</div>
