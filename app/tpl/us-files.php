@@ -168,7 +168,7 @@
 										</svg>';
 
 										echo '<div class="col-md-4">' . $fileIco . ' ' . $file . '</div>';
-										echo '<div class="col-md-4">' . Storio::ReadableSize(filesize($strRep . $getBrowse . $file)) . '</div>';
+										echo '<div class="col-md-4">' . Storio::ReadableSize(filesize($strRep . $file)) . '</div>';
 										echo '<div class="col-md-4">Download - Delete</div>';
 									}
 								}
