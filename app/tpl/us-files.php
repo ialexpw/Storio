@@ -111,15 +111,36 @@
 						<p class="card-text" style="margin-top:15px;">
 							<?php
 								echo 'User dir: ' . $usrDir . '<br />';
+								echo 'Browse dir: ' . $getBrowse . '<br />';
+
+								// Save the arrays
+								//$fldArr = Storio::DirList($usrDir . $getBrowse);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							/*
+								echo 'User dir: ' . $usrDir . '<br />';
 								echo 'Browse: ' . $getBrowse . '<br />';
 
 								// Save the arrays
-								if(!empty($getBrowse)) {
-									$fldArr = Storio::DirList($usrDir . '/' . $getBrowse);
-								}else{
-									$fldArr = Storio::DirList($usrDir . $getBrowse);
-								}
-								
+								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
 								echo 'Browsing dir: ' . $usrDir . $getBrowse . '<br />';
 
@@ -187,6 +208,8 @@
 								
 								// End the row
 								echo '</div>';
+
+							*/
 							?>
 						</p>
 					</div>
