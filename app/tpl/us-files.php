@@ -118,15 +118,11 @@
 
 								echo 'Browsing dir: ' . $usrDir . '/' . $getBrowse . '<br />';
 
-
-
-
-
 								// Use for the path
-								$strPath = $usrDir;
+								$strPath = $usrDir . '/' . $getBrowse;
 
 								// Use for str_replace
-								$strRep = $usrDir . '/';
+								$strRep = $usrDir . '/' . $getBrowse . '/';
 
 								echo '<pre>';
 								print_r($fldArr);
