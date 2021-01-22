@@ -113,6 +113,14 @@
 								echo 'User dir: ' . $usrDir . '<br />';
 								echo 'Browse: ' . $getBrowse . '<br />';
 
+								// Save the arrays
+								$fldArr = Storio::DirList($usrDir . '/' . $getBrowse);
+
+
+
+
+
+								
 
 								// Use for the path
 								$strPath = $usrDir;
