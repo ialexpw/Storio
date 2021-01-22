@@ -123,7 +123,7 @@
 										print_r($dir);
 
 										// Replace the beginning of the path
-										$dir = str_replace($usrDir.$getBrowse, "", $dir);
+										$dir = str_replace($usrDir.$getBrowse.'/', "", $dir);
 
 										// Generate a link to subfolder
 										$subLink = $getBrowse . $dir;
