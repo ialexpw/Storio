@@ -116,7 +116,7 @@
 											$strRep = $usrDir . '/';
 
 											// Save the arrays
-											$fldArr = Storio::DirList($usrDir);
+											$fldArr = Storio::DirList($strRep . $_GET['browse']);
 
 											echo '<pre>';
 											print_r($fldArr);
