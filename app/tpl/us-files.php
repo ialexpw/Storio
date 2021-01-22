@@ -24,7 +24,7 @@
 
 		// Store the browse (if any)
 		if(!empty($_GET['browse'])) {
-			$getBrowse = $_GET['browse'];
+			$getBrowse = '/' . $_GET['browse'];
 		}else{
 			$getBrowse = '';
 		}
