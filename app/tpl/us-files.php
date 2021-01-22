@@ -185,9 +185,19 @@
 								// Showing where the folder will go
 								if(isset($_GET['browse']) && !empty($_GET['browse'])) {
 									echo 'Folder will be created under /' . $_GET['browse'] . '/';
+								}else{
+									echo 'Folder will be created under /';
 								}
 							?>
 						</p>
+
+<form>
+<div class="mb-3">
+<label for="exampleInputEmail1" class="form-label">Folder name</label>
+<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+</div>
+<button type="submit" class="btn btn-primary">Create</button>
+</form>
 					</div>
 				</div>
 			</div>
@@ -207,6 +217,8 @@
 								// Showing where uploads will go
 								if(isset($_GET['browse']) && !empty($_GET['browse'])) {
 									echo 'Uploads will be stored under /' . $_GET['browse'] . '/';
+								}else{
+									echo 'Uploads will be stored under /';
 								}
 							?>
 						</p>
