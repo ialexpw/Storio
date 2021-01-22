@@ -26,7 +26,7 @@
 		if(!empty($_GET['browse'])) {
 			$getBrowse = '/' . $_GET['browse'];
 		}else{
-			$getBrowse = '/';
+			$getBrowse = '';
 		}
 	}else{
 		// Something has gone wrong - user possibly deleted while logged in?
