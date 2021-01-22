@@ -184,7 +184,7 @@
 							<?php
 								// Showing where the folder will go
 								if(isset($_GET['browse']) && !empty($_GET['browse'])) {
-									echo 'Folder will be created under /' . $GET['browse'] . '/';
+									echo 'Folder will be created under /' . $_GET['browse'] . '/';
 								}
 							?>
 						</p>
@@ -206,7 +206,7 @@
 							<?php
 								// Showing where uploads will go
 								if(isset($_GET['browse']) && !empty($_GET['browse'])) {
-									echo 'Uploads will be stored under /' . $GET['browse'] . '/';
+									echo 'Uploads will be stored under /' . $_GET['browse'] . '/';
 								}
 							?>
 						</p>
