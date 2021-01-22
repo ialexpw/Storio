@@ -111,10 +111,10 @@
 						<p class="card-text" style="margin-top:15px;">
 							<?php
 								// Use for the path
-								$strPath = $usrDir;
+								$strPath = $usrDir . $getBrowse;
 
 								// Use for str_replace
-								$strRep = $usrDir . '/';
+								$strRep = $usrDir . '/' . $getBrowse . '/';
 
 								echo "looking at " . $usrDir . $getBrowse;
 
