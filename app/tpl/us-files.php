@@ -24,7 +24,7 @@
 
 		// Store the browse (if any)
 		if(!empty($_GET['browse'])) {
-			$getBrowse = $_GET['browse'];
+			$getBrowse = '/' . $_GET['browse'];
 		}else{
 			$getBrowse = '';
 		}
@@ -112,6 +112,8 @@
 							<?php
 								echo 'User dir: ' . $usrDir . '<br />';
 								echo 'Browse dir: ' . $getBrowse . '<br />';
+
+								$browseDir = $usrDir . $getBrowse
 
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
