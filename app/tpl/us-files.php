@@ -124,6 +124,9 @@
 								// Use for str_replace
 								$strRep = $usrDir . $getBrowse . '/';
 
+								echo 'strPath: ' . $strPath . '<br />';
+								echo 'strRep: ' . $strRep . '<br />';
+
 								echo '<pre>';
 								print_r($fldArr);
 								echo '</pre>';
