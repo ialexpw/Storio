@@ -119,7 +119,7 @@
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
-									foreach($fldArr['dirview'][$usrDir]['folders'] as $dir) {
+									foreach($fldArr['dirview'][$usrDir.$getBrowse]['folders'] as $dir) {
 										print_r($dir);
 
 										// Replace the beginning of the path
