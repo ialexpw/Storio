@@ -114,7 +114,7 @@
 								$strPath = $usrDir . $getBrowse;
 
 								// Use for str_replace
-								$strRep = $usrDir . '/' . $getBrowse . '/';
+								$strRep = $usrDir . $getBrowse . '/';
 
 								echo "looking at " . $usrDir . $getBrowse;
 
