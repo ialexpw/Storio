@@ -126,7 +126,7 @@
 										$dir = str_replace($usrDir.$getBrowse.'/', "", $dir);
 
 										// Generate a link to subfolder
-										$subLink = $getBrowse . $dir;
+										$subLink = $getBrowse . '/' . $dir;
 
 										// Folder icon
 										$foldIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
