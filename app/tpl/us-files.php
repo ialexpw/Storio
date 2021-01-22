@@ -114,7 +114,11 @@
 								echo 'Browse dir: ' . $getBrowse . '<br />';
 
 								// Save the arrays
-								//$fldArr = Storio::DirList($usrDir . $getBrowse);
+								$fldArr = Storio::DirList($usrDir . $getBrowse);
+
+								echo '<pre>';
+								print_r($fldArr);
+								echo '</pre>';
 
 
 
