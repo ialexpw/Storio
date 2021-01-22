@@ -19,12 +19,12 @@
 	if(is_dir('users/' . $_SESSION['Username'])) {
 		$dirs = array_filter(glob('users/' . $_SESSION['Username'] . '/*'), 'is_dir');
 
-		// Set the static path
+		// Set the static path (e.g. users/username)
 		$usrDir = 'users/' . $_SESSION['Username'];
 
 		// Store the browse (if any)
 		if(!empty($_GET['browse'])) {
-			$getBrowse = '/' . $_GET['browse'];
+			$getBrowse = $_GET['browse'];
 		}else{
 			$getBrowse = '';
 		}
@@ -110,6 +110,10 @@
 						<h4 class="card-title">File Management</h4>
 						<p class="card-text" style="margin-top:15px;">
 							<?php
+								echo 'User dir: ' . $usrDir . '<br />';
+								echo 'Browse: ' . $getBrowse . '<br />';
+
+
 								// Use for the path
 								$strPath = $usrDir;
 
