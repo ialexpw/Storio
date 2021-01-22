@@ -24,7 +24,7 @@
 
 		// Store the browse (if any)
 		if(!empty($_GET['browse'])) {
-			$getBrowse = $_GET['browse'];
+			$getBrowse = '/' . $_GET['browse'];
 		}else{
 			$getBrowse = '';
 		}
@@ -111,15 +111,15 @@
 						<p class="card-text" style="margin-top:15px;">
 							<?php
 								// Use for the path
-								$strPath = $usrDir . $getBrowse;
+								$strPath = $usrDir;
 
 								// Use for str_replace
-								$strRep = $usrDir . $getBrowse . '/';
+								$strRep = $usrDir . '/';
 
-								echo "looking at " . $usrDir . $getBrowse;
+								echo "looking at " . $usrDir . $getBrowse
 
 								// Save the arrays
-								$fldArr = Storio::DirList($usrDir . '/' . $getBrowse);
+								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
 								echo '<pre>';
 								print_r($fldArr);
@@ -168,7 +168,7 @@
 										</svg>';
 
 										echo '<div class="col-md-4">' . $fileIco . ' ' . $file . '</div>';
-										echo '<div class="col-md-4">' . Storio::ReadableSize(filesize($strRep . $file)) . '</div>';
+										echo '<div class="col-md-4">' . Storio::ReadableSize(filesize($strRep . $getBrowse . $file)) . '</div>';
 										echo '<div class="col-md-4">Download - Delete</div>';
 									}
 								}
