@@ -24,7 +24,7 @@
 
 		// Store the browse (if any)
 		if(!empty($_GET['browse'])) {
-			$getBrowse = $_GET['browse'];
+			$getBrowse = '/' . $_GET['browse'];
 		}else{
 			$getBrowse = '';
 		}
@@ -114,15 +114,15 @@
 								echo 'Browse: ' . $getBrowse . '<br />';
 
 								// Save the arrays
-								$fldArr = Storio::DirList($usrDir . '/' . $getBrowse);
+								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
-								echo 'Browsing dir: ' . $usrDir . '/' . $getBrowse . '<br />';
+								echo 'Browsing dir: ' . $usrDir . $getBrowse . '<br />';
 
 								// Use for the path
 								$strPath = $usrDir . '/' . $getBrowse;
 
 								// Use for str_replace
-								$strRep = $usrDir . '/' . $getBrowse . '/';
+								$strRep = $usrDir . $getBrowse . '/';
 
 								echo '<pre>';
 								print_r($fldArr);
