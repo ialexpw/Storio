@@ -39,7 +39,7 @@
 
 	// Simple templating
 	if(!isset($_GET['page']) || empty($_GET['page'])) {
-		Storio::LoadView('index');
+		Storio::LoadView('login');
 	}else{
 		Storio::LoadView($_GET['page']);
 	}
