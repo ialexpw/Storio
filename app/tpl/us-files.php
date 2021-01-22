@@ -19,8 +19,15 @@
 	if(is_dir('users/' . $_SESSION['Username'])) {
 		$dirs = array_filter(glob('users/' . $_SESSION['Username'] . '/*'), 'is_dir');
 
-		// Keep the browse dir
+		// Set the static path
 		$usrDir = 'users/' . $_SESSION['Username'];
+
+		// Store the browse (if any)
+		if(!empty($_GET['browse'])) {
+			$getBrowse = $_GET['browse'];
+		}else{
+			$getBrowse = '';
+		}
 	}else{
 		// Something has gone wrong - user possibly deleted while logged in?
 		header("Location: ?logout");
@@ -116,7 +123,7 @@
 											$strRep = $usrDir . '/';
 
 											// Save the arrays
-											$fldArr = Storio::DirList($usrDir . $_GET['browse']);
+											$fldArr = Storio::DirList($usrDir . $getBrowse);
 
 											echo '<pre>';
 											print_r($fldArr);
@@ -138,7 +145,7 @@
 													$dir = str_replace($strRep, "", $dir);
 
 													// Generate a link to subfolder
-													$subLink = $_GET['browse'] . $dir . '/';
+													$subLink = $getBrowse . $dir . '/';
 
 													// Folder icon
 													$foldIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
