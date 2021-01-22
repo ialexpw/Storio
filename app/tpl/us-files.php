@@ -176,7 +176,7 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="folderModalLabel">New Directory</h5>
+						<h5 class="modal-title" id="folderModalLabel">Create a new directory</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
@@ -208,7 +208,7 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="fileModalLabel">New Files</h5>
+						<h5 class="modal-title" id="fileModalLabel">Upload new files</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
