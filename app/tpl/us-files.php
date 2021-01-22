@@ -107,7 +107,7 @@
 					<div class="card-body">
 						<!-- File management -->
 						<br />
-						<h4 class="card-title">File Management</h4>
+						<h4 class="card-title">File Management (<a href="#" data-bs-toggle="modal" data-bs-target="#userModal">upload</a>)</h4>
 						<p class="card-text" style="margin-top:15px;">
 							<?php
 								// Save the arrays
@@ -170,5 +170,115 @@
 		</main>
 
 		<script src="app/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Modal -->
+		<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="userModalLabel">Add new user</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form class="row g-3" method="post" action="?page=ad-users">
+							<!-- Username -->
+							<div class="col-md-2">
+								<label for="inputUser" class="form-label">Username</label>
+								<input type="text" class="form-control" id="inputUser" name="inputUser" required>
+							</div>
+
+							<!-- Email address -->
+							<div class="col-md-3">
+								<label for="inputEmail" class="form-label">Email (optional)</label>
+								<input type="email" class="form-control" id="inputEmail" name="inputEmail">
+							</div>
+
+							<!-- Password -->
+							<div class="col-md-3">
+								<label for="inputPass" class="form-label">Password</label>
+								<input type="password" class="form-control" id="inputPass" name="inputPass" required>
+							</div>
+
+							<!-- Welcome email -->
+							<div class="col-md-2">
+								<label for="inputWelcome" class="form-label">Welcome email</label>
+								<select id="inputWelcome" name="inputWelcome" class="form-select">
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
+								</select>
+							</div>
+
+							<!-- Admin user -->
+							<div class="col-md-2">
+								<label for="inputAdmin" class="form-label">Admin user</label>
+								<select id="inputAdmin" name="inputAdmin" class="form-select">
+									<option value="false" selected>false</option>
+									<option value="true">true</option>
+								</select>
+							</div>
+
+							<!-- Second line -->
+
+							<!-- Storage allowance -->
+							<div class="col-md-2">
+								<label for="inputStorage" class="form-label">Storage (MB)</label>
+								<input type="number" class="form-control" id="inputStorage" name="inputStorage" value="1000">
+							</div>
+
+							<!-- Can view files -->
+							<div class="col-md-2">
+								<label for="inputView" class="form-label">Can view</label>
+								<select id="inputView" name="inputView" class="form-select">
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
+								</select>
+							</div>
+
+							<!-- Can upload files -->
+							<div class="col-md-2">
+								<label for="inputUpload" class="form-label">Can upload</label>
+								<select id="inputUpload" name="inputUpload" class="form-select">
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
+								</select>
+							</div>
+
+							<!-- Can edit files -->
+							<div class="col-md-2">
+								<label for="inputEdit" class="form-label">Can edit</label>
+								<select id="inputEdit" name="inputEdit" class="form-select">
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
+								</select>
+							</div>
+
+							<!-- Can share files -->
+							<div class="col-md-2">
+								<label for="inputShare" class="form-label">Can share</label>
+								<select id="inputShare" name="inputShare" class="form-select">
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
+								</select>
+							</div>
+
+							<!-- Can delete files -->
+							<div class="col-md-2">
+								<label for="inputDelete" class="form-label">Can delete</label>
+								<select id="inputDelete" name="inputDelete" class="form-select">
+									<option value="true" selected>true</option>
+									<option value="false">false</option>
+								</select>
+							</div>
+
+							<!-- Footer and submit -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-primary">Create</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
