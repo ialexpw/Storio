@@ -119,14 +119,14 @@
 								echo 'Browsing dir: ' . $usrDir . $getBrowse . '<br />';
 
 								// Use for the path
-								//$strPath = $usrDir . $getBrowse;
-								$strPath = $usrDir . substr($getBrowse, 0, -1);
+								$strPath = $usrDir . $getBrowse;
+								//$strPath = $usrDir . substr($getBrowse, 0, -1);
 
 								// Use for str_replace
-								$strRep = $usrDir . $getBrowse;
+								//$strRep = $usrDir . $getBrowse;
 
 								echo 'strPath: ' . $strPath . '<br />';
-								echo 'strRep: ' . $strRep . '<br />';
+								//echo 'strRep: ' . $strRep . '<br />';
 
 								echo '<pre>';
 								print_r($fldArr);
@@ -145,7 +145,7 @@
 									// Loop the folders first
 									foreach($fldArr['dirview'][$strPath]['folders'] as $dir) {
 										// Replace the beginning of the path
-										$dir = str_replace($strRep, "", $dir);
+										$dir = str_replace($strPath, "", $dir);
 
 										// Generate a link to subfolder
 										$subLink = $getBrowse . $dir . '/';
@@ -166,7 +166,7 @@
 									// Loop the files after
 									foreach($fldArr['dirview'][$strPath]['files'] as $file) {
 										// Replace the beginning of the path
-										$file = str_replace($strRep, "", $file);
+										$file = str_replace($strPath, "", $file);
 
 										// File icon
 										$fileIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
