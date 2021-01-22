@@ -26,19 +26,9 @@
 		exit();
 	}
 
-	//include 'app/whispa.app.php';
-	//$db = Whispa::Connect();
-
 	// Get IP
 	$usrIP = $_SERVER['REMOTE_ADDR'];
 
-	// Set the state (to default)
-	$setState = 1;
-
-	// Store variable for all file names and archive
-	$multiFiles = "";
-	$archive = 0;
-	
 	/*
 	// Anti spam measure >30 uploads p/hour
 	if(Whispa::SpamDetected($db, $usrIP)) {
@@ -57,6 +47,7 @@
 	foreach($_FILES['file']['name'] as $id => $file) {
 		print_r($file);
 	}
+	print_r($_GET);
 	exit();
 /*
 	// Over 10 files
