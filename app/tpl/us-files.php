@@ -116,6 +116,8 @@
 								// Use for str_replace
 								$strRep = $usrDir . '/';
 
+								echo "looking at " . $usrDir . $getBrowse;
+
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
