@@ -26,8 +26,8 @@
 		exit();
 	}
 
-	include 'app/whispa.app.php';
-	$db = Whispa::Connect();
+	//include 'app/whispa.app.php';
+	//$db = Whispa::Connect();
 
 	// Get IP
 	$usrIP = $_SERVER['REMOTE_ADDR'];
@@ -39,6 +39,7 @@
 	$multiFiles = "";
 	$archive = 0;
 	
+	/*
 	// Anti spam measure >30 uploads p/hour
 	if(Whispa::SpamDetected($db, $usrIP)) {
 		$output = array(
@@ -51,13 +52,19 @@
 		echo json_encode($output);
 		exit();
 	}
+	*/
 
+	foreach($_FILES['file']['name'] as $id => $file) {
+		print_r($file);
+	}
+	exit();
+/*
 	// Over 10 files
-	if(count($_FILES['file']['name']) > 20) {
+	if(count($_FILES['file']['name']) > 10) {
 		$output = array(
 			"success" => false,
 			"message" => "max_files_exceeded",
-			"verbose" => "Maximum 20 files at a time"
+			"verbose" => "Maximum 10 files at a time"
 		);
 		
 		header("Content-Type: application/json; charset=utf-8");
@@ -321,4 +328,5 @@
 
 	header("Content-Type: application/json; charset=utf-8");
 	echo json_encode($output);
+*/
 ?>

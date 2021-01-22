@@ -7,7 +7,7 @@ $(document).ready(function(){
 		var totalSize = 0;
 
 		// For plus
-		var maxUploads = 20;
+		var maxUploads = 10;
 		var maxUploadSize = 2150000000; // 2GB
 
 		////////////////////
