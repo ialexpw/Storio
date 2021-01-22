@@ -21,6 +21,9 @@
 
 		// Keep the browse dir
 		$usrDir = 'users/' . $_SESSION['Username'];
+	}else{
+		// Something has gone wrong - user possibly deleted while logged in?
+		header("Location: ?logout");
 	}
 	
 ?>
