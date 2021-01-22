@@ -47,7 +47,7 @@
 	foreach($_FILES['file']['name'] as $id => $file) {
 		print_r($file);
 	}
-	print_r($_GET);
+	print_r($_POST);
 	exit();
 /*
 	// Over 10 files
