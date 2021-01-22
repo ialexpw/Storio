@@ -169,7 +169,9 @@
 			</div>
 		</main>
 
-		<script src="app/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="app/js/jquery.min.js"></script>
+		<script type="text/javascript" src="app/js/whUp.js"></script>
+		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 
 		<!-- Modal -->
 		<div class="modal fade" id="folderModal" tabindex="-1" aria-labelledby="folderModalLabel" aria-hidden="true">
@@ -243,5 +245,17 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+			function allowDrop(event) {
+				event.preventDefault();
+				document.getElementById("custom-file-label").innerHTML = "Drop files to upload";
+			}
+
+			function leaveDrop(event) {
+				event.preventDefault();
+				document.getElementById("custom-file-label").innerHTML = "Select up to 50 files";
+			}
+		</script>
 	</body>
 </html>
