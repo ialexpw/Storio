@@ -107,7 +107,7 @@
 					<div class="card-body">
 						<!-- File management -->
 						<br />
-						<h4 class="card-title">File Management (<a href="#" data-bs-toggle="modal" data-bs-target="#userModal">upload</a>)</h4>
+						<h4 class="card-title">File Management (new <a href="#" data-bs-toggle="modal" data-bs-target="#userModal">file</a> or <a href="#" data-bs-toggle="modal" data-bs-target="#userModal">directory</a>)</h4>
 						<p class="card-text" style="margin-top:15px;">
 							<?php
 								// Save the arrays
