@@ -180,7 +180,14 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						
+						<p>
+							<?php
+								// Showing where the folder will go
+								if(isset($_GET['browse']) && !empty($_GET['browse'])) {
+									echo 'Folder will be created under /' . $GET['browse'] . '/';
+								}
+							?>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -195,7 +202,14 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						
+						<p>
+							<?php
+								// Showing where uploads will go
+								if(isset($_GET['browse']) && !empty($_GET['browse'])) {
+									echo 'Uploads will be stored under /' . $GET['browse'] . '/';
+								}
+							?>
+						</p>
 					</div>
 				</div>
 			</div>
