@@ -116,19 +116,17 @@
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . '/' . $getBrowse);
 
+								echo 'Browsing dir: ' . $usrDir . '/' . $getBrowse . '<br />';
 
 
 
 
-								
 
 								// Use for the path
 								$strPath = $usrDir;
 
 								// Use for str_replace
 								$strRep = $usrDir . '/';
-
-								echo "looking at " . $usrDir . $getBrowse;
 
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
