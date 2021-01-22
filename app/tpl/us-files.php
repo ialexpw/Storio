@@ -118,7 +118,7 @@
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
-								if(!empty($fldArr['dirview'][$usrDir]['folders'])) {
+								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
 									foreach($fldArr['dirview'][$usrDir]['folders'] as $dir) {
 										print_r($dir);
 
