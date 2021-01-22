@@ -145,7 +145,7 @@
 									// Loop the folders first
 									foreach($fldArr['dirview'][$strPath]['folders'] as $dir) {
 										// Replace the beginning of the path
-										$dir = str_replace($strPath, "", $dir);
+										$dir = str_replace($strPath.'/', "", $dir);
 
 										// Generate a link to subfolder
 										$subLink = $getBrowse . $dir . '/';
@@ -166,7 +166,7 @@
 									// Loop the files after
 									foreach($fldArr['dirview'][$strPath]['files'] as $file) {
 										// Replace the beginning of the path
-										$file = str_replace($strPath, "", $file);
+										$file = str_replace($strPath.'/', "", $file);
 
 										// File icon
 										$fileIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
