@@ -119,10 +119,11 @@
 								echo 'Browsing dir: ' . $usrDir . $getBrowse . '<br />';
 
 								// Use for the path
-								$strPath = $usrDir . $getBrowse;
+								//$strPath = $usrDir . $getBrowse;
+								$strPath = $usrDir . substr($getBrowse, 0, -1);
 
 								// Use for str_replace
-								$strRep = $usrDir . $getBrowse . '/';
+								$strRep = $usrDir . $getBrowse;
 
 								echo 'strPath: ' . $strPath . '<br />';
 								echo 'strRep: ' . $strRep . '<br />';
