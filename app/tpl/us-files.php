@@ -20,7 +20,7 @@
 		$dirs = array_filter(glob('users/' . $_SESSION['Username'] . '/*'), 'is_dir');
 
 		// Set the static path (e.g. users/username)
-		$usrDir = 'users/' . $_SESSION['Username'];
+		$usrDir = 'users/' . $_SESSION['Username'] . '/';
 
 		// Store the browse (if any)
 		if(!empty($_GET['browse'])) {
