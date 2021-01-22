@@ -120,15 +120,13 @@
 
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
 									foreach($fldArr['dirview'][$usrDir.$getBrowse]['folders'] as $dir) {
-										print_r($dir);
+										//print_r($dir);
 
 										// Replace the beginning of the path
 										$dir = str_replace($usrDir.$getBrowse.'/', "", $dir);
 
 										// Generate a link to subfolder
 										$subLink = $getBrowse . '/' . $dir;
-
-										echo 'Link: ' . $getBrowse;
 
 										// Folder icon
 										$foldIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
@@ -138,6 +136,30 @@
 										echo '<div class="col-md-4">' . $foldIco . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										echo '<div class="col-md-4">n/a</div>';
 										echo '<div class="col-md-4">n/a</div>';
+									}
+								}
+
+								// Check if there are files first (avoid warnings)
+								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
+									// Loop the files after
+									foreach($fldArr['dirview'][$usrDir.$getBrowse]['files'] as $file) {
+										echo '<pre>';
+										print_r($file);
+										echo '</pre>';
+										/*
+										// Replace the beginning of the path
+										$file = str_replace($strRep, "", $file);
+
+										// File icon
+										$fileIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+										<path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+										<path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+										</svg>';
+
+										echo '<div class="col-md-4">' . $fileIco . ' ' . $file . '</div>';
+										echo '<div class="col-md-4">' . Storio::ReadableSize(filesize('users/' . $_GET['browse'] . $file)) . '</div>';
+										echo '<div class="col-md-4">Download - Delete</div>';
+										*/
 									}
 								}
 
