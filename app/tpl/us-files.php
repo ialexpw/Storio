@@ -128,9 +128,6 @@
 								// Use for str_replace
 								$strRep = $usrDir . '/';
 
-								// Save the arrays
-								$fldArr = Storio::DirList($usrDir . $getBrowse);
-
 								echo '<pre>';
 								print_r($fldArr);
 								echo '</pre>';
