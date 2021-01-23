@@ -62,6 +62,8 @@
 
 	//print_r($_POST);
 
+	echo 'users/' . $_POST['usrSes'] . $_POST['uplFld'];
+
 	// Check the directory exists where you want to upload
 	if(is_dir('users/' . $_POST['usrSes'] . $_POST['uplFld'])) {
 		// Save the upload dir
