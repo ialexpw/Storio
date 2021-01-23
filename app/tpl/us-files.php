@@ -165,7 +165,7 @@
 										echo '<div class="col-md-3">' . $foldIco . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										echo '<div class="col-md-3">directory</div>';
 										echo '<div class="col-md-3">n/a</div>';
-										echo '<div class="col-md-3">Delete</div>';
+										echo '<div class="col-md-3"><span style="color:red;">Delete</span></div>';
 									}
 								}
 
@@ -185,7 +185,7 @@
 										echo '<div class="col-md-3">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-3">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 										echo '<div class="col-md-3">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-3">Download - Delete</div>';
+										echo '<div class="col-md-3">Download - <span style="color:red;">Delete</span></div>';
 									}
 								}
 
