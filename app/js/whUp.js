@@ -61,7 +61,11 @@ $(document).ready(function(){
 
 			// Append the file data
 			formData.append('file[]', file);
+
+			console.log(i);
 		}
+
+		console.log(files.length);
 
 		//formData.append();
 
