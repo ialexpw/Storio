@@ -208,10 +208,10 @@
 							?>
 						</p>
 
-						<form>
+						<form action="?page=us-files" method="post">
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Folder name</label>
-								<input type="text" class="form-control" id="inpFolder">
+								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" />
 								<input type="hidden" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
 								<input type="hidden" id="usrSes" name="usrSes" value="<?php echo $_SESSION['Username']; ?>"/>
 							</div>
