@@ -232,6 +232,7 @@
 									Select up to 10 files
 								</label>
 								<input type="hidden" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
+								<input type="hidden" id="usrSes" name="usrSes" value="<?php echo $_SESSION['Username']; ?>"/>
 							</div>
 						</form>
 
