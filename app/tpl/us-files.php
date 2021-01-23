@@ -195,7 +195,7 @@
 
 								// Empty dir
 								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
-									echo '<div class="col-md-12">Seems this directory is empty!</div>';
+									echo '<div class="col-md-12" style="text-align:center;">Seems this directory is empty!</div>';
 								}
 
 								// End the row
