@@ -28,8 +28,6 @@
 		exit();
 	}
 
-	echo $_POST['usrSes'] . ' ' . $_SESSION['Username'];
-
 	// Check the logged in user with the hidden field
 	if($_POST['usrSes'] != $_SESSION['Username']) {
 		$output = array(
