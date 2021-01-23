@@ -263,7 +263,7 @@
 				$str = '&browse=';
 
 				for($i = 0; $i <= count($exp)-1; $i++) {
-					if($i=0) {
+					if($i==0) {
 						$str .= $exp[$i];
 					}else{
 						$str .= '/' . $exp[$i];
