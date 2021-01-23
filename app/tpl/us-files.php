@@ -192,7 +192,7 @@
 										//echo '<div class="col-md-2">Download - <span style="color:red;">Delete</span></div>';
 echo '<div class="col-md-2">';
 echo '<div class="dropdown">';
-echo '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">';
+echo '<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">';
 echo 'Dropdown button';
 echo '</button>';
 echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
