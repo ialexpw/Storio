@@ -186,10 +186,10 @@
 										<path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
 										</svg>';
 
-										echo '<div class="col-md-3">' . $fileIco . ' ' . $file . '</div>';
-										echo '<div class="col-md-3">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
-										echo '<div class="col-md-3">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-3">Download - <span style="color:red;">Delete</span></div>';
+										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
+										echo '<div class="col-md-2">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
+										echo '<div class="col-md-2">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
+										echo '<div class="col-md-2">Download - <span style="color:red;">Delete</span></div>';
 									}
 								}
 
