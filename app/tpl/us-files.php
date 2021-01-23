@@ -188,8 +188,8 @@
 
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-2">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
-										echo '<div class="col-md-2">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-2">Download - Copy Link - <span style="color:red;">Delete</span></div>';
+										echo '<div class="col-md-1">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
+										echo '<div class="col-md-3">Download - Copy Link - <span style="color:red;">Delete</span></div>';
 									}
 								}
 
