@@ -15,14 +15,11 @@ $(document).ready(function(){
 		////////////////////
 
 		const files = document.querySelector('[type=file]').files;
-		const formData = new FormData();
+		const formData = new FormData(form);
 
 		////////////////////
 		// Start script
 		////////////////////
-
-		// Get the value for plus
-		var user_id = $('.user_id').val();
 
 		// Max files per upload
 		if(files.length > maxUploads) {
