@@ -63,6 +63,8 @@ $(document).ready(function(){
 			formData.append('file[]', file);
 		}
 
+		//formData.append();
+
 		// Check file size - if high error (5GB)
 		if(totalSize > maxUploadSize) {
 			$('#filename').html("Maximum size has been exceeded");
