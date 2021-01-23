@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 		// Init area
 		const url = 'remoteUploadMultiple.php';
-		const form = document.querySelector('form');
+		const form = document.querySelector('#upload');
 		var totalSize = 0;
 
 		// For plus
