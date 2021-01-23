@@ -46,10 +46,7 @@
 
 	print_r($_FILES);
 
-	foreach($_FILES['file'] as $file) {
-	if($file['size'])
-	echo $file['name']."\n";
-	}
+	print_r($_POST);
 
 	//echo count($_FILES);
 
