@@ -26,6 +26,18 @@
 		exit();
 	}
 
+	// Check the logged in user with the hidden field
+	if($_POST['usrSes'] != $_SESSION['Username']) {
+		$output = array(
+			"success" => false,
+			"message" => "failed_upload"
+		);
+
+		header("Content-Type: application/json; charset=utf-8");
+	 	echo json_encode($output);
+		exit();
+	}
+
 	// Get IP
 	$usrIP = $_SERVER['REMOTE_ADDR'];
 
@@ -44,20 +56,55 @@
 	}
 	*/
 
-	print_r($_FILES);
+	//print_r($_FILES);
 
-	print_r($_POST);
+	//print_r($_POST);
 
-	//echo count($_FILES);
+	// Check the directory exists where you want to upload
+	if(is_dir('users/' . $_POST['usrSes'] . $_POST['uplFld'])) {
+		// Save the upload dir
+		$dirUpl = 'users/' . $_POST['usrSes'] . $_POST['uplFld'];
 
-	foreach($_FILES['file']['name'] as $id => $file) {
-		echo 'ID: ' . $id . ' File: ' . $file . '<br />';
+		// Loop the files
+		foreach($_FILES['file']['tmp_name'] as $index => $tmpName ) {
+			// Error occured on this file
+			if(!empty( $_FILES['file']['error'][$index])) {
+				return false;
+			}
+
+			// Check that it's an uploaded file and not empty
+			if(!empty($tmpName) && is_uploaded_file($tmpName)) {
+				// Move the file
+				move_uploaded_file($tmpName, $dirUpl . $_FILES["file"]["name"][$index]);
+			}
+		}
+
+		// Output results
+		$output = array(
+			"success" => true
+		);
+
+		header("Content-Type: application/json; charset=utf-8");
+		echo json_encode($output);
+		exit();
 	}
+
+	/*
+
+	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+} else {
+echo "Sorry, there was an error uploading your file.";
+}
+
+	*/
 		//
 	//echo '<pre>';
 	//print_r($_POST);
 	//echo '</pre>';
-	exit();
+	//exit();
 /*
 	// Over 10 files
 	if(count($_FILES['file']['name']) > 10) {
