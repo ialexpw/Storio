@@ -262,7 +262,7 @@
 
 				$str = '&browse=';
 
-				for($i = 0; $i <= count($exp)-1; $i++) {
+				for($i = 0; $i < count($exp)-1; $i++) {
 					if($i==0) {
 						$str .= $exp[$i];
 					}else{
