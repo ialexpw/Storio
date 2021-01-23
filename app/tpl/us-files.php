@@ -231,7 +231,7 @@
 								<label class="custom-file-label" id="custom-file-label" for="fileInput" style="text-align:left;">
 									Select up to 10 files
 								</label>
-								<input type="text" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
+								<input type="hidden" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
 							</div>
 						</form>
 
