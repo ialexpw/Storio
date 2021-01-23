@@ -44,12 +44,17 @@
 	}
 	*/
 
-	echo count($_FILES);
+	foreach($_FILES['file'] as $file) {
+	if($file['size'])
+	echo $file['name']."\n";
+	}
+
+	//echo count($_FILES);
 
 	//foreach($_FILES['file']['name'] as $id => $file) {
-	foreach($_FILES['file']['tmp_name'] as $id => $file) {
-		echo 'file ';
-	}
+	//foreach($_FILES['file']['tmp_name'] as $id => $file) {
+	//	echo 'file ';
+	//}
 		//
 	//echo '<pre>';
 	//print_r($_POST);
