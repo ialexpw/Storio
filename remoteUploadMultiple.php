@@ -50,10 +50,9 @@
 
 	//echo count($_FILES);
 
-	//foreach($_FILES['file']['name'] as $id => $file) {
-	//foreach($_FILES['file']['tmp_name'] as $id => $file) {
-	//	echo 'file ';
-	//}
+	foreach($_FILES['file']['name'] as $id => $file) {
+		echo 'ID: ' . $id . ' File: ' . $file . '<br />';
+	}
 		//
 	//echo '<pre>';
 	//print_r($_POST);
