@@ -40,7 +40,11 @@
 		// If folder does not already exist
 		if(!is_dir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
 			if(mkdir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
-				header("Location: ?page=us-files");
+				if(isset($_GET['browse'])) {
+					header("Location: ?page=us-files&browse=" . $_GET['browse']);
+				}else{
+					header("Location: ?page=us-files");
+				}
 			}
 		}
 	}
