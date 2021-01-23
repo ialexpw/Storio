@@ -44,6 +44,8 @@
 	}
 	*/
 
+	print_r($_FILES);
+
 	foreach($_FILES['file'] as $file) {
 	if($file['size'])
 	echo $file['name']."\n";
