@@ -45,10 +45,13 @@
 	*/
 
 	foreach($_FILES['file']['name'] as $id => $file) {
+		echo '<pre>';
 		print_r($file);
+		echo '</pre>';
 	}
+	echo '<pre>';
 	print_r($_POST);
-	print_r($_REQUEST);
+	echo '</pre>';
 	exit();
 /*
 	// Over 10 files
