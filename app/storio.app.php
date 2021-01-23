@@ -260,10 +260,14 @@
 			if(strpos($path, '/') !== false) {
 				$exp = explode("/", $path);
 
-				$str = '';
+				$str = '&browse=';
 
 				for($i = 0; $i <= count($exp)-1; $i++) {
-					$str .= $exp[$i];
+					if($i=0) {
+						$str .= $exp[$i];
+					}else{
+						$str .= '/' . $exp[$i];
+					}
 				}
 
 				return $str;
