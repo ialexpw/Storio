@@ -125,35 +125,8 @@ $(document).ready(function(){
 				//upload successful
 				$('#progress').html("Complete");
 
-				// Set the header to the correct text
-				$('#txtDl').html(data.type_msg);
-
-				// Show download options
-				document.getElementById('showDownloads').style.display = 'inherit';
-
-				// Hide the upload area
-				document.getElementById('hideAfter').style.display = 'none';
-
-				document.getElementById('maxFile').style.display = 'none';
-				
-				// Hide learn more button
-				document.getElementById('learnButton').style.display = 'none';
-
-				// Direct download link
-				$('#pageDownload').val(data.link);
-
-				// Page download link
-				$('#pageRemove').val(data.hash);
-
-				// Save the link
-				var qrUrl = data.link;
-				
-				// Generate the QR
-				new QRCode(document.getElementById("qr"), {
-					text: qrUrl,
-					width: 110,
-					height: 110
-				});
+				window.location.reload();
+				return false;
 			}
 		});
 	});
