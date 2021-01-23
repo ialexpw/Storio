@@ -134,9 +134,9 @@
 								echo '<div class="row">';
 
 								echo '<div class="col-md-6"><b>File name</b></div>';
-								echo '<div class="col-md-2"><b>Type</b></div>';
-								echo '<div class="col-md-2"><b>Size</b></div>';
-								echo '<div class="col-md-2"><b>Actions</b></div>';
+								echo '<div class="col-md-2" style="text-align:center;"><b>Type</b></div>';
+								echo '<div class="col-md-2" style="text-align:center;"><b>Size</b></div>';
+								echo '<div class="col-md-2" style="text-align:center;"><b>Actions</b></div>';
 								echo '<hr>';
 
 								// Show the back button if needed
@@ -167,9 +167,9 @@
 										</svg>';
 
 										echo '<div class="col-md-6">' . $foldIco . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
-										echo '<div class="col-md-2">directory</div>';
-										echo '<div class="col-md-2">n/a</div>';
-										echo '<div class="col-md-2"><span style="color:red;">Delete</span></div>';
+										echo '<div class="col-md-2" style="text-align:center;">directory</div>';
+										echo '<div class="col-md-2" style="text-align:center;">n/a</div>';
+										echo '<div class="col-md-2" style="text-align:center;"><span style="color:red;">Delete</span></div>';
 									}
 								}
 
@@ -204,8 +204,8 @@
 										</svg>';
 
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
-										echo '<div class="col-md-2">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
-										echo '<div class="col-md-2">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
+										echo '<div class="col-md-2" style="text-align:center;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
+										echo '<div class="col-md-2" style="text-align:center;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;"><span style="margin-right:25px;>' . $dlIco . '</span> <span style="margin-right:25px;>' . $copyIco . '</span> <span style="color:red;">' . $delIco . '</span></div>';
 									}
 								}
