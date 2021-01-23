@@ -48,6 +48,7 @@
 		print_r($file);
 	}
 	print_r($_POST);
+	print_r($_REQUEST);
 	exit();
 /*
 	// Over 10 files
