@@ -45,7 +45,7 @@
 		}
 	}
 
-	Storio::delTree('users/user/testing directory');
+	//Storio::delTree('users/user/testing directory');
 ?>
 <!doctype html>
 <html lang="en">
