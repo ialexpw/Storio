@@ -206,7 +206,7 @@
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-2">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 										echo '<div class="col-md-1">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-3"><span style="margin-right:15px;>' . $dlIco . '</span> <span>' . $copyIco . '</span> <span style="color:red;">' . $delIco . '</span></div>';
+										echo '<div class="col-md-3"><span style="margin-right:15px;>' . $dlIco . '</span> <span style="margin-right:15px;>' . $copyIco . '</span> <span style="color:red;">' . $delIco . '</span></div>';
 									}
 								}
 
