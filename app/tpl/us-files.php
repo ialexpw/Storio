@@ -191,7 +191,10 @@
 										echo '<div class="col-md-2">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 										echo '<div class="col-md-2">Download - <span style="color:red;">Delete</span></div>';
 									}
-								}else{
+								}
+
+								// Empty dir
+								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
 									echo '<div class="col-md-12">Seems this directory is empty!</div>';
 								}
 
