@@ -32,6 +32,10 @@
 		// Something has gone wrong - user possibly deleted while logged in?
 		header("Location: ?logout");
 	}
+
+	if(!empty($_POST)) {
+		print_r($_POST);
+	}
 	
 ?>
 <!doctype html>
