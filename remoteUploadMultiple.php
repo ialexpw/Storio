@@ -76,9 +76,8 @@
 
 			// Check that it's an uploaded file and not empty
 			if(!empty($tmpName) && is_uploaded_file($tmpName)) {
-				echo $dirUpl . $_FILES["file"]["name"][$index] . ' ';
 				// Move the file
-				move_uploaded_file($tmpName, $dirUpl . $_FILES["file"]["name"][$index]);
+				move_uploaded_file($tmpName, $dirUpl . '/' . $_FILES["file"]["name"][$index]);
 			}
 		}
 
