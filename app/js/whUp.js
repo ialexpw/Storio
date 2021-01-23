@@ -15,7 +15,7 @@ $(document).ready(function(){
 		////////////////////
 
 		const files = document.querySelector('[type=file]').files;
-		const formData = new FormData(form);
+		const formData = new FormData();
 
 		////////////////////
 		// Start script
