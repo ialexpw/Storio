@@ -33,10 +33,17 @@
 		header("Location: ?logout");
 	}
 
-	if(!empty($_POST)) {
-		print_r($_POST);
+	// Creating a new folder
+	if(!empty($_POST['inpFolder']) && $_POST['usrSes'] == $_SESSION['Username']) {
+		// Validate folder here
+
+		// If folder does not already exist
+		if(!is_dir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
+			if(mkdir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
+				header("Location: ?page=us-files");
+			}
+		}
 	}
-	
 ?>
 <!doctype html>
 <html lang="en">
