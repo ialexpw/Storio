@@ -289,10 +289,10 @@
 
 		public static function AddLog($time, $type, $msg) {
 			// Format the time
-			$logData = date("d M Y : ", $time);
+			$logData = date("H:i:s - d M Y : <", $time);
 
 			// Append the type and message
-			$logData .= $type . ' ' . $msg;
+			$logData .= $type . '> ' . $msg;
 
 			// Insert the data
 			file_put_contents('users/configs/site-logs.txt', $logData, FILE_APPEND);
