@@ -189,7 +189,19 @@
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-2">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 										echo '<div class="col-md-2">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-2">Download - <span style="color:red;">Delete</span></div>';
+										//echo '<div class="col-md-2">Download - <span style="color:red;">Delete</span></div>';
+echo '<div class="col-md-2">';
+echo '<div class="dropdown">';
+echo '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">';
+echo 'Dropdown button';
+echo '</button>';
+echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
+echo '<li><a class="dropdown-item" href="#">Action</a></li>';
+echo '<li><a class="dropdown-item" href="#">Another action</a></li>';
+echo '<li><a class="dropdown-item" href="#">Something else here</a></li>';
+echo '</ul>';
+echo '</div>';
+echo '</div>';
 									}
 								}
 
