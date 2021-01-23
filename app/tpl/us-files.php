@@ -40,11 +40,7 @@
 		// If folder does not already exist
 		if(!is_dir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
 			if(mkdir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
-				if(isset($_GET['browse'])) {
-					header("Location: ?page=us-files&browse=" . $_GET['browse']);
-				}else{
-					header("Location: ?page=us-files");
-				}
+				header('Location: ' . $_SERVER['REQUEST_URI']);
 			}
 		}
 	}
@@ -223,7 +219,7 @@
 							?>
 						</p>
 
-						<form action="?page=us-files" method="post">
+						<form action="?page=us-files<?php echo ltrim($getBrowse, '/'); ?>" method="post">
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Folder name</label>
 								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" />
