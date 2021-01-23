@@ -219,7 +219,7 @@
 							?>
 						</p>
 
-						<form action="?page=us-files<?php echo ltrim($getBrowse, '/'); ?>" method="post">
+						<form action="?page=us-files<?php echo '&' . ltrim($getBrowse, '/'); ?>" method="post">
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Folder name</label>
 								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" />
