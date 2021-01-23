@@ -213,13 +213,19 @@
 								// Showing where the folder will go
 								if(isset($_GET['browse']) && !empty($_GET['browse'])) {
 									echo 'Folder will be created under /' . $_GET['browse'] . '/';
+									
+									// Also generate a POST link
+									$post = '&browse=' . ltrim($getBrowse, '/');
 								}else{
 									echo 'Folder will be created under /';
+
+									// Create empty if no browsing
+									$post = '';
 								}
 							?>
 						</p>
 
-						<form action="?page=us-files<?php echo '&' . ltrim($getBrowse, '/'); ?>" method="post">
+						<form action="?page=us-files<?php echo $post; ?>" method="post">
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Folder name</label>
 								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" />
