@@ -31,6 +31,9 @@
 			$_SESSION['UserID'] = sha1($_POST['userInput'] . 'Storio');
 			$_SESSION['Username'] = $_POST['userInput'];
 
+			// Add to the log
+			Storio::AddLog(time(), "Login", $_POST['userInput'] . ' has logged in');
+
 			// For admin users
 			if(isset($_SESSION['isAdmin'])) {
 				// Go to the admin dashboard

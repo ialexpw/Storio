@@ -2,12 +2,12 @@
 	/**
 	 * remoteUploadMultiple.php
 	 *
-	 * Upload mechanism that allows both single and multi-upload with zipping
+	 * Upload mehanism
 	 *
-	 * @package    Whispa
-	 * @author     Alex White (https://github.com/ialexpw/Whispa)
-	 * @copyright  2020 Whispa
-	 * @link       https://whispa.app
+	 * @package    Storio
+	 * @author     Alex White
+	 * @copyright  2021 Storio
+	 * @link       https://storio.aw0.uk
 	 */
 
 	//ini_set('display_startup_errors', 1);
