@@ -255,6 +255,24 @@
 			return $list;
 		}
 
+		public static function GoBack($path) {
+			// Check if there is a "/" in the path
+			if(strpos($path, '/') !== false) {
+				$exp = explode("/", $path);
+
+				$str = '';
+
+				for($i = 0; $i <= count($exp)-1; $i++) {
+					$str .= $exp[$i];
+				}
+
+				return $str;
+			}else{
+				// Return nothing so back to the "home"
+				return '';
+			}
+		}
+
 		/**
 		 * Storio::CheckLicence()
 		 * Function to check the licence code

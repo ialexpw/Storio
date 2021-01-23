@@ -130,7 +130,7 @@
 								  </svg>';
 
 									echo '<div class="col-md-12">';
-									echo $arrIco;
+									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '">' . $arrIco . '</a>';
 									echo '</div>';
 								}
 								
