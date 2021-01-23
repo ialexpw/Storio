@@ -49,7 +49,7 @@
 		print_r($file);
 		echo '</pre>';
 	}
-	echo '<pre>';
+	echo '<br /><br /><pre>';
 	print_r($_POST);
 	echo '</pre>';
 	exit();
