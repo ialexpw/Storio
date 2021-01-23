@@ -191,6 +191,8 @@
 										echo '<div class="col-md-2">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 										echo '<div class="col-md-2">Download - <span style="color:red;">Delete</span></div>';
 									}
+								}else{
+									echo '<div class="col-md-12">Seems this directory is empty!</div>';
 								}
 
 								// End the row
