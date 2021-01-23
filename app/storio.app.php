@@ -292,7 +292,7 @@
 			$logData = date("H:i:s - d M Y : <", $time);
 
 			// Append the type and message
-			$logData .= $type . '> ' . $msg;
+			$logData .= $type . '> ' . $msg . "\n";
 
 			// Insert the data
 			file_put_contents('users/configs/site-logs.txt', $logData, FILE_APPEND);
