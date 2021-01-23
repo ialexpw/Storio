@@ -40,6 +40,10 @@
 		// If folder does not already exist
 		if(!is_dir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
 			if(mkdir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
+				// Add to the log
+				Storio::AddLog(time(), "Folder Created", $_SESSION['Username'] . ' has created a new folder named ' . $_POST['inpFolder']);
+
+				// Reload
 				header('Location: ' . $_SERVER['REQUEST_URI']);
 			}
 		}
