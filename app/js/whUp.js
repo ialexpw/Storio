@@ -14,21 +14,21 @@ $(document).ready(function(){
 		// Get files
 		////////////////////
 
-		const files = document.querySelector('[type=file]').files;
-		const formData = new FormData();
+		//test const files = document.querySelector('[type=file]').files;
+		const formData = new FormData(form);
 
 		////////////////////
 		// Start script
 		////////////////////
 
 		// Max files per upload
-		if(files.length > maxUploads) {
-			$('#filename').html("Max "+maxUploads+" uploads at a time");
-			return;
-		}
+		//test if(files.length > maxUploads) {
+		//test 	$('#filename').html("Max "+maxUploads+" uploads at a time");
+		//test 	return;
+		//test }
 
 		// Change label text
-		$("#custom-file-label").text("Selected "+files.length+" file(s)");
+		//test $("#custom-file-label").text("Selected "+files.length+" file(s)");
 		
 
 		// Show progress bar
@@ -38,11 +38,11 @@ $(document).ready(function(){
 		}
 
 		// Upload started
-		if(files.length > 1) {
-			$('#filename').html("Multiple files");
-		}else if(files.length == 1){
-			$('#filename').html(files[0].name);
-		}
+		//test if(files.length > 1) {
+		//test 	$('#filename').html("Multiple files");
+		//test }else if(files.length == 1){
+		//test 	$('#filename').html(files[0].name);
+		//test }
 
 		// Reset progress
 		$('#progress').html("");
@@ -53,7 +53,7 @@ $(document).ready(function(){
 		////////////////////
 
 		// Loop through the files
-		for (let i = 0; i < files.length; i++) {
+		/*for (let i = 0; i < files.length; i++) {
 			let file = files[i];
 
 			// Add the total size of all files
@@ -61,12 +61,12 @@ $(document).ready(function(){
 
 			// Append the file data
 			formData.append('file[]', file);
-		}
+		}*/
 
 		//formData.append();
 
 		// Check file size - if high error (5GB)
-		if(totalSize > maxUploadSize) {
+		/*if(totalSize > maxUploadSize) {
 			$('#filename').html("Maximum size has been exceeded");
 
 			// Hide the progress bar
@@ -76,7 +76,7 @@ $(document).ready(function(){
 
 			// return out
 			return;
-		}
+		}*/
 
 		$.ajax({
 			xhr: function () {
