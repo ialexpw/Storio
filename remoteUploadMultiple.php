@@ -43,6 +43,9 @@
 	// Get IP
 	$usrIP = $_SERVER['REMOTE_ADDR'];
 
+	// File counter
+	$fileCount = 0;
+
 	// Check the directory exists where you want to upload
 	if(is_dir('users/' . $_POST['usrSes'] . $_POST['uplFld'])) {
 		// Save the upload dir
@@ -61,8 +64,14 @@
 				if(!move_uploaded_file($tmpName, $dirUpl . '/' . $_FILES["file"]["name"][$index])) {
 					return false;
 				}
+
+				// Bump counter
+				$fileCount++;
 			}
 		}
+
+		// Add to the log
+		Storio::AddLog(time(), "Files Uploaded", $_SESSION['Username'] . ' has uploaded ' . $fileCount . ' new file(s)');
 
 		// Output results
 		$output = array(
