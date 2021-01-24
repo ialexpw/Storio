@@ -290,6 +290,83 @@
 		public static function GenerateFileIcon($file) {
 			// Set out our icons
 
+			// Arrays of file types
+			// Document files
+			$docArr = array("doc", "docx");
+
+			// Video files
+			$vidArr = array(
+				"webm",
+				"mp4"
+			);
+
+			// Image files
+			$imgArr = array(
+				"png",
+				"jpeg",
+				"jpg",
+				"gif",
+				"apng",
+				"ico",
+				"svg",
+				"tiff",
+				"webp"
+			);
+
+			// Text/source files
+			$txtArr = array(
+				"asm",
+				"atom",
+				"c",
+				"cpp",
+				"cs",
+				"css",
+				"d",
+				"dart",
+				"docker",
+				"dockerfile",
+				"go",
+				"h",
+				"htm",
+				"html",
+				"ini",
+				"js",
+				"javascript",
+				"json",
+				"less",
+				"lua",
+				"makefile",
+				"markdown",
+				"md",
+				"nginx",
+				"perl",
+				"php",
+				"py",
+				"python",
+				"rb",
+				"rss",
+				"ruby",
+				"rust",
+				"sass",
+				"scss",
+				"sh",
+				"smarty",
+				"sql",
+				"twig",
+				"txt",
+				"vbnet",
+				"vim",
+				"xml",
+				"yml",
+				"yaml"
+			);
+
+			// Audio files
+			$audArr = array(
+				"mp3",
+				"ogg"
+			);
+
 			// Code icon
 			$cIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-code" viewBox="0 0 16 16">
 			<path d="M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0a.5.5 0 1 0-.708.708L10.293 8 8.646 9.646a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z"/>
@@ -314,12 +391,35 @@
 			<path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8l-2.083-2.083a.5.5 0 0 0-.76.063L8 11 5.835 9.7a.5.5 0 0 0-.611.076L3 12V2z"/>
 			</svg>';
 
-			
+			// Video icon
+			$vIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-play" viewBox="0 0 16 16">
+			<path d="M6 10.117V5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z"/>
+			<path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+			</svg>';
+
+			// Audio icon
+			$aIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-music" viewBox="0 0 16 16">
+			<path d="M10.304 3.13a1 1 0 0 1 1.196.98v1.8l-2.5.5v5.09c0 .495-.301.883-.662 1.123C7.974 12.866 7.499 13 7 13c-.5 0-.974-.134-1.338-.377-.36-.24-.662-.628-.662-1.123s.301-.883.662-1.123C6.026 10.134 6.501 10 7 10c.356 0 .7.068 1 .196V4.41a1 1 0 0 1 .804-.98l1.5-.3z"/>
+			<path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+			</svg>';
+
+
 
 			// Grab the extension
 			$ext = pathinfo($file, PATHINFO_EXTENSION);
 
-			
+			// Check against the arrays
+			if(in_array($ext, $docArr)) {
+				return $wIco;
+			}else if(in_array($ext, $vidArr)) {
+				return $vIco;
+			}else if(in_array($ext, $imgArr)) {
+				return $iIco;
+			}else if(in_array($ext, $txtArr)) {
+				return $cIco;
+			}else if(in_array($ext, $audArr)) {
+				return $aIco;
+			}
 		}
 
 		public static function AddLog($time, $type, $msg) {
