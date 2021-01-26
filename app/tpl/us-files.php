@@ -69,9 +69,6 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
 
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
-		<script>
-			new ClipboardJS(".CopyText");
-		</script>
 
 		<style>
 			* {
@@ -239,6 +236,9 @@
 		<script type="text/javascript" src="app/js/jquery.min.js"></script>
 		<script type="text/javascript" src="app/js/whUp.js"></script>
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
+		<script>
+			new ClipboardJS(".CopyText");
+		</script>
 		
 
 		<!-- Modal -->
