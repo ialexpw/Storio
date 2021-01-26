@@ -273,7 +273,7 @@
 						<form action="?page=us-files<?php echo $post; ?>" method="post">
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Folder name</label>
-								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" />
+								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" maxlength="26" />
 								<input type="hidden" id="uplFldr" name="uplFldr" value="<?php echo $getBrowse; ?>"/>
 								<input type="hidden" id="usrSesr" name="usrSesr" value="<?php echo $_SESSION['Username']; ?>"/>
 							</div>
