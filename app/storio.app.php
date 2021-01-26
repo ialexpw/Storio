@@ -57,6 +57,34 @@
 			return true;
 		}
 
+		public static function LoadSiteConfig() {
+			return json_decode(file_get_contents('users/configs/site-settings.json'), true);
+		}
+
+		public static function DownloadFile($file) {
+			return true;
+		}
+
+		function SimpleCrypt($string, $action = 'e') {
+			// you may change these values to your own
+			$secret_key = 'Storio';
+			$secret_iv = 'ShareLinkGen';
+		 
+			$output = false;
+			$encrypt_method = "AES-256-CBC";
+			$key = hash( 'sha256', $secret_key );
+			$iv = substr( hash( 'sha256', $secret_iv ), 0, 16 );
+		 
+			if( $action == 'e' ) {
+				$output = base64_encode( openssl_encrypt( $string, $encrypt_method, $key, 0, $iv ) );
+			}
+			else if( $action == 'd' ){
+				$output = openssl_decrypt( base64_decode( $string ), $encrypt_method, $key, 0, $iv );
+			}
+		 
+			return $output;
+		}
+
 		/**
 		 * Storio::AddUser($user, $password, $size_mb, $settings)
 		 * Add a user to Storio, user information and permissions are passed through with the array

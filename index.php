@@ -37,6 +37,12 @@
 		session_start();
 	}
 
+	// Download a file
+	if(isset($_GET['dl']) && !empty($_GET['dl'])) {
+		echo Storio::SimpleCrypt('/users/alex/example.file.png');
+		exit();
+	}
+
 	// Simple templating
 	if(!isset($_GET['page']) || empty($_GET['page'])) {
 		Storio::LoadView('login');
