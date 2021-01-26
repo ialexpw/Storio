@@ -39,7 +39,10 @@
 
 	// Download a file
 	if(isset($_GET['dl']) && !empty($_GET['dl'])) {
-		echo Storio::SimpleCrypt('/users/alex/example.file.png');
+		$ex = Storio::SimpleCrypt('/users/alex/example.file.png');
+		echo $ex . '<br /><br />';
+
+		echo Storio::SimpleCrypt($ex, 'd');
 		exit();
 	}
 
