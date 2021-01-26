@@ -14,7 +14,7 @@ $(document).ready(function(){
 		// Get files
 		////////////////////
 
-		//test const files = document.querySelector('[type=file]').files;
+		const files = document.querySelector('[type=file]').files;
 		const formData = new FormData(form);
 
 		////////////////////
@@ -22,13 +22,13 @@ $(document).ready(function(){
 		////////////////////
 
 		// Max files per upload
-		//test if(files.length > maxUploads) {
-		//test 	$('#filename').html("Max "+maxUploads+" uploads at a time");
-		//test 	return;
-		//test }
+		if(files.length > maxUploads) {
+		$('#filename').html("Max "+maxUploads+" uploads at a time");
+			return;
+		}
 
 		// Change label text
-		//test $("#custom-file-label").text("Selected "+files.length+" file(s)");
+		$("#custom-file-label").text("Selected "+files.length+" file(s)");
 		
 
 		// Show progress bar
@@ -38,11 +38,11 @@ $(document).ready(function(){
 		}
 
 		// Upload started
-		//test if(files.length > 1) {
-		//test 	$('#filename').html("Multiple files");
-		//test }else if(files.length == 1){
-		//test 	$('#filename').html(files[0].name);
-		//test }
+		if(files.length > 1) {
+			$('#filename').html("Multiple files");
+		}else if(files.length == 1){
+			$('#filename').html(files[0].name);
+		}
 
 		// Reset progress
 		$('#progress').html("");
@@ -53,20 +53,17 @@ $(document).ready(function(){
 		////////////////////
 
 		// Loop through the files
-		/*for (let i = 0; i < files.length; i++) {
+		for (let i = 0; i < files.length; i++) {
 			let file = files[i];
 
 			// Add the total size of all files
 			totalSize += file.size;
-
-			// Append the file data
-			formData.append('file[]', file);
-		}*/
+		}
 
 		//formData.append();
 
 		// Check file size - if high error (5GB)
-		/*if(totalSize > maxUploadSize) {
+		if(totalSize > maxUploadSize) {
 			$('#filename').html("Maximum size has been exceeded");
 
 			// Hide the progress bar
@@ -76,7 +73,7 @@ $(document).ready(function(){
 
 			// return out
 			return;
-		}*/
+		}
 
 		$.ajax({
 			xhr: function () {
