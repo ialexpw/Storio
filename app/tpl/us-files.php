@@ -213,7 +213,7 @@
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <span style="color:blue; margin-right:22px;">' . $copyIco . '</span> <span style="color:red;">' . $delIco . '</span></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a data-clipboard-text="?dl=' . $encFile . '" href="#"><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <span style="color:red;">' . $delIco . '</span></div>';
 									}
 								}
 
@@ -234,6 +234,7 @@
 		<script type="text/javascript" src="app/js/jquery.min.js"></script>
 		<script type="text/javascript" src="app/js/whUp.js"></script>
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 
 		<!-- Modal -->
 		<div class="modal fade" id="folderModal" tabindex="-1" aria-labelledby="folderModalLabel" aria-hidden="true">
