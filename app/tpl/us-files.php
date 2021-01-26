@@ -213,7 +213,7 @@
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $file);
 
 										// For copy share url
-										$webPath = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 										echo $webPath . '?dl=' . $encFile;
 
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
