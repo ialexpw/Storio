@@ -10,7 +10,6 @@
 	 * @link       https://storio.aw0.uk
 	 */
 
-	 echo $_SERVER['SERVER_NAME'];
 	// Redirect if not logged in
 	if(!Storio::LoggedIn()) {
 		header("Location: ?page=login");
@@ -213,10 +212,13 @@
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $file);
 
+										// For copy share url
+										$webPath = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <span class="copyText" data-clipboard-text="?dl=' . $encFile . '" style="color:blue; margin-right:22px;">' . $copyIco . '</span> <span style="color:red;">' . $delIco . '</span></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a class="copyText" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href=""><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <span style="color:red;">' . $delIco . '</span></div>';
 									}
 								}
 
