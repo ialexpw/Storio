@@ -65,7 +65,7 @@
 			return true;
 		}
 
-		function SimpleCrypt($string, $action = 'e') {
+		public static function SimpleCrypt($string, $action = 'e') {
 			// you may change these values to your own
 			$secret_key = 'Storio';
 			$secret_iv = 'ShareLinkGen';
