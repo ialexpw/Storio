@@ -39,11 +39,22 @@
 
 	// Download a file
 	if(isset($_GET['dl']) && !empty($_GET['dl'])) {
-		$ex = Storio::SimpleCrypt('/users/alex/example.file.png');
-		echo $ex . '<br /><br />';
+		//$ex = Storio::SimpleCrypt('/users/alex/example.file.png');
+		//echo $ex . '<br /><br />';
 
-		echo Storio::SimpleCrypt($ex, 'd');
+		echo Storio::SimpleCrypt($_GET['dl'], 'd');
 		exit();
+		if(file_exists($_GET['dl'])) {
+			header('Content-Description: File Transfer');
+			header('Content-Type: application/octet-stream');
+			header('Content-Disposition: attachment; filename="'.basename($file).'"');
+			header('Expires: 0');
+			header('Cache-Control: must-revalidate');
+			header('Pragma: public');
+			header('Content-Length: ' . filesize($file));
+			readfile($file);
+			exit;
+		}
 	}
 
 	// Simple templating
