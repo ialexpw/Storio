@@ -34,12 +34,12 @@
 	}
 
 	// Creating a new folder
-	if(!empty($_POST['inpFolder']) && $_POST['usrSes'] == $_SESSION['Username']) {
+	if(!empty($_POST['inpFolder']) && $_POST['usrSesr'] == $_SESSION['Username']) {
 		// Validate folder here
 
 		// If folder does not already exist
-		if(!is_dir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
-			if(mkdir($usrDir . $_POST['uplFld'] . '/' . $_POST['inpFolder'])) {
+		if(!is_dir($usrDir . $_POST['uplFldr'] . '/' . $_POST['inpFolder'])) {
+			if(mkdir($usrDir . $_POST['uplFldr'] . '/' . $_POST['inpFolder'])) {
 				// Add to the log
 				Storio::AddLog(time(), "Folder Created", $_SESSION['Username'] . ' has created a new folder named ' . $_POST['inpFolder']);
 
@@ -271,8 +271,8 @@
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Folder name</label>
 								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" />
-								<input type="hidden" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
-								<input type="hidden" id="usrSes" name="usrSes" value="<?php echo $_SESSION['Username']; ?>"/>
+								<input type="hidden" id="uplFldr" name="uplFldr" value="<?php echo $getBrowse; ?>"/>
+								<input type="hidden" id="usrSesr" name="usrSesr" value="<?php echo $_SESSION['Username']; ?>"/>
 							</div>
 							<button type="submit" class="btn btn-primary">Create</button>
 						</form>
