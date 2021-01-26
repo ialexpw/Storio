@@ -68,6 +68,11 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
 
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+		<script>
+			new ClipboardJS(".CopyText");
+		</script>
+
 		<style>
 			* {
 				font-family: 'Nunito', sans-serif;
@@ -234,10 +239,7 @@
 		<script type="text/javascript" src="app/js/jquery.min.js"></script>
 		<script type="text/javascript" src="app/js/whUp.js"></script>
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
-		<script>
-			new ClipboardJS(".CopyText");
-		</script>
+		
 
 		<!-- Modal -->
 		<div class="modal fade" id="folderModal" tabindex="-1" aria-labelledby="folderModalLabel" aria-hidden="true">
