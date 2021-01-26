@@ -10,6 +10,7 @@
 	 * @link       https://storio.aw0.uk
 	 */
 
+	 echo $_SERVER['SERVER_NAME'];
 	// Redirect if not logged in
 	if(!Storio::LoggedIn()) {
 		header("Location: ?page=login");
