@@ -62,7 +62,11 @@
 					Storio::delTree($rmFolder);
 
 					// Reload
-					header('Location: ' . $_SERVER['REQUEST_URI']);
+					if(!empty($_GET['browse'])) {
+						header('Location: ?page=us-files&browse=' . $_GET['browse']);
+					}else{
+						header('Location: ?page=us-files');
+					}
 				}
 			}
 		}else if($_GET['type'] == 'file') {		// Deleting file
@@ -75,7 +79,11 @@
 					unlink($rmFile);
 
 					// Reload
-					header('Location: ' . $_SERVER['REQUEST_URI']);
+					if(!empty($_GET['browse'])) {
+						header('Location: ?page=us-files&browse=' . $_GET['browse']);
+					}else{
+						header('Location: ?page=us-files');
+					}
 				}
 			}
 		}
