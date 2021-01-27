@@ -49,7 +49,37 @@
 		}
 	}
 
-	//Storio::delTree('users/user/testing directory');
+	// Deleting files/folders
+	if(!empty($_GET['del']) && !empty($_GET['type'])) {
+		if($_GET['type'] == 'folder') {			// Deleting folder
+			// Decrypt it
+			$rmFolder = Storio::SimpleCrypt($_GET['del'], 'd');
+
+			// Do a quick user check (does the full path contain the user/folder string)
+			if(strpos($rmFolder, $usrDir) !== false) {
+				// Check the folder exists
+				if(is_dir($rmFolder)) {
+					Storio::delTree($rmFolder);
+
+					// Reload
+					header('Location: ' . $_SERVER['REQUEST_URI']);
+				}
+			}
+		}else if($_GET['type'] == 'file') {		// Deleting file
+			$rmFile = Storio::SimpleCrypt($_GET['del'], 'd');
+
+			// Do a quick user check (does the full path contain the user/folder string)
+			if(strpos($rmFile, $usrDir) !== false) {
+				// Check the file exists
+				if(file_exists($rmFile)) {
+					unlink($rmFile);
+
+					// Reload
+					header('Location: ' . $_SERVER['REQUEST_URI']);
+				}
+			}
+		}
+	}
 ?>
 <!doctype html>
 <html lang="en">
@@ -163,6 +193,9 @@
 										// Generate a link to subfolder
 										$subLink = $getBrowse . '/' . $dir;
 
+										// Encrypt file name
+										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
+
 										// Folder icon
 										$foldIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
 										<path d="M.54 3.87L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
@@ -171,7 +204,7 @@
 										echo '<div class="col-md-6">' . $foldIco . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										echo '<div class="col-md-2" style="text-align:center;">directory</div>';
 										echo '<div class="col-md-2" style="text-align:center;">n/a</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><span style="color:red;">Delete</span></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a href="">?del=' . $encFile . '<span style="color:red;">Delete</span></a></div>';
 									}
 								}
 
@@ -218,7 +251,7 @@
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a class="copyText" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href=""><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <span style="color:red;">' . $delIco . '</span></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a class="copyText" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href=""><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <a href="">?del=' . $encFile . '<span style="color:red;">' . $delIco . '</span></a></div>';
 									}
 								}
 
