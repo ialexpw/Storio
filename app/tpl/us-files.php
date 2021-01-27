@@ -204,7 +204,7 @@
 										echo '<div class="col-md-6">' . $foldIco . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										echo '<div class="col-md-2" style="text-align:center;">directory</div>';
 										echo '<div class="col-md-2" style="text-align:center;">n/a</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a href="?del=' . $encFile . '"><span style="color:red;">Delete</span></a></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '"><span style="color:red;">Delete</span></a></div>';
 									}
 								}
 
@@ -251,7 +251,7 @@
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a class="copyText" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href=""><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <a href="?del=' . $encFile . '"><span style="color:red;">' . $delIco . '</span></a></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a class="copyText" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href=""><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <a href="?page=us-files&del=' . $encFile . '"><span style="color:red;">' . $delIco . '</span></a></div>';
 									}
 								}
 
