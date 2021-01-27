@@ -204,7 +204,7 @@
 										echo '<div class="col-md-6">' . $foldIco . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										echo '<div class="col-md-2" style="text-align:center;">directory</div>';
 										echo '<div class="col-md-2" style="text-align:center;">n/a</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a href="">?del=' . $encFile . '<span style="color:red;">Delete</span></a></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a href="?del=' . $encFile . '"><span style="color:red;">Delete</span></a></div>';
 									}
 								}
 
