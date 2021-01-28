@@ -49,6 +49,8 @@
 
 		// Check storage left
 		if($usrCfg['usedStorage'] >= $usrCfg['maxStorage']) {
+			echo $usrCfg['usedStorage'] . ' ' . $usrCfg['maxStorage'];
+			
 			$output = array(
 				"success" => false,
 				"message" => "storage_full",
