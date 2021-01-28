@@ -301,6 +301,11 @@
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 		<script>
 			new ClipboardJS(".copyText");
+
+			// Focus on the input
+			$('#folderModal').on('shown.bs.modal', function() {
+				$('#inpFolder').focus();
+			})
 		</script>
 		
 
