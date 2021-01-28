@@ -375,6 +375,13 @@
 				"webp"
 			);
 
+			// Compressed files
+			$comArr = array(
+				"zip",
+				"rar",
+				"7z"
+			);
+
 			// Text/source files
 			$txtArr = array(
 				"asm",
@@ -508,6 +515,8 @@
 				return $cIco;
 			}else if(in_array($ext, $audArr)) {
 				return $aIco;
+			}else if(in_array($ext, $comArr)) {
+				return $comIco;
 			}else if($ext == 'pdf') {
 				return $pdIco;
 			}else{
