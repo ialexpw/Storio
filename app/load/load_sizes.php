@@ -2,11 +2,11 @@
 	ini_set('display_errors', '1');
 	ini_set('display_startup_errors', '1');
 	error_reporting(E_ALL);
-	
-	include '../app/storio.app.php';
+
+	include '../../app/storio.app.php';
 
 	// Load the configuration
-	$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
+	$usrCfg = json_decode(file_get_contents('../../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
 
 	if($usrCfg['usedStorage'] > 0) {
 		// Work out the percentage
