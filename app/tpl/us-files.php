@@ -283,7 +283,7 @@
 									$percUsed = 0;
 								}
 
-								echo '<br /><p class="text-center">Storage allocation</p><div class="progress" style="width:50%;">';
+								echo '<br /><hr><p class="text-center">Storage allocation</p><div class="progress" style="width:50%;">';
 								echo '<div class="progress-bar" role="progressbar" style="width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
 								echo '</div>';
 
