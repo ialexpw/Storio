@@ -21,22 +21,16 @@
 	// Get a listing of directories
 	$dirs = array_diff(scandir('users/'), array('.', '..'));
 
-	print_r($dirs);
-	exit();
 	// Loop
-	foreach($dirs as $dir) {
+	foreach($dirs as $usr) {
 		if(!is_dir()) {
 			continue;
 		}
 
-		// Explode the username out
-		$dir = explode("/", $dir);
-		$usr = $dir[1];
-
 		// Check a config file exists (checks the user)
 		if(file_exists('users/configs/' . $usr . '-cfg.json')) {
 			// Calculate the size in mb
-			$getSize = number_format(Storio::getDirectorySize($dir) / 1048576, 2);
+			$getSize = number_format(Storio::getDirectorySize('users/' . $usr) / 1048576, 2);
 
 			// Load the configuration
 			$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
