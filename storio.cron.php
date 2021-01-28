@@ -18,29 +18,31 @@
 
 	include 'app/storio.app.php';
 
-	// Get a listing of directories
-	$dirs = array_diff(scandir('users/'), array('.', '..'));
+	if (php_sapi_name() === 'cli') {
+		// Get a listing of directories
+		$dirs = array_diff(scandir('users/'), array('.', '..'));
 
-	// Loop
-	foreach($dirs as $usr) {
-		if(!is_dir('users/' . $usr)) {
-			continue;
-		}
+		// Loop
+		foreach($dirs as $usr) {
+			if(!is_dir('users/' . $usr)) {
+				continue;
+			}
 
-		// Check a config file exists (checks the user)
-		if(file_exists('users/configs/' . $usr . '-cfg.json')) {
-			// Calculate the size in mb
-			$getSize = number_format(Storio::getDirectorySize('users/' . $usr) / 1048576, 2);
+			// Check a config file exists (checks the user)
+			if(file_exists('users/configs/' . $usr . '-cfg.json')) {
+				// Calculate the size in mb
+				$getSize = number_format(Storio::getDirectorySize('users/' . $usr) / 1048576, 2);
 
-			// Load the configuration
-			$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
+				// Load the configuration
+				$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
 
-			// Add the usage
-			$usrCfg['usedStorage'] = $getSize;
+				// Add the usage
+				$usrCfg['usedStorage'] = $getSize;
 
-			// Encode and resave the config
-			$usrCfgEncode = json_encode($usrCfg);
-			file_put_contents('users/configs/' . $usr . '-cfg.json', $usrCfgEncode);
+				// Encode and resave the config
+				$usrCfgEncode = json_encode($usrCfg);
+				file_put_contents('users/configs/' . $usr . '-cfg.json', $usrCfgEncode);
+			}
 		}
 	}
 ?>
