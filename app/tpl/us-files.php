@@ -287,7 +287,7 @@
 									$percUsed = 0;
 								}
 
-								echo '<br /><hr><p class="text-center">Storage allocation</p><div class="progress" style="width:50%;">';
+								echo '<br /><hr><p class="text-center">Storage allocation</p><div class="progress" style="border: 1px solid #ccc; width:50%;">';
 								echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
 								echo '<small class="justify-content-center d-flex position-absolute w-50">' . $usrCfg['usedStorage'] . 'MB / ' . $usrCfg['maxStorage'] . 'MB</small>';
 								echo '</div>';
@@ -386,9 +386,9 @@
 							</div>
 						</div>-->
 
-						<div class="progress" id="progBar">
-						<div class="progress-bar" id="progressBar" role="progressbar" style="color:black;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-						<small class="justify-content-center d-flex position-absolute w-100"></small>
+						<div class="progress" id="progBar" style="border: 1px solid #ccc; display:none;">
+							<div class="progress-bar" id="progressBar" role="progressbar" style="color:black;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+							<small class="justify-content-center d-flex position-absolute w-100" id="progress"></small>
 						</div>
 
 						<!--
