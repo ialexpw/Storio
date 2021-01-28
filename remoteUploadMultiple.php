@@ -82,8 +82,8 @@
 		// Update the file size total (MB)
 		$fileSize = number_format($fileSize / 1048576, 2);
 
-		// Add to the total
-		Storio::UpdateStorageSize($_SESSION['Username'], $fileSize);
+		// Update folder sizes
+		Storio::UpdateStorageSize($_SESSION['Username']);
 
 		// Output results
 		$output = array(

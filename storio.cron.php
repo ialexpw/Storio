@@ -28,6 +28,8 @@
 				continue;
 			}
 
+			Storio::UpdateStorageSize($usr);
+			/*
 			// Check a config file exists (checks the user)
 			if(file_exists('users/configs/' . $usr . '-cfg.json')) {
 				// Calculate the size in mb
@@ -43,6 +45,7 @@
 				$usrCfgEncode = json_encode($usrCfg);
 				file_put_contents('users/configs/' . $usr . '-cfg.json', $usrCfgEncode);
 			}
+			*/
 		}
 	}
 ?>

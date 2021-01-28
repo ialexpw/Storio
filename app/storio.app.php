@@ -305,14 +305,17 @@
 			}
 		}
 
-		public static function UpdateStorageSize($user, $size) {
+		public static function UpdateStorageSize($user) {
 			// Check directory and config file
 			if(is_dir('users/' . $user) && file_exists('users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration
 				$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
 
+				// Get size of directory
+				$usrDir = Storio::getDirectorySize('users/' . $user);
+
 				// Add the usage
-				$usrCfg['usedStorage'] = number_format($usrCfg['usedStorage'] + $size, 2);
+				$usrCfg['usedStorage'] = number_format(Storio::getDirectorySize('users/' . $user) / 1048576, 2);
 
 				// Encode and resave the config
 				$usrCfgEncode = json_encode($usrCfg);
