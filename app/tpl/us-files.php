@@ -271,8 +271,10 @@
 								// End the row
 								echo '</div>';
 
-								//progress
+								echo '<span class="inpSize"></span>'
 
+								//progress
+								/*
 								// Load the configuration
 								$usrCfg = json_decode(file_get_contents('users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
 
@@ -287,7 +289,7 @@
 								echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
 								echo '<small class="justify-content-center d-flex position-absolute w-50">' . $usrCfg['usedStorage'] . 'MB / ' . $usrCfg['maxStorage'] . 'MB</small>';
 								echo '</div>';
-
+								*/
 								//progress
 							?>
 						</p>
@@ -405,6 +407,16 @@
 			myModal.addEventListener('shown.bs.modal', function () {
 				myInput.focus()
 			})
+
+			// Initially load the table
+			$(document).ready(function () {
+				$('.inpSize').load('app/load/load_sizes.php').stop().fadeIn();
+			});
+		
+			// Reload the messages every 10 seconds
+			setInterval(function(){
+				$('.inpSize').load('app/load/load_sizes.php').stop().fadeIn();
+			}, 10000);
 		</script>
 	</body>
 </html>
