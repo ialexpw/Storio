@@ -386,9 +386,11 @@
 							</div>
 						</div>-->
 
-						<div class="progress" id="progBar" style="border: 1px solid #ccc;">
-							<div class="progress-bar" id="progressBar" role="progressbar" style="color:black;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-							<small class="justify-content-center d-flex position-absolute w-100" id="progress"></small>
+						<div id="progBar" style="display:none;">
+							<div class="progress" style="border: 1px solid #ccc;">
+								<div class="progress-bar" id="progressBar" role="progressbar" style="color:black;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+								<small class="justify-content-center d-flex position-absolute w-100" id="progress"></small>
+							</div>
 						</div>
 
 						<!--
