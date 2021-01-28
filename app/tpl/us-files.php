@@ -262,6 +262,20 @@
 									}
 								}
 
+								// Load the configuration
+								$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
+
+								if($usrCfg['usedStorage'] > 0) {
+									// Work out the percentage
+									$percUsed = number_format($usrCfg['usedStorage'] * (100/$usrCfg['maxStorage']));
+								}else{
+									$percUsed = 0;
+								}
+
+								echo '<div class="progress">';
+								echo '<div class="progress-bar" role="progressbar" style="width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
+								echo '</div>';
+
 								// Empty dir
 								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
 									echo '<div class="col-md-12" style="text-align:center;">Seems this directory is empty!</div>';
