@@ -44,15 +44,11 @@
 
 	// Check directory and config file
 	if(file_exists('users/configs/' . $_SESSION['Username'] . '-cfg.json')) {
-		echo 'a';
 		// Load the configuration
-		$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
+		$usrCfg = json_decode(file_get_contents('users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
 
 		// Check storage left
 		if($usrCfg['usedStorage'] >= $usrCfg['maxStorage']) {
-			echo 'b';
-			echo $usrCfg['usedStorage'] . ' ' . $usrCfg['maxStorage'];
-
 			$output = array(
 				"success" => false,
 				"message" => "storage_full",
