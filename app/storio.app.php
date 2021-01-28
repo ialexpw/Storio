@@ -305,6 +305,21 @@
 			}
 		}
 
+		public static function UpdateStorageSize($user, $size) {
+			// Check directory and config file
+			if(is_dir('users/' . $user) && file_exists('users/configs/' . $user . '-cfg.json')) {
+				// Load the configuration
+				$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
+
+				// Add the usage
+				$usrCfg['usedStorage'] = number_format($usrCfg['usedStorage'] + $size, 2);
+
+				// Encode and resave the config
+				$usrCfgEncode = json_encode($usrCfg);
+				file_put_contents('users/configs/' . $user . '-cfg.json', $usrCfgEncode);
+			}
+		}
+
 		public static function delTree($dir) {
 			$files = array_diff(scandir($dir), array('.', '..'));
 

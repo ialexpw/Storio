@@ -46,6 +46,9 @@
 	// File counter
 	$fileCount = 0;
 
+	// Starter for file size
+	$fileSize = 0;
+
 	// Check the directory exists where you want to upload
 	if(is_dir('users/' . $_POST['usrSes'] . $_POST['uplFld'])) {
 		// Save the upload dir
@@ -65,6 +68,9 @@
 					return false;
 				}
 
+				// Add up the file size
+				$fileSize += $_FILES["file"]["size"][$index];
+
 				// Bump counter
 				$fileCount++;
 			}
@@ -72,6 +78,11 @@
 
 		// Add to the log
 		Storio::AddLog(time(), "Files Uploaded", $_SESSION['Username'] . ' has uploaded ' . $fileCount . ' new file(s)');
+
+		// Update the file size total (MB)
+		$fileSize = number_format($fileSize / 1048576, 2);
+
+		Storio::UpdateStorageSize($_SESSION['Username'], $fileSize);
 
 		// Output results
 		$output = array(
