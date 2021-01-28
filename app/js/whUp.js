@@ -89,10 +89,10 @@ $(document).ready(function(){
 						$('#progressBar').width(percentComplete + "%");
 
 						// Over 20%, change font colour
-						if (percentComplete > 20) {
-							var progFont = document.getElementById("progress");
-							progFont.style.color = "#fff";
-						}
+						//if (percentComplete > 20) {
+						//	var progFont = document.getElementById("progress");
+						//	progFont.style.color = "#fff";
+						//}
 
 						// Complete, wait
 						if (percentComplete === 100) {
