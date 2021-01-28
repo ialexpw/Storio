@@ -381,7 +381,8 @@
 
 						<div class="progress" id="progBar" style="border: 1px solid #000; margin-top:10px; display:none; height:20px;">
 							<div class="progress-bar bg-info" id="progressBar" role="progressbar" style="background-color:#759CC9 !important;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-								<div id="progress" align="center" style="color:black;"></div>
+								<!--<div id="progress" align="center" style="color:black;"></div>-->
+								<small class="justify-content-center d-flex position-absolute w-100" id="progress"></small>
 							</div>
 						</div>
 					</div>

@@ -2,7 +2,7 @@
 	/**
 	 * remoteUploadMultiple.php
 	 *
-	 * Upload mehanism
+	 * Upload mechanism
 	 *
 	 * @package    Storio
 	 * @author     Alex White
