@@ -23,7 +23,7 @@
 
 	// Loop
 	foreach($dirs as $usr) {
-		if(!is_dir()) {
+		if(!is_dir('users/' . $usr)) {
 			continue;
 		}
 
