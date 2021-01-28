@@ -19,11 +19,16 @@
 	include 'app/storio.app.php';
 
 	// Get a listing of directories
-	$dirs = array_filter(glob('/var/www/aw0/Storio/users/*'), 'is_dir');
-	print_r($dirs);
+	$dirs = array_diff(scandir('users/'), array('.', '..'));
 
+	print_r($dirs);
+	exit();
 	// Loop
 	foreach($dirs as $dir) {
+		if(!is_dir()) {
+			continue;
+		}
+
 		// Explode the username out
 		$dir = explode("/", $dir);
 		$usr = $dir[1];
