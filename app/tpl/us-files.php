@@ -120,6 +120,7 @@
 			a {
 				text-decoration:none;
 			}
+			.progress { margin-left: auto; margin-right:auto; }
 		</style>
 
 		<!-- Custom styles -->
@@ -272,7 +273,7 @@
 									$percUsed = 0;
 								}
 
-								echo '<div class="progress center-block" style="width:50%;">';
+								echo '<div class="progress" style="width:50%;">';
 								echo '<div class="progress-bar" role="progressbar" style="width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
 								echo '</div>';
 
