@@ -263,7 +263,7 @@
 								}
 
 								// Load the configuration
-								$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
+								$usrCfg = json_decode(file_get_contents('users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
 
 								if($usrCfg['usedStorage'] > 0) {
 									// Work out the percentage
