@@ -301,14 +301,6 @@
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 		<script>
 			new ClipboardJS(".copyText");
-
-			// Focus on the input
-			var myModal = document.getElementById('folderModal')
-			var myInput = document.getElementById('inpFolder')
-
-			myModal.addEventListener('shown.bs.modal', function () {
-				myInput.focus()
-			})
 		</script>
 		
 
@@ -405,6 +397,14 @@
 				event.preventDefault();
 				document.getElementById("custom-file-label").innerHTML = "Select up to 50 files";
 			}
+
+			// Focus on the input
+			var myModal = document.getElementById('folderModal')
+			var myInput = document.getElementById('inpFolder')
+
+			myModal.addEventListener('shown.bs.modal', function () {
+				myInput.focus()
+			})
 		</script>
 	</body>
 </html>
