@@ -285,7 +285,7 @@
 
 								echo '<br /><hr><p class="text-center">Storage allocation</p><div class="progress" style="width:50%;">';
 								echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100">' . $usrCfg['usedStorage'] . ' / ' . $usrCfg['maxStorage'] . '</div>';
-								echo '<small class="justify-content-center d-flex position-absolute w-50">60% complete</small>';
+								echo '<small class="justify-content-center d-flex position-absolute w-50">' . $usrCfg['usedStorage'] . ' / ' . $usrCfg['maxStorage'] . '</small>';
 								echo '</div>';
 
 								//progress
