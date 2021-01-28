@@ -272,25 +272,6 @@
 								echo '</div>';
 
 								echo '<span class="inpSize"></span>'
-
-								//progress
-								/*
-								// Load the configuration
-								$usrCfg = json_decode(file_get_contents('users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
-
-								if($usrCfg['usedStorage'] > 0) {
-									// Work out the percentage
-									$percUsed = number_format($usrCfg['usedStorage'] * (100/$usrCfg['maxStorage']));
-								}else{
-									$percUsed = 0;
-								}
-
-								echo '<br /><hr><p class="text-center">Storage allocation</p><div class="progress" style="width:50%;">';
-								echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
-								echo '<small class="justify-content-center d-flex position-absolute w-50">' . $usrCfg['usedStorage'] . 'MB / ' . $usrCfg['maxStorage'] . 'MB</small>';
-								echo '</div>';
-								*/
-								//progress
 							?>
 						</p>
 					</div>
@@ -390,11 +371,13 @@
 		</div>
 
 		<script>
+			// Hover over file upload
 			function allowDrop(event) {
 				event.preventDefault();
 				document.getElementById("custom-file-label").innerHTML = "Drop files to upload";
 			}
 
+			// Leave the hover area
 			function leaveDrop(event) {
 				event.preventDefault();
 				document.getElementById("custom-file-label").innerHTML = "Select up to 50 files";
@@ -413,10 +396,10 @@
 				$('.inpSize').load('app/load/load_sizes.php').stop().fadeIn();
 			});
 		
-			// Reload the messages every 10 seconds
+			// Reload the messages every 25 seconds
 			setInterval(function(){
 				$('.inpSize').load('app/load/load_sizes.php').stop().fadeIn();
-			}, 10000);
+			}, 25000);
 		</script>
 	</body>
 </html>
