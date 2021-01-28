@@ -42,6 +42,25 @@
 		exit();
 	}
 
+	// Check directory and config file
+	if(file_exists('users/configs/' . $_SESSION['Username'] . '-cfg.json')) {
+		// Load the configuration
+		$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
+
+		// Check storage left
+		if($usrCfg['usedStorage'] >= $usrCfg['maxStorage']) {
+			$output = array(
+				"success" => false,
+				"message" => "storage_full",
+				"verbose" => "Account storage is full"
+			);
+	
+			header("Content-Type: application/json; charset=utf-8");
+			 echo json_encode($output);
+			exit();
+		}
+	}
+
 	// Get IP
 	$usrIP = $_SERVER['REMOTE_ADDR'];
 
