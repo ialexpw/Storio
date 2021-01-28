@@ -283,6 +283,11 @@
 								if($usrCfg['usedStorage'] > 0) {
 									// Work out the percentage
 									$percUsed = number_format($usrCfg['usedStorage'] * (100/$usrCfg['maxStorage']));
+
+									// Round down if over
+									if($percUsed > 100) {
+										$percUsed = 100;
+									}
 								}else{
 									$percUsed = 0;
 								}

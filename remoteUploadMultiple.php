@@ -20,7 +20,8 @@
 	if($_SERVER['REQUEST_METHOD'] != 'POST') {
 		$output = array(
 			"success" => false,
-			"message" => "invalid_request_method"
+			"message" => "invalid_request_method",
+			"verbose" => "Incorrect method"
 		);
 
 		header("Content-Type: application/json; charset=utf-8");
@@ -32,7 +33,8 @@
 	if($_POST['usrSes'] != $_SESSION['Username']) {
 		$output = array(
 			"success" => false,
-			"message" => "failed_upload"
+			"message" => "failed_upload",
+			"verbose" => "Authentication issue"
 		);
 
 		header("Content-Type: application/json; charset=utf-8");

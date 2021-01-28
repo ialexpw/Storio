@@ -88,12 +88,6 @@ $(document).ready(function(){
 						$('#progress').html("Progress: " + Math.round(percentComplete) + "%");
 						$('#progressBar').width(percentComplete + "%");
 
-						// Over 20%, change font colour
-						//if (percentComplete > 20) {
-						//	var progFont = document.getElementById("progress");
-						//	progFont.style.color = "#fff";
-						//}
-
 						// Complete, wait
 						if (percentComplete === 100) {
 							$('#progress').html("Syncing with download server, please wait...");
