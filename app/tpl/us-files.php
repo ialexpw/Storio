@@ -303,8 +303,11 @@
 			new ClipboardJS(".copyText");
 
 			// Focus on the input
-			$('#folderModal').on('shown.bs.modal', function() {
-				$('#inpFolder').focus();
+			var myModal = document.getElementById('folderModal')
+			var myInput = document.getElementById('inpFolder')
+
+			myModal.addEventListener('shown.bs.modal', function () {
+				myInput.focus()
 			})
 		</script>
 		
