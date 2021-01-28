@@ -409,16 +409,6 @@
 			myModal.addEventListener('shown.bs.modal', function () {
 				myInput.focus()
 			})
-
-			// Initially load the table
-			$(document).ready(function () {
-				$('.inpSize').load('app/load/load_sizes.php').stop().fadeIn();
-			});
-		
-			// Reload the messages every 25 seconds
-			setInterval(function(){
-				$('.inpSize').load('app/load/load_sizes.php').stop().fadeIn();
-			}, 25000);
 		</script>
 	</body>
 </html>
