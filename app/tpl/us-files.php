@@ -263,6 +263,16 @@
 									}
 								}
 
+								// Empty dir
+								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
+									echo '<div class="col-md-12" style="text-align:center;">Seems this directory is empty!</div>';
+								}
+
+								// End the row
+								echo '</div>';
+
+								//progress
+
 								// Load the configuration
 								$usrCfg = json_decode(file_get_contents('users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
 
@@ -277,13 +287,7 @@
 								echo '<div class="progress-bar" role="progressbar" style="width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
 								echo '</div>';
 
-								// Empty dir
-								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
-									echo '<div class="col-md-12" style="text-align:center;">Seems this directory is empty!</div>';
-								}
-
-								// End the row
-								echo '</div>';
+								//progress
 							?>
 						</p>
 					</div>
