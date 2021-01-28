@@ -191,6 +191,7 @@
 									echo '</div>';
 								}
 								
+								echo Storio::getDirectorySize('users/user');
 
 								// Check if there are subfolders first (avoid warnings)
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
