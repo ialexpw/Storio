@@ -181,8 +181,8 @@
 								echo '<div class="row">';
 
 								echo '<div class="col-md-6"><b>File name</b></div>';
-								echo '<div class="col-md-2" style="text-align:center;"><b>Type</b></div>';
-								echo '<div class="col-md-2" style="text-align:center;"><b>Size</b></div>';
+								echo '<div class="col-md-2" style=""><b>Type</b></div>';
+								echo '<div class="col-md-2" style=""><b>Size</b></div>';
 								echo '<div class="col-md-2" style="text-align:center;"><b>Actions</b></div>';
 								echo '<hr>';
 
@@ -216,8 +216,8 @@
 										</svg>';
 
 										echo '<div class="col-md-6">' . $foldIco . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
-										echo '<div class="col-md-2" style="text-align:center;">directory</div>';
-										echo '<div class="col-md-2" style="text-align:center;">n/a</div>';
+										echo '<div class="col-md-2" style="">directory</div>';
+										echo '<div class="col-md-2" style="">n/a</div>';
 										echo '<div class="col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder"><span style="color:red;">Delete</span></a></div>';
 									}
 								}
@@ -263,8 +263,8 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
-										echo '<div class="col-md-2" style="text-align:center;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
-										echo '<div class="col-md-2" style="text-align:center;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
+										echo '<div class="col-md-2" style="">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
+										echo '<div class="col-md-2" style="">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a class="copyText" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href=""><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <a href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;">' . $delIco . '</span></a></div>';
 									}
 								}
