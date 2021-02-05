@@ -47,6 +47,19 @@
 		// Load the configuration
 		$usrCfg = json_decode(file_get_contents('users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
 
+		// Check if user can upload
+		if($usrCfg['canUpload'] != 'true') {
+			$output = array(
+				"success" => false,
+				"message" => "upload_permissions",
+				"verbose" => "User account can not upload files"
+			);
+	
+			header("Content-Type: application/json; charset=utf-8");
+			echo json_encode($output);
+			exit();
+		}
+
 		// Check storage left
 		if($usrCfg['usedStorage'] >= $usrCfg['maxStorage']) {
 			$output = array(
