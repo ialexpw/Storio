@@ -223,6 +223,18 @@
 				}else{
 					return false;
 				}
+			}else if($user == 'admin') {
+				// Load the site configuration
+				$usrCfg = json_decode(file_get_contents('users/configs/site-settings.json'), true);
+
+				// Verify password
+				if(password_verify($pass, $usrCfg['adminPassword'])) {
+					// Set the session
+					$_SESSION['isAdmin'] = $user;
+					return true;
+				}else{
+					return false;
+				}
 			}else{
 				return false;
 			}
