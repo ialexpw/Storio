@@ -108,8 +108,9 @@ $(document).ready(function(){
 				// If error with the upload
 				if(!data.success) {
 					//upload failed
-					$('#progress').html("Upload failed");
-					$('#filename').html(data.verbose);
+					//$('#progress').html("Upload failed");
+					//$('#filename').html(data.verbose);
+					$('#progress').html(data.verbose);
 					return;
 				}
 
