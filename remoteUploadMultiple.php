@@ -52,7 +52,7 @@
 			$output = array(
 				"success" => false,
 				"message" => "upload_permissions",
-				"verbose" => "User account can not upload files"
+				"verbose" => "User account does not have permission to upload files"
 			);
 	
 			header("Content-Type: application/json; charset=utf-8");
@@ -65,7 +65,7 @@
 			$output = array(
 				"success" => false,
 				"message" => "storage_full",
-				"verbose" => "Account storage is full"
+				"verbose" => "Account storage is full, remove some files to free up some space"
 			);
 	
 			header("Content-Type: application/json; charset=utf-8");
