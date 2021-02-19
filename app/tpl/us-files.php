@@ -396,6 +396,7 @@
 		</div>
 
 		<script>
+			// Show toast on click
 			document.getElementById("copyTxt").onclick = function() {
 				$('.toast').toast('show');
 			}
