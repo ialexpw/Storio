@@ -222,47 +222,48 @@
 							</div>
 
 							<!-- Second line -->
+							<div class="row g-3">
+								<!-- Storage allowance -->
+								<div class="col-md-3">
+									<label for="inputStorage" class="form-label">Storage (MB)</label>
+									<input type="number" class="form-control" id="inputStorage" name="inputStorage" value="1000">
+								</div>
 
-							<!-- Is the user enabled -->
-							<div class="col-md-3">
-								<label for="inputEnab" class="form-label">User enabled</label>
-								<select id="inputEnab" name="inputEnab" class="form-select">
-									<option value="true" selected>true</option>
-									<option value="false">false</option>
-								</select>
-							</div>
+								<!-- Is the user enabled -->
+								<div class="col-md">
+									<label for="inputEnab" class="form-label">User enabled</label>
+									<select id="inputEnab" name="inputEnab" class="form-select">
+										<option value="true" selected>true</option>
+										<option value="false">false</option>
+									</select>
+								</div>
 
-							<!-- Storage allowance -->
-							<div class="col-md-3">
-								<label for="inputStorage" class="form-label">Storage (MB)</label>
-								<input type="number" class="form-control" id="inputStorage" name="inputStorage" value="1000">
-							</div>
+								<!-- Can upload files -->
+								<div class="col-md">
+									<label for="inputUpload" class="form-label">Can upload</label>
+									<select id="inputUpload" name="inputUpload" class="form-select">
+										<option value="true" selected>true</option>
+										<option value="false">false</option>
+									</select>
+								</div>
 
-							<!-- Can upload files -->
-							<div class="col-md-2">
-								<label for="inputUpload" class="form-label">Can upload</label>
-								<select id="inputUpload" name="inputUpload" class="form-select">
-									<option value="true" selected>true</option>
-									<option value="false">false</option>
-								</select>
-							</div>
+								<!-- Can share files -->
+								<div class="col-md">
+									<label for="inputShare" class="form-label">Can share</label>
+									<select id="inputShare" name="inputShare" class="form-select">
+										<option value="true" selected>true</option>
+										<option value="false">false</option>
+									</select>
+								</div>
 
-							<!-- Can share files -->
-							<div class="col-md-2">
-								<label for="inputShare" class="form-label">Can share</label>
-								<select id="inputShare" name="inputShare" class="form-select">
-									<option value="true" selected>true</option>
-									<option value="false">false</option>
-								</select>
-							</div>
-
-							<!-- Can delete files -->
-							<div class="col-md-2">
-								<label for="inputDelete" class="form-label">Can delete</label>
-								<select id="inputDelete" name="inputDelete" class="form-select">
-									<option value="true" selected>true</option>
-									<option value="false">false</option>
-								</select>
+								<!-- Can delete files -->
+								<div class="col-md">
+									<label for="inputDelete" class="form-label">Can delete</label>
+									<select id="inputDelete" name="inputDelete" class="form-select">
+										<option value="true" selected>true</option>
+										<option value="false">false</option>
+									</select>
+								</div>
 							</div>
 
 							<!-- Footer and submit -->
