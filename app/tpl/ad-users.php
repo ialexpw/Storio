@@ -191,41 +191,34 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<form class="row g-3" method="post" action="?page=ad-users">
-							<!-- Username -->
-							<div class="col-md-2">
-								<label for="inputUser" class="form-label">Username</label>
-								<input type="text" class="form-control" id="inputUser" name="inputUser" required>
-							</div>
+						<form method="post" action="?page=ad-users">
+							<div class="row g-3">
+								<!-- Username -->
+								<div class="col-md">
+									<label for="inputUser" class="form-label">Username</label>
+									<input type="text" class="form-control" id="inputUser" name="inputUser" required>
+								</div>
 
-							<!-- Email address -->
-							<div class="col-md-3">
-								<label for="inputEmail" class="form-label">Email (optional)</label>
-								<input type="email" class="form-control" id="inputEmail" name="inputEmail">
-							</div>
+								<!-- Email address -->
+								<div class="col-md">
+									<label for="inputEmail" class="form-label">Email (optional)</label>
+									<input type="email" class="form-control" id="inputEmail" name="inputEmail">
+								</div>
 
-							<!-- Password -->
-							<div class="col-md-3">
-								<label for="inputPass" class="form-label">Password</label>
-								<input type="password" class="form-control" id="inputPass" name="inputPass" required>
-							</div>
+								<!-- Password -->
+								<div class="col-md">
+									<label for="inputPass" class="form-label">Password</label>
+									<input type="password" class="form-control" id="inputPass" name="inputPass" required>
+								</div>
 
-							<!-- Welcome email -->
-							<div class="col-md-2">
-								<label for="inputWelcome" class="form-label">Welcome email</label>
-								<select id="inputWelcome" name="inputWelcome" class="form-select">
-									<option value="true" selected>true</option>
-									<option value="false">false</option>
-								</select>
-							</div>
-
-							<!-- Admin user -->
-							<div class="col-md-2">
-								<label for="inputAdmin" class="form-label">Admin user</label>
-								<select id="inputAdmin" name="inputAdmin" class="form-select">
-									<option value="false" selected>false</option>
-									<option value="true">true</option>
-								</select>
+								<!-- Admin user -->
+								<div class="col-md-2">
+									<label for="inputAdmin" class="form-label">Admin user</label>
+									<select id="inputAdmin" name="inputAdmin" class="form-select">
+										<option value="false" selected>false</option>
+										<option value="true">true</option>
+									</select>
+								</div>
 							</div>
 
 							<!-- Second line -->
