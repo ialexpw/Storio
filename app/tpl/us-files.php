@@ -420,8 +420,8 @@
 				myInput.focus()
 			})
 		</script>
-	</body>
-<div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts bottom-0 end-0">
+
+<div aria-live="polite" aria-atomic="true" class="bg-dark bd-example-toasts bottom-0 end-0">
 <div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
 <div class="toast bottom-0 end-0">
 <div class="toast-header">
@@ -435,4 +435,5 @@ Hello, world! This is a toast message.
 </div>
 </div>
 </div>
+	</body>
 </html>
