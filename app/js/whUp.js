@@ -88,8 +88,8 @@ $(document).ready(function(){
 						$('#progress').html("Progress: " + Math.round(percentComplete) + "%");
 						$('#progressBar').width(percentComplete + "%");
 
-						// Over 20%, change font colour
-						if (percentComplete > 20) {
+						// Over 50%, change font colour
+						if (percentComplete > 50) {
 							var progFont = document.getElementById("progress");
 							progFont.style.color = "#fff";
 						}
