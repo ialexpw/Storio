@@ -421,7 +421,7 @@
 			})
 		</script>
 
-<div aria-live="polite" aria-atomic="true" class="bg-dark bd-example-toasts bottom-0 end-0">
+<!--<div aria-live="polite" aria-atomic="true" class="bg-dark bd-example-toasts bottom-0 end-0">
 <div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
 <div class="toast bottom-0 end-0">
 <div class="toast-header">
@@ -430,10 +430,20 @@
 <small>11 mins ago</small>
 </div>
 <div class="toast-body">
+Share link copied to clipboard.
+</div>
+</div>
+</div>
+</div>-->
+
+<div class="toast align-items-center bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+<div class="d-flex">
+<div class="toast-body">
 Hello, world! This is a toast message.
 </div>
+<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
 </div>
 </div>
-</div>
+
 	</body>
 </html>
