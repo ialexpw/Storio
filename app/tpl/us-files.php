@@ -397,7 +397,7 @@
 
 <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts top-0 end-0">
 <div class="toast-container position-absolute p-3 top-0 end-0" id="toastPlacement">
-<div class="toast">
+<div class="toast top-0 end-0">
 <div class="toast-header">
 <img src="..." class="rounded me-2" alt="...">
 <strong class="me-auto">Bootstrap</strong>
