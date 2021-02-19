@@ -395,21 +395,6 @@
 			</div>
 		</div>
 
-<div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts top-0 end-0">
-<div class="toast-container position-absolute p-3 top-0 end-0" id="toastPlacement">
-<div class="toast top-0 end-0">
-<div class="toast-header">
-<img src="..." class="rounded me-2" alt="...">
-<strong class="me-auto">Bootstrap</strong>
-<small>11 mins ago</small>
-</div>
-<div class="toast-body">
-Hello, world! This is a toast message.
-</div>
-</div>
-</div>
-</div>
-
 		<script>
 			document.getElementById("copyTxt").onclick = function() {
 				$('.toast').toast('show');
@@ -436,4 +421,18 @@ Hello, world! This is a toast message.
 			})
 		</script>
 	</body>
+<div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts top-0 end-0">
+<div class="toast-container position-absolute p-3 top-0 end-0" id="toastPlacement">
+<div class="toast top-0 end-0">
+<div class="toast-header">
+<img src="..." class="rounded me-2" alt="...">
+<strong class="me-auto">Bootstrap</strong>
+<small>11 mins ago</small>
+</div>
+<div class="toast-body">
+Hello, world! This is a toast message.
+</div>
+</div>
+</div>
+</div>
 </html>
