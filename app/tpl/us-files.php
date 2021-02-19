@@ -265,7 +265,7 @@
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-2" style="">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 										echo '<div class="col-md-2" style="">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a class="copyText" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href=""><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <a href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;">' . $delIco . '</span></a></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a class="copyText" id="copyTxt" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href=""><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <a href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;">' . $delIco . '</span></a></div>';
 									}
 								}
 
@@ -395,7 +395,23 @@
 			</div>
 		</div>
 
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+<div class="toast-header">
+<img src="..." class="rounded me-2" alt="...">
+<strong class="me-auto">Bootstrap</strong>
+<small>11 mins ago</small>
+<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
+<div class="toast-body">
+Hello, world! This is a toast message.
+</div>
+</div>
+
 		<script>
+			document.getElementById("copyTxt").onclick = function() {
+				toast.show();
+			}
+
 			// Hover over file upload
 			function allowDrop(event) {
 				event.preventDefault();
