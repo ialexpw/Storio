@@ -395,12 +395,18 @@
 			</div>
 		</div>
 
-<div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-<div class="d-flex">
+<div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+<div class="toast-container position-absolute p-3" id="toastPlacement">
+<div class="toast bottom-0 end-0">
+<div class="toast-header">
+<img src="..." class="rounded me-2" alt="...">
+<strong class="me-auto">Bootstrap</strong>
+<small>11 mins ago</small>
+</div>
 <div class="toast-body">
 Hello, world! This is a toast message.
 </div>
-<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
 </div>
 </div>
 
