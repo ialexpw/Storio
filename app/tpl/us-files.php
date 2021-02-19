@@ -409,7 +409,7 @@ Hello, world! This is a toast message.
 
 		<script>
 			document.getElementById("copyTxt").onclick = function() {
-				toast.show();
+				$('.toast').toast('show');
 			}
 
 			// Hover over file upload
