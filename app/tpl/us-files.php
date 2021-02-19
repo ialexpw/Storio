@@ -371,6 +371,8 @@
 							?>
 						</p>
 
+						<div id="filename"></div>
+
 						<form method="post" id="upload" enctype="multipart/form-data" style="margin:0px; padding:0px; display:inline;">
 							<div class="custom-file" ondragover="allowDrop(event)" ondragleave="leaveDrop(event)" id="customFile" style="margin-top:10px;">
 								<input type="file" name="file[]" class="custom-file-input" id="fileInput" aria-describedby="fileHelp" multiple>
