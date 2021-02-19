@@ -132,9 +132,8 @@
 									echo '<tr>';
 									echo '<th scope="col">User</th>';
 									echo '<th scope="col">Storage</th>';
-									echo '<th scope="col">View</th>';
+									echo '<th scope="col">Enabled</th>';
 									echo '<th scope="col">Upload</th>';
-									echo '<th scope="col">Edit</th>';
 									echo '<th scope="col">Share</th>';
 									echo '<th scope="col">Delete</th>';
 									echo '<th scope="col">Admin</th>';
@@ -161,9 +160,8 @@
 										echo '<tr>';
 										echo '<td style="width:14%;">' . $usr . '</td>';
 										echo '<td style="width:14%;">' . number_format($usrCfg['usedStorage']) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
-										echo '<td style="width:12%;">' . $usrCfg['canView'] . '</td>';
+										echo '<td style="width:12%;">' . $usrCfg['isEnabled'] . '</td>';
 										echo '<td style="width:12%;">' . $usrCfg['canUpload'] . '</td>';
-										echo '<td style="width:12%;">' . $usrCfg['canEdit'] . '</td>';
 										echo '<td style="width:12%;">' . $usrCfg['canShare'] . '</td>';
 										echo '<td style="width:12%;">' . $usrCfg['canDelete'] . '</td>';
 										echo '<td style="width:12%;">' . $usrCfg['isAdmin'] . '</td>';
@@ -232,34 +230,25 @@
 
 							<!-- Second line -->
 
-							<!-- Storage allowance -->
-							<div class="col-md-2">
-								<label for="inputStorage" class="form-label">Storage (MB)</label>
-								<input type="number" class="form-control" id="inputStorage" name="inputStorage" value="1000">
-							</div>
-
-							<!-- Can view files -->
-							<div class="col-md-2">
-								<label for="inputView" class="form-label">Can view</label>
-								<select id="inputView" name="inputView" class="form-select">
+							<!-- Is the user enabled -->
+							<div class="col-md-3">
+								<label for="inputEnab" class="form-label">User enabled</label>
+								<select id="inputEnab" name="inputEnab" class="form-select">
 									<option value="true" selected>true</option>
 									<option value="false">false</option>
 								</select>
+							</div>
+
+							<!-- Storage allowance -->
+							<div class="col-md-3">
+								<label for="inputStorage" class="form-label">Storage (MB)</label>
+								<input type="number" class="form-control" id="inputStorage" name="inputStorage" value="1000">
 							</div>
 
 							<!-- Can upload files -->
 							<div class="col-md-2">
 								<label for="inputUpload" class="form-label">Can upload</label>
 								<select id="inputUpload" name="inputUpload" class="form-select">
-									<option value="true" selected>true</option>
-									<option value="false">false</option>
-								</select>
-							</div>
-
-							<!-- Can edit files -->
-							<div class="col-md-2">
-								<label for="inputEdit" class="form-label">Can edit</label>
-								<select id="inputEdit" name="inputEdit" class="form-select">
 									<option value="true" selected>true</option>
 									<option value="false">false</option>
 								</select>

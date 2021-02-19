@@ -104,7 +104,7 @@
 					"passWord" => $password,
 					"usedStorage" => 0,
 					"maxStorage" => $size_mb,
-					"canView" => $settings['view'],
+					"isEnabled" => $settings['enabled'],
 					"canUpload" => $settings['upload'],
 					"canShare" => $settings['share'],
 					"canDelete" => $settings['delete'],
@@ -181,11 +181,10 @@
 
 			// Create the array
 			$usrAr = array(
-				"view" => $post['inputView'],
+				"enabled" => $post['inputEnab'],
 				"upload" => $post['inputUpload'],
 				"share" => $post['inputShare'],
 				"delete" => $post['inputDelete'],
-				"edit" => $post['inputEdit'],
 				"admin" => $post['inputAdmin']
 			);
 
