@@ -392,6 +392,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+
 <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
 <div class="toast-container position-absolute p-3" id="toastPlacement">
 <div class="toast bottom-0 end-0">
@@ -406,8 +409,6 @@ Hello, world! This is a toast message.
 </div>
 </div>
 </div>
-			</div>
-		</div>
 
 		<script>
 			document.getElementById("copyTxt").onclick = function() {
