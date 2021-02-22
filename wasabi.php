@@ -52,7 +52,7 @@ $client = S3Client::factory(array(
 	'secret' => $secret,
 ]
 ));
-
+echo '<pre>';
 try {
 $objects = $client->listObjects([
 'Bucket' => 'storio'
@@ -67,4 +67,5 @@ print_r($objectArray);
 } catch (S3Exception $e) {
 echo$e->getMessage() . PHP_EOL;
 }
+echo '</pre>';
 ?>
