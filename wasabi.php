@@ -5,6 +5,9 @@
 
 	// Include the SDK using the Composer autoloader
 	require 'vendor/autoload.php';
+
+	$key = "15AXQMANCB2TOXJ3H836";
+	$secret = "fmXrs7lGcjAwlvTWGC2AYjesCoNfAi2WEh5lciOT";
 /*
 	use Aws\S3\S3Client;
 
