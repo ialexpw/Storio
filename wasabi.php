@@ -39,11 +39,11 @@ use Aws\Exception\AwsException;
 // require the amazon sdk from your composer vendor dir
 //require '<path for>/vendor/autoload.php';
 
-putenv('HOME=/var/www');
+//putenv('HOME=/var/www');
 
 $client = S3Client::factory(array(
-'endpoint' => 'http://s3.wasabisys.com',
-'profile' => 'wasabi',
+'endpoint' => 'http://s3.eu-central-1.wasabisys.com',
+//'profile' => 'wasabi',
 'region' => 'eu-central-1',
 'version' => 'latest',
 'use_path_style_endpoint' => true,
