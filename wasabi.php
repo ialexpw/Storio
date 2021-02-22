@@ -24,5 +24,5 @@
 	));
 
 	//Sample to create a bucket
-	$s3Client->createBucket(array('Bucket' => 'test1'));
+	$s3Client->createBucket(array('Bucket' => 'tdfst124734kdf'));
 ?>
