@@ -37,10 +37,6 @@
 				font-family: 'Nunito', sans-serif;
 			}
 
-			body {
-				background-color: #F7F7F7;
-			}
-
 			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
 				height:94px;
 			}
