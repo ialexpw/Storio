@@ -43,7 +43,7 @@ putenv('HOME=/var/www');
 
 $client = S3Client::factory(array(
 'endpoint' => 'http://s3.wasabisys.com',
-'profile' => 'default',
+'profile' => 'wasabi',
 'region' => 'eu-central-1',
 'version' => 'latest',
 'use_path_style_endpoint' => true,
