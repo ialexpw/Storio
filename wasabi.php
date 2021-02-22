@@ -16,7 +16,7 @@
 
 	// Instantiate the S3 client using your Wasabi profile
 	$s3Client = S3Client::factory(array(
-		'endpoint' => 'http://s3.wasabisys.com',
+		'endpoint' => 'http://s3.eu-central-1.wasabisys.com',
 		//'profile' => 'wasabi',
 		'region' => 'eu-central-1',
 		'version' => 'latest',
