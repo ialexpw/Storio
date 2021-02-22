@@ -38,7 +38,7 @@
 			}
 
 			body {
-				background-color: #F2F3F5;
+				background-color: #F7F7F7;
 			}
 
 			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
