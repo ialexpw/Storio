@@ -5,7 +5,7 @@
 
 	// Include the SDK using the Composer autoloader
 	require 'vendor/autoload.php';
-
+/*
 	use Aws\S3\S3Client;
 
 	$key = "15AXQMANCB2TOXJ3H836";
@@ -25,4 +25,41 @@
 
 	//Sample to create a bucket
 	$s3Client->createBucket(array('Bucket' => 'tdfst124734kdf'));
+
+*/
+
+
+
+	use Aws\S3\S3Client;
+use Aws\Exception\AwsException;
+
+// require the amazon sdk from your composer vendor dir
+//require '<path for>/vendor/autoload.php';
+
+$client = S3Client::factory(array(
+'endpoint' => 'http://s3.wasabisys.com',
+//'profile' => 'wasabi',
+'region' => 'eu-central-1',
+'version' => 'latest',
+'use_path_style_endpoint' => true,
+'credentials' => [
+	'key' => $key,
+	'secret' => $secret,
+]
+));
+
+try {
+$objects = $client->listObjects([
+'Bucket' => 'storio'
+]);
+
+$objectArray = array();
+foreach ($objects as $object) {
+$objectArray[] = $object;
+}
+
+print_r($objectArray);
+} catch (S3Exception $e) {
+echo$e->getMessage() . PHP_EOL;
+}
 ?>
