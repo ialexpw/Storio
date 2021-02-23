@@ -404,8 +404,6 @@
 							</div>
 						</form>
 
-						<br />
-
 						<div id="progBar" style="display:none;">
 							<div class="progress" style="border: 1px solid #000;">
 								<div class="progress-bar" id="progressBar" role="progressbar" style="color:black;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -413,7 +411,7 @@
 							</div>
 						</div>
 
-						<div style="text-align:center;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></div>
+						<p style="text-align:center;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></p>
 
 						<?php
 							}else{
