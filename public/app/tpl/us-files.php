@@ -361,6 +361,10 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
+						<?php
+							// Permission to upload
+							if($usrCfg['canUpload'] == 'true') {
+						?>
 						<p>
 							<?php
 								// Showing where uploads will go
@@ -372,10 +376,6 @@
 							?>
 						</p>
 
-						<?php
-							// Permission to upload
-							if($usrCfg['canUpload'] == 'true') {
-						?>
 						<div id="filename"></div>
 
 						<form method="post" id="upload" enctype="multipart/form-data" style="margin:0px; padding:0px; display:inline;">
