@@ -17,6 +17,7 @@ var Heart = {
      * Begin heartbeats
      */
     start: function() {
+        Heart.log('Started');
         Heart.getSessionId();
         Heart.timer = setInterval(Heart.beat, Heart.pulse * 1000);
     },
