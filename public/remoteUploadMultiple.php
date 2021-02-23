@@ -34,7 +34,7 @@
 		$output = array(
 			"success" => false,
 			"message" => "failed_upload",
-			"verbose" => "Authentication issue"
+			"verbose" => "Authentication failure"
 		);
 
 		header("Content-Type: application/json; charset=utf-8");
