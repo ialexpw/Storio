@@ -197,7 +197,7 @@
 										// Loop users
 										foreach($dirs as $usr) {
 											// Remove the users/ prefix
-											$usr = str_replace("users/", "", $usr);
+											$usr = str_replace("../users/", "", $usr);
 
 											// Skip the configs dir
 											if($usr == 'configs') {
