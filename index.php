@@ -16,6 +16,8 @@
 
 	include 'app/storio.app.php';
 
+	define('INC_DATA', true);
+
 	// Check for the install file
 	if(!file_exists('users/configs/site-settings.json')) {
 		// Check the users dir permissions

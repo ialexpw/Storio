@@ -10,5 +10,8 @@
 	 * @link       https://storio.aw0.uk
 	 */
 
+	if(!defined('INC_DATA')) {
+		exit('error');
+	}
 ?>
 404
