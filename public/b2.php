@@ -77,7 +77,11 @@
 	//]);
 
 	// Retrieve an array of file objects from a bucket.
-	//$fileList = $client->listFiles([
-	//	'BucketId' => '4d2dbbe08e1e983c5e6f0d12'
-	//]);
+	$fileList = $client->listFiles([
+		'BucketId' => '3bb2cd71bdc9c3e479750c1c'
+	]);
+
+	echo '<pre>';
+	print_r($fileList);
+	echo '</pre>';
 ?>
