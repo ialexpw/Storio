@@ -390,8 +390,10 @@
 
 						<form method="post" id="upload" enctype="multipart/form-data" style="margin:0px; padding:0px; display:inline;">
 <div class="mb-3">
-<label for="formFile" class="form-label">Default file input example</label>
-<input class="form-control" type="file" id="formFile">
+<label for="fileInput" class="form-label">Select up to 10 files</label>
+<input class="form-control" type="file" name="file[]" id="fileInput">
+<input type="hidden" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
+<input type="hidden" id="usrSes" name="usrSes" value="<?php echo $_SESSION['Username']; ?>"/>
 </div>
 							
 							<div class="custom-file" ondragover="allowDrop(event)" ondragleave="leaveDrop(event)" id="customFile" style="margin-top:10px;">
