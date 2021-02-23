@@ -82,10 +82,10 @@
 						</ul>
 					</div>
 					<div class="card-body">
-						<!-- Intro to the dashboard -->
+						<!-- User Settings -->
 						<br />
-						<h4 class="card-title">Welcome to your Dashboard</h4>
-						<p class="card-text" style="margin-top:15px;">This is Storio!</p>
+						<h4 class="card-title">User Settings</h4>
+						<p class="card-text" style="margin-top:15px;">Change password</p>
 					</div>
 				</div>
 			</div>
