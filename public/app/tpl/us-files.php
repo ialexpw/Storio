@@ -321,6 +321,10 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
+						<?php
+							// Permission to upload
+							if($usrCfg['canUpload'] == 'true') {
+						?>
 						<p>
 							<?php
 								// Showing where the folder will go
@@ -347,6 +351,12 @@
 							</div>
 							<button type="submit" class="btn btn-primary">Create</button>
 						</form>
+
+						<?php
+							}else{
+								echo 'Uploading has been disabled for this account';
+							}
+						?>
 					</div>
 				</div>
 			</div>
