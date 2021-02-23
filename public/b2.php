@@ -9,9 +9,9 @@
 	use obregonco\B2\Client;
 	use obregonco\B2\Bucket;
 
-	$client = new Client('accountId', [
-		'keyId' => 'b2d1d93495cc', // optional if you want to use master key (account Id)
-		'applicationKey' => '0039d391169a861247445a9ae6401c0b70591b0552',
+	$client = new Client('b2d1d93495cc', [
+		'keyId' => '003b2d1d93495cc0000000002', // optional if you want to use master key (account Id)
+		'applicationKey' => 'K003L4gLu7XL9KcxlWroDBoNbcbAh7s',
 	]);
 
 	$client->version = 2; // By default will use version 1
