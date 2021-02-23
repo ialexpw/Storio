@@ -33,6 +33,9 @@
 		header("Location: ?logout");
 	}
 
+	// Load the configuration
+	$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
+
 	// Creating a new folder
 	if(!empty($_POST['inpFolder']) && $_POST['usrSesr'] == $_SESSION['Username']) {
 		// Validate folder here
@@ -277,9 +280,7 @@
 								// End the row
 								echo '</div>';
 
-								// Load the configuration
-								$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
-
+								// Work out the percentage of used space
 								if($usrCfg['usedStorage'] > 0) {
 									// Work out the percentage
 									$percUsed = number_format($usrCfg['usedStorage'] * (100/$usrCfg['maxStorage']));
@@ -371,6 +372,10 @@
 							?>
 						</p>
 
+						<?php
+							// Permission to upload
+							if($usrCfg['canUpload'] == 'true') {
+						?>
 						<div id="filename"></div>
 
 						<form method="post" id="upload" enctype="multipart/form-data" style="margin:0px; padding:0px; display:inline;">
@@ -392,6 +397,12 @@
 								<small class="justify-content-center d-flex position-absolute w-100" id="progress"></small>
 							</div>
 						</div>
+
+						<?php
+							}else{
+								echo 'Uploading has been disabled for this account';
+							}
+						?>
 					</div>
 				</div>
 			</div>
