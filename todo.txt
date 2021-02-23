@@ -25,9 +25,9 @@ Site Settings
 General Features
 	* Zip files together
 	* Ability to move files
-	* Create folders/sub-folders
+	* Create folders/sub-folders x
 	* Edit/view certain types of files
-	* Share with unique links
+	* Share with unique links x
 		* Password option
 		* Force download option
 	* Track information about files
