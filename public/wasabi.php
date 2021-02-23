@@ -4,7 +4,7 @@
 	error_reporting(-1);
 
 	// Include the SDK using the Composer autoloader
-	require 'vendor/autoload.php';
+	require '../vendor/autoload.php';
 
 	$key = "15AXQMANCB2TOXJ3H836";
 	$secret = "fmXrs7lGcjAwlvTWGC2AYjesCoNfAi2WEh5lciOT";
