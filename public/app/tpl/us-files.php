@@ -312,8 +312,7 @@
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 		<script>
 			new ClipboardJS(".copyText");
-		</script>
-		
+		</script>		
 
 		<!-- Modal -->
 		<div class="modal fade" id="folderModal" tabindex="-1" aria-labelledby="folderModalLabel" aria-hidden="true">

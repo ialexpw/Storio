@@ -92,6 +92,8 @@
 			</div>
 		</main>
 
-		<script src="app/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="app/js/jquery.min.js"></script>
+		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="app/js/session.js"></script>
 	</body>
 </html>
