@@ -7,7 +7,7 @@
 	 * @package    Storio
 	 * @author     Alex White
 	 * @copyright  2021 Storio
-	 * @link       https://storio.aw0.uk
+	 * @link       https://storio.uk
 	 */
 
 	ini_set('display_errors', '1');

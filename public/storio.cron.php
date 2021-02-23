@@ -8,18 +8,18 @@
 	 * @package    Storio
 	 * @author     Alex White
 	 * @copyright  2021 Storio
-	 * @link       https://storio.aw0.uk
+	 * @link       https://storio.uk
 	 */
 
 	include 'app/storio.app.php';
 
 	if (php_sapi_name() === 'cli') {
 		// Get a listing of directories
-		$dirs = array_diff(scandir('users/'), array('.', '..'));
+		$dirs = array_diff(scandir('../users/'), array('.', '..'));
 
 		// Loop the users
 		foreach($dirs as $usr) {
-			if(!is_dir('users/' . $usr)) {
+			if(!is_dir('../users/' . $usr)) {
 				continue;
 			}
 
