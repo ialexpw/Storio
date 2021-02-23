@@ -4,7 +4,7 @@
 var Heart = {
     url:         'https://storio.uk', // server script to hit
     logging:     true, // log to console for debugging
-    pulse:       300, // heartbeat interval in seconds
+    pulse:       150, // heartbeat interval in seconds
     maxTimeouts: 3, // max timeouts before "heart attack" (stop)
     sessionName: 'PHPSESSID', // session cookie name
 
@@ -17,7 +17,6 @@ var Heart = {
      * Begin heartbeats
      */
     start: function() {
-        Heart.log('Started');
         Heart.getSessionId();
         Heart.timer = setInterval(Heart.beat, Heart.pulse * 1000);
     },
