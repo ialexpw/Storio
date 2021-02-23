@@ -7,7 +7,7 @@
 	 * @package    Storio
 	 * @author     Alex White
 	 * @copyright  2021 Storio
-	 * @link       https://storio.aw0.uk
+	 * @link       https://storio.uk
 	 */
 
 	$sessTimeout = 7200;
@@ -66,27 +66,29 @@
 		}
 
 		public static function SimpleCrypt($string, $action = 'e') {
-			// you may change these values to your own
+			// Change these to encrypt links - changing these will void all previous share links
 			$secret_key = 'Storio';
 			$secret_iv = 'ShareLinkGen';
-		 
+
 			$output = false;
 			$encrypt_method = "AES-256-CBC";
-			$key = hash( 'sha256', $secret_key );
-			$iv = substr( hash( 'sha256', $secret_iv ), 0, 16 );
+			$key = hash('sha256', $secret_key);
+			$iv = substr(hash('sha256', $secret_iv), 0, 16);
 		 
-			if( $action == 'e' ) {
-				$output = base64_encode( openssl_encrypt( $string, $encrypt_method, $key, 0, $iv ) );
+			// If encrypting
+			if($action == 'e') {
+				$output = base64_encode(openssl_encrypt($string, $encrypt_method, $key, 0, $iv));
 			}
-			else if( $action == 'd' ){
-				$output = openssl_decrypt( base64_decode( $string ), $encrypt_method, $key, 0, $iv );
+			// If decrypting
+			else if($action == 'd'){
+				$output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv);
 			}
 		 
 			return $output;
 		}
 
 		/**
-		 * Storio::AddUser($user, $password, $size_mb, $settings)
+		 * Storio::AddUser()
 		 * Add a user to Storio, user information and permissions are passed through with the array
 		 */
 		public static function AddUser($user, $email="", $password, $size_mb, $settings) {
@@ -108,7 +110,6 @@
 					"canUpload" => $settings['upload'],
 					"canShare" => $settings['share'],
 					"canDelete" => $settings['delete'],
-					"canEdit" => $settings['edit'],
 					"isAdmin" => $settings['admin']
 				);
 
