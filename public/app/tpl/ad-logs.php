@@ -17,7 +17,7 @@
 
 	// Check for logfile
 	if(file_exists('users/configs/site-logs.txt')) {
-		$logFile = file_get_contents('users/configs/site-logs.txt');
+		$logFile = file_get_contents('../users/configs/site-logs.txt');
 	}else{
 		$logFile = 'Storio logs are currently empty!';
 	}

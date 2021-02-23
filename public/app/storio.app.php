@@ -50,7 +50,7 @@
 			$jsonCfg = json_encode($siteCfg);
 
 			// Create the json configuration file and write the contents
-			$siteFile = fopen('users/configs/site-settings.json','w+');
+			$siteFile = fopen('../users/configs/site-settings.json','w+');
 			fwrite($siteFile, $jsonCfg);
 			fclose($siteFile);
 
@@ -58,7 +58,7 @@
 		}
 
 		public static function LoadSiteConfig() {
-			return json_decode(file_get_contents('users/configs/site-settings.json'), true);
+			return json_decode(file_get_contents('../users/configs/site-settings.json'), true);
 		}
 
 		public static function DownloadFile($file) {
@@ -91,7 +91,7 @@
 		 */
 		public static function AddUser($user, $email="", $password, $size_mb, $settings) {
 			// Check if a user already exists
-			if(file_exists('users/' . $user)) {
+			if(file_exists('../users/' . $user)) {
 				return false;
 			}
 
@@ -116,7 +116,7 @@
 				$jsonCfg = json_encode($usrCfg);
 
 				// Create the json configuration file and write the contents
-				$usrFile = fopen('users/configs/' . $user . '-cfg.json','w+');
+				$usrFile = fopen('../users/configs/' . $user . '-cfg.json','w+');
 				fwrite($usrFile, $jsonCfg);
 				fclose($usrFile);
 
@@ -205,9 +205,9 @@
 			}
 
 			// Check directory and config file
-			if(is_dir('users/' . $user) && file_exists('users/configs/' . $user . '-cfg.json')) {
+			if(is_dir('users/' . $user) && file_exists('../users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration
-				$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
+				$usrCfg = json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
 
 				// Verify password
 				if(password_verify($pass, $usrCfg['passWord'])) {
@@ -224,7 +224,7 @@
 				}
 			}else if($user == 'admin') {
 				// Load the site configuration
-				$usrCfg = json_decode(file_get_contents('users/configs/site-settings.json'), true);
+				$usrCfg = json_decode(file_get_contents('../users/configs/site-settings.json'), true);
 
 				// Verify password
 				if(password_verify($pass, $usrCfg['adminPassword'])) {
@@ -318,19 +318,19 @@
 
 		public static function UpdateStorageSize($user) {
 			// Check directory and config file
-			if(is_dir('users/' . $user) && file_exists('users/configs/' . $user . '-cfg.json')) {
+			if(is_dir('../users/' . $user) && file_exists('../users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration
-				$usrCfg = json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
+				$usrCfg = json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
 
 				// Get size of directory
-				$usrDir = Storio::getDirectorySize('users/' . $user);
+				$usrDir = Storio::getDirectorySize('../users/' . $user);
 
 				// Add the usage
-				$usrCfg['usedStorage'] = number_format(Storio::getDirectorySize('users/' . $user) / 1048576, 2);
+				$usrCfg['usedStorage'] = number_format(Storio::getDirectorySize('../users/' . $user) / 1048576, 2);
 
 				// Encode and resave the config
 				$usrCfgEncode = json_encode($usrCfg);
-				file_put_contents('users/configs/' . $user . '-cfg.json', $usrCfgEncode);
+				file_put_contents('../users/configs/' . $user . '-cfg.json', $usrCfgEncode);
 			}
 		}
 
@@ -543,7 +543,7 @@
 			$logData .= $type . '> ' . $msg . "\n";
 
 			// Insert the data
-			file_put_contents('users/configs/site-logs.txt', $logData, FILE_APPEND);
+			file_put_contents('../users/configs/site-logs.txt', $logData, FILE_APPEND);
 		}
 
 		/**

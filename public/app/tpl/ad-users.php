@@ -16,7 +16,7 @@
 	}
 
 	// Get the user list from the dir structure
-	$dirs = array_filter(glob('users/*'), 'is_dir');
+	$dirs = array_filter(glob('../users/*'), 'is_dir');
 
 	// Validate and create a new user
 	if(!empty($_POST)) {
@@ -144,7 +144,7 @@
 									// Loop users
 									foreach($dirs as $usr) {
 										// Remove the users/ prefix
-										$usr = str_replace("users/", "", $usr);
+										$usr = str_replace("../users/", "", $usr);
 
 										// Skip the configs dir
 										if($usr == 'configs') {
@@ -152,8 +152,8 @@
 										}
 
 										// Try and get the config
-										if(file_exists('users/configs/' . $usr . '-cfg.json')) {
-											$usrCfg = json_decode(file_get_contents('users/configs/' . $usr . '-cfg.json'), true);
+										if(file_exists('../users/configs/' . $usr . '-cfg.json')) {
+											$usrCfg = json_decode(file_get_contents('../users/configs/' . $usr . '-cfg.json'), true);
 										}
 
 										// Add table row

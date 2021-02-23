@@ -43,9 +43,9 @@
 	}
 
 	// Check directory and config file
-	if(file_exists('users/configs/' . $_SESSION['Username'] . '-cfg.json')) {
+	if(file_exists('../users/configs/' . $_SESSION['Username'] . '-cfg.json')) {
 		// Load the configuration
-		$usrCfg = json_decode(file_get_contents('users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
+		$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
 
 		// Check if user can upload
 		if($usrCfg['canUpload'] != 'true') {
@@ -84,9 +84,9 @@
 	$fileSize = 0;
 
 	// Check the directory exists where you want to upload
-	if(is_dir('users/' . $_POST['usrSes'] . $_POST['uplFld'])) {
+	if(is_dir('../users/' . $_POST['usrSes'] . $_POST['uplFld'])) {
 		// Save the upload dir
-		$dirUpl = 'users/' . $_POST['usrSes'] . $_POST['uplFld'];
+		$dirUpl = '../users/' . $_POST['usrSes'] . $_POST['uplFld'];
 
 		// Loop the files
 		foreach($_FILES['file']['tmp_name'] as $index => $tmpName ) {

@@ -16,7 +16,7 @@
 	}
 
 	// Get the user list from the dir structure
-	$dirs = array_filter(glob('users/*'), 'is_dir');
+	$dirs = array_filter(glob('../users/*'), 'is_dir');
 ?>
 <!doctype html>
 <html lang="en">
