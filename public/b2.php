@@ -36,7 +36,9 @@
 	// Retrieve an array of Bucket objects on your account.
 	$buckets = $client->listBuckets();
 
+	echo '<pre>';
 	print_r($buckets);
+	echo '</pre>';
 
 	// Delete a bucket.
 	//$client->deleteBucket([
