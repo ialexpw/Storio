@@ -4,7 +4,7 @@
 	error_reporting(-1);
 
 	// Include the SDK using the Composer autoloader
-	require 'vendor/autoload.php';
+	require '../vendor/autoload.php';
 
 	use obregonco\B2\Client;
 	use obregonco\B2\Bucket;
