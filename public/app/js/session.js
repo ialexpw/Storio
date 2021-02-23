@@ -3,7 +3,7 @@
  */
 var Heart = {
     url:         'https://storio.uk', // server script to hit
-    logging:     false, // log to console for debugging
+    logging:     true, // log to console for debugging
     pulse:       300, // heartbeat interval in seconds
     maxTimeouts: 3, // max timeouts before "heart attack" (stop)
     sessionName: 'PHPSESSID', // session cookie name
