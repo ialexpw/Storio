@@ -403,7 +403,6 @@
 								</div>
 							</div>
 						</form>
-						<p style="text-align:center;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></p>
 
 						<br />
 
@@ -413,6 +412,8 @@
 								<small class="justify-content-center d-flex position-absolute w-100" id="progress"></small>
 							</div>
 						</div>
+
+						<div style="text-align:center;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></div>
 
 						<?php
 							}else{
