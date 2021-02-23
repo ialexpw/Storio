@@ -411,9 +411,7 @@
 							</div>
 						</div>
 
-						<hr>
-
-						<p style="text-align:center; margin-top:5px;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></p>
+						<p style="text-align:center; margin-top:10px;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></p>
 
 						<?php
 							}else{
