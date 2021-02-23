@@ -388,22 +388,29 @@
 
 						<div id="filename"></div>
 
+						<hr>
+
 						<form method="post" id="upload" enctype="multipart/form-data" style="margin:0px; padding:0px; display:inline;">
+
+<div class="custom-file" ondragover="allowDrop(event)" ondragleave="leaveDrop(event)" style="margin-top:10px;">
 <div class="mb-3">
 <label for="fileInput" class="form-label">Select up to 10 files</label>
-<input class="form-control" type="file" name="file[]" id="fileInput">
+<input class="form-control" type="file" name="file[]" id="fileInput" multiple>
 <input type="hidden" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
 <input type="hidden" id="usrSes" name="usrSes" value="<?php echo $_SESSION['Username']; ?>"/>
 </div>
+</div>
 							
+							<!--
 							<div class="custom-file" ondragover="allowDrop(event)" ondragleave="leaveDrop(event)" id="customFile" style="margin-top:10px;">
 								<input type="file" name="file[]" class="custom-file-input" id="fileInput" aria-describedby="fileHelp" multiple>
 								<label class="custom-file-label" id="custom-file-label" for="fileInput" style="text-align:left;">
 									Select up to 10 files
 								</label>
-								<input type="hidden" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
-								<input type="hidden" id="usrSes" name="usrSes" value="<?php echo $_SESSION['Username']; ?>"/>
+								<input type="hidden" id="uplFld" name="uplFld" value="<?php //echo $getBrowse; ?>"/>
+								<input type="hidden" id="usrSes" name="usrSes" value="<?php //echo $_SESSION['Username']; ?>"/>
 							</div>
+							-->
 						</form>
 
 						<br />
