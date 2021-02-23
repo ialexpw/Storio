@@ -205,7 +205,7 @@
 											}
 
 											// Try and get the config
-											if(file_exists('users/configs/' . $usr . '-cfg.json')) {
+											if(file_exists('../users/configs/' . $usr . '-cfg.json')) {
 												$usrCfg = json_decode(file_get_contents('../users/configs/' . $usr . '-cfg.json'), true);
 											}
 
