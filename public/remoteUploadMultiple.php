@@ -42,11 +42,14 @@
 		exit();
 	}
 
+	// Load the site configuration
+	$siteCfg = json_decode(file_get_contents('../users/configs/site-settings.json'), true);
+
+	// Load the user configuration
+	$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
+
 	// Check directory and config file
 	if(file_exists('../users/configs/' . $_SESSION['Username'] . '-cfg.json')) {
-		// Load the configuration
-		$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
-
 		// Check if user can upload
 		if($usrCfg['canUpload'] != 'true') {
 			$output = array(
@@ -88,10 +91,29 @@
 		// Save the upload dir
 		$dirUpl = '../users/' . $_POST['usrSes'] . $_POST['uplFld'];
 
+		// Get total file size
+		$totalFileSize = array_sum($_FILES['file']['size']);
+
+		// Work out if the file size is too big 
+		$maxFileSize = $siteCfg['uploadMaxMB'] * 1024 * 1024;
+
+		// If files exceed size, error
+		if($totalFileSize > $maxFileSize) {
+			$output = array(
+				"success" => false,
+				"message" => "file_size",
+				"verbose" => "Size of files exceeds the max upload size, please check and try again"
+			);
+	
+			header("Content-Type: application/json; charset=utf-8");
+			echo json_encode($output);
+			exit();
+		}
+
 		// Loop the files
 		foreach($_FILES['file']['tmp_name'] as $index => $tmpName ) {
 			// Error occured on this file
-			if(!empty( $_FILES['file']['error'][$index])) {
+			if(!empty($_FILES['file']['error'][$index])) {
 				return false;
 			}
 
@@ -112,9 +134,6 @@
 
 		// Add to the log
 		Storio::AddLog(time(), "Files Uploaded", $_SESSION['Username'] . ' has uploaded ' . $fileCount . ' new file(s)');
-
-		// Update the file size total (MB)
-		$fileSize = number_format($fileSize / 1048576, 2);
 
 		// Update folder sizes
 		Storio::UpdateStorageSize($_SESSION['Username']);

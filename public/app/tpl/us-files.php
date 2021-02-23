@@ -411,7 +411,7 @@
 							</div>
 						</div>
 
-						<p style="text-align:center; margin-top:10px;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></p>
+						<p style="text-align:center; margin-top:15px;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></p>
 
 						<?php
 							}else{
