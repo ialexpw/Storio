@@ -14,6 +14,12 @@
 	if(!Storio::LoggedIn()) {
 		header("Location: ?page=login");
 	}
+
+	if(isset($_POST) && !empty($_POST)) {
+		echo '<pre>';
+		print_r($_POST);
+		echo '</pre>';
+	}
 ?>
 <!doctype html>
 <html lang="en">
