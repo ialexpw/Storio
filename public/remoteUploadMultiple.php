@@ -31,6 +31,7 @@
 
 	// Check the logged in user with the hidden field
 	if($_POST['usrSes'] != $_SESSION['Username']) {
+		echo $_POST['usrSes'] . ' ' . $_SESSION['Username'];
 		$output = array(
 			"success" => false,
 			"message" => "failed_upload",
