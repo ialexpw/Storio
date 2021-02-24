@@ -72,7 +72,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
 				<i class="bi bi-droplet" style="font-size: 2rem; margin-right:12px; margin-bottom:6px; color: cornflowerblue;"></i>
-				<a class="navbar-brand" href="?page=ad-dashboard"> Storio File Management</a>
+				<a class="navbar-brand" href="?page=dashboard"> Storio File Management</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
