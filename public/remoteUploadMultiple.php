@@ -15,6 +15,8 @@
 	error_reporting(-1);
 
 	include 'app/storio.app.php';
+
+	print_r($_POST);
 	
 	// POSTing check
 	if($_SERVER['REQUEST_METHOD'] != 'POST') {
