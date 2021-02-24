@@ -15,10 +15,27 @@
 		header("Location: ?page=login");
 	}
 
-	if(isset($_POST) && !empty($_POST)) {
-		echo '<pre>';
-		print_r($_POST);
-		echo '</pre>';
+	// Changing the password
+	if(isset($_POST) && !empty($_POST['currPass']) && !empty($_POST['newPass'])) {
+		// Load the user configuration
+		$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
+
+		// Store variables
+		$usrPass = $_POST['currPass'];
+		$newPass = $_POST['newPass'];
+
+		// Verify password
+		if(password_verify($usrPass, $usrCfg['passWord'])) {
+			// Alter the password hash
+			$usrCfg['passWord'] = password_hash($newPass, PASSWORD_DEFAULT);
+
+			// Encode and resave the config
+			$usrCfgEncode = json_encode($usrCfg);
+			file_put_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json', $usrCfgEncode);
+
+			// Redirect
+			header("Location: ?page=us-settings&success");
+		}
 	}
 ?>
 <!doctype html>
