@@ -15,8 +15,6 @@
 	error_reporting(-1);
 
 	include 'app/storio.app.php';
-
-	print_r($_POST);
 	
 	// POSTing check
 	if($_SERVER['REQUEST_METHOD'] != 'POST') {
@@ -33,7 +31,6 @@
 
 	// Check the logged in user with the hidden field
 	if($_POST['usrSes'] != $_SESSION['Username']) {
-		echo '1-' . $_POST['usrSes'] . ' 2-' . $_SESSION['Username'];
 		$output = array(
 			"success" => false,
 			"message" => "failed_upload",

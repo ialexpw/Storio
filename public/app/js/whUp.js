@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 		// Max files per upload
 		if(files.length > maxUploads) {
-		$('#filename').html("Max "+maxUploads+" uploads at a time");
+			$('#filename').html("Max "+maxUploads+" uploads at a time");
 			return;
 		}
 
@@ -89,7 +89,7 @@ $(document).ready(function(){
 						$('#progressBar').width(percentComplete + "%");
 
 						// Over 50%, change font colour
-						if (percentComplete > 50) {
+						if (percentComplete > 60) {
 							var progFont = document.getElementById("progress");
 							progFont.style.color = "#fff";
 						}
