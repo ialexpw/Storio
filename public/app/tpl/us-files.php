@@ -225,6 +225,7 @@
 									echo '</div>';
 								}
 
+								// Sort folders
 								sort($fldArr['dirview'][$usrDir.$getBrowse]['folders']);
 
 								// Check if there are subfolders first (avoid warnings)
@@ -252,6 +253,9 @@
 										echo '<div class="col-4 col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?"><span style="color:red; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
 									}
 								}
+
+								// Sort files
+								sort($fldArr['dirview'][$usrDir.$getBrowse]['files']);
 
 								// Check if there are files first (avoid warnings)
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
