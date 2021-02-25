@@ -20,6 +20,8 @@
 		header("Location: ?page=login");
 	}
 
+	echo $_SESSION['Del'];
+
 	// Get the user dir structure
 	if(is_dir('../users/' . $_SESSION['Username'])) {
 		$dirs = array_filter(glob('../users/' . $_SESSION['Username'] . '/*'), 'is_dir');
@@ -435,12 +437,7 @@
 			</div>
 		</div>
 
-		<script>
-			// Show toast on click
-			//document.getElementById("copyTxt").onclick = function() {
-			//document.getElementsByClassName("copyText").onclick = function() {
-			//$('.copyText').click(function() {
-				
+		<script>				
 			function showAlert(){
 				$('.toast').toast('show');
 			}
