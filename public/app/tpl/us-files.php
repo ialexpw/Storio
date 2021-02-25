@@ -178,19 +178,19 @@
 				<div class="card">
 					<div class="card-header text-center">
 						<ul class="nav nav-tabs card-header-tabs">
-						<li class="nav-item" style="width:12%;">
+						<li class="nav-item" style="">
 								<a class="nav-link" href="?page=us-dashboard">
 									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br /><span class="d-none d-sm-block">Dashboard</span>
 								</a>
 							</li>
-							<li class="nav-item" style="width:12%;">
+							<li class="nav-item" style="">
 								<a class="nav-link active" aria-current="true" href="?page=us-files">
 									<i class="bi bi-folder" style="font-size: 2rem;"></i>
 									<br /><span class="d-none d-sm-block">Files</span>
 								</a>
 							</li>
-							<li class="nav-item" style="width:12%;">
+							<li class="nav-item" style="">
 								<a class="nav-link" href="?page=us-settings">
 									<i class="bi bi-gear" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br /><span class="d-none d-sm-block">Settings</span>
