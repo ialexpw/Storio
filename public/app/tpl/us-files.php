@@ -484,7 +484,8 @@
 				echo 'TESTAREA HERE';
 		?>
 			<script>
-				document.addEventListener("DOMContentLoaded", function(){
+				//document.addEventListener("DOMContentLoaded", function(){
+				$(document).ready(function() {
 					$('.toastdel').toast('show');
 				});
 			</script>
