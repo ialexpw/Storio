@@ -225,8 +225,11 @@
 									echo '</div>';
 								}
 
-								// Sort folders
-								sort($fldArr['dirview'][$usrDir.$getBrowse]['folders']);
+								// Check & sort
+								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
+									// Sort folders
+									sort($fldArr['dirview'][$usrDir.$getBrowse]['folders']);
+								}
 
 								// Check if there are subfolders first (avoid warnings)
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
@@ -254,8 +257,11 @@
 									}
 								}
 
-								// Sort files
-								sort($fldArr['dirview'][$usrDir.$getBrowse]['files']);
+								// Check & sort
+								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
+									// Sort files
+									sort($fldArr['dirview'][$usrDir.$getBrowse]['files']);
+								}
 
 								// Check if there are files first (avoid warnings)
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
