@@ -501,7 +501,7 @@
 			</div>
 		<?php
 				// Clear the session after
-				$_SESSION['Del'] = '';
+				$_SESSION['Del'] = 'NO';
 			}
 		?>
 	</body>
