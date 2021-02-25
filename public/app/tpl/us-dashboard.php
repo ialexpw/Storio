@@ -107,10 +107,10 @@
 
 			<!-- Toast notification -->
 			<div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
-				<div class="toast align-items-center bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast align-items-center text-white bg-success bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
 					<div class="d-flex">
 						<div class="toast-body">
-							Share link has been copied to your clipboard.
+							Logged in successfully! Welcome to Storio.
 						</div>
 						<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
 					</div>
