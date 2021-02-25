@@ -480,7 +480,7 @@
 
 		<?php
 			// Deleted file/folder
-			if(isset($_SESSION['Del']) && $_SESSION['Del'] == 'YES') {
+			if(isset($_SESSION['Del'])) {
 		?>
 			<script>
 				document.addEventListener("DOMContentLoaded", function(){
@@ -501,7 +501,7 @@
 			</div>
 		<?php
 				// Clear the session after
-				$_SESSION['Del'] = 'NO';
+				unset($_SESSION['Del']);
 			}
 		?>
 	</body>
