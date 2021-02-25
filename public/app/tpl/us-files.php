@@ -194,7 +194,7 @@
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
 								echo '<pre>';
-								print_r($fldArr);
+								print_r(sort($fldArr));
 								echo '</pre>';
 
 								// Start the row
