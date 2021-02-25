@@ -75,11 +75,14 @@
 					// Update folder sizes
 					Storio::UpdateStorageSize($_SESSION['Username']);
 
+					// Set a session for the toast
+					$_SESSION['Del'] = 'YES';
+
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files&browse=' . $_GET['browse'] . '&df');
+						header('Location: ?page=us-files&browse=' . $_GET['browse']);
 					}else{
-						header('Location: ?page=us-files&df');
+						header('Location: ?page=us-files');
 					}
 				}
 			}
@@ -95,11 +98,14 @@
 					// Update folder sizes
 					Storio::UpdateStorageSize($_SESSION['Username']);
 
+					// Set a session for the toast
+					$_SESSION['Del'] = 'YES';
+
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files&browse=' . $_GET['browse'] . '&df');
+						header('Location: ?page=us-files&browse=' . $_GET['browse']);
 					}else{
-						header('Location: ?page=us-files&df');
+						header('Location: ?page=us-files');
 					}
 				}
 			}
@@ -474,7 +480,8 @@
 
 		<?php
 			// Deleted file/folder
-			if(isset($_GET['df'])) {
+			if($_SESSION['Del'] == 'YES') {
+				$_SESSION['Del'] = '';
 		?>
 			<script>
 				document.addEventListener("DOMContentLoaded", function(){
