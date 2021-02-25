@@ -77,9 +77,9 @@
 
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files&browse=' . $_GET['browse'] . '&df');
+						header('Location: ?page=us-files&browse=' . $_GET['browse']);
 					}else{
-						header('Location: ?page=us-files&df');
+						header('Location: ?page=us-files');
 					}
 				}
 			}
@@ -97,9 +97,9 @@
 
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files&browse=' . $_GET['browse'] . '&df');
+						header('Location: ?page=us-files&browse=' . $_GET['browse']);
 					}else{
-						header('Location: ?page=us-files&df');
+						header('Location: ?page=us-files');
 					}
 				}
 			}
@@ -431,11 +431,7 @@
 
 		<script>				
 			function showAlert(){
-				$('.toastcopy').toast('show');
-			}
-
-			function showDelAlert(){
-				$('.toastdel').toast('show');
+				$('.toast').toast('show');
 			}
 
 			// Hover over file upload
@@ -461,7 +457,7 @@
 
 		<!-- Toast notification for Share link -->
 		<div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
-			<div class="toast align-items-center bg-info bottom-0 end-0 toastcopy" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast align-items-center bg-info bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
 				<div class="d-flex">
 					<div class="toast-body">
 						Share link has been copied to your clipboard.
@@ -470,26 +466,5 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Toast notification for removal -->
-		<div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
-			<div class="toast align-items-center bg-info bottom-0 end-0 toastdel" role="alert" aria-live="assertive" aria-atomic="true">
-				<div class="d-flex">
-					<div class="toast-body">
-						File/Folder has been removed successfully
-					</div>
-					<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-				</div>
-			</div>
-		</div>
-
-		<?php
-			// Deleted file/folder
-			if(isset($_GET['df'])) {
-				echo '<script type="text/javascript">',
-					'showDelAlert();',
-					'</script>';
-			}
-		?>
 	</body>
 </html>
