@@ -218,7 +218,9 @@
 									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a>';
 									echo '</div>';
 
-									echo $getBrowse;
+									$makeBread = explode("/", $getBrowse);
+
+									print_r($makeBread);
 								}
 
 								// Check & sort
