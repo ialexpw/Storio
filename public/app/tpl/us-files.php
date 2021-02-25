@@ -276,7 +276,7 @@
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 										echo '<div class="col-md-2" style="">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 										echo '<div class="col-md-2" style="">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="#"><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;">' . $delIco . '</span></a></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="javascript:;"><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;">' . $delIco . '</span></a></div>';
 									}
 								}
 
