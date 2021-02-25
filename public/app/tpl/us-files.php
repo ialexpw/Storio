@@ -196,10 +196,10 @@
 								// Start the row
 								echo '<div class="row">';
 
-								echo '<div class="col-md-6 col-sm-8"><b>File name</b></div>';
-								echo '<div class="col-md-2 d-none d-sm-block"><b>Type</b></div>';
-								echo '<div class="col-md-2 d-none d-sm-block"><b>Size</b></div>';
-								echo '<div class="col-md-2 col-sm-4" style="text-align:center;"><b>Actions</b></div>';
+								echo '<div class="col-6 col-sm-8"><b>File name</b></div>';
+								echo '<div class="col-2 d-none d-sm-block"><b>Type</b></div>';
+								echo '<div class="col-2 d-none d-sm-block"><b>Size</b></div>';
+								echo '<div class="col-2 col-sm-4" style="text-align:center;"><b>Actions</b></div>';
 
 								// End the row
 								echo '</div>';
