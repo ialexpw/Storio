@@ -230,6 +230,8 @@
 									foreach($makeBread as $breadCrumb) {
 										$tmpBread = $fullBread . ' / ' . $breadCrumb;
 										$linkBread = str_replace("Home / ", "", $tmpBread);
+
+										echo $linkBread . '<br />';
 									
 										$breadCrumb = '<a href="?page=us-files&browse=' . $linkBread . '">' . $breadCrumb . '</a>';
 										$fullBread .= ' / ' . $breadCrumb;
