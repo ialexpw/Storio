@@ -167,19 +167,19 @@
 						<li class="nav-item" style="">
 								<a class="nav-link" href="?page=us-dashboard">
 									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
-									<br /><span class="d-none d-sm-block">Dashboard</span>
+									<br />Dashboard
 								</a>
 							</li>
 							<li class="nav-item" style="">
 								<a class="nav-link active" aria-current="true" href="?page=us-files">
 									<i class="bi bi-folder" style="font-size: 2rem;"></i>
-									<br /><span class="d-none d-sm-block">Files</span>
+									<br />Files
 								</a>
 							</li>
 							<li class="nav-item" style="">
 								<a class="nav-link" href="?page=us-settings">
 									<i class="bi bi-gear" style="font-size: 2rem; color: cornflowerblue;"></i>
-									<br /><span class="d-none d-sm-block">Settings</span>
+									<br />Settings
 								</a>
 							</li>
 						</ul>
