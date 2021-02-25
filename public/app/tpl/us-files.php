@@ -165,7 +165,7 @@
 						<li class="nav-item" style="width:12%;">
 								<a class="nav-link" href="?page=us-dashboard">
 									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
-									<br />Dashboard
+									<br /><span class="hidden-xs">Dashboard</span>
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
