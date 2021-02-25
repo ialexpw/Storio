@@ -193,11 +193,11 @@
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
-								sort($fldArr);
+								//sort($fldArr);
 
-								echo '<pre>';
-								print_r($fldArr);
-								echo '</pre>';
+								//echo '<pre>';
+								//print_r($fldArr);
+								//echo '</pre>';
 
 								// Start the row
 								echo '<div class="row">';
@@ -224,6 +224,8 @@
 									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '">' . $arrIco . '</a>';
 									echo '</div>';
 								}
+
+								sort($fldArr['dirview'][$usrDir.$getBrowse]['folders']);
 
 								// Check if there are subfolders first (avoid warnings)
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
