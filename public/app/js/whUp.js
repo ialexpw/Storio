@@ -4,7 +4,6 @@ $(document).ready(function(){
 		// Init area
 		const url = 'remoteUploadMultiple.php';
 		const form = document.querySelector('#upload');
-		var totalSize = 0;
 
 		// Max files at a time
 		var maxUploads = 10;
@@ -47,33 +46,6 @@ $(document).ready(function(){
 		$('#progress').html("");
 		$('#progressBar').width(0);
 
-		////////////////////
-		// Loop files
-		////////////////////
-
-		// Loop through the files
-		/*for (let i = 0; i < files.length; i++) {
-			let file = files[i];
-
-			// Add the total size of all files
-			totalSize += file.size;
-		}*/
-
-		//formData.append();
-
-		// Check file size - if high error (5GB)
-		/*if(totalSize > maxUploadSize) {
-			$('#filename').html("Maximum size has been exceeded");
-
-			// Hide the progress bar
-			if (x.style.display === "inherit") {
-				x.style.display = "none";
-			}
-
-			// return out
-			return;
-		}*/
-
 		$.ajax({
 			xhr: function () {
 				var xhr = new window.XMLHttpRequest();
@@ -112,16 +84,17 @@ $(document).ready(function(){
 			success: function (data) {
 				// If error with the upload
 				if(!data.success) {
-					//upload failed
+					// Upload failed
 					//$('#progress').html("Upload failed");
 					//$('#filename').html(data.verbose);
 					$('#progress').html(data.verbose);
 					return;
 				}
 
-				//upload successful
+				// Upload success
 				$('#progress').html("Complete");
 
+				// Reload the window to get the file listing
 				window.location.reload();
 				return false;
 			}
