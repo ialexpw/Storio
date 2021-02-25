@@ -434,6 +434,18 @@
 				$('.toastcopy').toast('show');
 			}
 
+			<?php
+				// Deleted file/folder
+				if(isset($_GET['df'])) {
+			?>
+				<script>
+					//document.addEventListener("DOMContentLoaded", function(){
+					$('.toastdel').toast('show');
+				</script>
+			<?php
+				}
+			?>
+
 			// Hover over file upload
 			function allowDrop(event) {
 				event.preventDefault();
@@ -478,17 +490,5 @@
 				</div>
 			</div>
 		</div>
-
-		<?php
-			// Deleted file/folder
-			if(isset($_GET['df'])) {
-		?>
-			<script>
-				//document.addEventListener("DOMContentLoaded", function(){
-				$('.toastdel').toast('show');
-			</script>
-		<?php
-			}
-		?>
 	</body>
 </html>
