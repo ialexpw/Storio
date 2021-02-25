@@ -20,6 +20,11 @@
 		header("Location: ?page=login");
 	}
 
+	// If the deleted file session exists, remove it
+	if(isset($_SESSION['Del'])) {
+		unset($_SESSION['Del']);
+	}
+
 	// Get the user dir structure
 	if(is_dir('../users/' . $_SESSION['Username'])) {
 		$dirs = array_filter(glob('../users/' . $_SESSION['Username'] . '/*'), 'is_dir');
@@ -500,8 +505,6 @@
 				</div>
 			</div>
 		<?php
-				// Clear the session after
-				unset($_SESSION['Del']);
 			}
 		?>
 	</body>
