@@ -239,7 +239,7 @@
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
 
 										// Folder icon/name
-										echo '<div class="col-8 col-md-6" style="margin-bottom:1px;"><i style="font-size: 1.4rem; margin-top:1px; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
+										echo '<div class="col-8 col-md-6" style="margin-bottom:1px;"><i style="font-size: 1.4rem; margin-top:6px; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										
 										// Set type to "directory"
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:1px;">directory</div>';
