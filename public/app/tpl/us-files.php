@@ -30,6 +30,11 @@
 		// Store the browse (if any)
 		if(!empty($_GET['browse'])) {
 			$getBrowse = '/' . $_GET['browse'];
+
+			// Viewing an invalid folder
+			if(!is_dir($usrDir . $getBrowse)) {
+				header("Location: ?page=us-files");
+			}
 		}else{
 			$getBrowse = '';
 		}
