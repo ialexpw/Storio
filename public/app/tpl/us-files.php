@@ -485,9 +485,7 @@
 		?>
 			<script>
 				//document.addEventListener("DOMContentLoaded", function(){
-				$(document).ready(function() {
-					$('.toastdel').toast('show');
-				});
+				$('.toastdel').toast('show');
 			</script>
 
 			<!-- Toast notification -->
