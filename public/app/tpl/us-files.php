@@ -224,10 +224,17 @@
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
 
+										// Folder icon/name
 										echo '<div class="col-md-6"><i class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
+										
+										// Set type to "directory"
 										echo '<div class="col-md-2" style="">directory</div>';
+
+										// No size shown for directories
 										echo '<div class="col-md-2" style="">n/a</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder"><span style="color:red;">Delete</span></a></div>';
+
+										// Delete folder option
+										echo '<div class="col-md-2" style="text-align:right;"><a href="?page=us-files&del=' . $encFile . '&type=folder"><span style="color:red;"><i class="far fa-trash-alt"></i></span></a></div>';
 									}
 								}
 
