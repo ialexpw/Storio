@@ -469,7 +469,7 @@
 		</div>
 
 		<?php
-			// Deleted file
+			// Deleted file/folder
 			if(isset($_GET['df'])) {
 		?>
 			<script>
