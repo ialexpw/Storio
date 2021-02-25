@@ -19,7 +19,7 @@
 	 */
 	class Storio {
 		/**
-		 * Storio::AddUser($user, $password, $size_mb, $settings)
+		 * Storio::AddUser()
 		 * Add a user to Storio, user information and permissions are passed through with the array
 		 */
 		public static function Install() {
@@ -57,14 +57,18 @@
 			return true;
 		}
 
+		/**
+		 * Storio::LoadSiteConfig()
+		 * Returns the site configuration after decoding the JSON
+		 */
 		public static function LoadSiteConfig() {
 			return json_decode(file_get_contents('../users/configs/site-settings.json'), true);
 		}
 
-		public static function DownloadFile($file) {
-			return true;
-		}
-
+		/**
+		 * Storio::SimpleCrypt()
+		 * Simple encryption/decryption function used for share and download links
+		 */
 		public static function SimpleCrypt($string, $action = 'e') {
 			// Change these to encrypt links - changing these will void all previous share links
 			$secret_key = 'Storio';
@@ -195,6 +199,10 @@
 			}
 		}
 
+		/**
+		 * Storio::LoginUser()
+		 * Function to validate the user credentials and proceed to log in the user to the correct place
+		 */
 		public static function LoginUser($post) {
 			// Store the data
 			$user = strtolower($post['userInput']);
@@ -240,6 +248,10 @@
 			}
 		}
 
+		/**
+		 * Storio::ReadableSize()
+		 * Converts bytes into a readable value
+		 */
 		public static function ReadableSize($bytes) {
 			if($bytes == 0) {
 				return '0B';
@@ -249,6 +261,10 @@
 			return round($bytes / pow(1024, $i), [0,0,2,2,3][$i]).['B','kB','MB','GB','TB'][$i];
 		}
 
+		/**
+		 * Storio::DirList()
+		 * Lists all the files/folders from a specific area
+		 */
 		public static function DirList($dir){
 			if(!file_exists($dir)){ return $dir.' does not exists'; }
 			$list = array('path' => $dir, 'dirview' => array(), 'dirlist' => array(), 'files' => array(), 'folders' => array());
@@ -276,7 +292,7 @@
 		
 			if(!empty($list['dirview'])) ksort($list['dirview']);
 		
-			// Dosyaları dogru sıralama yaptırıyoruz. Deniz P. - info[at]netinial.com
+			// Dosyaları dogru sıralama yaptırıyoruz.
 			foreach($list['dirview'] as $path => $file){
 				if(isset($file['files'])){
 					$list['dirlist'][] = $path;
@@ -295,6 +311,10 @@
 			return $list;
 		}
 
+		/**
+		 * Storio::GoBack()
+		 * Simple function to work out one path back (used from sub-dirs)
+		 */
 		public static function GoBack($path) {
 			// Check if there is a "/" in the path
 			if(strpos($path, '/') !== false) {
@@ -317,6 +337,10 @@
 			}
 		}
 
+		/**
+		 * Storio::UpdateStorageSize()
+		 * Used to update the storage used from each user, done after removing/adding files and also on the cron
+		 */
 		public static function UpdateStorageSize($user) {
 			// Check directory and config file
 			if(is_dir('../users/' . $user) && file_exists('../users/configs/' . $user . '-cfg.json')) {
@@ -335,6 +359,10 @@
 			}
 		}
 
+		/**
+		 * Storio::getDirectorySize()
+		 * Works out a directory (plus sub-dir sizes) - used from UpdateStorageSize()
+		 */
 		public static function getDirectorySize($path) {
 			if(!is_dir( $path )) {
 				return 0;
@@ -348,6 +376,10 @@
 			return $size;
 		}
 
+		/**
+		 * Storio::delTree()
+		 * Deletes a folder, including sub-dirs and files
+		 */
 		public static function delTree($dir) {
 			$files = array_diff(scandir($dir), array('.', '..'));
 
@@ -358,6 +390,10 @@
 			return rmdir($dir);
 		}
 
+		/**
+		 * Storio::AddLog()
+		 * Used to add logs to the system of events
+		 */
 		public static function AddLog($time, $type, $msg) {
 			// Format the time
 			$logData = date("H:i:s - d M Y : <", $time);
@@ -371,7 +407,7 @@
 
 		/**
 		 * Storio::CheckLicence()
-		 * Function to check the licence code
+		 * Function to check the licence code - I'd rather you did not edit this, but do what you have to!
 		 */
 		public static function CheckLicence($user, $code) {
 			return true;
