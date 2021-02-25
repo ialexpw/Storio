@@ -312,7 +312,7 @@
 			</div>
 		</main>
 
-		<!--<script type="text/javascript" src="app/js/jquery.min.js"></script>-->
+		<script type="text/javascript" src="app/js/jquery.min.js"></script>
 		<script type="text/javascript" src="app/js/whUp.js"></script>
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 		<script type="text/javascript" src="app/js/session.js"></script>
@@ -467,6 +467,18 @@
 			</div>
 		</div>
 
+		<!-- Toast notification for removal -->
+		<div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
+			<div class="toast align-items-center bg-info bottom-0 end-0 toastdel" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="d-flex">
+					<div class="toast-body">
+						File/Folder has been removed successfully
+					</div>
+					<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+			</div>
+		</div>
+
 		<?php
 			// Deleted file/folder
 			if(isset($_GET['df'])) {
@@ -475,18 +487,6 @@
 				//document.addEventListener("DOMContentLoaded", function(){
 				$('.toastdel').toast('show');
 			</script>
-
-			<!-- Toast notification -->
-			<div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
-				<div class="toast align-items-center bg-info bottom-0 end-0 toastdel" role="alert" aria-live="assertive" aria-atomic="true">
-					<div class="d-flex">
-						<div class="toast-body">
-							File/Folder has been removed successfully
-						</div>
-						<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-					</div>
-				</div>
-			</div>
 		<?php
 			}
 		?>
