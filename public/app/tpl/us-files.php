@@ -234,7 +234,7 @@
 										echo '<div class="col-md-2" style="">n/a</div>';
 
 										// Delete folder option
-										echo '<div class="col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder"><span style="color:red; margin-left:66px;"><i class="far fa-trash-alt"></i></span></a></div>';
+										echo '<div class="col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder"><span style="color:red; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
 									}
 								}
 
