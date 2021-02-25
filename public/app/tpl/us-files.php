@@ -143,20 +143,6 @@
 			.progress {
 				margin-left: auto; margin-right:auto;
 			}
-
-			.nav-item {
-				width: 12%;
-			}
-
-			@media only screen and (max-width: 600px) {
-				.nav-item {
-					width: 22%;
-				}
-			}
-  body {
-    background-color: lightblue;
-  }
-}
 		</style>
 
 		<!-- Custom styles -->

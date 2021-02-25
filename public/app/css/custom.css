@@ -16,3 +16,13 @@ body {
 		font-size: 3.5rem;
 	}
 }
+
+.nav-item {
+	width: 12%;
+}
+
+@media only screen and (max-width: 600px) {
+	.nav-item {
+		width: 22%;
+	}
+}

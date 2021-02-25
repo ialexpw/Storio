@@ -96,7 +96,7 @@
 				<div class="card">
 					<div class="card-header text-center">
 						<ul class="nav nav-tabs card-header-tabs">
-							<li class="nav-item" style="width:12%;">
+							<li class="nav-item">
 								<a class="nav-link active" aria-current="true" href="?page=login">
 									<i class="bi bi-door-open" style="font-size: 2rem;"></i>
 									<br />Log in
