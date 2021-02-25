@@ -196,10 +196,10 @@
 								// Start the row
 								echo '<div class="row">';
 
-								echo '<div class="col-md-6"><b>File name</b></div>';
-								echo '<div class="col-md-2"><span class="d-none d-sm-block"><b>Type</b></span></div>';
-								echo '<div class="col-md-2"><b>Size</b></div>';
-								echo '<div class="col-md-2" style="text-align:center;"><b>Actions</b></div>';
+								echo '<div class="col-md-6 col-sm-8"><b>File name</b></div>';
+								echo '<div class="col-md-2 d-none d-sm-block"><b>Type</b></div>';
+								echo '<div class="col-md-2 d-none d-sm-block"><b>Size</b></div>';
+								echo '<div class="col-md-2 col-sm-4" style="text-align:center;"><b>Actions</b></div>';
 								echo '<hr>';
 
 								// Show the back button if needed
@@ -227,16 +227,16 @@
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
 
 										// Folder icon/name
-										echo '<div class="col-md-6"><i class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
+										echo '<div class="col-md-6 col-sm-8"><i class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										
 										// Set type to "directory"
-										echo '<div class="col-md-2"><span class="d-none d-sm-block">directory</span></div>';
+										echo '<div class="col-md-2 d-none d-sm-block">directory</div>';
 
 										// No size shown for directories
-										echo '<div class="col-md-2">n/a</div>';
+										echo '<div class="col-md-2 d-none d-sm-block">n/a</div>';
 
 										// Delete folder option
-										echo '<div class="col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder"><span style="color:red; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
+										echo '<div class="col-md-2 col-sm-4" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder"><span style="color:red; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
 									}
 								}
 
@@ -259,16 +259,16 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										// Show icon
-										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
+										echo '<div class="col-md-6 col-sm-8">' . $fileIco . ' ' . $file . '</div>';
 
 										// Show mime type
-										echo '<div class="col-md-2"><span class="d-none d-sm-block">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</span></div>';
+										echo '<div class="col-md-2 d-none d-sm-block">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 
 										// Show file size
-										echo '<div class="col-md-2">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
+										echo '<div class="col-md-2 d-none d-sm-block">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 
 										// Show actions (download, copy and delete)
-										echo '<div class="col-md-2" style="text-align:center;">';
+										echo '<div class="col-md-2 col-sm-4" style="text-align:center;">';
 										echo '<a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
 										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="javascript:;"><span style="color:blue; margin-right:22px;"><i class="fas fa-link"></i></span></a> ';
 										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;"><i class="far fa-trash-alt"></i></span></a>';
