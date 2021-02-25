@@ -481,8 +481,8 @@
 		<?php
 			// Deleted file/folder
 			if(isset($_SESSION['Del']) && $_SESSION['Del'] == 'YES') {
-				echo 'Test';
-				$_SESSION['Del'] = '';
+				echo 'Test DELETE FUNCTION';
+				//$_SESSION['Del'] = '';
 		?>
 			<script>
 				document.addEventListener("DOMContentLoaded", function(){
