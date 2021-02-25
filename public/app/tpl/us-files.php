@@ -438,13 +438,6 @@
 				$('.toastdel').toast('show');
 			}
 
-			<?php
-				// Deleted file/folder
-				if(isset($_GET['df'])) {
-					echo "showDelAlert();";
-				}
-			?>
-
 			// Hover over file upload
 			function allowDrop(event) {
 				event.preventDefault();
@@ -489,5 +482,14 @@
 				</div>
 			</div>
 		</div>
+
+		<?php
+			// Deleted file/folder
+			if(isset($_GET['df'])) {
+				echo '<script type="text/javascript">',
+					'showDelAlert();',
+					'</script>';
+			}
+		?>
 	</body>
 </html>
