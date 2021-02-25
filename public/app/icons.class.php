@@ -130,7 +130,7 @@
 
 			// In arr
 			if(in_array($ext, $txtArr)) {
-				return 'far fa-file-code';
+				return 'bi bi-file-code';
 			}
 
 			////
