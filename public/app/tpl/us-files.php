@@ -276,7 +276,7 @@
 										echo '<div class="col-4 col-md-2" style="text-align:center;">';
 										echo '<a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
 										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="javascript:;"><span style="color:blue; margin-right:22px;"><i class="fas fa-link"></i></span></a> ';
-										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;"><i class="far fa-trash-alt"></i></span></a>';
+										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure to delete this item?"><span style="color:red;"><i class="far fa-trash-alt"></i></span></a>';
 										echo '</div>';
 									}
 								}
@@ -439,6 +439,20 @@
 		<script>				
 			function showAlert(){
 				$('.toast').toast('show');
+			}
+
+			var deleteLinks = document.querySelectorAll('.delete');
+
+			for (var i = 0; i < deleteLinks.length; i++) {
+				deleteLinks[i].addEventListener('click', function(event) {
+					event.preventDefault();
+
+					var choice = confirm(this.getAttribute('data-confirm'));
+
+					if (choice) {
+						window.location.href = this.getAttribute('href');
+					}
+				});
 			}
 
 			// Hover over file upload
