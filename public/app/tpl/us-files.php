@@ -259,7 +259,7 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										// Show icon
-										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
+										echo '<div class="col-md-6 d-inline-block text-truncate" style="max-width: 100px;">' . $fileIco . ' ' . $file . '</div>';
 
 										// Show mime type
 										echo '<div class="col-md-2 d-none d-sm-block">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
