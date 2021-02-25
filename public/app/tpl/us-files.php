@@ -97,9 +97,9 @@
 
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files&browse=' . $_GET['browse']);
+						header('Location: ?page=us-files&browse=' . $_GET['browse'] . '&df');
 					}else{
-						header('Location: ?page=us-files');
+						header('Location: ?page=us-files&df');
 					}
 				}
 			}
