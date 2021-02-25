@@ -486,6 +486,7 @@
 		<?php
 			// Deleted file/folder
 			if(isset($_SESSION['Del'])) {
+				echo 'TESTAREA HERE';
 		?>
 			<script>
 				document.addEventListener("DOMContentLoaded", function(){
