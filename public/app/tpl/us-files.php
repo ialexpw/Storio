@@ -171,13 +171,13 @@
 							<li class="nav-item" style="width:12%;">
 								<a class="nav-link active" aria-current="true" href="?page=us-files">
 									<i class="bi bi-folder" style="font-size: 2rem;"></i>
-									<br />Files
+									<br /><span class="d-none d-sm-block">Files</span>
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
 								<a class="nav-link" href="?page=us-settings">
 									<i class="bi bi-gear" style="font-size: 2rem; color: cornflowerblue;"></i>
-									<br />Settings
+									<br /><span class="d-none d-sm-block">Settings</span>
 								</a>
 							</li>
 						</ul>
