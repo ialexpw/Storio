@@ -480,7 +480,7 @@
 
 		<?php
 			// Deleted file/folder
-			if($_SESSION['Del'] == 'YES') {
+			if(isset($_SESSION['Del']) && $_SESSION['Del'] == 'YES') {
 				$_SESSION['Del'] = '';
 		?>
 			<script>
