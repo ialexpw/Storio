@@ -268,7 +268,7 @@
 										// Get the correct file icon
 										$fIco = StoIco::ShowIcon($file);
 
-										$fileIco = '<i style="font-size: 1.4rem;" class="' . $fIco . '"></i>';
+										$fileIco = '<i style="font-size: 1.4rem; margin-right:6px;" class="' . $fIco . '"></i>';
 
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $file);
@@ -277,7 +277,7 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										// Show icon
-										echo '<div class="col-8 col-md-6">' . $fileIco . ' <span style="margin-top:3px; margin-bottom:3px;">' . $file . '</span></div>';
+										echo '<div class="col-8 col-md-6">' . $fileIco . ' ' . $file . '</div>';
 
 										// Show mime type
 										echo '<div class="col-md-2 d-none d-sm-block">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
