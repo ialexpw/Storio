@@ -431,7 +431,8 @@
 
 		<script>
 			// Show toast on click
-			document.getElementById("copyTxt").onclick = function() {
+			//document.getElementById("copyTxt").onclick = function() {
+			document.getElementsByClassName("copyText").onclick = function() {
 				$('.toast').toast('show');
 			}
 
