@@ -228,7 +228,6 @@
 			// Check directory and config file
 			if(is_dir('../users/' . $user) && file_exists('../users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration
-				//$usrCfg = json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
 				$usrCfg = Storio::UserConfig($user);
 
 				// Verify password
@@ -246,7 +245,6 @@
 				}
 			}else if($user == 'admin') {
 				// Load the site configuration
-				//$usrCfg = json_decode(file_get_contents('../users/configs/site-settings.json'), true);
 				$usrCfg = Storio::SiteConfig();
 
 				// Verify password
@@ -359,7 +357,6 @@
 			// Check directory and config file
 			if(is_dir('../users/' . $user) && file_exists('../users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration
-				//$usrCfg = json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
 				$usrCfg = Storio::UserConfig($user);
 
 				// Get size of directory
