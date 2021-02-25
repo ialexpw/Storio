@@ -239,16 +239,16 @@
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
 
 										// Folder icon/name
-										echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
+										echo '<div class="col-8 col-md-6" style="margin-bottom:1px;"><i style="font-size: 1.4rem; margin-top:1px; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										
 										// Set type to "directory"
-										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">directory</div>';
+										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:1px;">directory</div>';
 
 										// No size shown for directories
-										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">n/a</div>';
+										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:1px;">n/a</div>';
 
 										// Delete folder option
-										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;"><a href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?"><span style="color:red; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
+										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:1px;"><a href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?"><span style="color:red; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
 									}
 								}
 
@@ -268,7 +268,7 @@
 										// Get the correct file icon
 										$fIco = StoIco::ShowIcon($file);
 
-										$fileIco = '<i style="font-size: 1.4rem; margin-top:2px; margin-right:12px;" class="' . $fIco . '"></i>';
+										$fileIco = '<i style="font-size: 1.4rem; margin-top:1px; margin-right:12px;" class="' . $fIco . '"></i>';
 
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $file);
@@ -277,13 +277,13 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										// Show icon
-										echo '<div class="col-8 col-md-6" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
+										echo '<div class="col-8 col-md-6" style="margin-bottom:1px;">' . $fileIco . ' ' . $file . '</div>';
 
 										// Show mime type
-										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
+										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:1px;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 
 										// Show file size
-										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
+										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:1px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 
 										// Show actions (download, copy and delete)
 										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;">';
