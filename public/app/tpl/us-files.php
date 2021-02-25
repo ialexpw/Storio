@@ -200,7 +200,12 @@
 								echo '<div class="col-md-2 d-none d-sm-block"><b>Type</b></div>';
 								echo '<div class="col-md-2 d-none d-sm-block"><b>Size</b></div>';
 								echo '<div class="col-md-2 col-sm-4" style="text-align:center;"><b>Actions</b></div>';
+
+								// End the row
+								echo '</div>';
 								echo '<hr>';
+
+								echo '<div class="row">';
 
 								// Show the back button if needed
 								if(!empty($_GET['browse'])) {
