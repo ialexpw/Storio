@@ -39,10 +39,12 @@
 	}
 
 	// Load the site configuration
-	$siteCfg = json_decode(file_get_contents('../users/configs/site-settings.json'), true);
+	//$siteCfg = json_decode(file_get_contents('../users/configs/site-settings.json'), true);
+	$siteCfg = Storio::SiteConfig();
 
 	// Load the user configuration
-	$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
+	//$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
+	$usrCfg = Storio::UserConfig($_SESSION['Username']);
 
 	// Creating a new folder
 	if(!empty($_POST['inpFolder']) && $_POST['usrSesr'] == $_SESSION['Username']) {

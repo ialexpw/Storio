@@ -23,7 +23,8 @@
 	// Changing the password
 	if(isset($_POST) && !empty($_POST['currPass']) && !empty($_POST['newPass'])) {
 		// Load the user configuration
-		$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
+		//$usrCfg = json_decode(file_get_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json'), true);
+		$usrCfg = Storio::UserConfig($_SESSION['Username']);
 
 		// Store variables
 		$usrPass = $_POST['currPass'];
