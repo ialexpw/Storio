@@ -273,10 +273,21 @@
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
+										// Show icon
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
+
+										// Show mime type
 										echo '<div class="col-md-2" style="">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
+
+										// Show file size
 										echo '<div class="col-md-2" style="">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-										echo '<div class="col-md-2" style="text-align:center;"><a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> <a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="javascript:;"><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> <a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;">' . $delIco . '</span></a></div>';
+
+										// Show actions (download, copy and delete)
+										echo '<div class="col-md-2" style="text-align:center;">';
+										echo '<a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> ';
+										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="javascript:;"><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> ';
+										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;">' . $delIco . '</span></a>';
+										echo '</div>';
 									}
 								}
 
@@ -321,7 +332,7 @@
 			new ClipboardJS(".copyText");
 		</script>		
 
-		<!-- Modal -->
+		<!-- Modal for a new folder -->
 		<div class="modal fade" id="folderModal" tabindex="-1" aria-labelledby="folderModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
@@ -351,6 +362,7 @@
 							?>
 						</p>
 
+						<!-- Form for creating a new folder -->
 						<form action="?page=us-files<?php echo $post; ?>" method="post">
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Folder name</label>
@@ -363,6 +375,7 @@
 
 						<?php
 							}else{
+								// Disabled uploading
 								echo 'Uploading has been disabled for this account';
 							}
 						?>
@@ -371,7 +384,7 @@
 			</div>
 		</div>
 
-		<!-- Modal -->
+		<!-- Modal for new files -->
 		<div class="modal fade" id="fileModal" tabindex="-1" aria-labelledby="fileModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
@@ -399,6 +412,7 @@
 
 						<hr>
 
+						<!-- Upload files -->
 						<form method="post" id="upload" enctype="multipart/form-data" style="margin:0px; padding:0px; display:inline;">
 							<div class="custom-file" ondragover="allowDrop(event)" ondragleave="leaveDrop(event)" style="margin-top:10px;">
 								<div class="mb-3">
@@ -410,6 +424,7 @@
 							</div>
 						</form>
 
+						<!-- Progress bar -->
 						<div id="progBar" style="display:none;">
 							<div class="progress" style="border: 1px solid #000;">
 								<div class="progress-bar" id="progressBar" role="progressbar" style="color:black;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -417,9 +432,11 @@
 							</div>
 						</div>
 
+						<!-- Max size label -->
 						<p style="text-align:center; margin-top:15px;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></p>
 
 						<?php
+							// Disabled uploading
 							}else{
 								echo 'Uploading has been disabled for this account';
 							}
