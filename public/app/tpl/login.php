@@ -37,10 +37,10 @@
 			// For admin users
 			if(isset($_SESSION['isAdmin'])) {
 				// Go to the admin dashboard
-				header("Location: ?page=ad-dashboard");
+				header("Location: ?page=ad-dashboard&li");
 			}else{
 				// Go to the dashboard
-				header("Location: ?page=us-dashboard");
+				header("Location: ?page=us-dashboard&li");
 			}
 		}
 	}
