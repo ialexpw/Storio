@@ -219,8 +219,8 @@
 									echo '</div>';
 
 									// Breadcrumbs, remove the first /
-									$makeBread = explode("/", $getBrowse);
-									$makeBread = ltrim($makeBread, '/');
+									$makeBread = ltrim($getBrowse, '/');
+									$makeBread = explode("/", $makeBread);
 
 									print_r($makeBread);
 								}
