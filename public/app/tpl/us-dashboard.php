@@ -95,5 +95,29 @@
 		<script type="text/javascript" src="app/js/jquery.min.js"></script>
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 		<script type="text/javascript" src="app/js/session.js"></script>
+
+		<?php
+			if(isset($_GET['li'])) {
+		?>
+			<script>
+				document.addEventListener("DOMContentLoaded", function(){
+					$('.toast').toast('show');
+				});
+			</script>
+
+			<!-- Toast notification -->
+			<div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
+				<div class="toast align-items-center bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+					<div class="d-flex">
+						<div class="toast-body">
+							Share link has been copied to your clipboard.
+						</div>
+						<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+					</div>
+				</div>
+			</div>
+		<?php
+			}
+		?>
 	</body>
 </html>
