@@ -268,7 +268,7 @@
 										// Get the correct file icon
 										$fIco = StoIco::ShowIcon($file);
 
-										$fileIco = '<i class="' . $fIco . '"></i>';
+										$fileIco = '<i style="font-size: 1.5rem; class="' . $fIco . '"></i>';
 
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $file);
