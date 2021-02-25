@@ -434,10 +434,14 @@
 				$('.toastcopy').toast('show');
 			}
 
+			function showDelAlert(){
+				$('.toastdel').toast('show');
+			}
+
 			<?php
 				// Deleted file/folder
 				if(isset($_GET['df'])) {
-					echo "$('.toastdel').toast('show');";
+					echo "showDelAlert();";
 				}
 			?>
 
