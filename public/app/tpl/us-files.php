@@ -250,18 +250,9 @@
 										</svg>';
 
 										// Get the correct file icon
-										$fileIco = Storio::GenerateFileIcon($file);
+										$fIco = StoIco::ShowIcon($file);
 
-										$fileIco = '<i class="far fa-file"></i>';
-
-										// Download icon
-										$dlIco = '<i class="fas fa-angle-double-down"></i>';
-
-										// Copy icon
-										$copyIco = '<i class="fas fa-link"></i>';
-
-										// Delete icon
-										$delIco = '<i class="far fa-trash-alt"></i>';
+										$fileIco = '<i class="' . $fIco . '"></i>';
 
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $file);
@@ -280,9 +271,9 @@
 
 										// Show actions (download, copy and delete)
 										echo '<div class="col-md-2" style="text-align:center;">';
-										echo '<a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;">' . $dlIco . '</span></a> ';
-										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="javascript:;"><span style="color:blue; margin-right:22px;">' . $copyIco . '</span></a> ';
-										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;">' . $delIco . '</span></a>';
+										echo '<a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
+										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="javascript:;"><span style="color:blue; margin-right:22px;"><i class="fas fa-link"></i></span></a> ';
+										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file"><span style="color:red;"><i class="far fa-trash-alt"></i></span></a>';
 										echo '</div>';
 									}
 								}

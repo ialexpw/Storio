@@ -15,6 +15,7 @@
 	error_reporting(E_ALL);
 
 	include 'app/storio.app.php';
+	include 'app/icons.class.php';
 
 	define('INC_DATA', true);
 
