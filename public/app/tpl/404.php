@@ -10,6 +10,7 @@
 	 * @link       https://storio.uk
 	 */
 
+	// No direct access
 	if(!defined('INC_DATA')) {
 		exit('error');
 	}

@@ -10,6 +10,11 @@
 	 * @link       https://storio.uk
 	 */
 
+	// No direct access
+	if(!defined('INC_DATA')) {
+		exit('error');
+	}
+
 	 // Auto direct if already logged in
 	if(Storio::LoggedIn()) {
 		if(Storio::LoggedIn('admin')) {
@@ -121,6 +126,7 @@
 			</div>
 		</main>
 
-		<script src="app/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="app/js/jquery.min.js"></script>
+		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>

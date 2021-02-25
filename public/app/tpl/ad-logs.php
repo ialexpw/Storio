@@ -10,6 +10,11 @@
 	 * @link       https://storio.uk
 	 */
 
+	// No direct access
+	if(!defined('INC_DATA')) {
+		exit('error');
+	}
+
 	// Redirect if not logged in
 	if(!Storio::LoggedIn('admin')) {
 		header("Location: ?page=login");
@@ -121,6 +126,8 @@
 			</div>
 		</main>
 
-		<script src="app/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="app/js/jquery.min.js"></script>
+		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="app/js/session.js"></script>
 	</body>
 </html>

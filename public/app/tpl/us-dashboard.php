@@ -10,6 +10,11 @@
 	 * @link       https://storio.uk
 	 */
 
+	// No direct access
+	if(!defined('INC_DATA')) {
+		exit('error');
+	}
+
 	// Redirect if not logged in
 	if(!Storio::LoggedIn()) {
 		header("Location: ?page=login");
@@ -97,6 +102,7 @@
 		<script type="text/javascript" src="app/js/session.js"></script>
 
 		<?php
+			// Just logged in
 			if(isset($_GET['li'])) {
 		?>
 			<script>
