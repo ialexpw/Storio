@@ -233,8 +233,6 @@
 
 									echo $fullBread;
 									echo '</div>';
-
-									print_r($makeBread);
 								}
 
 								// Check & sort
