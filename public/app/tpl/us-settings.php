@@ -141,16 +141,16 @@
 		?>
 			<script>
 				document.addEventListener("DOMContentLoaded", function(){
-					$('.toastdel').toast('show');
+					$('.toast').toast('show');
 				});
 			</script>
 
-			<!-- Toast notification -->
+			<!-- Toast notification for Share link -->
 			<div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
-				<div class="toast align-items-center text-white bg-success bottom-0 end-0 toastdel" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast align-items-center bg-info bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
 					<div class="d-flex">
 						<div class="toast-body">
-							Changed password successfully!
+							Your password has been updated!
 						</div>
 						<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
 					</div>
