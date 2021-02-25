@@ -239,16 +239,16 @@
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
 
 										// Folder icon/name
-										echo '<div class="col-8 col-md-6"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
+										echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										
 										// Set type to "directory"
-										echo '<div class="col-md-2 d-none d-sm-block">directory</div>';
+										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">directory</div>';
 
 										// No size shown for directories
-										echo '<div class="col-md-2 d-none d-sm-block">n/a</div>';
+										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">n/a</div>';
 
 										// Delete folder option
-										echo '<div class="col-4 col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?"><span style="color:red; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
+										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;"><a href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?"><span style="color:red; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
 									}
 								}
 
@@ -280,13 +280,13 @@
 										echo '<div class="col-8 col-md-6" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
 
 										// Show mime type
-										echo '<div class="col-md-2 d-none d-sm-block">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
+										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 
 										// Show file size
-										echo '<div class="col-md-2 d-none d-sm-block">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
+										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 
 										// Show actions (download, copy and delete)
-										echo '<div class="col-4 col-md-2" style="text-align:center;">';
+										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;">';
 										echo '<a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
 										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="javascript:;"><span style="color:blue; margin-right:22px;"><i class="fas fa-link"></i></span></a> ';
 										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure you would like to delete this file?"><span style="color:red;"><i class="far fa-trash-alt"></i></span></a>';
