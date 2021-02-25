@@ -61,8 +61,20 @@
 		 * Storio::LoadSiteConfig()
 		 * Returns the site configuration after decoding the JSON
 		 */
-		public static function LoadSiteConfig() {
+		public static function SiteConfig() {
 			return json_decode(file_get_contents('../users/configs/site-settings.json'), true);
+		}
+
+		/**
+		 * Storio::UserConfig()
+		 * Returns the user configuration after decoding the JSON
+		 */
+		public static function UserConfig($user) {
+			if(file_exists('../users/configs/' . $user . '-cfg.json')) {
+				return json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
+			}else{
+				return false;
+			}
 		}
 
 		/**
