@@ -218,7 +218,9 @@
 									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a>';
 									echo '</div>';
 
+									// Breadcrumbs, remove the first /
 									$makeBread = explode("/", $getBrowse);
+									$makeBread = ltrim($makeBread, '/');
 
 									print_r($makeBread);
 								}
