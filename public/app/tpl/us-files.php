@@ -197,8 +197,8 @@
 								echo '<div class="row">';
 
 								echo '<div class="col-md-6"><b>File name</b></div>';
-								echo '<div class="col-md-2" style=""><b>Type</b></div>';
-								echo '<div class="col-md-2" style=""><b>Size</b></div>';
+								echo '<div class="col-md-2 d-none d-sm-block"><b>Type</b></div>';
+								echo '<div class="col-md-2"><b>Size</b></div>';
 								echo '<div class="col-md-2" style="text-align:center;"><b>Actions</b></div>';
 								echo '<hr>';
 
@@ -230,10 +230,10 @@
 										echo '<div class="col-md-6"><i class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										
 										// Set type to "directory"
-										echo '<div class="col-md-2" style="">directory</div>';
+										echo '<div class="col-md-2 d-none d-sm-block">directory</div>';
 
 										// No size shown for directories
-										echo '<div class="col-md-2" style="">n/a</div>';
+										echo '<div class="col-md-2">n/a</div>';
 
 										// Delete folder option
 										echo '<div class="col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder"><span style="color:red; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
@@ -262,10 +262,10 @@
 										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 
 										// Show mime type
-										echo '<div class="col-md-2" style="">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
+										echo '<div class="col-md-2 d-none d-sm-block">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
 
 										// Show file size
-										echo '<div class="col-md-2" style="">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
+										echo '<div class="col-md-2">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 
 										// Show actions (download, copy and delete)
 										echo '<div class="col-md-2" style="text-align:center;">';
