@@ -115,13 +115,16 @@
 		<meta name="author" content="">
 		<title>Storio - File Management</title>
 
-		<link rel="canonical" href="https://storio.aw0.uk">
+		<link rel="canonical" href="https://storio.uk">
 
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="app/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
+
+		<!-- Font awesome -->
+		<link rel="stylesheet" href="app/css/all.css">
 
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 
@@ -248,6 +251,8 @@
 
 										// Get the correct file icon
 										$fileIco = Storio::GenerateFileIcon($file);
+
+										$fileIco = '<i class="far fa-file"></i>';
 
 										// Download icon
 										$dlIco = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
