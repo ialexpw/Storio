@@ -481,6 +481,7 @@
 		<?php
 			// Deleted file/folder
 			if(isset($_SESSION['Del']) && $_SESSION['Del'] == 'YES') {
+				echo 'Test';
 				$_SESSION['Del'] = '';
 		?>
 			<script>
