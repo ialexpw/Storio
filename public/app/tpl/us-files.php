@@ -193,7 +193,7 @@
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
-								$fldArr = sort($fldArr);
+								sort($fldArr);
 
 								echo '<pre>';
 								print_r($fldArr);
