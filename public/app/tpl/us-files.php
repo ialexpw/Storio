@@ -197,7 +197,7 @@
 								echo '<div class="row">';
 
 								echo '<div class="col-md-6"><b>File name</b></div>';
-								echo '<div class="col-md-2 d-none d-sm-block"><b>Type</b></div>';
+								echo '<div class="col-md-2"><span class="d-none d-sm-block"><b>Type</b></span></div>';
 								echo '<div class="col-md-2"><b>Size</b></div>';
 								echo '<div class="col-md-2" style="text-align:center;"><b>Actions</b></div>';
 								echo '<hr>';
@@ -230,7 +230,7 @@
 										echo '<div class="col-md-6"><i class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										
 										// Set type to "directory"
-										echo '<div class="col-md-2 d-none d-sm-block">directory</div>';
+										echo '<div class="col-md-2"><span class="d-none d-sm-block">directory</span></div>';
 
 										// No size shown for directories
 										echo '<div class="col-md-2">n/a</div>';
@@ -259,10 +259,10 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										// Show icon
-										echo '<div class="col-md-6 d-inline-block text-truncate" style="max-width: 100px;">' . $fileIco . ' ' . $file . '</div>';
+										echo '<div class="col-md-6">' . $fileIco . ' ' . $file . '</div>';
 
 										// Show mime type
-										echo '<div class="col-md-2 d-none d-sm-block">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
+										echo '<div class="col-md-2"><span class="d-none d-sm-block">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</span></div>';
 
 										// Show file size
 										echo '<div class="col-md-2">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
