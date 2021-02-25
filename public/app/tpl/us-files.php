@@ -20,8 +20,6 @@
 		header("Location: ?page=login");
 	}
 
-	echo $_SESSION['Del'];
-
 	// Get the user dir structure
 	if(is_dir('../users/' . $_SESSION['Username'])) {
 		$dirs = array_filter(glob('../users/' . $_SESSION['Username'] . '/*'), 'is_dir');
@@ -77,14 +75,11 @@
 					// Update folder sizes
 					Storio::UpdateStorageSize($_SESSION['Username']);
 
-					// Set a session for the toast
-					$_SESSION['Del'] = 'YES';
-
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files&browse=' . $_GET['browse']);
+						header('Location: ?page=us-files&browse=' . $_GET['browse'] . '&df');
 					}else{
-						header('Location: ?page=us-files');
+						header('Location: ?page=us-files&df');
 					}
 				}
 			}
@@ -100,14 +95,11 @@
 					// Update folder sizes
 					Storio::UpdateStorageSize($_SESSION['Username']);
 
-					// Set a session for the toast
-					$_SESSION['Del'] = 'YES';
-
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files&browse=' . $_GET['browse']);
+						header('Location: ?page=us-files&browse=' . $_GET['browse'] . '&df');
 					}else{
-						header('Location: ?page=us-files');
+						header('Location: ?page=us-files&df');
 					}
 				}
 			}
@@ -439,7 +431,7 @@
 
 		<script>				
 			function showAlert(){
-				$('.toast').toast('show');
+				$('.toastcopy').toast('show');
 			}
 
 			// Hover over file upload
@@ -465,7 +457,7 @@
 
 		<!-- Toast notification for Share link -->
 		<div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
-			<div class="toast align-items-center bg-info bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast align-items-center bg-info bottom-0 end-0 toastcopy" role="alert" aria-live="assertive" aria-atomic="true">
 				<div class="d-flex">
 					<div class="toast-body">
 						Share link has been copied to your clipboard.
@@ -477,8 +469,7 @@
 
 		<?php
 			// Deleted file/folder
-			if(isset($_SESSION['Del'])) {
-				echo 'TESTAREA HERE';
+			if(isset($_GET['df'])) {
 		?>
 			<script>
 				//document.addEventListener("DOMContentLoaded", function(){
@@ -497,10 +488,6 @@
 				</div>
 			</div>
 		<?php
-				// If the deleted file session exists, remove it
-				if(isset($_SESSION['Del'])) {
-					unset($_SESSION['Del']);
-				}
 			}
 		?>
 	</body>
