@@ -437,12 +437,7 @@
 			<?php
 				// Deleted file/folder
 				if(isset($_GET['df'])) {
-			?>
-				<script>
-					//document.addEventListener("DOMContentLoaded", function(){
-					$('.toastdel').toast('show');
-				</script>
-			<?php
+					echo "$('.toastdel').toast('show');";
 				}
 			?>
 
