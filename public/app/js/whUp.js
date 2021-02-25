@@ -6,9 +6,8 @@ $(document).ready(function(){
 		const form = document.querySelector('#upload');
 		var totalSize = 0;
 
-		// For plus
+		// Max files at a time
 		var maxUploads = 10;
-		var maxUploadSize = 2150000000; // 2GB
 
 		////////////////////
 		// Get files
@@ -53,17 +52,17 @@ $(document).ready(function(){
 		////////////////////
 
 		// Loop through the files
-		for (let i = 0; i < files.length; i++) {
+		/*for (let i = 0; i < files.length; i++) {
 			let file = files[i];
 
 			// Add the total size of all files
 			totalSize += file.size;
-		}
+		}*/
 
 		//formData.append();
 
 		// Check file size - if high error (5GB)
-		if(totalSize > maxUploadSize) {
+		/*if(totalSize > maxUploadSize) {
 			$('#filename').html("Maximum size has been exceeded");
 
 			// Hide the progress bar
@@ -73,7 +72,7 @@ $(document).ready(function(){
 
 			// return out
 			return;
-		}
+		}*/
 
 		$.ajax({
 			xhr: function () {
