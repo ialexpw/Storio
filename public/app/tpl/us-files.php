@@ -224,7 +224,7 @@
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
 
-										echo '<div class="col-md-6"><i class="far fa-folder-open"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
+										echo '<div class="col-md-6"><i class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 										echo '<div class="col-md-2" style="">directory</div>';
 										echo '<div class="col-md-2" style="">n/a</div>';
 										echo '<div class="col-md-2" style="text-align:center;"><a href="?page=us-files&del=' . $encFile . '&type=folder"><span style="color:red;">Delete</span></a></div>';
