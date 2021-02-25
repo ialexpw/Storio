@@ -228,9 +228,9 @@
 
 									// Loop
 									foreach($makeBread as $breadCrumb) {
-										$fullBread .= ' > ' . $breadCrumb;
+										$fullBread .= ' / ' . $breadCrumb;
 									}
-									
+
 									echo $fullBread;
 									echo '</div>';
 
