@@ -1,4 +1,15 @@
 <?php
+	/**
+	 * viewSource.php
+	 *
+	 * Use for showing images/video files directly within a lightbox or media player
+	 *
+	 * @package    Storio
+	 * @author     Alex White
+	 * @copyright  2021 Storio
+	 * @link       https://storio.uk
+	 */
+
 	ini_set('display_startup_errors', 1);
 	ini_set('display_errors', 1);
 	error_reporting(-1);
