@@ -2,7 +2,7 @@
 	ini_set('display_startup_errors', 1);
 	ini_set('display_errors', 1);
 	error_reporting(-1);
-	
+
 	include 'app/storio.app.php';
 	
 	// Grab the path and user
@@ -11,6 +11,8 @@
 		if(is_dir('../users/' . $_GET['u'])) {
 			// Decrypt the string
 			$usrFile = Storio::SimpleCrypt($_GET['p'], 'd');
+
+			echo $usrFile;
 
 			// Check the file exists
 			if(file_exists($usrFile)) {
