@@ -21,25 +21,28 @@
 	}
 
 	// Changing the password
-	if(isset($_POST) && !empty($_POST['currPass']) && !empty($_POST['newPass'])) {
-		// Load the user configuration
-		$usrCfg = Storio::UserConfig($_SESSION['Username']);
+	if(isset($_POST)) {
+		// Updating password
+		if(!empty($_POST['currPass']) && !empty($_POST['newPass'])) {
+			// Load the user configuration
+			$usrCfg = Storio::UserConfig($_SESSION['Username']);
 
-		// Store variables
-		$usrPass = $_POST['currPass'];
-		$newPass = $_POST['newPass'];
+			// Store variables
+			$usrPass = $_POST['currPass'];
+			$newPass = $_POST['newPass'];
 
-		// Verify password
-		if(password_verify($usrPass, $usrCfg['passWord'])) {
-			// Alter the password hash
-			$usrCfg['passWord'] = password_hash($newPass, PASSWORD_DEFAULT);
+			// Verify password
+			if(password_verify($usrPass, $usrCfg['passWord'])) {
+				// Alter the password hash
+				$usrCfg['passWord'] = password_hash($newPass, PASSWORD_DEFAULT);
 
-			// Encode and resave the config
-			$usrCfgEncode = json_encode($usrCfg);
-			file_put_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json', $usrCfgEncode);
+				// Encode and resave the config
+				$usrCfgEncode = json_encode($usrCfg);
+				file_put_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json', $usrCfgEncode);
 
-			// Redirect
-			header("Location: ?page=us-settings&success");
+				// Redirect
+				header("Location: ?page=us-settings&success");
+			}
 		}
 	}
 ?>
@@ -115,14 +118,24 @@
 						<h4 class="card-title">User Settings</h4>
 						<p class="card-text" style="margin-top:15px;">Change password</p>
 						<form method="post">
+							<!-- Original password -->
 							<div class="mb-3">
 								<label for="currPass" class="form-label">Current password</label>
-								<input type="password" class="form-control" id="currPass" name="currPass" aria-describedby="currPass" required>
+								<input type="password" class="form-control" id="currPass" name="currPass" aria-describedby="currPass">
 							</div>
+
+							<!-- New password -->
 							<div class="mb-3">
 								<label for="newPass" class="form-label">New password</label>
-								<input type="password" class="form-control" id="newPass" name="newPass" aria-describedby="newPass" required>
+								<input type="password" class="form-control" id="newPass" name="newPass" aria-describedby="newPass">
 								<div id="passHelp" class="form-text">Make it a good one!</div>
+							</div>
+
+							<!-- Email -->
+							<div class="mb-3">
+								<label for="usrMail" class="form-label">New password</label>
+								<input type="email" class="form-control" id="usrMail" name="usrMail" aria-describedby="usrMail">
+								<div id="passHelp" class="form-text">Optional</div>
 							</div>
 							<button type="submit" class="btn btn-primary">Update</button>
 						</form>
