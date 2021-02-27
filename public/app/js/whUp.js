@@ -6,7 +6,7 @@ $(document).ready(function(){
 		const form = document.querySelector('#upload');
 
 		// Max files at a time
-		var maxUploads = 10;
+		var maxUploads = 25;
 
 		////////////////////
 		// Get files
