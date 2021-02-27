@@ -158,6 +158,11 @@
 				color: black;
 				text-decoration: none;
 			}
+
+			html.with-featherlight {
+	/* disable global scrolling when featherlights are visible */
+	overflow: inherit;
+}
 		</style>
 
 		<!-- Custom styles -->
