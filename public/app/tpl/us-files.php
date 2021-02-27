@@ -160,9 +160,9 @@
 			}
 
 			html.with-featherlight {
-	/* disable global scrolling when featherlights are visible */
-	overflow: inherit;
-}
+				/* disable global scrolling when featherlights are visible */
+				overflow: inherit;
+			}
 		</style>
 
 		<!-- Custom styles -->
