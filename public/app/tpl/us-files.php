@@ -229,21 +229,26 @@
 
 								// Show the back button if needed
 								if(!empty($_GET['browse'])) {
-									echo '<div class="col-md-12" style="margin-bottom:8px;">';
+									echo '<div class="col-md-1" style="margin-bottom:8px;">';
 									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a>';
 									echo '</div>';
 
-									/*
 									// Breadcrumbs, remove the first /
 									$makeBread = ltrim($getBrowse, '/');
 									$makeBread = explode("/", $makeBread);
 
 									echo '<div class="col-md-11">';
+									echo '<pre>';
+									print_r($makeBread);
+									echo '</pre>';
+
+
 									// Hold variable
-									$fullBread = 'Home';
+									//$fullBread = 'Home';
 
 									// Loop
 									foreach($makeBread as $breadCrumb) {
+										/*
 										$tmpBread = $fullBread . ' / ' . $breadCrumb;
 										$linkBread = str_replace("Home / ", "", $tmpBread);
 										$linkBread = str_replace($fullBread, "", $tmpBread);
@@ -252,11 +257,11 @@
 									
 										$breadCrumb = '<a href="?page=us-files&browse=' . $linkBread . '">' . $breadCrumb . '</a>';
 										$fullBread .= ' / ' . $breadCrumb;
+										*/
 									}
 
-									echo $fullBread;
+									//echo $fullBread;
 									echo '</div>';
-									*/
 								}
 
 								// Check & sort
