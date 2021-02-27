@@ -4,19 +4,13 @@
 	error_reporting(-1);
 
 	include 'app/storio.app.php';
-
-	echo 'a';
 	
 	// Grab the path and user
 	if(isset($_GET['p']) && !empty($_GET['p']) && isset($_GET['u']) && !empty($_GET['u'])) {
-		echo 'b';
 		// Users directory
 		if(is_dir('../users/' . $_GET['u'])) {
-			echo 'c';
 			// Decrypt the string
 			$usrFile = Storio::SimpleCrypt($_GET['p'], 'd');
-
-			echo $usrFile;
 
 			// Check the file exists
 			if(file_exists($usrFile)) {

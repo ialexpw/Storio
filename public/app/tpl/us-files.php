@@ -125,8 +125,13 @@
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="app/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+		<!-- Google fonts -->
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
+
+		<!-- Featherlight lightbox -->
+		<link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 
 		<!-- Font awesome -->
 		<link rel="stylesheet" href="app/css/all.css">
@@ -292,6 +297,9 @@
 										// Get the correct file icon
 										$fIco = StoIco::ShowIcon($file);
 
+										// Grab the mime type
+										$mimeType = mime_content_type($usrDir . $getBrowse. '/' . $file);
+
 										$fileIco = '<i style="font-size: 1.4rem; margin-right:12px;" class="' . $fIco . '"></i>';
 
 										// Encrypt file name
@@ -301,10 +309,14 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										// Show icon
-										echo '<div class="col-8 col-md-6" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
+										if(strpos(mime_content_type($mimeType), 'image') !== false) {
+											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
+										}else{
+											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
+										}
 
 										// Show mime type
-										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . mime_content_type($usrDir . $getBrowse. '/' . $file) . '</div>';
+										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . $mimeType . '</div>';
 
 										// Show file size
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
@@ -354,6 +366,7 @@
 		<script type="text/javascript" src="app/js/whUp.js"></script>
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 		<script type="text/javascript" src="app/js/session.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
 		<script>
 			new ClipboardJS(".copyText");
