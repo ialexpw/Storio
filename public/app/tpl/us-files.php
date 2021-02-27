@@ -305,6 +305,7 @@
 										// Grab the mime type
 										$mimeType = mime_content_type($usrDir . $getBrowse. '/' . $file);
 
+										// Config the user icon
 										$fileIco = '<i style="font-size: 1.4rem; margin-right:12px;" class="' . $fIco . '"></i>';
 
 										// Encrypt file name
@@ -313,7 +314,7 @@
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-										// Show icon
+										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
@@ -356,6 +357,7 @@
 									$percUsed = 0;
 								}
 
+								// Used storage bar
 								echo '<br /><hr><p class="text-center">Storage allocation</p><div class="progress" style="border: 1px solid #000; width:75%;">';
 								echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
 								echo '<small class="justify-content-center d-flex position-absolute w-75">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</small>';
@@ -367,12 +369,22 @@
 			</div>
 		</main>
 
+		<!-- JQuery -->
 		<script type="text/javascript" src="app/js/jquery.min.js"></script>
+
+		<!-- Storio file upload script -->
 		<script type="text/javascript" src="app/js/whUp.js"></script>
+
+		<!-- Bootstrap JS -->
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Keep sessions alive while browser is open -->
 		<script type="text/javascript" src="app/js/session.js"></script>
+
+		<!-- Lightbox script -->
 		<script src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
+		<!-- Copy text to clipboard -->
 		<script>
 			new ClipboardJS(".copyText");
 		</script>		
