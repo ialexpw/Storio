@@ -309,7 +309,7 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										// Show icon
-										if(strpos(mime_content_type($mimeType), 'image') !== false) {
+										if(strpos($mimeType, 'image') !== false) {
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
