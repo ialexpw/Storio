@@ -19,10 +19,10 @@
 	if(Storio::LoggedIn()) {
 		if(Storio::LoggedIn('admin')) {
 			// Go to admin dashboard
-			header("Location: ?page=ad-dashboard&li");
+			header("Location: ?page=ad-dashboard");
 		}else{
 			// Go to user dashboard
-			header("Location: ?page=us-dashboard&li");
+			header("Location: ?page=us-dashboard");
 		}
 	}
 
