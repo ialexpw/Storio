@@ -440,9 +440,11 @@
 
 						<div id="filename"></div>
 
-						<hr>
+						<br /><br />
 
-						<h6>Upload form</h6>
+						<h5>Upload form</h5>
+
+						<hr>
 
 						<!-- Upload files -->
 						<form method="post" id="upload" enctype="multipart/form-data" style="margin:0px; padding:0px; display:inline;">
