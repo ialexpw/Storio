@@ -8,7 +8,7 @@
 	echo 'a';
 	
 	// Grab the path and user
-	if(isset($_GET['p']) && !empty($_GET['p']) && !isset($_GET['u']) && !empty($_GET['u'])) {
+	if(isset($_GET['p']) && !empty($_GET['p']) && isset($_GET['u']) && !empty($_GET['u'])) {
 		echo 'b';
 		// Users directory
 		if(is_dir('../users/' . $_GET['u'])) {
