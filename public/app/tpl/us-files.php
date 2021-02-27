@@ -244,7 +244,7 @@
 
 										echo $linkBread . '<br />';
 									
-										$breadCrumb = '<a href="?page=us-files&browse=' . $linkBread . '">' . $breadCrumb . '</a>';
+										$breadCrumb = '<a href="?page=us-files&browse=' . $fullBread . $linkBread . '">' . $breadCrumb . '</a>';
 										$fullBread .= ' / ' . $breadCrumb;
 									}
 
