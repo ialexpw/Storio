@@ -238,7 +238,7 @@
 
 									// Loop
 									foreach($makeBread as $breadCrumb) {
-										$tmpBread = $fullBread . ' / ' . $breadCrumb;
+										$tmpBread .= $fullBread . ' / ' . $breadCrumb;
 										$linkBread = str_replace("Home / ", "", $tmpBread);
 										$linkBread = str_replace($fullBread, "", $tmpBread);
 
