@@ -187,7 +187,7 @@
 							<li class="nav-item">
 								<a class="nav-link" href="?page=us-dashboard">
 									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
-									<br /><span class="d-none d-sm-block">Dashboard</span>
+									<br />Dashboard
 								</a>
 							</li>
 							<li class="nav-item">
@@ -229,8 +229,8 @@
 
 								// Show the back button if needed
 								if(!empty($_GET['browse'])) {
-									echo '<div class="col-md-12">';
-									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a><br /><br />';
+									echo '<div class="col-md-12" style="margin-bottom:8px;">';
+									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a>';
 									echo '</div>';
 
 									/*
