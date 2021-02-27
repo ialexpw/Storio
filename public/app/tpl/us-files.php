@@ -228,6 +228,7 @@
 									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a>';
 									echo '</div>';
 
+									/*
 									// Breadcrumbs, remove the first /
 									$makeBread = ltrim($getBrowse, '/');
 									$makeBread = explode("/", $makeBread);
@@ -244,12 +245,13 @@
 
 										echo $linkBread . '<br />';
 									
-										$breadCrumb = '<a href="?page=us-files&browse=' . $fullBread . $linkBread . '">' . $breadCrumb . '</a>';
+										$breadCrumb = '<a href="?page=us-files&browse=' . $linkBread . '">' . $breadCrumb . '</a>';
 										$fullBread .= ' / ' . $breadCrumb;
 									}
 
 									echo $fullBread;
 									echo '</div>';
+									*/
 								}
 
 								// Check & sort
