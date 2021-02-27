@@ -231,7 +231,7 @@
 								if(!empty($_GET['browse'])) {
 									echo '<div class="col-md-12">';
 									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a>';
-									echo '</div>';
+									echo '</div><br />';
 
 									/*
 									// Breadcrumbs, remove the first /
