@@ -230,8 +230,8 @@
 								// Show the back button if needed
 								if(!empty($_GET['browse'])) {
 									echo '<div class="col-md-12">';
-									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a>';
-									echo '</div><br />';
+									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a><br />';
+									echo '</div>';
 
 									/*
 									// Breadcrumbs, remove the first /
