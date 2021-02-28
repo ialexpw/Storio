@@ -264,7 +264,7 @@
 										*/
 									}
 									$fullBread = substr($fullBread, 0, -1);
-									echo $fullBread;
+									//echo $fullBread;
 									echo '</div>';
 								}
 
