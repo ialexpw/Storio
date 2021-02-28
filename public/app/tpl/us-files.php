@@ -249,7 +249,8 @@
 
 									// Loop
 									foreach($makeBread as $breadCrumb) {
-										$brLinks .= $brLinks . '/' . $breadCrumb; 
+										$brLinks .= $brLinks . '/' . $breadCrumb;
+										echo 'a: ' . $brLinks . ' b: ' . $breadCrumb;
 										$fullBread .= '<a href="?page=us-files&browse=' . $brLinks . '">' . $breadCrumb . ' ></a> ';
 										/*
 										$tmpBread = $fullBread . ' / ' . $breadCrumb;
@@ -262,7 +263,7 @@
 										$fullBread .= ' / ' . $breadCrumb;
 										*/
 									}
-
+									$fullBread = substr($fullBread, 0, -1);
 									echo $fullBread;
 									echo '</div>';
 								}
