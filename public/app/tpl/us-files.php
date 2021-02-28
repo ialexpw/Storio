@@ -244,10 +244,13 @@
 
 
 									// Hold variable
-									//$fullBread = 'Home';
+									$fullBread = '';
+									$brLinks = '';
 
 									// Loop
 									foreach($makeBread as $breadCrumb) {
+										$brLinks .= $brLinks . '/' . $breadCrumb; 
+										$fullBread .= '<a href="?page=us-files&browse=' . $brLinks . '">' . $breadCrumb . ' ></a> ';
 										/*
 										$tmpBread = $fullBread . ' / ' . $breadCrumb;
 										$linkBread = str_replace("Home / ", "", $tmpBread);
@@ -260,7 +263,7 @@
 										*/
 									}
 
-									//echo $fullBread;
+									echo $fullBread;
 									echo '</div>';
 								}
 
