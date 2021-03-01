@@ -255,7 +255,7 @@
 										$rmSlash = str_replace("/", "", $breadCrumb);
 
 										$hrLink .= $breadCrumb;
-										$fullBread .= '<a href="?page=us-files&browse=' . $hrLink . '">' . $breadCrumb . '</a>';
+										$fullBread .= '<a href="?page=us-files&browse=' . $hrLink . '">' . $breadCrumb . '</a> >';
 
 										// Add the slash onto the link (for the next go around)
 										$hrLink .= '/';
@@ -280,8 +280,8 @@
 										*/
 									}
 
-									// Remove trailing /
-									//$hrLink = substr($fullBread, 0, -1);
+									// Remove trailing >
+									$fullBread = substr($fullBread, 0, -1);
 
 									echo $hrLink . '<br />';
 									echo $fullBread;
