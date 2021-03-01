@@ -22,11 +22,14 @@
 
 	// Changing the password
 	if(isset($_POST)) {
+		// Set an updated flag
+		$strUpd = 0;
+
+		// Load the user configuration
+		$usrCfg = Storio::UserConfig($_SESSION['Username']);
+
 		// Updating password
 		if(!empty($_POST['currPass']) && !empty($_POST['newPass'])) {
-			// Load the user configuration
-			$usrCfg = Storio::UserConfig($_SESSION['Username']);
-
 			// Store variables
 			$usrPass = $_POST['currPass'];
 			$newPass = $_POST['newPass'];
@@ -36,13 +39,32 @@
 				// Alter the password hash
 				$usrCfg['passWord'] = password_hash($newPass, PASSWORD_DEFAULT);
 
-				// Encode and resave the config
-				$usrCfgEncode = json_encode($usrCfg);
-				file_put_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json', $usrCfgEncode);
-
-				// Redirect
-				header("Location: ?page=us-settings&success");
+				$strUpd = 1;
 			}
+		}
+
+		// Updating email
+		if(!empty($_POST['usrMail']) && !empty($_POST['usrMail'])) {
+			// Store variables
+			$usrMail = $_POST['usrMail'];
+
+			// Verify email
+			if(filter_var($usrMail, FILTER_VALIDATE_EMAIL)) {
+				// Alter the email
+				$usrCfg['usrEmail'] = $usrMail;
+
+				$strUpd = 1;
+			}
+		}
+
+		// Config has been updated
+		if($strUpd) {
+			// Encode and resave the config
+			$usrCfgEncode = json_encode($usrCfg);
+			file_put_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json', $usrCfgEncode);
+
+			// Redirect
+			header("Location: ?page=us-settings&success");
 		}
 	}
 ?>
@@ -133,8 +155,8 @@
 
 							<!-- Email -->
 							<div class="mb-3">
-								<label for="usrMail" class="form-label">New password</label>
-								<input type="email" class="form-control" id="usrMail" name="usrMail" aria-describedby="usrMail">
+								<label for="usrMail" class="form-label">Email</label>
+								<input type="email" class="form-control" id="usrMail" name="usrMail" value="<?php echo $usrCfg['usrEmail']; ?>" aria-describedby="usrMail">
 								<div id="passHelp" class="form-text">Optional</div>
 							</div>
 							<button type="submit" class="btn btn-primary">Update</button>
@@ -149,7 +171,7 @@
 		<script type="text/javascript" src="app/js/session.js"></script>
 
 		<?php
-			// Changed password
+			// Updated details
 			if(isset($_GET['success'])) {
 		?>
 			<script>
@@ -163,7 +185,7 @@
 				<div class="toast align-items-center bg-info bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
 					<div class="d-flex">
 						<div class="toast-body">
-							Your password has been updated!
+							Your details have been updated!
 						</div>
 						<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
 					</div>
