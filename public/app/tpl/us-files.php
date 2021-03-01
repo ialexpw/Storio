@@ -532,7 +532,7 @@
 					<div class="modal-body" style="margin-bottom:-10px;">
 						<p>Whispa generates a unique URL below which you can share with other people to request files to your account, each link is single-use and will expire when files are uploaded.</p><p>The files will stay within your account as per the normal Whispa retention.</p>
 						<hr>
-						<div id="showReq"></div>
+						<div id="showVid"></div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -551,13 +551,13 @@
 				$('.reqBtn').click(function() {
 					console.log("clicked");
 					usrPath = this.name;
-					//$('#showReq').html("");
+					$('#showVid').html("");
 					$('#reqModal').on('shown.bs.modal', function () {
 						$.ajax({
 							type: 'GET',
-							url: "viewSource.php?vid="+usrPath,
+							url: "viewVideo.php?vid="+usrPath,
 							success:function(data){
-								$('#showReq').html(data);
+								$('#showVid').html(data);
 								delete usrPath;
 							}
 						});
