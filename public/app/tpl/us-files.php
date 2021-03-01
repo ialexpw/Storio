@@ -238,19 +238,11 @@
 									$makeBread = explode("/", $makeBread);
 
 									echo '<div class="col-md-11">';
-									//echo '<pre>';
-									//print_r($makeBread);
-									//echo '</pre>';
-
-
-									// Hold variable
-									//$fullBread = '';
-									//$brLinks = '';
-
+									// Store initial variables
 									$hrLink = '';
 									$fullBread = '';
 
-									// Loop
+									// Loop and build the breadcrumbs
 									foreach($makeBread as $breadCrumb) {
 										$rmSlash = str_replace("/", "", $breadCrumb);
 
@@ -259,34 +251,13 @@
 
 										// Add the slash onto the link (for the next go around)
 										$hrLink .= '/';
-
-
-
-
-
-
-										//$brLinks .= $brLinks . '/' . $breadCrumb;
-										//echo 'a: ' . $brLinks . ' b: ' . $breadCrumb;
-										//$fullBread .= '<a href="?page=us-files&browse=' . $brLinks . '">' . $breadCrumb . ' ></a> ';
-										/*
-										$tmpBread = $fullBread . ' / ' . $breadCrumb;
-										$linkBread = str_replace("Home / ", "", $tmpBread);
-										$linkBread = str_replace($fullBread, "", $tmpBread);
-
-										echo $linkBread . '<br />';
-									
-										$breadCrumb = '<a href="?page=us-files&browse=' . $linkBread . '">' . $breadCrumb . '</a>';
-										$fullBread .= ' / ' . $breadCrumb;
-										*/
 									}
 
 									// Remove trailing >
 									$fullBread = substr($fullBread, 0, -1);
 
-									//echo $hrLink . '<br />';
+									// Echo the breadcrumbs
 									echo $fullBread;
-									//$fullBread = substr($fullBread, 0, -1);
-									//echo $fullBread;
 									echo '</div>';
 								}
 
