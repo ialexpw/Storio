@@ -549,6 +549,7 @@
 			// Pop up modal with request files dialog
 			$(document).ready(function(){
 				$('.reqBtn').click(function() {
+					console.log("clicked");
 					usrId = this.name;
 					$('#showReq').html("");
 					$('#reqModal').on('shown.bs.modal', function () {
