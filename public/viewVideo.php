@@ -18,7 +18,7 @@
 
 	// Grab the path and user
 	if(isset($_GET['vid']) && !empty($_GET['vid'])) {
-		echo '<video width="320" height="240" controls>';
+		echo '<video width="100%" controls>';
 		echo '<source src="viewSource.php?u=' . $_SESSION['Username'] . '&p=' . $_GET['vid'] . '" type="video/mp4">';
 		echo 'Your browser does not support the video tag.';
 		echo '</video>';

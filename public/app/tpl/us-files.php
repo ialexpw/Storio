@@ -324,7 +324,7 @@
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
-										}else if(strpos($mimeType, 'video') !== false) {
+										}else if(strpos($mimeType, 'video/mp4') !== false) {
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
@@ -524,14 +524,12 @@
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="reqModalLabel">Request files</h5>
+						<h5 class="modal-title" id="reqModalLabel">Video Preview</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body" style="margin-bottom:-10px;">
-						<p>Whispa generates a unique URL below which you can share with other people to request files to your account, each link is single-use and will expire when files are uploaded.</p><p>The files will stay within your account as per the normal Whispa retention.</p>
-						<hr>
 						<div id="showVid"></div>
 					</div>
 					<div class="modal-footer">
