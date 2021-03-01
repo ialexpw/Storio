@@ -244,14 +244,25 @@
 
 
 									// Hold variable
-									$fullBread = '';
-									$brLinks = '';
+									//$fullBread = '';
+									//$brLinks = '';
+
+									$hrLink = '';
 
 									// Loop
 									foreach($makeBread as $breadCrumb) {
-										$brLinks .= $brLinks . '/' . $breadCrumb;
-										echo 'a: ' . $brLinks . ' b: ' . $breadCrumb;
-										$fullBread .= '<a href="?page=us-files&browse=' . $brLinks . '">' . $breadCrumb . ' ></a> ';
+										$rmSlash = str_replace("/", "", $breadCrumb);
+
+										$hrLink .= $breadCrumb . '/';
+
+
+
+
+
+
+										//$brLinks .= $brLinks . '/' . $breadCrumb;
+										//echo 'a: ' . $brLinks . ' b: ' . $breadCrumb;
+										//$fullBread .= '<a href="?page=us-files&browse=' . $brLinks . '">' . $breadCrumb . ' ></a> ';
 										/*
 										$tmpBread = $fullBread . ' / ' . $breadCrumb;
 										$linkBread = str_replace("Home / ", "", $tmpBread);
@@ -263,7 +274,9 @@
 										$fullBread .= ' / ' . $breadCrumb;
 										*/
 									}
-									$fullBread = substr($fullBread, 0, -1);
+
+									echo $hrLink;
+									//$fullBread = substr($fullBread, 0, -1);
 									//echo $fullBread;
 									echo '</div>';
 								}
