@@ -324,8 +324,8 @@
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
-										//}else if(strpos($mimeType, 'video') !== false) {
-										//	echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
+										}else if(strpos($mimeType, 'video') !== false) {
+											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a class="noLink reqBtn" href="#">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
 										}
@@ -519,10 +519,50 @@
 			</div>
 		</div>
 
+		<!-- Modal for video -->
+		<div class="modal fade" id="reqModal" tabindex="-1" role="dialog" aria-labelledby="reqModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="reqModalLabel">Request files</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body" style="margin-bottom:-10px;">
+						<p>Whispa generates a unique URL below which you can share with other people to request files to your account, each link is single-use and will expire when files are uploaded.</p><p>The files will stay within your account as per the normal Whispa retention.</p>
+						<hr>
+						<div id="showReq"></div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<script>				
 			function showAlert(){
 				$('.toast').toast('show');
 			}
+
+			// Pop up modal with request files dialog
+			$(document).ready(function(){
+				$('.reqBtn').click(function() {
+					usrId = this.name;
+					$('#showReq').html("");
+					$('#reqModal').on('shown.bs.modal', function () {
+						$.ajax({
+							type: 'GET',
+							url: "request.php?id="+usrId,
+							success:function(data){
+								$('#showReq').html(data);
+								delete usrId;
+							}
+						});
+					});
+				});
+			});
 
 			var deleteLinks = document.querySelectorAll('.delete');
 
