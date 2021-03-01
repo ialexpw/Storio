@@ -138,7 +138,7 @@
 						<!-- User Settings -->
 						<br />
 						<h4 class="card-title">User Settings</h4>
-						<p class="card-text" style="margin-top:15px;">Change password</p>
+						<br />
 						<form method="post">
 							<!-- Original password -->
 							<div class="mb-3">
