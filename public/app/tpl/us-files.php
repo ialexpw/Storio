@@ -324,8 +324,8 @@
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
-										}else if(strpos($mimeType, 'video') !== false) {
-											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
+										//}else if(strpos($mimeType, 'video') !== false) {
+										//	echo '<div class="col-8 col-md-6" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
 											echo '<div class="col-8 col-md-6" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
 										}
