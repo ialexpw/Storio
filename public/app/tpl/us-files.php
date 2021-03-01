@@ -283,7 +283,7 @@
 									// Remove trailing >
 									$fullBread = substr($fullBread, 0, -1);
 
-									echo $hrLink . '<br />';
+									//echo $hrLink . '<br />';
 									echo $fullBread;
 									//$fullBread = substr($fullBread, 0, -1);
 									//echo $fullBread;
