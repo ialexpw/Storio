@@ -565,6 +565,8 @@
 
 			// Pop up modal with request files dialog
 			$(document).ready(function(){
+				const player = new Plyr('#player');
+				
 				$('.reqBtn').click(function() {
 					console.log("clicked");
 					usrPath = this.name;
