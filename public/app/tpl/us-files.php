@@ -550,15 +550,15 @@
 			$(document).ready(function(){
 				$('.reqBtn').click(function() {
 					console.log("clicked");
-					//usrId = this.name;
+					usrPath = this.name;
 					//$('#showReq').html("");
 					$('#reqModal').on('shown.bs.modal', function () {
 						$.ajax({
 							type: 'GET',
-							url: "request.php?id="+usrId,
+							url: "viewSource.php?vid="+usrPath,
 							success:function(data){
 								$('#showReq').html(data);
-								delete usrId;
+								delete usrPath;
 							}
 						});
 					});
