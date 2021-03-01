@@ -248,12 +248,17 @@
 									//$brLinks = '';
 
 									$hrLink = '';
+									$fullBread = '';
 
 									// Loop
 									foreach($makeBread as $breadCrumb) {
 										$rmSlash = str_replace("/", "", $breadCrumb);
 
-										$hrLink .= $breadCrumb . '/';
+										$hrLink .= $breadCrumb;
+										$fullBread .= '<a href="?page=us-files&browse=' . $hrLink . '">' . $breadCrumb . '</a>';
+
+										// Add the slash onto the link (for the next go around)
+										$hrLink .= '/';
 
 
 
@@ -275,7 +280,11 @@
 										*/
 									}
 
-									echo $hrLink;
+									// Remove trailing /
+									//$hrLink = substr($fullBread, 0, -1);
+
+									echo $hrLink . '<br />';
+									echo $fullBread;
 									//$fullBread = substr($fullBread, 0, -1);
 									//echo $fullBread;
 									echo '</div>';
