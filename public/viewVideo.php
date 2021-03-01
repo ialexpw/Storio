@@ -18,11 +18,7 @@
 
 	// Grab the path and user
 	if(isset($_GET['vid']) && !empty($_GET['vid'])) {
-		echo '<script src="https://cdn.plyr.io/3.6.4/plyr.polyfilled.js"></script>';
-		echo '<link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />';
-
-	echo '<video id="player" playsinline controls>';
-	//echo '<source src="/path/to/video.mp4" type="video/mp4" />';
+	echo '<video id="player" class="center" playsinline controls>';
 	echo '<source src="viewSource.php?u=' . $_SESSION['Username'] . '&p=' . $_GET['vid'] . '" type="video/mp4">';
 	echo '</video>';
 
