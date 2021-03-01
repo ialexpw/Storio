@@ -255,7 +255,7 @@
 										$rmSlash = str_replace("/", "", $breadCrumb);
 
 										$hrLink .= $breadCrumb;
-										$fullBread .= '<a href="?page=us-files&browse=' . $hrLink . '">' . $breadCrumb . '</a> >';
+										$fullBread .= '<a style="margin-right:10px; margin-left:10px;" href="?page=us-files&browse=' . $hrLink . '">' . $breadCrumb . '</a> >';
 
 										// Add the slash onto the link (for the next go around)
 										$hrLink .= '/';
