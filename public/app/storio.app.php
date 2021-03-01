@@ -126,7 +126,6 @@
 					"canUpload" => $settings['upload'],
 					"canShare" => $settings['share'],
 					"canDelete" => $settings['delete'],
-					"canCreate" => $settings['create'],
 					"isAdmin" => $settings['admin']
 				);
 
