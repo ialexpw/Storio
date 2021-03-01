@@ -238,9 +238,9 @@
 									$makeBread = explode("/", $makeBread);
 
 									echo '<div class="col-md-11">';
-									echo '<pre>';
-									print_r($makeBread);
-									echo '</pre>';
+									//echo '<pre>';
+									//print_r($makeBread);
+									//echo '</pre>';
 
 
 									// Hold variable
