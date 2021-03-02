@@ -139,7 +139,6 @@
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 
 		<link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />
-		<script type="text/javascript" src="https://cdn.plyr.io/3.6.4/plyr.polyfilled.js"></script>
 
 		<style>
 			* {
@@ -411,13 +410,11 @@
 		<!-- Lightbox script -->
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js"></script>
 
-		
+		<script type="text/javascript" src="https://cdn.plyr.io/3.6.4/plyr.polyfilled.js"></script>
 
 		<!-- Copy text to clipboard -->
 		<script>
 			new ClipboardJS(".copyText");
-
-			const player = new Plyr('#player');
 		</script>		
 
 		<!-- Modal for a new folder -->
@@ -552,7 +549,9 @@
 						</button>
 					</div>
 					<div class="modal-body" style="margin-bottom:-10px;">
+						<div id="player">
 						<div id="showVid"></div>
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -565,6 +564,8 @@
 			function showAlert(){
 				$('.toast').toast('show');
 			}
+
+			const player = new Plyr('#player');
 
 			// Pop up modal with request files dialog
 			$(document).ready(function(){
