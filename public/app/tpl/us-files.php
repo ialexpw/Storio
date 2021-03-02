@@ -139,6 +139,7 @@
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 
 		<link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />
+		<script type="text/javascript" src="https://cdn.plyr.io/3.6.4/plyr.polyfilled.js"></script>
 
 		<style>
 			* {
@@ -410,11 +411,13 @@
 		<!-- Lightbox script -->
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js"></script>
 
-		<script type="text/javascript" src="https://cdn.plyr.io/3.6.4/plyr.polyfilled.js"></script>
+		
 
 		<!-- Copy text to clipboard -->
 		<script>
 			new ClipboardJS(".copyText");
+
+			const player = new Plyr('#player');
 		</script>		
 
 		<!-- Modal for a new folder -->
@@ -565,8 +568,6 @@
 
 			// Pop up modal with request files dialog
 			$(document).ready(function(){
-				const player = new Plyr('#player');
-				
 				$('.reqBtn').click(function() {
 					console.log("clicked");
 					usrPath = this.name;
