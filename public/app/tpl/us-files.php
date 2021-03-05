@@ -557,11 +557,6 @@
 		</div>
 
 		<script>
-		// Initialize video player
-	new VideoPlayer({
-		element: document.querySelector('.video-player')
-	});
-	
 			function showAlert(){
 				$('.toast').toast('show');
 			}
