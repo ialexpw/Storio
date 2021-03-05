@@ -43,7 +43,7 @@
 ?>
 <script>
 	// Initialize video player
-	new VideoPlayer({
-		element: document.querySelector('.video-player')
-	});
+	//new VideoPlayer({
+	//	element: document.querySelector('.video-player')
+	//});
 </script>
