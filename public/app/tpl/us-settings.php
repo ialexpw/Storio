@@ -85,16 +85,6 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
 
-		<style>
-			* {
-				font-family: 'Nunito', sans-serif;
-			}
-
-			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-				height:94px;
-			}
-		</style>
-
 		<!-- Custom styles -->
 		<link rel="stylesheet" href="app/css/custom.css">
 	</head>
