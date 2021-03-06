@@ -139,14 +139,6 @@
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 
 		<style>
-			* {
-				font-family: 'Nunito', sans-serif;
-			}
-
-			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-				height:94px;
-			}
-
 			a {
 				text-decoration:none;
 			}
