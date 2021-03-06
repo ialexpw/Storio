@@ -45,6 +45,10 @@
 			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
 				height:94px;
 			}
+
+			.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
+				height:94px;
+			}
 		</style>
 
 		<!-- Custom styles -->
