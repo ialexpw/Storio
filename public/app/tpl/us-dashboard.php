@@ -91,6 +91,7 @@
 						<br />
 						<h4 class="card-title">Dashboard</h4>
 						<p class="card-text" style="margin-top:15px;">Welcome to Storio!</p>
+						<p class="card-text">Storio makes it easy to Upload, Store and Share your files across the web. View media files directly from your account and organise all of them into their appropriate folders and sub-folders.</p>
 						<p class="card-text"></p>
 					</div>
 				</div>
