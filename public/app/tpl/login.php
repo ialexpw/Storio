@@ -47,7 +47,10 @@
 				// Go to the dashboard
 				header("Location: ?page=us-dashboard&li");
 			}
-		}
+		}else{
+			// Log in error
+			header("Location: ?page=us-dashboard&le");
+        }
 	}
 ?>
 <!doctype html>
@@ -128,5 +131,30 @@
 
 		<script type="text/javascript" src="app/js/jquery.min.js"></script>
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
+		
+		<?php
+			// Updated details
+			if(isset($_GET['le'])) {
+				?>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function(){
+                        $('.toast').toast('show');
+                    });
+                </script>
+
+                <!-- Toast notification for Share link -->
+                <div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
+                    <div class="toast align-items-center bg-info bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                Log in failed, please check your credentials and try again.
+                            </div>
+                            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+				<?php
+			}
+		?>
 	</body>
 </html>

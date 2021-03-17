@@ -194,6 +194,8 @@
 				}else{
 					return true;
 				}
+			}else{
+				return false;
 			}
 		}
 		
@@ -229,6 +231,8 @@
 			// Add the user
 			if(Storio::AddUser(strtolower($post['inputUser']), $usrPass, $post['inputStorage'], $usrAr, $post['inputEmail'])) {
 				return true;
+			}else{
+				return false;
 			}
 		}
 		
@@ -393,7 +397,7 @@
 				$usrCfg = Storio::UserConfig($user);
 
 				// Get size of directory
-				$usrDir = Storio::getDirectorySize('../users/' . $user);
+				//$usrDir = Storio::getDirectorySize('../users/' . $user);
 
 				// Add the usage
 				$usrCfg['usedStorage'] = number_format(Storio::getDirectorySize('../users/' . $user) / 1048576, 2);
@@ -458,12 +462,14 @@
 			// Insert the data
 			file_put_contents('../users/configs/site-logs.txt', $logData, FILE_APPEND);
 		}
-
+		
 		/**
 		 * Storio::CheckLicence()
 		 * Function to check the licence code - I'd rather you did not edit this, but do what you have to!
+		 * @return bool
 		 */
-		public static function CheckLicence($user, $code) {
+		public static function CheckLicence(): bool
+		{
 			return true;
 		}
 	}
