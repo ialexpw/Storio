@@ -49,7 +49,7 @@
 			}
 		}else{
 			// Log in error
-			header("Location: ?page=us-dashboard&le");
+			header("Location: ?page=login&le");
         }
 	}
 ?>
