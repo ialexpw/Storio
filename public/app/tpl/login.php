@@ -108,7 +108,7 @@
 						<!-- Intro to the dashboard -->
 						<br />
 						<h4 class="card-title">Log in to Storio</h4>
-						<p class="card-text" style="margin-top:15px;">
+						<div class="card-text" style="margin-top:15px;">
 							<form method="post" action="?page=login">
 								<div class="mb-3">
 									<label for="userInput" class="form-label">User name</label>
@@ -120,7 +120,7 @@
 								</div>
 								<button type="submit" class="btn btn-primary">Log in</button>
 							</form>
-						</p>
+						</div>
 					</div>
 				</div>
 			</div>

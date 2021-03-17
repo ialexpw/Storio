@@ -112,7 +112,7 @@
 
 		// Loop the files
 		foreach($_FILES['file']['tmp_name'] as $index => $tmpName ) {
-			// Error occured on this file
+			// Error occurred on this file
 			if(!empty($_FILES['file']['error'][$index])) {
 				return false;
 			}

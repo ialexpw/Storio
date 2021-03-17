@@ -14,7 +14,8 @@
 	 * Icon Class
 	 */
 	class StoIco {
-		public static function ShowIcon($ico) {
+		public static function ShowIcon($ico): string
+		{
 			// Grab the extension
 			$ext = strtolower(pathinfo($ico, PATHINFO_EXTENSION));
 

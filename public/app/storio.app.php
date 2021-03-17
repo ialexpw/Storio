@@ -22,7 +22,8 @@
 		 * Storio::AddUser()
 		 * Add a user to Storio, user information and permissions are passed through with the array
 		 */
-		public static function Install() {
+		public static function Install(): bool
+		{
 			// Hash the admin password
 			$usrPass = password_hash("AdminUser123", PASSWORD_DEFAULT);
 
@@ -64,22 +65,30 @@
 		public static function SiteConfig() {
 			return json_decode(file_get_contents('../users/configs/site-settings.json'), true);
 		}
-
+		
 		/**
 		 * Storio::UserConfig()
 		 * Returns the user configuration after decoding the JSON
+		 * @param $user
+		 * @return array
 		 */
-		public static function UserConfig($user) {
+		public static function UserConfig($user): array
+		{
 			if(file_exists('../users/configs/' . $user . '-cfg.json')) {
 				return json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
 			}else{
-				return false;
+				return array(
+					"error" => "user_not_exist"
+				);
 			}
 		}
-
+		
 		/**
 		 * Storio::SimpleCrypt()
 		 * Simple encryption/decryption function used for share and download links
+		 * @param $string
+		 * @param string $action
+		 * @return false|string
 		 */
 		public static function SimpleCrypt($string, $action = 'e') {
 			// Change these to encrypt links - changing these will void all previous share links
@@ -102,12 +111,19 @@
 		 
 			return $output;
 		}
-
+		
 		/**
 		 * Storio::AddUser()
 		 * Add a user to Storio, user information and permissions are passed through with the array
+		 * @param $user
+		 * @param $password
+		 * @param $size_mb
+		 * @param $settings
+		 * @param string $email
+		 * @return bool
 		 */
-		public static function AddUser($user, $password, $size_mb, $settings, $email="") {
+		public static function AddUser($user, $password, $size_mb, $settings, $email=""): bool
+		{
 			// Check if a user already exists
 			if(file_exists('../users/' . $user)) {
 				return false;
@@ -142,10 +158,11 @@
 				return false;
 			}
 		}
-
+		
 		/**
 		 * Storio::LoadView()
 		 * Simple template system, check for a template file otherwise return 404
+		 * @param $view
 		 */
 		public static function LoadView($view) {
 			// Check if the page exists otherwise 404
@@ -155,32 +172,36 @@
 				include 'app/tpl/404.php';
 			}
 		}
-
+		
 		/**
 		 * Storio::LoggedIn()
 		 * Check logged in status by looking at the sessions
+		 * @param string $type
+		 * @return int
 		 */
 		public static function LoggedIn($type='') {
 			// Standard user log in
 			if(empty($type)) {
 				if(!isset($_SESSION['UserID']) || !isset($_SESSION['Username'])) {
-					return 0;
+					return false;
 				}else{
-					return 1;
+					return true;
 				}
 			// Admin log in
 			}else if($type == 'admin') {
 				if(!isset($_SESSION['UserID']) || !isset($_SESSION['Username']) || !isset($_SESSION['isAdmin'])) {
-					return 0;
+					return false;
 				}else{
-					return 1;
+					return true;
 				}
 			}
 		}
-
+		
 		/**
 		 * Storio::ValidateUserData()
 		 * Validate the user data when adding a user
+		 * @param $post
+		 * @return bool|int
 		 */
 		public static function ValidateUserData($post) {
 			// Check the user
@@ -210,12 +231,15 @@
 				return true;
 			}
 		}
-
+		
 		/**
 		 * Storio::LoginUser()
 		 * Function to validate the user credentials and proceed to log in the user to the correct place
+		 * @param $post
+		 * @return bool
 		 */
-		public static function LoginUser($post) {
+		public static function LoginUser($post): bool
+		{
 			// Store the data
 			$user = strtolower($post['userInput']);
 			$pass = $post['passInput'];
@@ -259,12 +283,15 @@
 				return false;
 			}
 		}
-
+		
 		/**
 		 * Storio::ReadableSize()
 		 * Converts bytes into a readable value
+		 * @param $bytes
+		 * @return string
 		 */
-		public static function ReadableSize($bytes) {
+		public static function ReadableSize($bytes): string
+		{
 			if($bytes == 0) {
 				return '0B';
 			}
@@ -272,10 +299,12 @@
 			$i = floor(log($bytes, 1024));
 			return round($bytes / pow(1024, $i), [0,0,2,2,3][$i]).['B','kB','MB','GB','TB'][$i];
 		}
-
+		
 		/**
 		 * Storio::DirList()
 		 * Lists all the files/folders from a specific area
+		 * @param $dir
+		 * @return array|string
 		 */
 		public static function DirList($dir){
 			if(!file_exists($dir)){ return $dir.' does not exists'; }
@@ -322,12 +351,15 @@
 		
 			return $list;
 		}
-
+		
 		/**
 		 * Storio::GoBack()
 		 * Simple function to work out one path back (used from sub-dirs)
+		 * @param $path
+		 * @return string
 		 */
-		public static function GoBack($path) {
+		public static function GoBack($path): string
+		{
 			// Check if there is a "/" in the path
 			if(strpos($path, '/') !== false) {
 				$exp = explode("/", $path);
@@ -348,10 +380,11 @@
 				return '';
 			}
 		}
-
+		
 		/**
 		 * Storio::UpdateStorageSize()
 		 * Used to update the storage used from each user, done after removing/adding files and also on the cron
+		 * @param $user
 		 */
 		public static function UpdateStorageSize($user) {
 			// Check directory and config file
@@ -370,12 +403,15 @@
 				file_put_contents('../users/configs/' . $user . '-cfg.json', $usrCfgEncode);
 			}
 		}
-
+		
 		/**
 		 * Storio::getDirectorySize()
 		 * Works out a directory (plus sub-dir sizes) - used from UpdateStorageSize()
+		 * @param $path
+		 * @return int
 		 */
-		public static function getDirectorySize($path) {
+		public static function getDirectorySize($path): int
+		{
 			if(!is_dir( $path )) {
 				return 0;
 			}
@@ -387,12 +423,15 @@
 
 			return $size;
 		}
-
+		
 		/**
 		 * Storio::delTree()
 		 * Deletes a folder, including sub-dirs and files
+		 * @param $dir
+		 * @return bool
 		 */
-		public static function delTree($dir) {
+		public static function delTree($dir): bool
+		{
 			$files = array_diff(scandir($dir), array('.', '..'));
 
 			foreach ($files as $file) {
@@ -401,10 +440,13 @@
 
 			return rmdir($dir);
 		}
-
+		
 		/**
 		 * Storio::AddLog()
 		 * Used to add logs to the system of events
+		 * @param $time
+		 * @param $type
+		 * @param $msg
 		 */
 		public static function AddLog($time, $type, $msg) {
 			// Format the time

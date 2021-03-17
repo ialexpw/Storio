@@ -38,7 +38,7 @@ $(document).ready(function(){
 		// Upload started
 		if(files.length > 1) {
 			$('#filename').html("Multiple files");
-		}else if(files.length == 1){
+		}else if(files.length === 1){
 			$('#filename').html(files[0].name);
 		}
 
