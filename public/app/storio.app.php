@@ -498,15 +498,24 @@
 		 */
 		public static function AddShareLink($path, $file, $user, $len = 12): void
 		{
+			
+			
 			// Check the path
 			if(file_exists($path . '/' . $file)) {
+				// Check for subfolders
+				$subDir = str_replace("../users/" . $user . '/', "", $path);
+				
+				// Append the file name
+				$subDir .= '/' . $file;
+				
+				// Decode the share links file
 				$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
 				
 				// Generate string for the share link
 				$bytes = random_bytes($len);
 				
 				// Add the usage
-				$shareCfg['ShareLinks'][$user][$file] = bin2hex($bytes);
+				$shareCfg['ShareLinks'][$user][$subDir] = bin2hex($bytes);
 				
 				// Encode and resave the config
 				$shareCfgEncode = json_encode($shareCfg);
