@@ -54,16 +54,39 @@
 			$siteFile = fopen('../users/configs/site-settings.json','w+');
 			fwrite($siteFile, $jsonCfg);
 			fclose($siteFile);
+			
+			// Create the share links json
+			$shareCfg = array(
+				"ShareLinks" => array(
+				
+				)
+			);
+			
+			// JSON encode the configuration
+			$jsonShareCfg = json_encode($shareCfg);
+			
+			// Create the json configuration file and write the contents
+			$shareFile = fopen('../users/configs/share-links.json','w+');
+			fwrite($shareFile, $jsonShareCfg);
+			fclose($shareFile);
 
 			return true;
 		}
 
 		/**
-		 * Storio::LoadSiteConfig()
+		 * Storio::SiteConfig()
 		 * Returns the site configuration after decoding the JSON
 		 */
 		public static function SiteConfig() {
 			return json_decode(file_get_contents('../users/configs/site-settings.json'), true);
+		}
+		
+		/**
+		 * Storio::ShareLinks()
+		 * Returns the share links after decoding the JSON
+		 */
+		public static function ShareLinks() {
+			return json_decode(file_get_contents('../users/configs/share-links.json'), true);
 		}
 		
 		/**
@@ -464,6 +487,36 @@
 		}
 		
 		/**
+		 * Storio::GenerateShare()
+		 * Generate a share link
+		 * @param $path
+		 * @param int $len
+		 * @return string
+		 * @throws Exception
+		 */
+		public static function AddShareLink($path, $len = 12): bool
+		{
+			// Check the path
+			if(file_exists($path)) {
+				$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
+				
+				// Generate string for the share link
+				$bytes = random_bytes($len);
+				
+				// Add the usage
+				$shareCfg[$bytes] = $path;
+				
+				// Encode and resave the config
+				$shareCfgEncode = json_encode($shareCfg);
+				file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
+				
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
+		/**
 		 * Storio::CheckLicence()
 		 * Function to check the licence code - I'd rather you did not edit this, but do what you have to!
 		 * @return bool
@@ -473,4 +526,3 @@
 			return true;
 		}
 	}
-?>

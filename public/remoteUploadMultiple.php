@@ -120,7 +120,22 @@
 			// Check that it's an uploaded file and not empty
 			if(!empty($tmpName) && is_uploaded_file($tmpName)) {
 				// Move the file
-				if(!move_uploaded_file($tmpName, $dirUpl . '/' . $_FILES["file"]["name"][$index])) {
+				if(move_uploaded_file($tmpName, $dirUpl . '/' . $_FILES["file"]["name"][$index])) {
+					// Add a share link
+					try {
+						Storio::AddShareLink($dirUpl . '/' . $_FILES["file"]["name"][$index]);
+					} catch (Exception $e) {
+						$output = array(
+							"success" => false,
+							"message" => "share_link",
+							"verbose" => $e
+						);
+						
+						header("Content-Type: application/json; charset=utf-8");
+						echo json_encode($output);
+						exit();
+					}
+				}else{
 					return false;
 				}
 
