@@ -497,26 +497,23 @@
 		public static function AddShareLink($path, $len = 12): bool
 		{
 			// Check the path
-			//if(file_exists($path)) {
+			if(file_exists($path)) {
 				$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
 				
 				// Generate string for the share link
 				$bytes = random_bytes($len);
-				echo bin2hex($bytes);
 				
 				// Add the usage
 				$shareCfg[bin2hex($bytes)] = $path;
-				print_r($shareCfg);
 				
 				// Encode and resave the config
 				$shareCfgEncode = json_encode($shareCfg);
-				print_r($shareCfgEncode);
 				file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
 				
 				return true;
-			//}else{
-			//	return false;
-			//}
+			}else{
+				return false;
+			}
 		}
 		
 		/**
