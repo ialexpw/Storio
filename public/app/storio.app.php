@@ -497,7 +497,7 @@
 		public static function AddShareLink($path, $len = 12): bool
 		{
 			// Check the path
-			if(file_exists($path)) {
+			//if(file_exists($path)) {
 				$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
 				
 				// Generate string for the share link
@@ -511,9 +511,9 @@
 				file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
 				
 				return true;
-			}else{
-				return false;
-			}
+			//}else{
+			//	return false;
+			//}
 		}
 		
 		/**
