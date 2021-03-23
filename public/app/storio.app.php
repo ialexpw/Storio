@@ -507,9 +507,6 @@
 				$rep = '../users/' . $user . '/';
 				$subDir = str_replace($rep, "", $fullPath);
 				
-				// Append the file name
-				$subDir .= '/' . $file;
-				
 				// Decode the share links file
 				$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
 				
