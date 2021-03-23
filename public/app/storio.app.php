@@ -498,16 +498,14 @@
 		 */
 		public static function AddShareLink($path, $file, $user, $len = 12): void
 		{
-			
+			// Build the path
+			$fullPath = $path . '/' . $file;
 			
 			// Check the path
-			if(file_exists($path . '/' . $file)) {
+			if(file_exists($fullPath)) {
 				// Check for subfolders
-				echo $path . '<br />';
 				$rep = '../users/' . $user . '/';
-				echo $rep . '<br />';
-				$subDir = str_replace($rep, "", $path);
-				echo $subDir;
+				$subDir = str_replace($rep, "", $fullPath);
 				
 				// Append the file name
 				$subDir .= '/' . $file;
