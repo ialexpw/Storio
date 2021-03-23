@@ -121,9 +121,15 @@
 			if(!empty($tmpName) && is_uploaded_file($tmpName)) {
 				// Move the file
 				if(move_uploaded_file($tmpName, $dirUpl . '/' . $_FILES["file"]["name"][$index])) {
+					// Check for subfolders
+					$subDir = str_replace("../users/" . $_SESSION['Username'] . '/', "", $dirUpl);
+					
+					// Append the file name
+					$subDir .= '/' . $_FILES["file"]["name"][$index];
+					
 					// Add a share link
 					try {
-						Storio::AddShareLink($dirUpl, $_FILES["file"]["name"][$index], $_SESSION['Username']);
+						Storio::AddShareLink($dirUpl, $subDir, $_SESSION['Username']);
 					} catch (Exception $e) {
 						$output = array(
 							"success" => false,
