@@ -502,10 +502,10 @@
 				
 				// Generate string for the share link
 				$bytes = random_bytes($len);
-				echo $bytes;
+				echo bin2hex($bytes);
 				
 				// Add the usage
-				$shareCfg[$bytes] = $path;
+				$shareCfg[bin2hex($bytes)] = $path;
 				print_r($shareCfg);
 				
 				// Encode and resave the config
