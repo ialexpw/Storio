@@ -494,7 +494,7 @@
 		 * @return string
 		 * @throws Exception
 		 */
-		public static function AddShareLink($path, $len = 12): bool
+		public static function AddShareLink($path, $len = 12): void
 		{
 			// Check the path
 			if(file_exists($path)) {
@@ -509,10 +509,6 @@
 				// Encode and resave the config
 				$shareCfgEncode = json_encode($shareCfg);
 				file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
-				
-				return true;
-			}else{
-				return false;
 			}
 		}
 		
