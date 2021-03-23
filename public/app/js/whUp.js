@@ -95,8 +95,8 @@ $(document).ready(function(){
 				$('#progress').html("Complete");
 
 				// Reload the window to get the file listing
-				window.location.reload();
-				return false;
+				//window.location.reload();
+				//return false;
 			}
 		});
 	});
