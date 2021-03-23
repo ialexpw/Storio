@@ -504,7 +504,9 @@
 			if(file_exists($path . '/' . $file)) {
 				// Check for subfolders
 				echo $path . '<br />';
-				$subDir = str_replace("../users/" . $user . '/', "", $path);
+				$rep = '../users/' . $user . '/';
+				echo $rep . '<br />';
+				$subDir = str_replace($rep, "", $path);
 				echo $subDir;
 				
 				// Append the file name
