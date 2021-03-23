@@ -502,12 +502,15 @@
 				
 				// Generate string for the share link
 				$bytes = random_bytes($len);
+				echo $bytes;
 				
 				// Add the usage
 				$shareCfg[$bytes] = $path;
+				print_r($shareCfg);
 				
 				// Encode and resave the config
 				$shareCfgEncode = json_encode($shareCfg);
+				print_r($shareCfgEncode);
 				file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
 				
 				return true;
