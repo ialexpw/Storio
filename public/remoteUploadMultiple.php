@@ -123,7 +123,7 @@
 				if(move_uploaded_file($tmpName, $dirUpl . '/' . $_FILES["file"]["name"][$index])) {
 					// Add a share link
 					try {
-						Storio::AddShareLink($dirUpl . '/' . $_FILES["file"]["name"][$index]);
+						Storio::AddShareLink($dirUpl, $_FILES["file"]["name"][$index], $_SESSION['Username']);
 					} catch (Exception $e) {
 						$output = array(
 							"success" => false,

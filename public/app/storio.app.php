@@ -490,21 +490,23 @@
 		 * Storio::GenerateShare()
 		 * Generate a share link
 		 * @param $path
+		 * @param $file
+		 * @param $user
 		 * @param int $len
-		 * @return string
+		 * @return void
 		 * @throws Exception
 		 */
-		public static function AddShareLink($path, $len = 12): void
+		public static function AddShareLink($path, $file, $user, $len = 12): void
 		{
 			// Check the path
-			if(file_exists($path)) {
+			if(file_exists($path . '/' . $file)) {
 				$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
 				
 				// Generate string for the share link
 				$bytes = random_bytes($len);
 				
 				// Add the usage
-				$shareCfg[bin2hex($bytes)] = $path;
+				$shareCfg['ShareLinks'][$user][$file] = bin2hex($bytes);
 				
 				// Encode and resave the config
 				$shareCfgEncode = json_encode($shareCfg);
