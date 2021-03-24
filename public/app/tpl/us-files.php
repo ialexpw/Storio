@@ -47,7 +47,7 @@
 	$siteCfg = Storio::SiteConfig();
 	
 	// Load the share links configuration
-	$shareCfg = Storio::ShareLinks();
+	//$shareCfg = Storio::ShareLinks();
 
 	// Load the user configuration
 	$usrCfg = Storio::UserConfig($_SESSION['Username']);
