@@ -1,8 +1,11 @@
 /**
  * Heartbeat singleton
  */
+var getUrl = window.location;
+var baseUrl = getUrl.protocol + "//" + getUrl.host;
+
 var Heart = {
-    url:         'https://stco.uk', // server script to hit
+    url:         baseUrl, // server script to hit
     logging:     true, // log to console for debugging
     pulse:       150, // heartbeat interval in seconds
     maxTimeouts: 3, // max timeouts before "heart attack" (stop)
