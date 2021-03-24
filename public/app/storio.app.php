@@ -58,7 +58,7 @@
 			// Create the share links json
 			$shareCfg = array(
 				"ShareLinks" => array(
-				
+					
 				)
 			);
 			
@@ -496,25 +496,26 @@
 		 * @return void
 		 * @throws Exception
 		 */
-		public static function AddShareLink($path, $file, $user, $len = 12): void
+		public static function AddShareLink($path, $file, $user): void
 		{
 			// Build the path
 			$fullPath = $path . '/' . $file;
 			
 			// Check the path
-			if(file_exists($fullPath)) {
-				// Check for subfolders
-				$rep = '../users/' . $user . '/';
-				$subDir = str_replace($rep, "", $fullPath);
-				
+			if(file_exists($fullPath)) {	
 				// Decode the share links file
 				$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
-				
+
 				// Generate string for the share link
-				$bytes = random_bytes($len);
+				$shareId = sha1($user . $fullPath);
+
+				// Cut the length of the string down
+				$shareId = substr($shareId, 0, 15);
 				
-				// Add the usage
-				$shareCfg['ShareLinks'][$user][$subDir] = bin2hex($bytes);
+				// Add the required strings
+				$shareCfg['ShareLinks'][$shareId]['File'] = $file;
+				$shareCfg['ShareLinks'][$shareId]['Path'] = $fullPath;
+				$shareCfg['ShareLinks'][$shareId]['User'] = $user;
 				
 				// Encode and resave the config
 				$shareCfgEncode = json_encode($shareCfg);
