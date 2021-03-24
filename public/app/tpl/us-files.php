@@ -47,7 +47,7 @@
 	$siteCfg = Storio::SiteConfig();
 	
 	// Load the share links configuration
-	//$shareCfg = Storio::ShareLinks();
+	$shareCfg = Storio::ShareLinks();
 
 	// Load the user configuration
 	$usrCfg = Storio::UserConfig($_SESSION['Username']);
@@ -99,6 +99,21 @@
 				// Check the file exists
 				if(file_exists($rmFile)) {
 					unlink($rmFile);
+
+					// Remove the share link entry - Generate string for the share link
+					$shareId = sha1($_SESSION['Username'] . $rmFile);
+
+					// Cut the length of the string down
+					$shareId = substr($shareId, 0, 15);
+
+					// Unset the array entry
+					if(isset($shareCfg['ShareLinks'][$shareId])) {
+						unset($shareCfg['ShareLinks'][$shareId]);
+
+						// Encode and resave the config
+						$shareCfgEncode = json_encode($shareCfg);
+						file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
+					}
 
 					// Update folder sizes
 					Storio::UpdateStorageSize($_SESSION['Username']);

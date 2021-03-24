@@ -67,9 +67,6 @@
 				exit();
 			}
 		}
-
-		// Decrypt it
-		//$dlFile = Storio::SimpleCrypt($_GET['dl'], 'd');
 	}
 
 	// Simple templating
