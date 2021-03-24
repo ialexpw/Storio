@@ -325,6 +325,12 @@
 										// Config the user icon
 										$fileIco = '<i style="font-size: 1.4rem; margin-right:12px;" class="' . $fIco . '"></i>';
 
+										// Generate the download link
+										$shareId = sha1($_SESSION['Username'] . $usrDir . $getBrowse. '/' . $file);
+
+										// Cut the length of the string down
+										$shareId = substr($shareId, 0, 15);
+
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $file);
 
@@ -348,8 +354,9 @@
 
 										// Show actions (download, copy and delete)
 										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;">';
-										echo '<a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
-										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $encFile . '" href="javascript:;"><span style="color:blue; margin-right:22px;"><i class="fas fa-link"></i></span></a> ';
+										//echo '<a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
+										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:green; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
+										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;"><span style="color:blue; margin-right:22px;"><i class="fas fa-link"></i></span></a> ';
 										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure you would like to delete this file?"><span style="color:red;"><i class="far fa-trash-alt"></i></span></a>';
 										echo '</div>';
 									}
