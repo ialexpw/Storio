@@ -122,19 +122,7 @@
 				// Move the file
 				if(move_uploaded_file($tmpName, $dirUpl . '/' . $_FILES["file"]["name"][$index])) {
 					// Add a share link
-					try {
-						Storio::AddShareLink($dirUpl, $_FILES["file"]["name"][$index], $_SESSION['Username']);
-					} catch (Exception $e) {
-						$output = array(
-							"success" => false,
-							"message" => "share_link",
-							"verbose" => $e
-						);
-						
-						header("Content-Type: application/json; charset=utf-8");
-						echo json_encode($output);
-						exit();
-					}
+					Storio::AddShareLink($dirUpl, $_FILES["file"]["name"][$index], $_SESSION['Username']);
 				}else{
 					return false;
 				}
