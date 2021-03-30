@@ -111,8 +111,8 @@
 						<h4 class="card-title">System Logs</h4>
 						<p class="card-text" style="margin-top:15px;">
 							<div class="mb-3">
-								<label for="exampleFormControlTextarea1" class="form-label">Storio logs</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="8"><?php echo $logFile; ?></textarea>
+								<label for="stLogs" class="form-label">Storio logs</label>
+								<textarea class="form-control" id="stLogs" rows="8"><?php echo $logFile; ?></textarea>
 							</div>
 						</p>
 					</div>
@@ -123,5 +123,10 @@
 		<script type="text/javascript" src="app/js/jquery.min.js"></script>
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 		<script type="text/javascript" src="app/js/session.js"></script>
+
+		<script>
+			var textarea = document.getElementById('stLogs');
+			textarea.scrollTop = textarea.scrollHeight;
+		</script>
 	</body>
 </html>
