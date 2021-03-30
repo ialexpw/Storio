@@ -163,8 +163,6 @@
 					"maxStorage" => $size_mb,
 					"isEnabled" => $settings['enabled'],
 					"canUpload" => $settings['upload'],
-					"canShare" => $settings['share'],
-					"canDelete" => $settings['delete'],
 					"isAdmin" => $settings['admin']
 				);
 
@@ -246,8 +244,6 @@
 			$usrAr = array(
 				"enabled" => $post['inputEnab'],
 				"upload" => $post['inputUpload'],
-				"share" => $post['inputShare'],
-				"delete" => $post['inputDelete'],
 				"admin" => $post['inputAdmin']
 			);
 

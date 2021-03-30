@@ -139,8 +139,6 @@
 									echo '<th scope="col">Storage</th>';
 									echo '<th scope="col">Enabled</th>';
 									echo '<th scope="col">Upload</th>';
-									echo '<th scope="col">Share</th>';
-									echo '<th scope="col">Delete</th>';
 									echo '<th scope="col">Admin</th>';
 									echo '</tr>';
 									echo '</thead>';
@@ -163,13 +161,11 @@
 
 										// Add table row
 										echo '<tr>';
-										echo '<td style="width:14%;">' . $usr . '</td>';
-										echo '<td style="width:14%;">' . number_format($usrCfg['usedStorage'], 2) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
-										echo '<td style="width:12%;">' . $usrCfg['isEnabled'] . '</td>';
-										echo '<td style="width:12%;">' . $usrCfg['canUpload'] . '</td>';
-										echo '<td style="width:12%;">' . $usrCfg['canShare'] . '</td>';
-										echo '<td style="width:12%;">' . $usrCfg['canDelete'] . '</td>';
-										echo '<td style="width:12%;">' . $usrCfg['isAdmin'] . '</td>';
+										echo '<td style="width:24%;">' . $usr . '</td>';
+										echo '<td style="width:24%;">' . number_format($usrCfg['usedStorage'], 2) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
+										echo '<td style="width:13%;">' . $usrCfg['isEnabled'] . '</td>';
+										echo '<td style="width:13%;">' . $usrCfg['canUpload'] . '</td>';
+										echo '<td style="width:13%;">' . $usrCfg['isAdmin'] . '</td>';
 										echo '</tr>';
 									}
 
@@ -249,24 +245,6 @@
 								<div class="col-md">
 									<label for="inputUpload" class="form-label">Can upload</label>
 									<select id="inputUpload" name="inputUpload" class="form-select">
-										<option value="true" selected>true</option>
-										<option value="false">false</option>
-									</select>
-								</div>
-
-								<!-- Can share files -->
-								<div class="col-md">
-									<label for="inputShare" class="form-label">Can share</label>
-									<select id="inputShare" name="inputShare" class="form-select">
-										<option value="true" selected>true</option>
-										<option value="false">false</option>
-									</select>
-								</div>
-
-								<!-- Can delete files -->
-								<div class="col-md">
-									<label for="inputDelete" class="form-label">Can delete</label>
-									<select id="inputDelete" name="inputDelete" class="form-select">
 										<option value="true" selected>true</option>
 										<option value="false">false</option>
 									</select>
