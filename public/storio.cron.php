@@ -13,7 +13,7 @@
 
 	include 'app/storio.app.php';
 
-	if (php_sapi_name() === 'cli') {
+	if(php_sapi_name() === 'cli') {
 		// Get a listing of directories
 		$dirs = array_diff(scandir('../users/'), array('.', '..'));
 

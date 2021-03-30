@@ -487,7 +487,7 @@
 		}
 		
 		/**
-		 * Storio::GenerateShare()
+		 * Storio::AddShareLink()
 		 * Generate a share link
 		 * @param $path
 		 * @param $file

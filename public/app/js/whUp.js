@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$('input[type=file]').change(function(){
 
 		// Init area
-		const url = 'remoteUploadMultiple.php';
+		const url = 'rmUpload.php';
 		const form = document.querySelector('#upload');
 
 		// Max files at a time
