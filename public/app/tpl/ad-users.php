@@ -92,12 +92,6 @@
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">
-								<a class="nav-link" href="?page=ad-files">
-									<i class="bi bi-folder" style="font-size: 2rem; color: cornflowerblue;"></i>
-									<br />Files
-								</a>
-							</li>
-							<li class="nav-item" style="width:12%;">
 								<a class="nav-link active" aria-current="true" href="?page=ad-users">
 									<i class="bi bi-people" style="font-size: 2rem;"></i>
 									<br />Users
@@ -161,11 +155,11 @@
 
 										// Add table row
 										echo '<tr>';
-										echo '<td>' . $usr . '</td>';
-										echo '<td>' . number_format($usrCfg['usedStorage'], 2) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
-										echo '<td>' . $usrCfg['isEnabled'] . '</td>';
-										echo '<td>' . $usrCfg['canUpload'] . '</td>';
-										echo '<td>' . $usrCfg['isAdmin'] . '</td>';
+										echo '<td style="width:24%;">' . $usr . '</td>';
+										echo '<td style="width:24%;">' . number_format($usrCfg['usedStorage'], 2) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
+										echo '<td style="width:13%;">' . $usrCfg['isEnabled'] . '</td>';
+										echo '<td style="width:13%;">' . $usrCfg['canUpload'] . '</td>';
+										echo '<td style="width:13%;">' . $usrCfg['isAdmin'] . '</td>';
 										echo '</tr>';
 									}
 
