@@ -10,7 +10,7 @@
 	 * @link       https://storio.uk
 	 */
 
-	include 'app/storio.app.php';
+	include 'public/app/storio.app.php';
 
 	if(php_sapi_name() === 'cli') {
 		// Set a password
