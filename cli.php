@@ -13,29 +13,33 @@
 	include 'public/app/storio.app.php';
 
 	if(php_sapi_name() === 'cli') {
-		// Set a password
-		if(strtolower($argv[1]) == 'set-password') {
-			// Check the user exists
-			if(file_exists('users/' . $argv[2])) {
-				// Password supplied
-				if(isset($argv[3])) {
-					// Load the user configuration
-					$usrCfg = Storio::UserConfig($argv[2]);
+		if(!empty($argv[1])) {
+			// Set a password
+			if(strtolower($argv[1]) == 'set-password') {
+				// Check the user exists
+				if(file_exists('users/' . $argv[2])) {
+					// Password supplied
+					if(isset($argv[3])) {
+						// Load the user configuration
+						$usrCfg = Storio::UserConfig($argv[2]);
 
-					// Hash the new password
-					$usrCfg['passWord'] = password_hash($argv[3], PASSWORD_DEFAULT);
+						// Hash the new password
+						$usrCfg['passWord'] = password_hash($argv[3], PASSWORD_DEFAULT);
 
-					// Encode and resave the config
-					$usrCfgEncode = json_encode($usrCfg);
-					file_put_contents('users/configs/' . $argv[2] . '-cfg.json', $usrCfgEncode);
+						// Encode and resave the config
+						$usrCfgEncode = json_encode($usrCfg);
+						file_put_contents('users/configs/' . $argv[2] . '-cfg.json', $usrCfgEncode);
 
-					exit('Password updated');
+						exit('Password updated');
+					}else{
+						exit('Supply a password');
+					}
 				}else{
-					exit('Supply a password');
+					exit('User not found');
 				}
-			}else{
-				exit('User not found');
 			}
+		}else{
+			exit('No params');
 		}
 	}
 ?>
