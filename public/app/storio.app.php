@@ -97,8 +97,11 @@
 		 */
 		public static function UserConfig($user): array
 		{
-			if(file_exists('../users/configs/' . $user . '-cfg.json')) {
+			
+			if(file_exists('../users/configs/' . $user . '-cfg.json')) {		// Original path
 				return json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
+			}else if(file_exists('users/configs/' . $user . '-cfg.json')) {		// For cron/cli
+				return json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
 			}else{
 				return array(
 					"error" => "user_not_exist"
