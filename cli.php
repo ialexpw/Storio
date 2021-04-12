@@ -16,7 +16,7 @@
 		// Set a password
 		if(strtolower($argv[1]) == 'set-password') {
 			// Check the user exists
-			if(file_exists('../users/' . $argv[2])) {
+			if(file_exists('users/' . $argv[2])) {
 				// Password supplied
 				if(isset($argv[3])) {
 					// Load the user configuration
@@ -27,7 +27,7 @@
 
 					// Encode and resave the config
 					$usrCfgEncode = json_encode($usrCfg);
-					file_put_contents('../users/configs/' . $argv[2] . '-cfg.json', $usrCfgEncode);
+					file_put_contents('users/configs/' . $argv[2] . '-cfg.json', $usrCfgEncode);
 
 					exit('Password updated');
 				}else{
