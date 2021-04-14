@@ -411,21 +411,25 @@
 		 * Used to update the storage used from each user, done after removing/adding files and also on the cron
 		 * @param $user
 		 */
-		public static function UpdateStorageSize($user) {
+		public static function UpdateStorageSize($user, $cron = 0) {
+			// Default to standard
+			$usrPath = '../';
+
+			// if running from the cron, use same dir
+			if($cron) {
+				$usrPath = '';
+			}
 			// Check directory and config file
-			if(is_dir('../users/' . $user) && file_exists('../users/configs/' . $user . '-cfg.json')) {
+			if(is_dir($usrPath . 'users/' . $user) && file_exists($usrPath . 'users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration
 				$usrCfg = Storio::UserConfig($user);
 
-				// Get size of directory
-				//$usrDir = Storio::getDirectorySize('../users/' . $user);
-
 				// Add the usage
-				$usrCfg['usedStorage'] = number_format(Storio::getDirectorySize('../users/' . $user) / 1048576, 2);
+				$usrCfg['usedStorage'] = number_format(Storio::getDirectorySize($usrPath . 'users/' . $user) / 1048576, 2);
 
 				// Encode and resave the config
 				$usrCfgEncode = json_encode($usrCfg);
-				file_put_contents('../users/configs/' . $user . '-cfg.json', $usrCfgEncode);
+				file_put_contents($usrPath . 'users/configs/' . $user . '-cfg.json', $usrCfgEncode);
 			}
 		}
 		

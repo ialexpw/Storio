@@ -15,16 +15,16 @@
 
 	if(php_sapi_name() === 'cli') {
 		// Get a listing of directories
-		$dirs = array_diff(scandir('../users/'), array('.', '..'));
+		$dirs = array_diff(scandir('users/'), array('.', '..'));
 
 		// Loop the users
 		foreach($dirs as $usr) {
-			if(!is_dir('../users/' . $usr)) {
+			if(!is_dir('users/' . $usr)) {
 				continue;
 			}
 
 			// Update storage sizes for each user
-			Storio::UpdateStorageSize($usr);
+			Storio::UpdateStorageSize($usr, 1);
 		}
 	}
 ?>
