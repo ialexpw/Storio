@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * storio.cron.php
+	 * cron.php
 	 *
 	 * Cron to update file/folder sizes
 	 * Storio adds the file sizes on upload, the cron is here to update when files/folders get removed
@@ -11,7 +11,7 @@
 	 * @link       https://storio.uk
 	 */
 
-	include 'app/storio.app.php';
+	include 'public/app/storio.app.php';
 
 	if(php_sapi_name() === 'cli') {
 		// Get a listing of directories
