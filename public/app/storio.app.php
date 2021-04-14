@@ -22,8 +22,7 @@
 		 * Storio::AddUser()
 		 * Add a user to Storio, user information and permissions are passed through with the array
 		 */
-		public static function Install(): bool
-		{
+		public static function Install() {
 			// Hash the admin password
 			$usrPass = password_hash("AdminUser123", PASSWORD_DEFAULT);
 
@@ -95,16 +94,20 @@
 		 * @param $user
 		 * @return array
 		 */
-		public static function UserConfig($user): array
-		{
-			if(file_exists('../users/configs/' . $user . '-cfg.json')) {		// Original path
-				return json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
-			}else if(file_exists('users/configs/' . $user . '-cfg.json')) {		// For cron/cli
-				return json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
+		public static function UserConfig($user, $cron = 0) {
+			// Default to standard
+			$usrPath = '../';
+
+			// if running from the cron, use same dir
+			if($cron) {
+				$usrPath = '';
+			}
+
+			// Check for the file, otherwise fail
+			if(file_exists($usrPath . 'users/configs/' . $user . '-cfg.json')) {
+				return json_decode(file_get_contents($usrPath . 'users/configs/' . $user . '-cfg.json'), true);
 			}else{
-				return array(
-					"error" => "user_not_exist"
-				);
+				return '';
 			}
 		}
 		
@@ -147,8 +150,7 @@
 		 * @param string $email
 		 * @return bool
 		 */
-		public static function AddUser($user, $password, $size_mb, $settings, $email=""): bool
-		{
+		public static function AddUser($user, $password, $size_mb, $settings, $email="") {
 			// Check if a user already exists
 			if(file_exists('../users/' . $user)) {
 				return false;
@@ -263,8 +265,7 @@
 		 * @param $post
 		 * @return bool
 		 */
-		public static function LoginUser($post): bool
-		{
+		public static function LoginUser($post) {
 			// Store the data
 			$user = strtolower($post['userInput']);
 			$pass = $post['passInput'];
@@ -315,8 +316,7 @@
 		 * @param $bytes
 		 * @return string
 		 */
-		public static function ReadableSize($bytes): string
-		{
+		public static function ReadableSize($bytes) {
 			if($bytes == 0) {
 				return '0B';
 			}
@@ -331,7 +331,7 @@
 		 * @param $dir
 		 * @return array|string
 		 */
-		public static function DirList($dir){
+		public static function DirList($dir) {
 			if(!file_exists($dir)){ return $dir.' does not exists'; }
 			$list = array('path' => $dir, 'dirview' => array(), 'dirlist' => array(), 'files' => array(), 'folders' => array());
 		
@@ -383,8 +383,7 @@
 		 * @param $path
 		 * @return string
 		 */
-		public static function GoBack($path): string
-		{
+		public static function GoBack($path) {
 			// Check if there is a "/" in the path
 			if(strpos($path, '/') !== false) {
 				$exp = explode("/", $path);
@@ -419,6 +418,7 @@
 			if($cron) {
 				$usrPath = '';
 			}
+			
 			// Check directory and config file
 			if(is_dir($usrPath . 'users/' . $user) && file_exists($usrPath . 'users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration
@@ -439,8 +439,7 @@
 		 * @param $path
 		 * @return int
 		 */
-		public static function getDirectorySize($path): int
-		{
+		public static function getDirectorySize($path) {
 			if(!is_dir( $path )) {
 				return 0;
 			}
@@ -459,8 +458,7 @@
 		 * @param $dir
 		 * @return bool
 		 */
-		public static function delTree($dir): bool
-		{
+		public static function delTree($dir) {
 			$files = array_diff(scandir($dir), array('.', '..'));
 
 			foreach ($files as $file) {
@@ -498,8 +496,7 @@
 		 * @return void
 		 * @throws Exception
 		 */
-		public static function AddShareLink($path, $file, $user): void
-		{
+		public static function AddShareLink($path, $file, $user) {
 			// Build the path
 			$fullPath = $path . '/' . $file;
 			
@@ -530,8 +527,7 @@
 		 * Function to check the licence code - I'd rather you did not edit this, but do what you have to!
 		 * @return bool
 		 */
-		public static function CheckLicence(): bool
-		{
+		public static function CheckLicence() {
 			return true;
 		}
 	}
