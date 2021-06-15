@@ -396,6 +396,8 @@
 					</div>
 				</div>
 
+				<br />
+
 				<div class="card">
 					<div class="card-body">
 						<?php
@@ -428,6 +430,7 @@
 						?>
 					</div>
 				</div>
+				<p class="text-center" style="font-size:12px;">&copy; Copyright Storio 2021 - b.<?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
 			</div>
 		</main>
 
