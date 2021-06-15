@@ -15,4 +15,4 @@
 		exit('error');
 	}
 ?>
-404
+This page or file can not be found. <a href="?page=login">Return home</a>.

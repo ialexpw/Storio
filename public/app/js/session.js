@@ -50,7 +50,7 @@ var Heart = {
      * Successful heartbeat handler
      */
     thump: function() {
-        Heart.log('thump thump');
+        Heart.log('Session Heartbeat');
         if (Heart.timeouts > 0)
             Heart.timeouts = 0;
     },
@@ -62,7 +62,7 @@ var Heart = {
         if (++Heart.timeouts >= Heart.maxTimeouts)
             Heart.infarction();
         else
-            Heart.log('skipped beat')
+            Heart.log('Heartbeat Skipped')
                  .beat();
     },
 
@@ -70,7 +70,7 @@ var Heart = {
      * Heartbeat failure handler
      */
     infarction: function() {
-        Heart.log('CODE BLUE!! GET THE CRASH CART!!')
+        Heart.log('Heartbeat Failed')
              .stop();
     },
 
