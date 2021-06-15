@@ -66,6 +66,9 @@
 				readfile($dlFile);
 				exit();
 			}
+		}else{
+			// No value - send to 404
+			exit(Storio::LoadView('404'));
 		}
 	}
 
