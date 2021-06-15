@@ -399,9 +399,20 @@
 								}
 
 								// Used storage bar
-								echo '<br /><hr><p class="text-center">Storage allocation</p><div class="progress" style="border: 1px solid #000; width:75%;">';
+								echo '<br /><hr>';
+								
+								echo '<div class="row">';
+								
+								echo '<div class="col-md-6">';
+								echo '<p class="text-center">Storage allocation</p><div class="progress" style="border: 1px solid #000; width:75%;">';
 								echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
 								echo '<small class="justify-content-center d-flex position-absolute w-75">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</small>';
+								echo '</div>';
+								echo '</div>';
+
+								echo '<div class="col-md-6">';
+								echo '</div>';
+
 								echo '</div>';
 							?>
 						</p>
