@@ -82,6 +82,16 @@
 						<h4 class="card-title">Dashboard</h4>
 						<p class="card-text" style="margin-top:15px;">Welcome to Storio!</p>
 						<p class="card-text">Storio makes it easy to Upload, Store and Share your files across the web. View media files directly from your account and organise all of them into their appropriate folders and sub-folders.</p>
+						
+						<h5 class="card-title">Upload</h5>
+						<p class="card-text" style="margin-top:15px;">With Storio you can upload multiple files at the same time into your account, either choose them from your standard file-picker or drag and drop them from your computer directly into your webpage.</p>
+
+						<h5 class="card-title">Store</h5>
+						<p class="card-text" style="margin-top:15px;">Create folders within Storio to sort your content into different categories and keep track of files with unique file-type icons throughout the application.</p>
+
+						<h5 class="card-title">Share</h5>
+						<p class="card-text" style="margin-top:15px;">Unique sharing links can be created for each individual file. Storio has the ability to remove or regenerate sharing links to void access to people at any time.</p>
+
 						<p class="card-text"></p>
 					</div>
 				</div>
