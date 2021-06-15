@@ -430,7 +430,7 @@
 						?>
 					</div>
 				</div>
-				<p class="text-center" style="font-size:12px;">&copy; Copyright Storio 2021 - b.<?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
+				<p class="text-center" style="font-size:13px; margin-top:5px;">&copy; Copyright Storio 2021 - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
 			</div>
 		</main>
 
