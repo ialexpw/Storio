@@ -369,7 +369,6 @@
 
 										// Show actions (download, copy and delete)
 										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;">';
-										//echo '<a alt="Download file" href="?dl=' . $encFile . '"><span style="color:green; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
 										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
 										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;"><span style="color:#A4B6DD; margin-right:22px;"><i class="fas fa-link"></i></span></a> ';
 										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure you would like to delete this file?"><span style="color:#D09292;"><i class="far fa-trash-alt"></i></span></a>';
@@ -384,13 +383,6 @@
 
 								// End the row
 								echo '</div>';
-
-								
-
-								// Used storage bar
-								//echo '<br /><hr>';
-								
-								
 							?>
 						</p>
 					</div>
@@ -430,7 +422,7 @@
 						?>
 					</div>
 				</div>
-				<p class="text-center" style="font-size:13px; margin-top:5px;">&copy; Copyright Storio 2021 - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
+				<p class="text-center" style="margin-top:5px;">&copy; Copyright Storio 2021 - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
 			</div>
 		</main>
 
