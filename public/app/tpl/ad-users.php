@@ -74,9 +74,6 @@
 			<div class="container-fluid">
 				<i class="bi bi-droplet" style="font-size: 2rem; margin-right:12px; margin-bottom:6px; color: cornflowerblue;"></i>
 				<a class="navbar-brand" href="?page=ad-dashboard"> Storio File Management</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
 			</div>
 		</nav>
 
@@ -88,7 +85,7 @@
 							<li class="nav-item" style="width:12%;">
 								<a class="nav-link" href="?page=ad-dashboard">
 									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
-									<br />Dashboard
+									<br />Home
 								</a>
 							</li>
 							<li class="nav-item" style="width:12%;">

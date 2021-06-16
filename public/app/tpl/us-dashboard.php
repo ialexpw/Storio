@@ -45,9 +45,6 @@
 			<div class="container-fluid">
 				<i class="bi bi-droplet" style="font-size: 2rem; margin-right:12px; margin-bottom:6px; color: cornflowerblue;"></i>
 				<a class="navbar-brand" href="?page=us-dashboard"> Storio File Management</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
 			</div>
 		</nav>
 
@@ -59,7 +56,7 @@
 							<li class="nav-item">
 								<a class="nav-link active" aria-current="true" href="?page=us-dashboard">
 									<i class="bi bi-house" style="font-size: 2rem;"></i>
-									<br />Dashboard
+									<br />Home
 								</a>
 							</li>
 							<li class="nav-item">
@@ -79,8 +76,7 @@
 					<div class="card-body">
 						<!-- Intro to the dashboard -->
 						<br />
-						<h4 class="card-title">Dashboard</h4>
-						<p class="card-text" style="margin-top:15px;">Welcome to Storio!</p>
+						<h4 class="card-title">Welcome to Storio!</h4>
 						<p class="card-text">Storio makes it easy to Upload, Store and Share your files across the web. View media files directly from your account and organise all of them into their appropriate folders and sub-folders.</p>
 						
 						<h5 class="card-title">Upload</h5>

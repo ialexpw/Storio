@@ -33,8 +33,4 @@ body {
 	.nav-item {
 		width: 33%;
 	}
-
-	.nav-link .nav-item .nav {
-		font-size: 10px;
-	}
 }
