@@ -311,7 +311,7 @@
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">n/a</div>';
 
 										// Delete folder option
-										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;"><a href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?"><span style="color:#D09292; margin-left:78px;"><i class="far fa-trash-alt"></i></span></a></div>';
+										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;"><a href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?"><span style="color:#D09292; margin-left:70px;"><i class="far fa-trash-alt"></i></span></a></div>';
 									}
 								}
 
@@ -366,8 +366,8 @@
 
 										// Show actions (download, copy and delete)
 										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;">';
-										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:22px;"><i class="fas fa-angle-double-down"></i></span></a> ';
-										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;"><span style="color:#A4B6DD; margin-right:22px;"><i class="fas fa-link"></i></span></a> ';
+										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:18px;"><i class="fas fa-angle-double-down"></i></span></a> ';
+										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;"><span style="color:#A4B6DD; margin-right:18px;"><i class="fas fa-link"></i></span></a> ';
 										echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure you would like to delete this file?"><span style="color:#D09292;"><i class="far fa-trash-alt"></i></span></a>';
 										echo '</div>';
 									}
