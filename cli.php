@@ -23,13 +23,24 @@
 						// Hash the password
 						$usrPass = password_hash($argv[3], PASSWORD_DEFAULT);
 
-						// Create with default perms
-						if(Storio::AddUser(strtolower($argv[2]), $usrPass, 1000, $usrAr, $post['inputEmail'])) {
+						// Default settings
+						$usrAr = array(
+							"enabled" => "true",
+							"upload" => "true",
+							"admin" => "false"
+						);
 
+						// Create with default perms
+						if(Storio::AddUser(strtolower($argv[2]), $usrPass, 1000, $usrAr)) {
+							exit("User created");
+						}else{
+							exit("Failed to create user");
 						}
 					}else{
-						// Random password
+						exit("Supply a password");
 					}
+				}else{
+					exit("User exists");
 				}
 			}
 
