@@ -403,14 +403,14 @@
 								$percUsed = 0;
 							}
 
-							echo '<h4 class="card-title">File Statistics</h4>';
+							echo '<h4 class="card-title">File Statistics</h4><br />';
 
 							echo '<div class="row">';
 
 							echo '<div class="col-md-4">';
 							echo '<p class="text-center">Storage allocation</p><div class="progress" style="border: 1px solid #000; width:75%;">';
 							echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
-							echo '<small class="justify-content-center d-flex position-absolute" style="width: 20%!important;">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</small>';
+							echo '<small class="justify-content-center d-flex position-absolute" style="width: 28%!important;">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</small>';
 							echo '</div>';
 							echo '</div>';
 
