@@ -241,7 +241,7 @@
 
 								// Show the back button if needed
 								if(!empty($_GET['browse'])) {
-									echo '<div class="col-md-1" style="margin-bottom:8px;">';
+									echo '<div class="col-md-1 left-indent" style="margin-bottom:8px;">';
 									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a>';
 									echo '</div>';
 
