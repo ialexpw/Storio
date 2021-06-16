@@ -351,15 +351,15 @@
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
-											echo '<div class="col-8 col-md-6 left-indent" style="margin-bottom:2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
+											echo '<div class="col-8 col-md-6 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
 										}else if(strpos($mimeType, 'video/mp4') !== false) {
-											echo '<div class="col-8 col-md-6 left-indent" style="margin-bottom:2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><a class="noLink reqBtn" name="' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
+											echo '<div class="col-8 col-md-6 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
-											echo '<div class="col-8 col-md-6 left-indent" style="margin-bottom:2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">' . $fileIco . ' ' . $file . '</div>';
+											echo '<div class="col-8 col-md-6 left-indent stop-wrap" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
 										}
 
 										// Show mime type
-										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . $mimeType . '</div>';
+										echo '<div class="col-md-2 d-none d-sm-block stop-wrap" style="margin-bottom:2px;">' . $mimeType . '</div>';
 
 										// Show file size
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
