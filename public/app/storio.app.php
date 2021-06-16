@@ -317,6 +317,7 @@
 		 * @return string
 		 */
 		public static function ReadableSize($bytes) {
+			// Avoid / by 0 if the file is empty
 			if($bytes == 0) {
 				return '0B';
 			}
@@ -328,6 +329,7 @@
 		/**
 		 * Storio::DirList()
 		 * Lists all the files/folders from a specific area
+		 * @author https://stackoverflow.com/questions/24783862/list-all-the-files-and-folders-in-a-directory-with-php-recursive-function
 		 * @param $dir
 		 * @return array|string
 		 */
@@ -344,7 +346,7 @@
 						$list['dirlist_natural'][] = $path;
 						if(is_dir($path)){
 							$list['dirview'][$dir]['folders'][] = $path;
-							// Bos klasorler while icerisine tekrar girmeyecektir. Klasorun oldugundan emin olalım.
+							// Bos klasorler while icerisine tekrar girmeyecektir. Klasorun oldugundan emin olalım
 							if(!isset($list['dirview'][$path])){ $list['dirview'][$path] = array(); }
 							$dirs[] = $path;
 						}
@@ -440,7 +442,8 @@
 		 * @return int
 		 */
 		public static function getDirectorySize($path) {
-			if(!is_dir( $path )) {
+			// Not a directory
+			if(!is_dir($path)) {
 				return 0;
 			}
 

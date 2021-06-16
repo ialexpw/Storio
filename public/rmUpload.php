@@ -150,4 +150,3 @@
 		echo json_encode($output);
 		exit();
 	}
-?>
