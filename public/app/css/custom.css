@@ -34,7 +34,7 @@ body {
 		width: 33%;
 	}
 
-	.nav-link {
+	.nav-link .nav-item {
 		font-size: 10px;
 	}
 }
