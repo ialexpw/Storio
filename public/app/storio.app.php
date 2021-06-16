@@ -19,8 +19,8 @@
 	 */
 	class Storio {
 		/**
-		 * Storio::AddUser()
-		 * Add a user to Storio, user information and permissions are passed through with the array
+		 * Storio::Install()
+		 * Install Storio
 		 */
 		public static function Install() {
 			// Hash the admin password
