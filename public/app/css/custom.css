@@ -32,5 +32,6 @@ body {
 @media only screen and (max-width: 768px) {
 	.nav-item {
 		width: 33%;
+		font-size: 14px;
 	}
 }
