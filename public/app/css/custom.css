@@ -29,8 +29,16 @@ body {
 	width: 18%;
 }
 
+.left-indent {
+	margin-left:10px;
+}
+
 @media only screen and (max-width: 768px) {
 	.nav-item {
 		width: 33%;
+	}
+
+	.left-indent {
+		margin-left:0px;
 	}
 }
