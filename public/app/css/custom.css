@@ -30,7 +30,7 @@ body {
 }
 
 .left-indent {
-	margin-left:10px;
+	padding-left:10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -39,6 +39,6 @@ body {
 	}
 
 	.left-indent {
-		margin-left:0px;
+		padding-left:0px;
 	}
 }
