@@ -511,27 +511,6 @@
 							// Permission to upload
 							if($usrCfg['canUpload'] == 'true') {
 						?>
-						<p>
-							Uploading new files to Storio is easy, use the form below to select up to 25 files at a time. Files will be stored within the folder you are currently looking at!
-							<?php
-								/*
-								// Showing where uploads will go
-								if(isset($_GET['browse']) && !empty($_GET['browse'])) {
-									echo 'Uploads will be stored under /' . $_GET['browse'] . '/';
-								}else{
-									echo 'Uploads will be stored under /';
-								}
-								*/
-							?>
-						</p>
-
-						<div id="filename"></div>
-
-						<br /><br />
-
-						<h5>Upload form</h5>
-
-						<hr>
 
 						<!-- Upload files -->
 						<form method="post" id="upload" enctype="multipart/form-data" style="margin:0px; padding:0px; display:inline;">
@@ -552,6 +531,8 @@
 								<small class="justify-content-center d-flex position-absolute w-100" id="progress"></small>
 							</div>
 						</div>
+
+						<div id="filename"></div>
 
 						<!-- Max size label -->
 						<p style="text-align:center; margin-top:15px;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></p>
