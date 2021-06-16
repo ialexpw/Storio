@@ -413,7 +413,7 @@
 							echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
 							//echo '<small class="justify-content-center d-flex position-absolute" style="width: 24%!important;">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</small>';
 							echo '</div>';
-							echo '<small class="text-center">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</small>';
+							echo '<p class="text-center">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</p>';
 							echo '</div>';
 
 							echo '<div class="col-md-4">';
