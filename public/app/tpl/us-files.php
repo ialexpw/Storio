@@ -385,13 +385,13 @@
 					</div>
 				</div>
 
-				<br />
+				<!--<br />
 
 				<div class="card">
 					<div class="card-body">
 						<?php
 							// Work out the percentage of used space
-							if($usrCfg['usedStorage'] > 0) {
+							/*if($usrCfg['usedStorage'] > 0) {
 								// Work out the percentage
 								$percUsed = number_format($usrCfg['usedStorage'] * (100/$usrCfg['maxStorage']));
 
@@ -426,10 +426,10 @@
 
 							echo '<br />';
 
-							echo '</div>';
+							echo '</div>';*/
 						?>
 					</div>
-				</div>
+				</div> -->
 				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
 			</div>
 		</main>
