@@ -229,9 +229,7 @@
 								// Start the row
 								echo '<div class="row">';
 
-								echo '<div class="col-8 col-md-6 left-indent"><b>File name</b></div>';
-								echo '<div class="col-md-2 d-none d-sm-block"><b></b></div>';
-								//echo '<div class="col-md-2 d-none d-sm-block"><b>Type</b></div>';
+								echo '<div class="col-8 col-md-8 left-indent"><b>File name</b></div>';
 								echo '<div class="col-md-2 d-none d-sm-block"><b>Size</b></div>';
 								echo '<div class="col-4 col-md-2" style="text-align:center;"><b>Actions</b></div>';
 
@@ -303,11 +301,7 @@
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
 
 										// Folder icon/name
-										echo '<div class="col-8 col-md-6 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
-										
-										// Set type to "directory"
-										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;"></div>';
-										//echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">directory</div>';
+										echo '<div class="col-8 col-md-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 
 										// No size shown for directories
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">n/a</div>';
@@ -353,16 +347,12 @@
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
-											echo '<div class="col-8 col-md-6 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
+											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
 										}else if(strpos($mimeType, 'video/mp4') !== false) {
-											echo '<div class="col-8 col-md-6 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
+											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
-											echo '<div class="col-8 col-md-6 left-indent stop-wrap" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
+											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
 										}
-
-										// Show mime type
-										echo '<div class="col-md-2 d-none d-sm-block stop-wrap" style="margin-bottom:2px;"></div>';
-										//echo '<div class="col-md-2 d-none d-sm-block stop-wrap" style="margin-bottom:2px;">' . $mimeType . '</div>';
 
 										// Show file size
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
