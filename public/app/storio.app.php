@@ -521,13 +521,5 @@
 				file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
 			}
 		}
-		
-		/**
-		 * Storio::CheckLicence()
-		 * Function to check the licence code - I'd rather you did not edit this, but do what you have to!
-		 * @return bool
-		 */
-		public static function CheckLicence() {
-			return true;
-		}
 	}
+?>
