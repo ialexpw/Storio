@@ -101,9 +101,7 @@
 						<!-- System Settings -->
 						<br />
 						<h4 class="card-title">System Settings</h4>
-						<p class="card-text" style="margin-top:15px;">
-							Coming soon.
-						</p>
+						<br />
 						<form method="post">
 							<!-- Original password -->
 							<div class="mb-3">
