@@ -70,7 +70,7 @@
 				<div class="card">
 					<div class="card-header text-center">
 						<ul class="nav nav-tabs card-header-tabs">
-							<li class="nav-item" style="width:12%;">
+							<li class="nav-item">
 								<a class="nav-link" href="?page=ad-dashboard">
 									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Home
