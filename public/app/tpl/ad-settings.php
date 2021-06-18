@@ -25,6 +25,59 @@
 
 	// Load the user configuration
 	$usrCfg = Storio::UserConfig($_SESSION['Username']);
+
+	// Changing the password
+	if(isset($_POST) && (!empty($_POST['currPass']) || !empty($_POST['newPass']) || !empty($_POST['usrMail']))) {
+		// Set an updated flag
+		$strUpd = 0;
+
+		// Load the user configuration
+		$usrCfg = Storio::UserConfig($_SESSION['Username']);
+
+		// Updating password
+		if(!empty($_POST['currPass']) && !empty($_POST['newPass'])) {
+			// Store variables
+			$usrPass = $_POST['currPass'];
+			$newPass = $_POST['newPass'];
+
+			// Verify password
+			if(password_verify($usrPass, $usrCfg['passWord'])) {
+				// Alter the password hash
+				$usrCfg['passWord'] = password_hash($newPass, PASSWORD_DEFAULT);
+
+				$strUpd = 1;
+			}
+		}
+
+		// Updating email
+		if(!empty($_POST['usrMail']) && !empty($_POST['usrMail'])) {
+			// Store variables
+			$usrMail = $_POST['usrMail'];
+
+			// Verify email
+			if(filter_var($usrMail, FILTER_VALIDATE_EMAIL)) {
+				// Alter the email
+				$usrCfg['usrEmail'] = $usrMail;
+
+				$strUpd = 1;
+			}
+		}
+
+		// Config has been updated
+		if($strUpd) {
+			// Encode and resave the config
+			$usrCfgEncode = json_encode($usrCfg);
+			file_put_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json', $usrCfgEncode);
+
+			// Redirect
+			header("Location: ?page=ad-settings&success");
+		}
+	}
+
+	// Changing site settings
+	if(isset($_POST) && (!empty($_POST['siteName']) && !empty($_POST['defStore']) && !empty($_POST['maxUpload']))) {
+		echo 'Site Settings';
+	}
 ?>
 <!doctype html>
 <html lang="en">
