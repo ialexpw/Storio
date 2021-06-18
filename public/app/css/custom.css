@@ -7,6 +7,10 @@ body {
 	font-family: 'Nunito', sans-serif;
 }
 
+a {
+	text-decoration:none;
+}
+
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
 	height:94px;
 }
