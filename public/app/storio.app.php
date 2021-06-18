@@ -35,7 +35,7 @@
 
 			// Add the admin user
 			if(!Storio::AddUser('admin', $usrPass, 0, $usrAr)) {
-				exit('Error creating admin');
+				exit('Error creating admin user.');
 			}
 
 

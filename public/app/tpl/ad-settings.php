@@ -20,6 +20,9 @@
 		header("Location: ?page=login");
 	}
 
+	// Load the site configuration
+	$siteCfg = Storio::SiteConfig();
+
 	// Load the user configuration
 	$usrCfg = Storio::UserConfig($_SESSION['Username']);
 ?>
@@ -106,40 +109,34 @@
 						<h4 class="card-title">System Settings</h4>
 						<br />
 						<form method="post">
-							<!-- Original password -->
+							<!-- Site name -->
 							<div class="mb-3">
 								<label for="currPass" class="form-label">Site Name</label>
-								<input type="text" class="form-control" id="currPass" name="currPass" aria-describedby="currPass">
+								<input type="text" class="form-control" id="currPass" name="currPass" value="<?php echo $siteCfg['siteName']; ?>" aria-describedby="currPass">
 							</div>
-<div class="mb-3">
-<div class="row">
-<div class="col">
-<label for="currPass" class="form-label">Default Storage</label>
-<div class="input-group">
-<input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2">
-<span class="input-group-text" id="basic-addon2">MB</span>
-</div>
-</div>
-<div class="col">
-<label for="currPass" class="form-label">Max Upload</label>
-<div class="input-group">
-<input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2">
-<span class="input-group-text" id="basic-addon2">MB</span>
-</div>
-</div>
 
-<!--
-<div class="col">
-<label for="currPass" class="form-label">Default Storage</label>
-<input type="text" class="form-control" placeholder="" aria-label="First name">
-</div>
-<div class="col">
-<label for="currPass" class="form-label">Max Upload</label>
-<input type="text" class="form-control" placeholder="" aria-label="Last name">
-</div>
--->
-</div>
-</div>
+							<div class="mb-3">
+								<div class="row">
+									<!-- Default storage size -->
+									<div class="col">
+										<label for="currPass" class="form-label">Default Storage</label>
+										<div class="input-group">
+											<input type="text" class="form-control" value="<?php echo $siteCfg['defaultAllowance']; ?>" aria-label="" aria-describedby="basic-addon2">
+											<span class="input-group-text" id="basic-addon2">MB</span>
+										</div>
+									</div>
+
+									<!-- Max upload size -->
+									<div class="col">
+										<label for="currPass" class="form-label">Max Upload</label>
+										<div class="input-group">
+											<input type="text" class="form-control" value="<?php echo $siteCfg['uploadMaxMB']; ?>" placeholder="" aria-label="" aria-describedby="basic-addon2">
+											<span class="input-group-text" id="basic-addon2">MB</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
 							<button type="submit" class="btn btn-primary">Update</button>
 						</form>
 
