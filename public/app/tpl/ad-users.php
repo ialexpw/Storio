@@ -125,7 +125,7 @@
 								// Are there users?
 								if(count($dirs) > 1) {
 									// Gen the table start
-									echo '<table class="table table-hover">';
+									echo '<table class="table-responsive">';
 									echo '<thead>';
 									echo '<tr>';
 									echo '<th scope="col">User</th>';
