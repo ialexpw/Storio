@@ -34,7 +34,9 @@
 			);
 
 			// Add the admin user
-			Storio::AddUser('admin', $usrPass, 1000, $usrAr);
+			if(!Storio::AddUser('admin', $usrPass, 0, $usrAr)) {
+				exit('Error creating admin');
+			}
 
 
 			// Set up the default settings

@@ -2,7 +2,7 @@
 	/**
 	 * install.php
 	 *
-	 * Basic installer
+	 * Storio installer page, check permissions before installing
 	 *
 	 * @package    Storio
 	 * @author     Alex White
