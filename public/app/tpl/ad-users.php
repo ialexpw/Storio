@@ -143,7 +143,13 @@
 
 										// Add table row
 										echo '<tr>';
-										echo '<td style="width:26%;">' . $usr . '</td>';
+
+										// If admin show icon
+										if($usrCfg['isAdmin'] == 'true') {
+											echo '<td style="width:26%;"><i class="bi bi-shield"></i> ' . $usr . '</td>';
+										}else{
+											echo '<td style="width:26%;">' . $usr . '</td>';
+										}
 
 										// If admin user, storage is not used
 										if($usrCfg['isAdmin'] == 'true') {
