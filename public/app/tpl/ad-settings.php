@@ -111,15 +111,16 @@
 								<label for="currPass" class="form-label">Site Name</label>
 								<input type="text" class="form-control" id="currPass" name="currPass" aria-describedby="currPass">
 							</div>
-
+<div class="mb-3">
 <div class="row">
 <div class="col">
-<label for="currPass" class="form-label">Default Allowance (MB)</label>
+<label for="currPass" class="form-label">Default Storage (MB)</label>
 <input type="text" class="form-control" placeholder="" aria-label="First name">
 </div>
 <div class="col">
 <label for="currPass" class="form-label">Max Upload (MB)</label>
 <input type="text" class="form-control" placeholder="" aria-label="Last name">
+</div>
 </div>
 </div>
 							<button type="submit" class="btn btn-primary">Update</button>
