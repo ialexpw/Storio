@@ -19,6 +19,9 @@
 	if(!Storio::LoggedIn('admin')) {
 		header("Location: ?page=login");
 	}
+
+	// Load the user configuration
+	$usrCfg = Storio::UserConfig($_SESSION['Username']);
 ?>
 <!doctype html>
 <html lang="en">
@@ -125,7 +128,9 @@
 							<button type="submit" class="btn btn-primary">Update</button>
 						</form>
 
+						<br />
 						<hr />
+						<br />
 
 						<h4 class="card-title">User Settings</h4>
 						<br />
