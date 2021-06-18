@@ -19,6 +19,9 @@
 	if(!Storio::LoggedIn()) {
 		header("Location: ?page=login");
 	}
+
+	// Load the site configuration
+	$siteCfg = Storio::SiteConfig();
 ?>
 <!doctype html>
 <html lang="en">
@@ -44,7 +47,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
 				<i class="bi bi-droplet" style="font-size: 2rem; margin-right:12px; margin-bottom:6px; color: cornflowerblue;"></i>
-				<a class="navbar-brand" href="?page=us-dashboard"> Storio File Management</a>
+				<a class="navbar-brand" href="?page=us-dashboard"> <?php echo $siteCfg['siteName']; ?></a>
 			</div>
 		</nav>
 
