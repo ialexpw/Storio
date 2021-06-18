@@ -76,7 +76,27 @@
 
 	// Changing site settings
 	if(isset($_POST) && (!empty($_POST['siteName']) && !empty($_POST['defStore']) && !empty($_POST['maxUpload']))) {
-		echo 'Site Settings';
+		// Check numeric values
+		if(is_numeric($_POST['defStore']) && is_numeric($_POST['maxUpload'])) {
+			// Validate the site name
+			if(preg_match('/^[a-z0-9 .\-]+$/i', $_POST['siteName'])) {
+				// Set the new site name
+				$siteCfg['siteName'] = $_POST['siteName'];
+
+				// Set default storage
+				$siteCfg['defaultAllowance'] = $_POST['defStore'];
+
+				// Set max upload
+				$siteCfg['uploadMaxMB'] = $_POST['maxUpload'];
+
+				// Encode and resave the config
+				$siteCfgEncode = json_encode($siteCfg);
+				file_put_contents('../users/configs/site-settings.json', $siteCfgEncode);
+
+				// Redirect
+				header("Location: ?page=ad-settings&success");
+			}
+		}
 	}
 ?>
 <!doctype html>
