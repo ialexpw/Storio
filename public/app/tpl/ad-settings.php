@@ -141,6 +141,15 @@
 								<input type="password" class="form-control" id="currPass" name="currPass" aria-describedby="currPass">
 							</div>
 
+<div class="row">
+<div class="col">
+<input type="text" class="form-control" placeholder="First name" aria-label="First name">
+</div>
+<div class="col">
+<input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+</div>
+</div>
+
 							<!-- New password -->
 							<div class="mb-3">
 								<label for="newPass" class="form-label">New password</label>
