@@ -124,6 +124,31 @@
 							</div>
 							<button type="submit" class="btn btn-primary">Update</button>
 						</form>
+
+						<h4 class="card-title">User Settings</h4>
+						<br />
+						<form method="post">
+							<!-- Original password -->
+							<div class="mb-3">
+								<label for="currPass" class="form-label">Current password</label>
+								<input type="password" class="form-control" id="currPass" name="currPass" aria-describedby="currPass">
+							</div>
+
+							<!-- New password -->
+							<div class="mb-3">
+								<label for="newPass" class="form-label">New password</label>
+								<input type="password" class="form-control" id="newPass" name="newPass" aria-describedby="newPass">
+								<div id="passHelp" class="form-text">Make it a good one!</div>
+							</div>
+
+							<!-- Email -->
+							<div class="mb-3">
+								<label for="usrMail" class="form-label">Email</label>
+								<input type="email" class="form-control" id="usrMail" name="usrMail" value="<?php echo $usrCfg['usrEmail']; ?>" aria-describedby="usrMail">
+								<div id="passHelp" class="form-text">Optional</div>
+							</div>
+							<button type="submit" class="btn btn-primary">Update</button>
+						</form>
 					</div>
 				</div>
 			</div>
