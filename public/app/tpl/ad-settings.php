@@ -125,6 +125,8 @@
 							<button type="submit" class="btn btn-primary">Update</button>
 						</form>
 
+						<hr />
+
 						<h4 class="card-title">User Settings</h4>
 						<br />
 						<form method="post">
