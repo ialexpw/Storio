@@ -154,25 +154,25 @@
 
 										// Add table row
 										echo '<tr>';
-										echo '<td style="width:24%;">' . $usr . '</td>';
+										echo '<td style="width:26%;">' . $usr . '</td>';
 
 										// If admin user, storage is not used
 										if($usrCfg['isAdmin'] == 'true') {
-											echo '<td style="width:24%;">n/a</td>';
+											echo '<td style="width:20%;">n/a</td>';
 										}else{
-											echo '<td style="width:24%;">' . number_format($usrCfg['usedStorage'], 2) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
+											echo '<td style="width:20%;">' . number_format($usrCfg['usedStorage'], 2) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
 										}
 										
-										echo '<td style="width:13%;">' . $usrCfg['isEnabled'] . '</td>';
-										echo '<td style="width:13%;">' . $usrCfg['canUpload'] . '</td>';
-										echo '<td style="width:13%;">' . $usrCfg['isAdmin'] . '</td>';
+										echo '<td style="width:18%;">' . $usrCfg['isEnabled'] . '</td>';
+										echo '<td style="width:18%;">' . $usrCfg['canUpload'] . '</td>';
+										echo '<td style="width:18%;">' . $usrCfg['isAdmin'] . '</td>';
 										echo '</tr>';
 									}
 
 									echo '</tbody>';
 									echo '</table>';
 								}else{
-									echo 'Storio does not have any users, you can create one with the link above.';
+									echo 'There are no users, you can create one with the link above.';
 								}
 							?>
 						</p>
