@@ -11,6 +11,10 @@ a {
 	text-decoration:none;
 }
 
+.bi-shield {
+	color: #D48F2A;
+}
+
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
 	height:94px;
 }
