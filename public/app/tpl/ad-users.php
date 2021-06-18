@@ -20,6 +20,9 @@
 		header("Location: ?page=login");
 	}
 
+	// Load the site configuration
+	$siteCfg = Storio::SiteConfig();
+
 	// Get the user list from the dir structure
 	$dirs = array_filter(glob('../users/*'), 'is_dir');
 
@@ -229,7 +232,7 @@
 								<!-- Storage allowance -->
 								<div class="col-md-3">
 									<label for="inputStorage" class="form-label">Storage (MB)</label>
-									<input type="number" class="form-control" id="inputStorage" name="inputStorage" value="1000">
+									<input type="number" class="form-control" id="inputStorage" name="inputStorage" value="<?php echo $siteCfg['defaultAllowance']; ?>">
 								</div>
 
 								<!-- Is the user enabled -->
