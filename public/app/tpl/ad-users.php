@@ -55,6 +55,12 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
 
+		<style>
+		.bi-shield {
+			color:yellow;
+		}
+		</style>
+
 		<!-- Custom styles -->
 		<link rel="stylesheet" href="app/css/custom.css">
 	</head>
