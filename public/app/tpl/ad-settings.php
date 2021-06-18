@@ -114,13 +114,28 @@
 <div class="mb-3">
 <div class="row">
 <div class="col">
-<label for="currPass" class="form-label">Default Storage (MB)</label>
+<div class="input-group">
+<input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+<span class="input-group-text" id="basic-addon2">@example.com</span>
+</div>
+</div>
+<div class="col">
+<div class="input-group">
+<input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+<span class="input-group-text" id="basic-addon2">@example.com</span>
+</div>
+</div>
+
+<!--
+<div class="col">
+<label for="currPass" class="form-label">Default Storage</label>
 <input type="text" class="form-control" placeholder="" aria-label="First name">
 </div>
 <div class="col">
-<label for="currPass" class="form-label">Max Upload (MB)</label>
+<label for="currPass" class="form-label">Max Upload</label>
 <input type="text" class="form-control" placeholder="" aria-label="Last name">
 </div>
+-->
 </div>
 </div>
 							<button type="submit" class="btn btn-primary">Update</button>
