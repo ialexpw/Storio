@@ -114,15 +114,15 @@
 <div class="mb-3">
 <div class="row">
 <div class="col">
-<div class="input-group">
 <label for="currPass" class="form-label">Default Storage</label>
+<div class="input-group">
 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2">
 <span class="input-group-text" id="basic-addon2">MB</span>
 </div>
 </div>
 <div class="col">
-<div class="input-group">
 <label for="currPass" class="form-label">Max Upload</label>
+<div class="input-group">
 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2">
 <span class="input-group-text" id="basic-addon2">MB</span>
 </div>
