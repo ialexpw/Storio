@@ -115,14 +115,16 @@
 <div class="row">
 <div class="col">
 <div class="input-group">
-<input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-<span class="input-group-text" id="basic-addon2">@example.com</span>
+<label for="currPass" class="form-label">Default Storage</label>
+<input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2">
+<span class="input-group-text" id="basic-addon2">MB</span>
 </div>
 </div>
 <div class="col">
 <div class="input-group">
-<input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-<span class="input-group-text" id="basic-addon2">@example.com</span>
+<label for="currPass" class="form-label">Max Upload</label>
+<input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2">
+<span class="input-group-text" id="basic-addon2">MB</span>
 </div>
 </div>
 
