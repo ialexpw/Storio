@@ -111,27 +111,27 @@
 						<form method="post">
 							<!-- Site name -->
 							<div class="mb-3">
-								<label for="currPass" class="form-label">Site Name</label>
-								<input type="text" class="form-control" id="currPass" name="currPass" value="<?php echo $siteCfg['siteName']; ?>" aria-describedby="currPass">
+								<label for="siteName" class="form-label">Site Name</label>
+								<input type="text" class="form-control" id="siteName" name="siteName" value="<?php echo $siteCfg['siteName']; ?>" aria-describedby="siteName">
 							</div>
 
 							<div class="mb-3">
 								<div class="row">
 									<!-- Default storage size -->
 									<div class="col">
-										<label for="currPass" class="form-label">Default Storage</label>
+										<label for="defStore" class="form-label">Default Storage</label>
 										<div class="input-group">
-											<input type="number" class="form-control" value="<?php echo $siteCfg['defaultAllowance']; ?>" aria-label="" aria-describedby="basic-addon2">
-											<span class="input-group-text" id="basic-addon2">MB</span>
+											<input type="number" class="form-control" id="defStore" name="defStore" value="<?php echo $siteCfg['defaultAllowance']; ?>">
+											<span class="input-group-text">MB</span>
 										</div>
 									</div>
 
 									<!-- Max upload size -->
 									<div class="col">
-										<label for="currPass" class="form-label">Max Upload</label>
+										<label for="maxUpload" class="form-label">Max Upload</label>
 										<div class="input-group">
-											<input type="number" class="form-control" value="<?php echo $siteCfg['uploadMaxMB']; ?>" placeholder="" aria-label="" aria-describedby="basic-addon2">
-											<span class="input-group-text" id="basic-addon2">MB</span>
+											<input type="number" class="form-control" id="maxUpload" name="maxUpload" value="<?php echo $siteCfg['uploadMaxMB']; ?>">
+											<span class="input-group-text">MB</span>
 										</div>
 									</div>
 								</div>
