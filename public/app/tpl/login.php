@@ -37,7 +37,7 @@
 			$_SESSION['Username'] = $_POST['userInput'];
 
 			// Add to the log
-			Storio::AddLog(time(), "Login Event", $_POST['userInput'] . ' has logged in');
+			//Storio::AddLog(time(), "Login Event", $_POST['userInput'] . ' has logged in');
 
 			// For admin users
 			if(isset($_SESSION['isAdmin'])) {

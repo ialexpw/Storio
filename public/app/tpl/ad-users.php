@@ -101,13 +101,13 @@
 									<br />Messages
 								</a>
 							</li>
-							-->
 							<li class="nav-item">
 								<a class="nav-link" href="?page=ad-logs">
 									<i class="bi bi-archive" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Logs
 								</a>
 							</li>
+							-->
 							<li class="nav-item">
 								<a class="nav-link" href="?page=ad-settings">
 									<i class="bi bi-gear" style="font-size: 2rem; color: cornflowerblue;"></i>

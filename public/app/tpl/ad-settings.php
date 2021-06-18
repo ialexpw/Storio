@@ -108,8 +108,8 @@
 						<form method="post">
 							<!-- Original password -->
 							<div class="mb-3">
-								<label for="currPass" class="form-label">Current password</label>
-								<input type="password" class="form-control" id="currPass" name="currPass" aria-describedby="currPass">
+								<label for="currPass" class="form-label">Site Name</label>
+								<input type="text" class="form-control" id="currPass" name="currPass" aria-describedby="currPass">
 							</div>
 
 							<!-- New password -->
