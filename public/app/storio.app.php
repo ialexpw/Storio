@@ -26,24 +26,23 @@
 			// Hash the admin password
 			$usrPass = password_hash("AdminUser123", PASSWORD_DEFAULT);
 
+			// Create the array for admin
+			$usrAr = array(
+				"enabled" => 'true',
+				"upload" => 'true',
+				"admin" => 'true'
+			);
+
+			// Add the admin user
+			Storio::AddUser('admin', $usrPass, 1000, $usrAr);
+
+
 			// Set up the default settings
 			$siteCfg = array(
 				"siteName" => "Storio File Management",
-				"adminUser" => "admin",
-				"adminPassword" => $usrPass,
 				"allowRegistration" => false,
-				"defaultAllowance" => 5000,
-				"expireFiles" => false,
-				"expiryDays" => 31,
-				"uploadMaxMB" => 500,
-				"mailProc" => "mail", // "mail" or "smtp"
-				"smtpServer" => "",
-				"smtpPort" => "587",
-				"smtpSec" => "tls",
-				"smtpAuth" => true,
-				"smtpUsername" => "",
-				"smtpPassword" => "",
-				"smtpFromAddr" => ""
+				"defaultAllowance" => 5000, // in MB
+				"uploadMaxMB" => 500 // in MB
 			);
 
 			// JSON encode the configuration
@@ -290,18 +289,6 @@
 					}else{
 						return true;
 					}
-				}else{
-					return false;
-				}
-			}else if($user == 'admin') {
-				// Load the site configuration
-				$usrCfg = Storio::SiteConfig();
-
-				// Verify password
-				if(password_verify($pass, $usrCfg['adminPassword'])) {
-					// Set the session
-					$_SESSION['isAdmin'] = $user;
-					return true;
 				}else{
 					return false;
 				}
