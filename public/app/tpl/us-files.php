@@ -156,31 +156,6 @@
 
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 
-		<style>
-			a {
-				text-decoration:none;
-			}
-			.progress {
-				margin-left: auto; margin-right:auto;
-			}
-
-			.noLink {
-				color: black;
-				text-decoration: none;
-			}
-
-			html.with-featherlight {
-				/* disable global scrolling when featherlights are visible */
-				overflow: inherit;
-			}
-
-			.center {
-				margin: 0 auto;
-				max-height: 80%;
-				display: block;
-			}
-		</style>
-
 		<!-- Custom styles -->
 		<link rel="stylesheet" href="app/css/custom.css">
 	</head>
