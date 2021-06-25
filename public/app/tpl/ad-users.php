@@ -59,6 +59,21 @@
 				// Redirect back to page after change
 				header("Location: ?page=ad-users");
 			}
+
+			// Enable user
+			if($_GET['ctl'] == 'enab') {
+				// Load the configuration
+				$usrCfg = Storio::UserConfig($usrEdit);
+
+				$usrCfg['isEnabled'] = 'true';
+
+				// Encode and resave the config
+				$usrCfgEncode = json_encode($usrCfg);
+				file_put_contents('../users/configs/' . $usrEdit . '-cfg.json', $usrCfgEncode);
+
+				// Redirect back to page after change
+				header("Location: ?page=ad-users");
+			}
 		}
 	}
 ?>
