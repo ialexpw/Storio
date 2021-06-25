@@ -74,6 +74,66 @@
 				// Redirect back to page after change
 				header("Location: ?page=ad-users");
 			}
+
+			// Disable upload
+			if($_GET['ctl'] == 'noup') {
+				// Load the configuration
+				$usrCfg = Storio::UserConfig($usrEdit);
+
+				$usrCfg['canUpload'] = 'false';
+
+				// Encode and resave the config
+				$usrCfgEncode = json_encode($usrCfg);
+				file_put_contents('../users/configs/' . $usrEdit . '-cfg.json', $usrCfgEncode);
+
+				// Redirect back to page after change
+				header("Location: ?page=ad-users");
+			}
+
+			// Enable upload
+			if($_GET['ctl'] == 'upl') {
+				// Load the configuration
+				$usrCfg = Storio::UserConfig($usrEdit);
+
+				$usrCfg['canUpload'] = 'true';
+
+				// Encode and resave the config
+				$usrCfgEncode = json_encode($usrCfg);
+				file_put_contents('../users/configs/' . $usrEdit . '-cfg.json', $usrCfgEncode);
+
+				// Redirect back to page after change
+				header("Location: ?page=ad-users");
+			}
+
+			// Demote to standard user
+			if($_GET['ctl'] == 'usr') {
+				// Load the configuration
+				$usrCfg = Storio::UserConfig($usrEdit);
+
+				$usrCfg['isAdmin'] = 'false';
+
+				// Encode and resave the config
+				$usrCfgEncode = json_encode($usrCfg);
+				file_put_contents('../users/configs/' . $usrEdit . '-cfg.json', $usrCfgEncode);
+
+				// Redirect back to page after change
+				header("Location: ?page=ad-users");
+			}
+
+			// Promote to admin
+			if($_GET['ctl'] == 'adm') {
+				// Load the configuration
+				$usrCfg = Storio::UserConfig($usrEdit);
+
+				$usrCfg['isAdmin'] = 'true';
+
+				// Encode and resave the config
+				$usrCfgEncode = json_encode($usrCfg);
+				file_put_contents('../users/configs/' . $usrEdit . '-cfg.json', $usrCfgEncode);
+
+				// Redirect back to page after change
+				header("Location: ?page=ad-users");
+			}
 		}
 	}
 ?>
