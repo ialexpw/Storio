@@ -32,7 +32,7 @@
 		<!-- Editing user -->
 		<div class="col-md-12">
 		<label for="editUsrName" class="form-label">Editing user</label>
-		<input type="text" class="form-control" id="editUsrName" name="editUsrName" value="<?php echo $usrEdit; ?> readonly">
+		<input type="text" class="form-control" id="editUsrName" name="editUsrName" value="<?php echo $usrEdit; ?>" readonly />
 		</div>
 
 		<!-- Is the user enabled -->
