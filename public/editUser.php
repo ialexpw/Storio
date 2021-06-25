@@ -10,6 +10,8 @@
 	 * @link       https://storio.uk
 	 */
 
+	include 'app/storio.app.php';
+
 	// Need admin to call this
 	if(!Storio::LoggedIn('admin')) {
 		exit("Permission denied");
