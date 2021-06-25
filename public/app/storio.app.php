@@ -239,7 +239,7 @@
 
 			// Hash the password
 			$usrPass = password_hash($post['inputPass'], PASSWORD_DEFAULT);
-
+			
 			// Check the storage value
 			if(!is_numeric($post['inputStorage'])) {
 				return -2;
@@ -251,7 +251,7 @@
 				"upload" => $post['inputUpload'],
 				"admin" => $post['inputAdmin']
 			);
-
+			
 			// Add the user
 			if(Storio::AddUser(strtolower($post['inputUser']), $usrPass, $post['inputStorage'], $usrAr, $post['inputEmail'])) {
 				return true;

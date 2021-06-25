@@ -19,6 +19,7 @@
 
 		// Loop the users
 		foreach($dirs as $usr) {
+			// Skip files, only for directories
 			if(!is_dir('users/' . $usr)) {
 				continue;
 			}
@@ -26,5 +27,7 @@
 			// Update storage sizes for each user
 			Storio::UpdateStorageSize($usr, 1);
 		}
+
+		// Get site stats (total files/folders/users)
 	}
 ?>
