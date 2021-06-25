@@ -28,7 +28,7 @@
 ?>
 <p>Editing user: <?php echo $usrCfg['userName']; ?></p>
 
-<form class="row g-3" method="post" action="?page=ad-users">
+<form class="row g-3" method="post" action="?page=ad-users&usr=<?php echo $usrEdit; ?>">
 	<div class="row g-3">
 		<!-- Is the user enabled -->
 		<div class="col-md-4">
