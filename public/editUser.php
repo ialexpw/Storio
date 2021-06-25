@@ -32,8 +32,8 @@
 	<div class="row g-3">
 		<!-- Is the user enabled -->
 		<div class="col-md-4">
-			<label for="inputEnab" class="form-label">Enabled</label>
-			<select id="inputEnab" name="inputEnab" class="form-select">
+			<label for="editEnab" class="form-label">Enabled</label>
+			<select id="editEnab" name="editEnab" class="form-select">
 				<?php
 					// Enabled/disabled options
 					if($usrCfg['isEnabled'] == 'true') {
@@ -49,8 +49,8 @@
 
 		<!-- Can the user upload files? -->
 		<div class="col-md-4">
-			<label for="inputUpload" class="form-label">Upload</label>
-			<select id="inputUpload" name="inputUpload" class="form-select">
+			<label for="editUpload" class="form-label">Upload</label>
+			<select id="editUpload" name="editUpload" class="form-select">
 				<?php
 					// Enabled/disabled options
 					if($usrCfg['canUpload'] == 'true') {
@@ -66,8 +66,8 @@
 
 		<!-- Is the user an admin? -->
 		<div class="col-md-4">
-			<label for="inputAdmin" class="form-label">Admin</label>
-			<select id="inputAdmin" name="inputAdmin" class="form-select">
+			<label for="editAdmin" class="form-label">Admin</label>
+			<select id="editAdmin" name="editAdmin" class="form-select">
 				<?php
 					// Enabled/disabled options
 					if($usrCfg['isAdmin'] == 'true') {
@@ -85,6 +85,6 @@
 	<!-- Footer and submit -->
 	<div class="modal-footer">
 		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-		<button type="submit" class="btn btn-primary">Create</button>
+		<button type="submit" class="btn btn-primary">Save</button>
 	</div>
 </form>
