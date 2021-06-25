@@ -30,7 +30,7 @@
 					$base64 = 'data:' . mime_content_type($usrFile) . ';base64,' . base64_encode($getImg);
 
 					// Echo the image out
-					echo '<img style="width:100%;" src="' . $base64 . '" />';
+					echo '<img style="width:100%; height:100%;" src="' . $base64 . '" />';
 				}
 
 				// Is it a video?
