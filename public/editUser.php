@@ -24,40 +24,60 @@
 
 		// Load the configuration
 		$usrCfg = Storio::UserConfig($usrEdit);
-
-		echo '<pre>';
-		print_r($usrCfg);
-		echo '</pre>';
 	}
 ?>
+<p>Editing user: <?php echo $usrCfg['userName']; ?></p>
 
 <form class="row g-3" method="post" action="?page=ad-users">
-	<!-- Second line -->
 	<div class="row g-3">
 		<!-- Is the user enabled -->
 		<div class="col-md-4">
-			<label for="inputEnab" class="form-label">User enabled</label>
+			<label for="inputEnab" class="form-label">Enabled</label>
 			<select id="inputEnab" name="inputEnab" class="form-select">
-				<option value="true" selected>true</option>
-				<option value="false">false</option>
+				<?php
+					// Enabled/disabled options
+					if($usrCfg['isEnabled'] == 'true') {
+						echo '<option value="true" selected>true</option>';
+						echo '<option value="false">false</option>';
+					}else{
+						echo '<option value="true">true</option>';
+						echo '<option value="false" selected>false</option>';
+					}
+				?>
 			</select>
 		</div>
 
-		<!-- Is the user enabled -->
+		<!-- Can the user upload files? -->
 		<div class="col-md-4">
-			<label for="inputEnab" class="form-label">User enabled</label>
-			<select id="inputEnab" name="inputEnab" class="form-select">
-				<option value="true" selected>true</option>
-				<option value="false">false</option>
-			</select>
-		</div>
-
-		<!-- Can upload files -->
-		<div class="col-md-4">
-			<label for="inputUpload" class="form-label">Can upload</label>
+			<label for="inputUpload" class="form-label">Upload</label>
 			<select id="inputUpload" name="inputUpload" class="form-select">
-				<option value="true" selected>true</option>
-				<option value="false">false</option>
+				<?php
+					// Enabled/disabled options
+					if($usrCfg['canUpload'] == 'true') {
+						echo '<option value="true" selected>true</option>';
+						echo '<option value="false">false</option>';
+					}else{
+						echo '<option value="true">true</option>';
+						echo '<option value="false" selected>false</option>';
+					}
+				?>
+			</select>
+		</div>
+
+		<!-- Is the user an admin? -->
+		<div class="col-md-4">
+			<label for="inputAdmin" class="form-label">Admin</label>
+			<select id="inputAdmin" name="inputAdmin" class="form-select">
+				<?php
+					// Enabled/disabled options
+					if($usrCfg['isAdmin'] == 'true') {
+						echo '<option value="true" selected>true</option>';
+						echo '<option value="false">false</option>';
+					}else{
+						echo '<option value="true">true</option>';
+						echo '<option value="false" selected>false</option>';
+					}
+				?>
 			</select>
 		</div>
 	</div>
