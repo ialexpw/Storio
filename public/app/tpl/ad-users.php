@@ -245,6 +245,8 @@
 											$usrCfg = json_decode(file_get_contents('../users/configs/' . $usr . '-cfg.json'), true);
 										}
 
+										echo '<a class="noLink editUsr" name="' . $usr . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#editUser">Test</a>';
+
 										// Add table row
 										echo '<tr>';
 
@@ -444,5 +446,49 @@
 				</div>
 			</div>
 		</div>
+
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editUser">
+		Launch demo modal
+		</button>
+
+		<!-- Modal for user edit -->
+		<div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editUserLabel">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="usrDetails"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Pop up modal with request files dialog
+			$(document).ready(function(){
+				$('.editUsr').click(function() {
+					console.log("clicked");
+					usrPath = this.name;
+					$('#usrDetails').html("");
+					$('#editUser').on('shown.bs.modal', function () {
+						$.ajax({
+							type: 'GET',
+							url: "editUser.php?uid="+usrPath,
+							success:function(data){
+								$('#usrDetails').html(data);
+								delete usrPath;
+							}
+						});
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
