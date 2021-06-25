@@ -30,9 +30,15 @@
 <form class="row g-3" method="post" action="?page=ad-users&usr=<?php echo $usrEdit; ?>">
 	<div class="row g-3">
 		<!-- Editing user -->
-		<div class="col-md-12">
-		<label for="editUsrName" class="form-label">Editing user</label>
-		<input type="text" class="form-control" id="editUsrName" name="editUsrName" value="<?php echo $usrEdit; ?>" readonly />
+		<div class="col-md-8">
+			<label for="editUsrName" class="form-label">Username</label>
+			<input type="text" class="form-control" id="editUsrName" name="editUsrName" value="<?php echo $usrEdit; ?>" readonly />
+		</div>
+
+		<!-- Storage for user -->
+		<div class="col-md-4">
+			<label for="editStorage" class="form-label">Storage (MB)</label>
+			<input type="number" class="form-control" id="editStorage" name="editStorage" value="<?php echo $usrCfg['maxStorage']; ?>" />
 		</div>
 
 		<!-- Is the user enabled -->

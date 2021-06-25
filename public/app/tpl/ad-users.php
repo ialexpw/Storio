@@ -49,6 +49,7 @@
 			$usrCfg = Storio::UserConfig($usrEdit);
 
 			// Alter the settings
+			$usrCfg['maxStorage'] = $_POST['editStorage'];
 			$usrCfg['isEnabled'] = $_POST['editEnab'];
 			$usrCfg['canUpload'] = $_POST['editUpload'];
 			$usrCfg['isAdmin'] = $_POST['editAdmin'];
