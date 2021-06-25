@@ -169,7 +169,7 @@
 											echo '<td style="width:18%;">';
 											echo $usrCfg['isEnabled'];
 											// Link
-											echo '<a href="#" class="text-decoration-none float-end">';
+											echo '<a href="?page=ad-users&usr=' . $usr . '&dis" class="text-decoration-none float-end">';
 
 											// SVG image
 											echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-on" viewBox="0 0 16 16">
@@ -180,7 +180,7 @@
 											echo '<td style="width:18%;">';
 											echo $usrCfg['isEnabled'];
 											// Link
-											echo '<a href="#" class="text-decoration-none float-end">';
+											echo '<a href="?page=ad-users&usr=' . $usr . '&enab" class="text-decoration-none float-end">';
 
 											// SVG image
 											echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-off" viewBox="0 0 16 16">
