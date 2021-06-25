@@ -19,6 +19,14 @@
 
 	// Check for the user
 	if(!empty($_GET['uid']) && is_dir('../users/' . $_GET['uid'])) {
-		echo 'Hello ' . $_GET['uid'];
+		// Store the user
+		$usrEdit = $_GET['uid'];
+
+		// Load the configuration
+		$usrCfg = Storio::UserConfig($usrEdit);
+
+		echo '<pre>';
+		print_r($usrCfg);
+		echo '</pre>';
 	}
 ?>
