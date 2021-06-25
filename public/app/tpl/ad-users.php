@@ -37,6 +37,30 @@
 			header("Location: ?page=ad-users");
 		}
 	}
+
+	// Altering user settings
+	if(isset($_GET['usr']) && isset($_GET['ctl'])) {
+		// Check the user
+		if(!empty($_GET['usr']) && is_dir('../users/' . $_GET['usr'])) {
+			// Save the user
+			$usrEdit = $_GET['usr'];
+
+			// Disable user
+			if($_GET['ctl'] == 'dis') {
+				// Load the configuration
+				$usrCfg = Storio::UserConfig($usrEdit);
+
+				$usrCfg['isEnabled'] = 'false';
+
+				// Encode and resave the config
+				$usrCfgEncode = json_encode($usrCfg);
+				file_put_contents('../users/configs/' . $usrEdit . '-cfg.json', $usrCfgEncode);
+
+				// Redirect back to page after change
+				header("Location: ?page=ad-users");
+			}
+		}
+	}
 ?>
 <!doctype html>
 <html lang="en">
@@ -169,7 +193,7 @@
 											echo '<td style="width:18%;">';
 											echo $usrCfg['isEnabled'];
 											// Link
-											echo '<a href="?page=ad-users&usr=' . $usr . '&dis" class="text-decoration-none float-end">';
+											echo '<a href="?page=ad-users&usr=' . $usr . '&ctl=dis" class="text-decoration-none float-end">';
 
 											// SVG image
 											echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-on" viewBox="0 0 16 16">
@@ -180,7 +204,7 @@
 											echo '<td style="width:18%;">';
 											echo $usrCfg['isEnabled'];
 											// Link
-											echo '<a href="?page=ad-users&usr=' . $usr . '&enab" class="text-decoration-none float-end">';
+											echo '<a href="?page=ad-users&usr=' . $usr . '&ctl=enab" class="text-decoration-none float-end">';
 
 											// SVG image
 											echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-off" viewBox="0 0 16 16">
@@ -196,7 +220,7 @@
 												echo '<td style="width:18%;">';
 												echo $usrCfg['canUpload'];
 												// Link
-												echo '<a href="?page=ad-users&usr=' . $usr . '&dis" class="text-decoration-none float-end">';
+												echo '<a href="?page=ad-users&usr=' . $usr . '&ctl=noup" class="text-decoration-none float-end">';
 
 												// SVG image
 												echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-on" viewBox="0 0 16 16">
@@ -207,7 +231,7 @@
 												echo '<td style="width:18%;">';
 												echo $usrCfg['canUpload'];
 												// Link
-												echo '<a href="?page=ad-users&usr=' . $usr . '&enab" class="text-decoration-none float-end">';
+												echo '<a href="?page=ad-users&usr=' . $usr . '&ctl=upl" class="text-decoration-none float-end">';
 
 												// SVG image
 												echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-off" viewBox="0 0 16 16">
@@ -224,7 +248,7 @@
 											echo '<td style="width:18%;">';
 											echo $usrCfg['isAdmin'];
 											// Link
-											echo '<a href="?page=ad-users&usr=' . $usr . '&dis" class="text-decoration-none float-end">';
+											echo '<a href="?page=ad-users&usr=' . $usr . '&ctl=usr" class="text-decoration-none float-end">';
 
 											// SVG image
 											echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-on" viewBox="0 0 16 16">
@@ -235,7 +259,7 @@
 											echo '<td style="width:18%;">';
 											echo $usrCfg['isAdmin'];
 											// Link
-											echo '<a href="?page=ad-users&usr=' . $usr . '&enab" class="text-decoration-none float-end">';
+											echo '<a href="?page=ad-users&usr=' . $usr . '&ctl=adm" class="text-decoration-none float-end">';
 
 											// SVG image
 											echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-off" viewBox="0 0 16 16">
