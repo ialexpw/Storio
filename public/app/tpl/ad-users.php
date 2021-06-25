@@ -39,12 +39,28 @@
 	}
 
 	// Altering user settings
-	if(isset($_GET['usr']) && isset($_GET['ctl'])) {
+	if(isset($_POST['editUsrName']) && isset($_GET['usr'])) {
 		// Check the user
-		if(!empty($_GET['usr']) && is_dir('../users/' . $_GET['usr'])) {
+		if(!empty($_GET['usr']) && is_dir('../users/' . $_GET['usr']) && $_POST['editUsrName'] == $_GET['usr']) {
 			// Save the user
 			$usrEdit = $_GET['usr'];
 
+			// Load the configuration
+			$usrCfg = Storio::UserConfig($usrEdit);
+
+			// Alter the settings
+			$usrCfg['isEnabled'] = $_POST['editEnab'];
+			$usrCfg['canUpload'] = $_POST['editUpload'];
+			$usrCfg['isAdmin'] = $_POST['editAdmin'];
+
+			// Encode and resave the config
+			$usrCfgEncode = json_encode($usrCfg);
+			file_put_contents('../users/configs/' . $usrEdit . '-cfg.json', $usrCfgEncode);
+
+			// Redirect back to page after change
+			header("Location: ?page=ad-users");
+
+			/*
 			if($usrEdit != $_SESSION['Username']) {
 				// Disable user
 				if($_GET['ctl'] == 'dis') {
@@ -138,7 +154,8 @@
 			}else{
 				// Cannot edit yourself
 				header("Location: ?page=ad-users&self-edit");
-			}			
+			}
+			*/			
 		}
 	}
 ?>
@@ -456,7 +473,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="editUserLabel">Edit user</h5>
+						<h5 class="modal-title" id="editUserLabel">Edit user permissions</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
