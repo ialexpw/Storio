@@ -139,7 +139,7 @@
 								// Are there users?
 								if(count($dirs) > 1) {
 									// Gen the table start
-									echo '<table class="table table-responsive table-bordered">';
+									echo '<table class="table table-responsive table-bordered" style="border-radius: 6px;">';
 									echo '<thead>';
 									echo '<tr>';
 									echo '<th scope="col">User</th>';
