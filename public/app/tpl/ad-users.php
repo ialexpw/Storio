@@ -164,11 +164,31 @@
 											echo '<td style="width:20%;">' . number_format($usrCfg['usedStorage'], 2) . ' / ' . number_format($usrCfg['maxStorage']) . ' MB</td>';
 										}
 										
-										echo '<td style="width:18%;">' . $usrCfg['isEnabled'] . '<a href="#" class="text-decoration-none float-end">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-off" viewBox="0 0 16 16">
-						  <path d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"/>
-						</svg>
-									  </a></td>';
+										// Enable/disable user
+										if($usrCfg['isEnabled'] == 'true') {
+											echo '<td style="width:18%;">';
+											echo $usrCfg['isEnabled'];
+											// Link
+											echo '<a href="#" class="text-decoration-none float-end">';
+
+											// SVG image
+											echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-on" viewBox="0 0 16 16">
+													<path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+													</svg>';
+											echo '</a></td>';
+										}else{
+											echo '<td style="width:18%;">';
+											echo $usrCfg['isEnabled'];
+											// Link
+											echo '<a href="#" class="text-decoration-none float-end">';
+
+											// SVG image
+											echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-off" viewBox="0 0 16 16">
+													<path d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"/>
+													</svg>';
+											echo '</a></td>';
+										}
+
 										echo '<td style="width:18%;">' . $usrCfg['canUpload'] . '</td>';
 										echo '<td style="width:18%;">' . $usrCfg['isAdmin'] . '</td>';
 										echo '</tr>';
