@@ -24,8 +24,6 @@
 				continue;
 			}
 
-			echo $usr;
-
 			// Update storage sizes for each user
 			Storio::UpdateStorageSize('admin', 1);
 		}
