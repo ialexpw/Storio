@@ -114,6 +114,6 @@
 		//echo 'Your browser does not support the video tag.';
 		//echo '</video>';
 
-		echo '<iframe src="https://nix.ac/viewSource.php?u=alex&p=RjZEYS9hS2RpRWYwRVk4dEswVjNLYkxBVGdTZytZRXZ6dTJ5VTlEdkFZelhGZVEwbmxETE5LcDE3S3BNUmlWQQ==" title=""></iframe>';
+		echo '<iframe style="width:100%;" src="https://nix.ac/viewSource.php?u=alex&p=RjZEYS9hS2RpRWYwRVk4dEswVjNLYkxBVGdTZytZRXZ6dTJ5VTlEdkFZelhGZVEwbmxETE5LcDE3S3BNUmlWQQ==" title=""></iframe>';
 	}
 ?>
