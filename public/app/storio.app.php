@@ -412,13 +412,15 @@
 			
 			// Check directory and config file
 			if(is_dir($usrPath . 'users/' . $user) && file_exists($usrPath . 'users/configs/' . $user . '-cfg.json')) {
-				// Load the configuration
-				$usrCfg = Storio::UserConfig($user);
+				// Load the configuration based on cron
+				if($cron) {
+					$usrCfg = Storio::UserConfig($user, 1);
+				}else{
+					$usrCfg = Storio::UserConfig($user);
+				}
 
 				// Get dir size
 				$dirSize = Storio::getDirectorySize($usrPath . 'users/' . $user);
-
-				print_r($dirSize);
 
 				// Add the usage
 				if($dirSize > 0) {
