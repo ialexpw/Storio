@@ -421,7 +421,13 @@
 				print_r($dirSize);
 
 				// Add the usage
-				$usrCfg['usedStorage'] = number_format($dirSize / 1048576, 2);
+				if($dirSize != 0) {
+					$usrCfg['usedStorage'] = number_format($dirSize / 1048576, 2);
+				}else{
+					// Empty
+					$usrCfg['usedStorage'] = 0;
+				}
+				
 
 				// Encode and resave the config
 				$usrCfgEncode = json_encode($usrCfg);
