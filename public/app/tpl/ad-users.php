@@ -48,8 +48,15 @@
 			// Load the configuration
 			$usrCfg = Storio::UserConfig($usrEdit);
 
+			// Validate storage
+			if(!is_numeric($_POST['editStorage'])) {
+				$usrCfg['maxStorage'] = 1000;
+			}else{
+				$usrCfg['maxStorage'] = $_POST['editStorage'];
+			}
+
 			// Alter the settings
-			$usrCfg['maxStorage'] = $_POST['editStorage'];
+			
 			$usrCfg['isEnabled'] = $_POST['editEnab'];
 			$usrCfg['canUpload'] = $_POST['editUpload'];
 			$usrCfg['isAdmin'] = $_POST['editAdmin'];
