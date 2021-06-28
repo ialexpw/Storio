@@ -27,12 +27,12 @@
 			echo $usr;
 
 			// Update storage sizes for each user
-			Storio::UpdateStorageSize($usr, 1);
+			Storio::UpdateStorageSize('admin', 1);
 		}
 
 		// Get site stats (total files/folders/users)
-		$usrDirs = Storio::getDirectorySize('users');
+		//$usrDirs = Storio::getDirectorySize('users');
 
-		print_r($usrDirs);
+		//print_r($usrDirs);
 	}
 ?>

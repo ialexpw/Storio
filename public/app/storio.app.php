@@ -402,9 +402,6 @@
 		 * @param $user
 		 */
 		public static function UpdateStorageSize($user, $cron = 0) {
-			// Declare as an array (fixes cli call)
-			$usrCfg = array();
-			
 			// Default to standard
 			$usrPath = '../';
 
