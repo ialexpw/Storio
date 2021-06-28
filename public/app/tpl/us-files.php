@@ -556,7 +556,8 @@
 					$('#reqModal').on('shown.bs.modal', function () {
 						$.ajax({
 							type: 'GET',
-							url: "viewSource.php?vid="+usrPath,
+							//url: "viewSource.php?vid="+usrPath,
+							url: "viewSource.php?u=alex&p="+usrPath,
 							success:function(data){
 								$('#showVid').html(data);
 								delete usrPath;
