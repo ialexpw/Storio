@@ -107,13 +107,8 @@
 		}
 	}
 
-	// Grab the path and user for the video player
+	// Grab the path and user for the iframe
 	if(isset($_GET['vid']) && !empty($_GET['vid'])) {
-		//echo '<video controls>';
-		//echo '<source src="viewSource.php?u=' . $_SESSION['Username'] . '&p=' . $_GET['vid'] . '" type="video/mp4">';
-		//echo 'Your browser does not support the video tag.';
-		//echo '</video>';
-
 		echo '<iframe style="width:100%; height:650px;" src="viewSource.php?u=' . $_SESSION['Username'] . '&p=' . $_GET['vid'] . '"></iframe>';
 	}
 ?>
