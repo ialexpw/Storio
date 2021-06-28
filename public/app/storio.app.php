@@ -283,13 +283,18 @@
 
 				// Verify password
 				if(password_verify($pass, $usrCfg['passWord'])) {
-					// Admin user?
-					if($usrCfg['isAdmin'] == "true") {
-						// Set the session
-						$_SESSION['isAdmin'] = $user;
-						return true;
+					// Check if user is enabled
+					if($usrCfg['isEnabled'] == 'true') {
+						// Admin user?
+						if($usrCfg['isAdmin'] == "true") {
+							// Set the session
+							$_SESSION['isAdmin'] = $user;
+							return true;
+						}else{
+							return true;
+						}
 					}else{
-						return true;
+						return false;
 					}
 				}else{
 					return false;
