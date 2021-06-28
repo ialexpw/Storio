@@ -101,6 +101,9 @@
 					exit();
 				}
 			}
+		}else{
+			// Redirect if not logged in/folder does not exist
+			header("Location: ?page=login");
 		}
 	}
 
