@@ -418,6 +418,8 @@
 				// Get dir size
 				$dirSize = Storio::getDirectorySize($usrPath . 'users/' . $user);
 
+				print_r($dirSize);
+
 				// Add the usage
 				$usrCfg['usedStorage'] = number_format($dirSize / 1048576, 2);
 
