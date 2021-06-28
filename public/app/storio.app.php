@@ -415,8 +415,11 @@
 				// Load the configuration
 				$usrCfg = Storio::UserConfig($user);
 
+				// Get dir size
+				$dirSize = Storio::getDirectorySize($usrPath . 'users/' . $user);
+
 				// Add the usage
-				$usrCfg['usedStorage'] = number_format(Storio::getDirectorySize($usrPath . 'users/' . $user) / 1048576, 2);
+				$usrCfg['usedStorage'] = number_format($dirSize / 1048576, 2);
 
 				// Encode and resave the config
 				$usrCfgEncode = json_encode($usrCfg);
