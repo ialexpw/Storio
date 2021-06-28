@@ -109,9 +109,11 @@
 
 	// Grab the path and user for the video player
 	if(isset($_GET['vid']) && !empty($_GET['vid'])) {
-		echo '<video controls>';
-		echo '<source src="viewSource.php?u=' . $_SESSION['Username'] . '&p=' . $_GET['vid'] . '" type="video/mp4">';
-		echo 'Your browser does not support the video tag.';
-		echo '</video>';
+		//echo '<video controls>';
+		//echo '<source src="viewSource.php?u=' . $_SESSION['Username'] . '&p=' . $_GET['vid'] . '" type="video/mp4">';
+		//echo 'Your browser does not support the video tag.';
+		//echo '</video>';
+
+		echo '<iframe src="https://nix.ac/viewSource.php?u=alex&p=RjZEYS9hS2RpRWYwRVk4dEswVjNLYkxBVGdTZytZRXZ6dTJ5VTlEdkFZelhGZVEwbmxETE5LcDE3S3BNUmlWQQ==" title=""></iframe>';
 	}
 ?>
