@@ -31,12 +31,12 @@
 		// Get site stats (total files/folders/users)
 		$usrDirs = Storio::getDirectorySize('users');
 
-		if($usrDirs > 0) {
-			$usrDirs = Storio::ReadableSize($usrDirs);
-			//$usrDirs = number_format($usrDirs / 1048576, 2);
-		}else{
-			$usrDirs = 0;
-		}
+		//if($usrDirs > 0) {
+			//$usrDirs = Storio::ReadableSize($usrDirs);
+			//$usrDirs = $usrDirs / 1048576;
+		//}else{
+			//$usrDirs = 0;
+		//}
 
 		print_r($usrDirs);
 	}
