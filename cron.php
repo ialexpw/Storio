@@ -32,7 +32,7 @@
 		$usrDirs = Storio::getDirectorySize('users');
 
 		if($usrDirs > 0) {
-			$usrDirs = number_format($dirSize / 1048576, 2);
+			$usrDirs = number_format($usrDirs / 1048576, 2);
 		}else{
 			$usrDirs = 0;
 		}
