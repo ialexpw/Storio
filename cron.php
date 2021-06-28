@@ -29,5 +29,8 @@
 		}
 
 		// Get site stats (total files/folders/users)
+		$usrDirs = Storio::getDirectorySize('users');
+
+		print_r($usrDirs);
 	}
 ?>
