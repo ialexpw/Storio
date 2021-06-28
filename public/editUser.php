@@ -24,6 +24,8 @@
 
 		// Load the configuration
 		$usrCfg = Storio::UserConfig($usrEdit);
+	}else{
+		exit("Permission denied");
 	}
 ?>
 <!-- Form for editing the user -->
