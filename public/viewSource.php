@@ -114,6 +114,6 @@
 		//echo 'Your browser does not support the video tag.';
 		//echo '</video>';
 
-		echo '<iframe style="width:100%; height:650px;" src="https://nix.ac/viewSource.php?u=alex&p=RjZEYS9hS2RpRWYwRVk4dEswVjNLYkxBVGdTZytZRXZ6dTJ5VTlEdkFZelhGZVEwbmxETE5LcDE3S3BNUmlWQQ==" title=""></iframe>';
+		echo '<iframe style="width:100%; height:650px;" src="viewSource.php?u=' . $_SESSION['Username'] . '&p=' . $_GET['vid'] . '"></iframe>';
 	}
 ?>
