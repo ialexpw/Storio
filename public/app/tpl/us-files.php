@@ -319,7 +319,7 @@
 										if(strpos($mimeType, 'image') !== false) {
 											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
 										}else if(strpos($mimeType, 'video/mp4') !== false) {
-											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
+											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . $_SESSION['Username'] . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
 											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
 										}
@@ -550,18 +550,29 @@
 			// Pop up modal with request files dialog
 			$(document).ready(function(){
 				$('.reqBtn').click(function() {
-					console.log("clicked");
-					usrPath = this.name;
+					// Log the click
+					console.log("Loading video..");
+
+					// Store the name
+					vidSplit = this.name;
+
+					// Split the string
+					vidSplit = vidSplit.split("+Sto+");
+
+					ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]'&p='+vidSplit[1]+'"></iframe>';
+
+					//usrPath = this.name;
 					$('#showVid').html("");
 					$('#reqModal').on('shown.bs.modal', function () {
-						$.ajax({
+						$('#showVid').html(ifContent);
+						/*$.ajax({
 							type: 'GET',
 							url: "viewSource.php?vid="+usrPath,
 							success:function(data){
 								$('#showVid').html(data);
 								delete usrPath;
 							}
-						});
+						});*/
 					});
 				});
 			});

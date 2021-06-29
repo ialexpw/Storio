@@ -11,6 +11,11 @@
 	 */
 
 	include 'app/storio.app.php';
+
+	// Redirect if not logged in
+	if(!Storio::LoggedIn()) {
+		header("Location: ?page=login");
+	}
 	
 	// Grab the path and user
 	if(isset($_GET['p']) && !empty($_GET['p']) && isset($_GET['u']) && !empty($_GET['u'])) {
