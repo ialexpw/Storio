@@ -252,13 +252,22 @@
 									*/
 								}else{
 									// Search bar
-									echo '<div class="col-md-12 left-indent" style="margin-bottom:8px;">';
-									//echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"></a>';
-									echo '<form class="g-3 form-inline" method="post" action="?page=ad-users">';
-									echo '<input type="text" class="form-control form-control-sm" id="" name="" />';
-									echo '<button type="submit" class="btn btn-primary mb-2"><i class="bi bi-search"></i></button>';
-									echo '</form>';
-									echo '</div>';
+									//echo '<div class="col-md-12 left-indent" style="margin-bottom:8px;">';
+									//echo '<form class="g-3 form-inline" method="post" action="?page=ad-users">';
+									//echo '<input type="text" class="form-control form-control-sm" id="" name="" />';
+									//echo '<button type="submit" class="btn btn-primary mb-2"><i class="bi bi-search"></i></button>';
+									//echo '</form>';
+									//echo '</div>';
+
+echo '<div class="input-group">';
+echo '<div class="form-outline">';
+echo '<input type="search" id="form1" class="form-control" />';
+echo '<label class="form-label" for="form1">Search</label>';
+echo '</div>';
+echo '<button type="button" class="btn btn-primary">';
+echo '<i class="fas fa-search"></i>';
+echo '</button>';
+echo '</div>';
 									
 								}
 
