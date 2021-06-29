@@ -216,7 +216,7 @@
 						</div>
 
 						
-						<p class="card-text" style="margin-top:15px;">
+						<p class="card-text dirContent" style="margin-top:15px;">
 							<?php
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
@@ -270,22 +270,6 @@
 									echo '</div>';
 
 									*/
-								}else{
-									// Search bar
-									/*echo '<div class="col-md-2"></div>';
-									echo '<div class="col-md-8" style="margin-bottom:8px;">';
-									echo '<form class="form-inline" method="post" action="testSearch.php">';
-									
-									echo '<div class="input-group mb-3">';
-									echo '<input type="text" class="form-control" placeholder="Search term..." id="sTerm" name="sTerm" aria-label="Search" aria-describedby="basic-addon2">';
-									echo '<div class="input-group-append">';
-									echo '<button class="btn btn-outline-secondary" type="submit">Search</button>';
-									echo '</div>';
-									echo '</div>';
-
-									echo '</form>';
-									echo '</div>';
-									echo '<div class="col-md-2"></div>';*/
 								}
 
 								// Check & sort
