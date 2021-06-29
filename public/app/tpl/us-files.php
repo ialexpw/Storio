@@ -252,19 +252,12 @@
 									*/
 								}else{
 									// Search bar
-									//echo '<div class="col-md-12 left-indent" style="margin-bottom:8px;">';
-									//echo '<form class="g-3 form-inline" method="post" action="?page=ad-users">';
-									//echo '<input type="text" class="form-control form-control-sm" id="" name="" />';
-									//echo '<button type="submit" class="btn btn-primary mb-2"><i class="bi bi-search"></i></button>';
-									//echo '</form>';
-									//echo '</div>';
-
-echo '<div class="row height d-flex justify-content-center align-items-center">';
-echo '<div class="col-md-8">';
-echo '<div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Have a question? Ask Now"> <button class="btn btn-primary">Search</button> </div>';
-echo '</div>';
-echo '</div>';
-									
+									echo '<div class="col-md-12" style="margin-bottom:8px;">';
+									echo '<form class="form-inline" method="post" action="?page=ad-users">';
+									echo '<input type="text" class="form-control form-control-sm" id="" name="" />';
+									echo '<button type="submit" class="btn btn-primary mb-2"><i class="bi bi-search"></i></button>';
+									echo '</form>';
+									echo '</div>';
 								}
 
 								// Check & sort
