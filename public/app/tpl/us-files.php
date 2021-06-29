@@ -571,7 +571,7 @@
 					});
 				});
 
-				$('#reqModal').on('shown.bs.modal', function () {
+				$('#reqModal').on('hidden.bs.modal', function () {
 					console.log("Closed");
 				});
 			});
