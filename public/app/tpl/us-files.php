@@ -259,14 +259,10 @@
 									//echo '</form>';
 									//echo '</div>';
 
-echo '<div class="input-group">';
-echo '<div class="form-outline">';
-echo '<input type="search" id="form1" class="form-control" />';
-echo '<label class="form-label" for="form1">Search</label>';
+echo '<div class="row height d-flex justify-content-center align-items-center">';
+echo '<div class="col-md-8">';
+echo '<div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Have a question? Ask Now"> <button class="btn btn-primary">Search</button> </div>';
 echo '</div>';
-echo '<button type="button" class="btn btn-primary">';
-echo '<i class="fas fa-search"></i>';
-echo '</button>';
 echo '</div>';
 									
 								}
