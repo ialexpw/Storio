@@ -254,12 +254,12 @@
 									// Search bar
 									echo '<div class="col-md-8"></div>';
 									echo '<div class="col-md-3" style="margin-bottom:8px;">';
-									echo '<form class="form-inline" method="post" action="?page=ad-users">';
+									echo '<form class="form-inline" method="post" action="?page=us-files">';
 									
 echo '<div class="input-group mb-3">';
 echo '<input type="text" class="form-control" placeholder="Search term..." aria-label="Search" aria-describedby="basic-addon2">';
 echo '<div class="input-group-append">';
-echo '<button class="btn btn-outline-secondary" type="submit">Button</button>';
+echo '<button class="btn btn-outline-secondary" type="submit">Search</button>';
 echo '</div>';
 echo '</div>';
 
