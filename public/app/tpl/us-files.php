@@ -250,6 +250,16 @@
 									echo '</div>';
 
 									*/
+								}else{
+									// Search bar
+									echo '<div class="col-md-12 left-indent" style="margin-bottom:8px;">';
+									//echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"></a>';
+									echo '<form class="row g-3" method="post" action="?page=ad-users">';
+									echo '<input type="text" class="form-control form-control-sm" id="" name="" />';
+									echo '<button type="submit" class="btn btn-primary mb-2"><i class="bi bi-search"></i></button>';
+									echo '</form>';
+									echo '</div>';
+									
 								}
 
 								// Check & sort
