@@ -207,8 +207,8 @@
 
 
 								// Search bar
-								echo '<div class="col-md-2"></div>';
-								echo '<div class="col-md-8" style="margin-bottom:8px;">';
+								echo '<div class="col-md-7"></div>';
+								echo '<div class="col-md-4" style="margin-bottom:8px;">';
 								echo '<form class="form-inline" method="post" action="testSearch.php">';
 								
 								echo '<div class="input-group mb-3">';
@@ -220,7 +220,7 @@
 
 								echo '</form>';
 								echo '</div>';
-								echo '<div class="col-md-2"></div>';
+								echo '<div class="col-md-1"></div>';
 
 
 
