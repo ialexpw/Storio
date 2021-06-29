@@ -561,9 +561,9 @@
 
 					console.log(vidSplit);
 
-					//var ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]'&p='+vidSplit[1]+'"></iframe>';
+					var ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]+'&p='+vidSplit[1]+'"></iframe>';
 
-					//console.log(ifContent);
+					console.log(ifContent);
 
 					//usrPath = this.name;
 					$('#showVid').html("");
