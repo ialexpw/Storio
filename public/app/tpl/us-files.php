@@ -573,6 +573,9 @@
 
 				$('#reqModal').on('hidden.bs.modal', function () {
 					console.log("Closed");
+
+					// Delete the video
+					$('#showVid').html("");
 				});
 			});
 
