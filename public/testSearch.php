@@ -8,13 +8,21 @@
 		return $files;
 	}
 
+	if(isset($_POST['sTerm']) && !empty($_POST['sTerm'])) {
+		// to find the all files that names ends with test.zip
+		$result = rglob('../users/alex' . '/*' . $_POST['sTerm'] . '*');
+
+		echo '<pre>';
+		print_r($result);
+		echo '</pre>';
+		//var_dump($result);
+	}
+
 	// usage: to find the test.zip file recursively
-	$result = rglob('../users/alex' . '/enVigil.zip');
-	var_dump($result);
+	//$result = rglob('../users/alex' . '/enVigil.zip');
+	//var_dump($result);
 
-	echo '<br /><br />';
+	//echo '<br /><br />';
 
-	// to find the all files that names ends with test.zip
-	$result = rglob('../users/alex' . '/*dark*');
-	var_dump($result);
+	
 ?>
