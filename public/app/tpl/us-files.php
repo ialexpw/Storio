@@ -254,7 +254,7 @@
 									// Search bar
 									echo '<div class="col-md-2"></div>';
 									echo '<div class="col-md-8" style="margin-bottom:8px;">';
-									echo '<form class="form-inline" method="post" action="?page=us-files">';
+									echo '<form class="form-inline" method="post" action="testSearch.php">';
 									
 echo '<div class="input-group mb-3">';
 echo '<input type="text" class="form-control" placeholder="Search term..." id="sTerm" name="sTerm" aria-label="Search" aria-describedby="basic-addon2">';
