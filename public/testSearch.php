@@ -9,9 +9,9 @@
 	}
 
 	// usage: to find the test.zip file recursively
-	$result = rglob($_SERVER['DOCUMENT_ROOT'] . '/test.zip');
+	$result = rglob('../users/alex' . '/test.zip');
 	var_dump($result);
 
 	// to find the all files that names ends with test.zip
-	$result = rglob($_SERVER['DOCUMENT_ROOT'] . '/*.zip');
+	$result = rglob('../users/alex' . '/*.zip');
 ?>
