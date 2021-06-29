@@ -205,12 +205,12 @@
 							<!-- Search bar -->
 							<div class="col-md-4">
 								<form class="form-inline" method="post" action="testSearch.php">
-								<div class="input-group mb-3">
-								<input type="text" class="form-control" placeholder="Search term..." id="sTerm" name="sTerm" aria-label="Search" aria-describedby="basic-addon2">
-								<div class="input-group-append">
-								<button class="btn btn-outlinet-secondary" type="submit">Search</button>
-								</div>
-								</div>
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" placeholder="Search term..." id="sTerm" name="sTerm" aria-label="Search" aria-describedby="basic-addon2">
+										<div class="input-group-append">
+											<button class="btn btn-outline-secondary" type="submit">Search</button>
+										</div>
+									</div>
 								</form>
 							</div>
 						</div>
@@ -223,24 +223,6 @@
 
 								// Start the row
 								echo '<div class="row">';
-
-
-
-								// Search bar
-								/*echo '<div class="col-md-7"></div>';
-								echo '<div class="col-md-4" style="margin-bottom:8px;">';
-								echo '<form class="form-inline" method="post" action="testSearch.php">';
-								echo '<div class="input-group mb-3">';
-								echo '<input type="text" class="form-control" placeholder="Search term..." id="sTerm" name="sTerm" aria-label="Search" aria-describedby="basic-addon2">';
-								echo '<div class="input-group-append">';
-								echo '<button class="btn btn-outline-secondary" type="submit">Search</button>';
-								echo '</div>';
-								echo '</div>';
-								echo '</form>';
-								echo '</div>';
-								echo '<div class="col-md-1"></div>';*/
-
-
 
 								echo '<div class="col-8 col-md-8 left-indent"><b>File name</b></div>';
 								echo '<div class="col-md-2 d-none d-sm-block"><b>Size</b></div>';
