@@ -547,36 +547,27 @@
 				$('.toast').toast('show');
 			}
 
-			// Pop up modal with request files dialog
+			// Pop up modal for the video player
 			$(document).ready(function(){
 				$('.reqBtn').click(function() {
-					// Log the click
-					//console.log("Loading video..");
-
 					// Store the name
 					var vidSplit = this.name;
 
 					// Split the string
 					vidSplit = vidSplit.split("+Sto+");
 
-					//console.log(vidSplit);
-
+					// Generate the iframe link
 					var ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]+'&p='+vidSplit[1]+'"></iframe>';
 
-					//console.log(ifContent);
-
-					//usrPath = this.name;
+					// Ensure html is empty first
 					$('#showVid').html("");
 					$('#reqModal').on('shown.bs.modal', function () {
+						// Load the iframe html in
 						$('#showVid').html(ifContent);
-						/*$.ajax({
-							type: 'GET',
-							url: "viewSource.php?vid="+usrPath,
-							success:function(data){
-								$('#showVid').html(data);
-								delete usrPath;
-							}
-						});*/
+
+						// Cleanup
+						delete vidSplit;
+						delete ifContent;
 					});
 				});
 			});
