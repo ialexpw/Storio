@@ -559,9 +559,11 @@
 					// Split the string
 					vidSplit = vidSplit.split("+Sto+");
 
-					var ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]'&p='+vidSplit[1]+'"></iframe>';
+					console.log(vidSplit);
 
-					console.log(ifContent);
+					//var ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]'&p='+vidSplit[1]+'"></iframe>';
+
+					//console.log(ifContent);
 
 					//usrPath = this.name;
 					$('#showVid').html("");
