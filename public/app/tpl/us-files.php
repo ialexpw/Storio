@@ -252,10 +252,17 @@
 									*/
 								}else{
 									// Search bar
-									echo '<div class="col-md-12" style="margin-bottom:8px;">';
+									echo '<div class="col-md-8"></div>';
+									echo '<div class="col-md-4" style="margin-bottom:8px;">';
 									echo '<form class="form-inline" method="post" action="?page=ad-users">';
-									echo '<input type="text" class="form-control form-control-sm" id="" name="" />';
-									echo '<button type="submit" class="btn btn-primary mb-2"><i class="bi bi-search"></i></button>';
+									
+echo '<div class="input-group mb-3">';
+echo '<input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">';
+echo '<div class="input-group-append">';
+echo '<button class="btn btn-outline-secondary" type="button">Button</button>';
+echo '</div>';
+echo '</div>';
+
 									echo '</form>';
 									echo '</div>';
 								}
