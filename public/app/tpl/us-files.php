@@ -551,7 +551,7 @@
 			$(document).ready(function(){
 				$('.reqBtn').click(function() {
 					// Log the click
-					console.log("Loading video..");
+					//console.log("Loading video..");
 
 					// Store the name
 					var vidSplit = this.name;
@@ -559,16 +559,16 @@
 					// Split the string
 					vidSplit = vidSplit.split("+Sto+");
 
-					console.log(vidSplit);
+					//console.log(vidSplit);
 
 					var ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]+'&p='+vidSplit[1]+'"></iframe>';
 
-					console.log(ifContent);
+					//console.log(ifContent);
 
 					//usrPath = this.name;
 					$('#showVid').html("");
 					$('#reqModal').on('shown.bs.modal', function () {
-						//$('#showVid').html(ifContent);
+						$('#showVid').html(ifContent);
 						/*$.ajax({
 							type: 'GET',
 							url: "viewSource.php?vid="+usrPath,
