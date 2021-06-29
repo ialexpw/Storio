@@ -554,12 +554,12 @@
 					console.log("Loading video..");
 
 					// Store the name
-					vidSplit = this.name;
+					var vidSplit = this.name;
 
 					// Split the string
 					vidSplit = vidSplit.split("+Sto+");
 
-					ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]'&p='+vidSplit[1]+'"></iframe>';
+					var ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]'&p='+vidSplit[1]+'"></iframe>';
 
 					console.log(ifContent);
 
