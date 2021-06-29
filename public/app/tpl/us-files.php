@@ -570,6 +570,10 @@
 						delete ifContent;
 					});
 				});
+
+				$('#reqModal').on('shown.bs.modal', function () {
+					console.log("Closed");
+				});
 			});
 
 			var deleteLinks = document.querySelectorAll('.delete');
