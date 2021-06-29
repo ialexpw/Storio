@@ -12,6 +12,9 @@
 	$result = rglob('../users/alex' . '/enVigil.zip');
 	var_dump($result);
 
+	echo '<br /><br />';
+
 	// to find the all files that names ends with test.zip
 	$result = rglob('../users/alex' . '/*.zip');
+	var_dump($result);
 ?>
