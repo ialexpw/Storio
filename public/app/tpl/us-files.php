@@ -561,10 +561,12 @@
 
 					ifContent = '<iframe style="width:100%; height:650px;" src="viewSource.php?u='+vidSplit[0]'&p='+vidSplit[1]+'"></iframe>';
 
+					console.log(ifContent);
+
 					//usrPath = this.name;
 					$('#showVid').html("");
 					$('#reqModal').on('shown.bs.modal', function () {
-						$('#showVid').html(ifContent);
+						//$('#showVid').html(ifContent);
 						/*$.ajax({
 							type: 'GET',
 							url: "viewSource.php?vid="+usrPath,
