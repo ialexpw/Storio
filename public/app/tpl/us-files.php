@@ -616,7 +616,10 @@
 
 					console.log(formPath);
 
-					$("#dirLister").empty();
+var div = document.getElementById('dirLister');
+while(div.firstChild){
+div.removeChild(div.firstChild);
+}
 
 					$('.searchItems').html("");
 
