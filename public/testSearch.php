@@ -15,6 +15,7 @@
 	error_reporting(-1);
 
 	include 'app/storio.app.php';
+	include 'app/icons.class.php';
 
 	// Redirect if not logged in
 	if(!Storio::LoggedIn()) {
