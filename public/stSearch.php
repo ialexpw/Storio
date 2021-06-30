@@ -31,8 +31,8 @@
 			// Set up the layout of the table
 			echo '<div class="row">';
 
-			echo '<div class="col-8 left-indent"><b>Search results</b></div>';
-			echo '<div class="col-4"><b>Location</b></div>';
+			echo '<div class="col-8 col-md-8 left-indent"><b>Search results</b></div>';
+			echo '<div class="col-4 col-md-4"><b>Location</b></div>';
 
 			// End the row
 			echo '</div>';
@@ -60,8 +60,8 @@
 				}
 
 				// Build the result view
-				echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> ' . $fileName . '</div>';
-				echo '<div class="col-4" style="margin-bottom:2px;">' . $filePath . '</div>';
+				echo '<div class="col-8 col-md-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> ' . $fileName . '</div>';
+				echo '<div class="col-4 col-md-4" style="margin-bottom:2px;">' . $filePath . '</div>';
 			}
 
 			echo '</div>';
