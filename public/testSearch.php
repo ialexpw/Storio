@@ -2,7 +2,7 @@
 	ini_set('display_errors', '1');
 	ini_set('display_startup_errors', '1');
 	error_reporting(E_ALL);
-	
+
 	// Does not support flag GLOB_BRACE
 	function rglob($pattern, $flags = 0) {
 		$files = glob($pattern, $flags);
@@ -32,7 +32,8 @@
 
 			foreach($scResult as $res) {
 				// Get file name
-				$fileName = end(split('/', $res));
+				$strExplode = explode('/', $res);
+				$fileName = end($strExplode);
 
 				// Get path to file
 				$filePath = str_replace($fileName, "", $res);
