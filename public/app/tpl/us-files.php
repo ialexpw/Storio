@@ -216,7 +216,7 @@
 						</div>
 
 						
-						<p class="card-text dirContent" style="margin-top:15px;">
+						<p class="card-text" id="dirContent" style="margin-top:15px;">
 							<?php
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
@@ -569,6 +569,7 @@
 
 			// Pop up modal for the video player
 			$(document).ready(function(){
+				// Click the video to preview
 				$('.reqBtn').click(function() {
 					// Store the name
 					var vidSplit = this.name;
@@ -591,11 +592,41 @@
 					});
 				});
 
+				// When modal is closed, remove video player (stop sound)
 				$('#reqModal').on('hidden.bs.modal', function () {
 					console.log("Closed");
 
 					// Delete the video
 					$('#showVid').html("");
+				});
+
+				// Search button clicked
+				$('.sTerm').click(function() {
+					// Log to the console
+					console.log("clicked");
+
+					usrPath = this.value;
+
+					console.log(usrPath);
+
+					$('#dirContent').html("");
+
+					$('#dirContent').html(usrPath);
+					/*
+					
+					$('#reqModal').on('shown.bs.modal', function () {
+						$.ajax({
+							type: 'GET',
+							//url: "viewSource.php?vid="+usrPath,
+							url: "viewSource.php?u=alex&p="+usrPath,
+							url: "viewSource.php?vid="+usrPath,
+							success:function(data){
+								$('#showVid').html(data);
+								delete usrPath;
+							}
+						});
+					});
+					*/
 				});
 			});
 
