@@ -217,7 +217,7 @@
 						</div>
 
 						
-						<p class="card-text" id="dirContent" style="margin-top:15px;">
+						<p class="card-text dirContent" style="margin-top:15px;">
 							<?php
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
@@ -605,17 +605,17 @@
 				$("#searchClick").click(function () {
 					// Log to the console
 
-					var usrPath = document.getElementById("sTerm").value;
+					//var usrPath = document.getElementById("sTerm").value;
 
 					var formPath = searchForm.sTerm.value;
 
-					console.log(usrPath);
+					//console.log(usrPath);
 
 					console.log(formPath);
 
-					$('#dirContent').html("");
+					$('.dirContent').html("");
 
-					$('#dirContent').html(usrPath);
+					$('.dirContent').html(usrPath);
 					/*
 					
 					$('#reqModal').on('shown.bs.modal', function () {
