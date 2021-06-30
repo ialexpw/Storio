@@ -217,7 +217,7 @@
 						</div>
 
 						<div class="dirContent">
-							
+
 						</div>
 
 						<p class="card-text" style="margin-top:15px;">
@@ -616,9 +616,11 @@
 
 					console.log(formPath);
 
+					//$("#cart_item").empty();
+
 					$('.dirContent').html("");
 
-					$('.dirContent').html(usrPath);
+					$('.dirContent').html(formPath);
 					/*
 					
 					$('#reqModal').on('shown.bs.modal', function () {
