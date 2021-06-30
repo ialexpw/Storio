@@ -47,7 +47,8 @@
 					$path = $usrFile;
 
 					// Note file type
-					$ftype = mime_content_type($usrFile);
+					$ftype = 'video/mp4';
+					//$ftype = mime_content_type($usrFile);
 
 					$file = $path;
 					$fp = @fopen($file, 'rb');
