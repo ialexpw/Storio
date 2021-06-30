@@ -216,8 +216,11 @@
 							</div>
 						</div>
 
-						
-						<p class="card-text dirContent" style="margin-top:15px;">
+						<div class="dirContent">
+							
+						</div>
+
+						<p class="card-text" style="margin-top:15px;">
 							<?php
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
