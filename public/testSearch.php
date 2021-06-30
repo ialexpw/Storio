@@ -53,7 +53,7 @@
 				$filePath = str_replace($fileName, "", $res);
 
 				// Strip out the users/username structure
-				$filePath = str_replace("../users/" . $filePath);
+				$filePath = str_replace("../users/" . $stUser, "", $filePath);
 
 				// Work out the icon to use
 				if(is_dir($res)) {
