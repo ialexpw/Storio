@@ -71,13 +71,13 @@
 			echo '</div>';
 
 			// Add spacing before normal file listing
-			echo '<br /><hr><br />';
+			echo '<br />';
 		}else{
 			// No results found from the search
 			echo 'No results have been found';
 
 			// Add spacing before normal file listing
-			echo '<br /><hr><br />';
+			echo '<br />';
 		}
 	}
 ?>
