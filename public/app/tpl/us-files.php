@@ -625,10 +625,10 @@
 			});
 
 			// If the enter key is clicked on the search input
-			const node = document.getElementById('co');
+			const node = document.getElementById('sTerm');
 			node.addEventListener('keydown', function onEvent(event) {
 				event.preventDefault();
-				
+
 				if (event.key === "Enter") {
 					document.getElementById("searchClick").click();
 				}
