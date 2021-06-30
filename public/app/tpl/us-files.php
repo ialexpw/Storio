@@ -627,9 +627,9 @@
 			// If the enter key is clicked on the search input
 			const node = document.getElementById('sTerm');
 			node.addEventListener('keydown', function onEvent(event) {
-				event.preventDefault();
-
 				if (event.key === "Enter") {
+					event.preventDefault();
+					
 					document.getElementById("searchClick").click();
 				}
 			});
