@@ -606,7 +606,7 @@
 					// Log to the console
 					console.log("clicked");
 
-					usrPath = document.getElementById("sTerm").value;
+					var usrPath = document.getElementById("sTerm").value;
 
 					console.log(usrPath);
 
