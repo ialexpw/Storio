@@ -216,7 +216,7 @@
 							</div>
 						</div>
 
-						<div class="dirContent">
+						<div class="searchItems">
 
 						</div>
 
@@ -620,22 +620,16 @@
 
 					$('.dirContent').html("");
 
-					$('.dirContent').html(formPath);
-					/*
+					//$('.dirContent').html(formPath);
 					
-					$('#reqModal').on('shown.bs.modal', function () {
-						$.ajax({
-							type: 'GET',
-							//url: "viewSource.php?vid="+usrPath,
-							url: "viewSource.php?u=alex&p="+usrPath,
-							url: "viewSource.php?vid="+usrPath,
-							success:function(data){
-								$('#showVid').html(data);
-								delete usrPath;
-							}
-						});
+					$.ajax({
+						type: 'GET',
+						url: "testSearch.php?sid="+formPath,
+						success:function(data){
+							$('#searchItems').html(data);
+							delete formPath;
+						}
 					});
-					*/
 				});
 			});
 

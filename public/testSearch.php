@@ -8,9 +8,9 @@
 		return $files;
 	}
 
-	if(isset($_POST['sTerm']) && !empty($_POST['sTerm'])) {
+	if(isset($_GET['sid']) && !empty($_GET['sid'])) {
 		// to find the all files that names ends with test.zip
-		$result = rglob('../users/alex' . '/*' . $_POST['sTerm'] . '*');
+		$result = rglob('../users/alex' . '/*' . $_GET['sid'] . '*');
 
 		echo '<pre>';
 		print_r($result);
