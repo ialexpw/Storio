@@ -602,7 +602,7 @@
 				});
 
 				// Search button clicked
-				$('.searchClick').click(function() {
+				$("#searchClick").click(function () {
 					// Log to the console
 					alert("Clicked");
 
