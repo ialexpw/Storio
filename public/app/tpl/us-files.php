@@ -624,6 +624,16 @@
 				});
 			});
 
+			// If the enter key is clicked on the search input
+			const node = document.getElementById('co');
+			node.addEventListener('keydown', function onEvent(event) {
+				event.preventDefault();
+				
+				if (event.key === "Enter") {
+					document.getElementById("searchClick").click();
+				}
+			});
+
 			var deleteLinks = document.querySelectorAll('.delete');
 
 			for (var i = 0; i < deleteLinks.length; i++) {
