@@ -74,7 +74,7 @@
 			echo '<br />';
 		}else{
 			// No results found from the search
-			echo '<p class="left-indent">No results have been found</p>';
+			echo '<p class="left-indent" style="margin-bottom:2px;><i style="font-size: 1.4rem; margin-right:6px;" class="bi bi-x-circle"></i> No results have been found</p>';
 
 			// Add spacing before normal file listing
 			echo '<br />';
