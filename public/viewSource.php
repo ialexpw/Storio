@@ -47,8 +47,12 @@
 					$path = $usrFile;
 
 					// Note file type
-					$ftype = 'video/mp4';
-					//$ftype = mime_content_type($usrFile);
+					$ftype = mime_content_type($usrFile);
+
+					// Some videos show as this, so need to "fix it" to mp4
+					if($ftype == 'application/octet-stream') {
+						$ftype = 'video/mp4';
+					}
 
 					$file = $path;
 					$fp = @fopen($file, 'rb');
