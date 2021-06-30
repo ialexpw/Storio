@@ -23,58 +23,61 @@
 		// Get the username
 		$stUser = $_SESSION['Username'];
 
-		// Wildcard search on the file within the users dir
-		$scResult = Storio::rglob('../users/' . $stUser . '/*' . $_GET['sid'] . '*');
+		// Ensure there is a users folder
+		if(is_dir('../users/' . $stUser)) {
+			// Wildcard search on the file within the users dir
+			$scResult = Storio::rglob('../users/' . $stUser . '/*' . $_GET['sid'] . '*');
 
-		// We have results
-		if(!empty($scResult)) {
-			// Set up the layout of the table
-			echo '<div class="row">';
+			// We have results
+			if(!empty($scResult)) {
+				// Set up the layout of the table
+				echo '<div class="row">';
 
-			echo '<div class="col-8 left-indent"><b>Search results</b></div>';
-			echo '<div class="col-4 mobileCenter"><b>Location</b></div>';
+				echo '<div class="col-8 left-indent"><b>Search results</b></div>';
+				echo '<div class="col-4 mobileCenter"><b>Location</b></div>';
 
-			// End the row
-			echo '</div>';
-			echo '<hr>';
+				// End the row
+				echo '</div>';
+				echo '<hr>';
 
-			echo '<div class="row">';
+				echo '<div class="row">';
 
-			// Loop the search results
-			foreach($scResult as $res) {
-				// Get file name
-				$strExplode = explode('/', $res);
-				$fileName = end($strExplode);
+				// Loop the search results
+				foreach($scResult as $res) {
+					// Get file name
+					$strExplode = explode('/', $res);
+					$fileName = end($strExplode);
 
-				// Get path to file
-				$filePath = str_replace($fileName, "", $res);
+					// Get path to file
+					$filePath = str_replace($fileName, "", $res);
 
-				// Strip out the users/username structure
-				$filePath = str_replace("../users/" . $stUser, "", $filePath);
+					// Strip out the users/username structure
+					$filePath = str_replace("../users/" . $stUser, "", $filePath);
 
-				// Work out the icon to use
-				if(is_dir($res)) {
-					$ico = 'far fa-folder';
-					echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> ' . $fileName . '</div>';
-				}else{
-					$ico = StoIco::ShowIcon($fileName);
-					echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:12px;" class="' . $ico . '"></i> ' . $fileName . '</div>';
+					// Work out the icon to use
+					if(is_dir($res)) {
+						$ico = 'far fa-folder';
+						echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> ' . $fileName . '</div>';
+					}else{
+						$ico = StoIco::ShowIcon($fileName);
+						echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:12px;" class="' . $ico . '"></i> ' . $fileName . '</div>';
+					}
+
+					// Build the result view
+					echo '<div class="col-4" style="margin-bottom:2px;">' . $filePath . '</div>';
 				}
 
-				// Build the result view
-				echo '<div class="col-4" style="margin-bottom:2px;">' . $filePath . '</div>';
+				echo '</div>';
+
+				// Add spacing before normal file listing
+				echo '<br />';
+			}else{
+				// No results found from the search
+				echo '<p class="left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-times-circle"></i> No results have been found</p>';
+
+				// Add spacing before normal file listing
+				echo '<br />';
 			}
-
-			echo '</div>';
-
-			// Add spacing before normal file listing
-			echo '<br />';
-		}else{
-			// No results found from the search
-			echo '<p class="left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-times-circle"></i> No results have been found</p>';
-
-			// Add spacing before normal file listing
-			echo '<br />';
 		}
 	}
 ?>

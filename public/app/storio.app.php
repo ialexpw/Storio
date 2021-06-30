@@ -480,9 +480,6 @@
 		public static function rglob($pattern, $flags = 0) {
 			$files = glob($pattern, $flags);
 
-			print_r($files);
-			exit();
-
 			foreach (glob(dirname($pattern) . '/*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir) {
 				$files = array_merge($files, Storio::rglob($dir . '/' . basename($pattern), $flags));
 			}
