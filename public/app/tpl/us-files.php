@@ -618,7 +618,7 @@
 
 					//$("#cart_item").empty();
 
-					$('.dirContent').html("");
+					$('.searchItems').html("");
 
 					//$('.dirContent').html(formPath);
 					
@@ -626,7 +626,7 @@
 						type: 'GET',
 						url: "testSearch.php?sid="+formPath,
 						success:function(data){
-							$('#searchItems').html(data);
+							$('.searchItems').html(data);
 							delete formPath;
 						}
 					});
