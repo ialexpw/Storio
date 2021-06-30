@@ -340,6 +340,7 @@
 								// End the row
 								echo '</div>';
 							?>
+							<small style="text-align:right;">using 99% of your storage</small>
 						</p>
 					</div>
 				</div>
