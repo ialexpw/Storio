@@ -35,8 +35,8 @@
 			// Set up the layout of the table
 			echo '<div class="row">';
 
-			echo '<div class="col-8 col-md-8 left-indent"><b>File name</b></div>';
-			echo '<div class="col-4 col-md-4" style="text-align:center;"><b>Location</b></div>';
+			echo '<div class="col-8 left-indent"><b>Search results</b></div>';
+			echo '<div class="col-4" style="text-align:center;"><b>Location</b></div>';
 
 			// End the row
 			echo '</div>';
@@ -64,8 +64,8 @@
 				}
 
 				// Build the result view
-				echo '<div class="col-8 col-md-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> <a href="?page=us-files&browse=">' . $fileName . '</a></div>';
-				echo '<div class="col-4 col-md-4" style="text-align:center;" style="margin-bottom:2px;"><a href="" class="">' . $filePath . '</a></div>';
+				echo '<div class="col-8  left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> <a href="?page=us-files&browse=">' . $fileName . '</a></div>';
+				echo '<div class="col-4" style="text-align:center;" style="margin-bottom:2px;"><a href="" class="">' . $filePath . '</a></div>';
 			}
 
 			echo '</div>';
