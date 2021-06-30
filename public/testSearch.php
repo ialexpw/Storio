@@ -52,8 +52,18 @@
 				// Get path to file
 				$filePath = str_replace($fileName, "", $res);
 
+				// Strip out the users/username structure
+				$filePath = str_replace("../users/" . $filePath);
+
+				// Work out the icon to use
+				if(is_dir($res)) {
+					$ico = 'far fa-folder';
+				}else{
+					$ico = StoIco::ShowIcon($fileName);
+				}
+
 				// Build the result view
-				echo '<div class="col-8 col-md-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=">' . $fileName . '</a></div>';
+				echo '<div class="col-8 col-md-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> <a href="?page=us-files&browse=">' . $fileName . '</a></div>';
 				echo '<div class="col-4 col-md-4" style="text-align:center;" style="margin-bottom:2px;"><a href="" class="">' . $filePath . '</a></div>';
 			}
 
