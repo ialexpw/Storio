@@ -604,7 +604,7 @@
 				// Search button clicked
 				$('.searchClick').click(function() {
 					// Log to the console
-					console.log("clicked");
+					alert("Clicked");
 
 					var usrPath = document.getElementById("sTerm").value;
 
