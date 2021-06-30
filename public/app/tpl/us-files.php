@@ -204,12 +204,11 @@
 
 							<!-- Search bar -->
 							<div class="col-md-4">
-								<form class="form-inline" name="searchForm" method="post" action="testSearch.php">
+								<form class="form-inline" name="searchForm" method="post" action="">
 									<div class="input-group mb-3">
 										<input type="text" class="form-control" placeholder="Search term..." id="sTerm" name="sTerm" aria-label="Search" aria-describedby="basic-addon2">
 										<div class="input-group-append">
-											<button class="btn btn-outline-secondary" type="submit">Search</button>
-											<a class="btn btn-outline-secondary" id="searchClick" name="searchClick" href="javascript:;">test</a>
+											<a class="btn btn-outline-secondary" id="searchClick" name="searchClick" href="javascript:;">Search</a>
 										</div>
 									</div>
 								</form>
