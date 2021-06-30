@@ -614,7 +614,7 @@
 					// Search for results and display them
 					$.ajax({
 						type: 'GET',
-						url: "testSearch.php?sid="+formPath,
+						url: "stSearch.php?sid="+formPath,
 						success:function(data){
 							// Display the html and then clean up the vars
 							$('.searchItems').html(data);
@@ -629,7 +629,7 @@
 			node.addEventListener('keydown', function onEvent(event) {
 				if (event.key === "Enter") {
 					event.preventDefault();
-					
+
 					document.getElementById("searchClick").click();
 				}
 			});
