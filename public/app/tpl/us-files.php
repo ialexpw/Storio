@@ -220,7 +220,7 @@
 
 						</div>
 
-						<p class="card-text" style="margin-top:15px;">
+						<p class="card-text" id="dirLister" style="margin-top:15px;">
 							<?php
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
@@ -616,7 +616,7 @@
 
 					console.log(formPath);
 
-					//$("#cart_item").empty();
+					$("#dirLister").empty();
 
 					$('.searchItems').html("");
 
