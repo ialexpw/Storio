@@ -566,8 +566,6 @@
 
 				// When modal is closed, remove video player (stop sound)
 				$('#reqModal').on('hidden.bs.modal', function () {
-					console.log("Closed");
-
 					// Delete the video
 					$('#showVid').html("");
 				});
