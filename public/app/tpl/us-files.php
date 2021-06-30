@@ -204,7 +204,7 @@
 
 							<!-- Search bar -->
 							<div class="col-md-4">
-								<form class="form-inline" method="post" action="testSearch.php">
+								<form class="form-inline" name="searchForm" method="post" action="testSearch.php">
 									<div class="input-group mb-3">
 										<input type="text" class="form-control" placeholder="Search term..." id="sTerm" name="sTerm" aria-label="Search" aria-describedby="basic-addon2">
 										<div class="input-group-append">
@@ -607,7 +607,11 @@
 
 					var usrPath = document.getElementById("sTerm").value;
 
+					var formPath = searchForm.sTerm.value;
+
 					console.log(usrPath);
+
+					console.log(formPath);
 
 					$('#dirContent').html("");
 
