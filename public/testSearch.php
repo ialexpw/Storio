@@ -64,7 +64,7 @@
 				}
 
 				// Build the result view
-				echo '<div class="col-8  left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> <a href="?page=us-files&browse=">' . $fileName . '</a></div>';
+				echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> <a href="?page=us-files&browse=">' . $fileName . '</a></div>';
 				echo '<div class="col-4" style="text-align:center;" style="margin-bottom:2px;"><a href="" class="">' . $filePath . '</a></div>';
 			}
 
@@ -74,7 +74,7 @@
 			echo '<br />';
 		}else{
 			// No results found from the search
-			echo 'No results have been found';
+			echo '<p class="left-indent">No results have been found</p>';
 
 			// Add spacing before normal file listing
 			echo '<br />';
