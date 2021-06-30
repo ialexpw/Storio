@@ -59,9 +59,6 @@
 		// If folder does not already exist
 		if(!is_dir($usrDir . $_POST['uplFldr'] . '/' . $_POST['inpFolder'])) {
 			if(mkdir($usrDir . $_POST['uplFldr'] . '/' . $_POST['inpFolder'])) {
-				// Add to the log
-				//Storio::AddLog(time(), "Folder Created", $_SESSION['Username'] . ' has created a new folder named ' . $_POST['inpFolder']);
-
 				// Reload
 				header('Location: ' . $_SERVER['REQUEST_URI']);
 			}
@@ -242,37 +239,6 @@
 									echo '<div class="col-md-12 left-indent" style="margin-bottom:8px;">';
 									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="fas fa-arrow-left"></i></a>';
 									echo '</div>';
-
-									/*
-
-									// Breadcrumbs, remove the first /
-									$makeBread = ltrim($getBrowse, '/');
-									$makeBread = explode("/", $makeBread);
-
-									echo '<div class="col-md-11">';
-									// Store initial variables
-									$hrLink = '';
-									$fullBread = '';
-
-									// Loop and build the breadcrumbs
-									foreach($makeBread as $breadCrumb) {
-										$rmSlash = str_replace("/", "", $breadCrumb);
-
-										$hrLink .= $breadCrumb;
-										$fullBread .= '<a style="margin-right:10px; margin-left:10px;" href="?page=us-files&browse=' . $hrLink . '">' . $breadCrumb . '</a> >';
-
-										// Add the slash onto the link (for the next go around)
-										$hrLink .= '/';
-									}
-
-									// Remove trailing >
-									$fullBread = substr($fullBread, 0, -1);
-
-									// Echo the breadcrumbs
-									echo $fullBread;
-									echo '</div>';
-
-									*/
 								}
 
 								// Check & sort
