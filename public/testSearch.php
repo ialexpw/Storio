@@ -10,11 +10,40 @@
 
 	if(isset($_GET['sid']) && !empty($_GET['sid'])) {
 		// to find the all files that names ends with test.zip
-		$result = rglob('../users/alex' . '/*' . $_GET['sid'] . '*');
+		$scResult = rglob('../users/alex' . '/*' . $_GET['sid'] . '*');
 
-		echo '<pre>';
-		print_r($result);
-		echo '</pre>';
+		// We have results
+		if(!empty($scResult)) {
+			// Set up the layout of the table
+			echo '<div class="row">';
+
+			echo '<div class="col-8 col-md-8 left-indent"><b>File name</b></div>';
+			echo '<div class="col-4 col-md-4" style="text-align:center;"><b>Location</b></div>';
+
+			// End the row
+			echo '</div>';
+			echo '<hr>';
+
+			echo '<div class="row">';
+
+			foreach($scResult as $res) {
+				// Get file name
+				$fileName = end(split('/',$res));
+
+				// Get path to file
+				$filePath = str_replace($fileName, "", $res);
+
+				echo '<div class="col-8 col-md-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=">' . $fileName . '</a></div>';
+				echo '<div class="col-4 col-md-4" style="text-align:center;" style="margin-bottom:2px;"><a href="" class="">' . $filePath . '</a></div>';
+
+			}
+
+			echo '</div>';
+		}
+
+		//echo '<pre>';
+		//print_r($result);
+		//echo '</pre>';
 		//var_dump($result);
 	}
 

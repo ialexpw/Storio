@@ -606,29 +606,18 @@
 
 				// Search button clicked
 				$("#searchClick").click(function () {
-					// Log to the console
-
-					//var usrPath = document.getElementById("sTerm").value;
-
+					// Get the value of the search input
 					var formPath = searchForm.sTerm.value;
 
-					//console.log(usrPath);
-
-					console.log(formPath);
-
-var div = document.getElementById('dirLister');
-while(div.firstChild){
-div.removeChild(div.firstChild);
-}
-
+					// Ensure the results div is empty before
 					$('.searchItems').html("");
 
-					//$('.dirContent').html(formPath);
-					
+					// Search for results and display them
 					$.ajax({
 						type: 'GET',
 						url: "testSearch.php?sid="+formPath,
 						success:function(data){
+							// Display the html and then clean up the vars
 							$('.searchItems').html(data);
 							delete formPath;
 						}
