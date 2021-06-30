@@ -61,7 +61,7 @@
 
 				// Build the result view
 				echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> ' . $fileName . '</div>';
-				echo '<div class="col-4 mobileCenter" style="margin-bottom:2px;">' . $filePath . '</div>';
+				echo '<div class="col-4" style="margin-bottom:2px;">' . $filePath . '</div>';
 			}
 
 			echo '</div>';
