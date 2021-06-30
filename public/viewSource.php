@@ -26,6 +26,9 @@
 
 			// Check the file exists
 			if(file_exists($usrFile)) {
+				// Get the files extension
+				$ext = pathinfo($usrFile, PATHINFO_EXTENSION);
+
 				// Is it an image?
 				if(strpos(mime_content_type($usrFile), 'image') !== false) {
 					// Grab the image contents
@@ -39,7 +42,7 @@
 				}
 
 				// Is it a video?
-				if(strpos(mime_content_type($usrFile), 'video') !== false) {
+				if(strpos(mime_content_type($usrFile), 'video') !== false || $ext == 'mp4') {
 					// Set the path
 					$path = $usrFile;
 
