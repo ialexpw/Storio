@@ -608,6 +608,11 @@
 					// Get the value of the search input
 					var formPath = searchForm.sTerm.value;
 
+					// If empty return
+					if(formPath == "") {
+						return false;
+					}
+
 					// Ensure the results div is empty before
 					$('.searchItems').html("");
 
