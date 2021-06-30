@@ -1,20 +1,29 @@
 <?php
-	ini_set('display_errors', '1');
-	ini_set('display_startup_errors', '1');
-	error_reporting(E_ALL);
+	/**
+	 * us-files.php
+	 *
+	 * The file management page for users
+	 *
+	 * @package    Storio
+	 * @author     Alex White
+	 * @copyright  2021 Storio
+	 * @link       https://storio.uk
+	 */
 
-	// Does not support flag GLOB_BRACE
-	function rglob($pattern, $flags = 0) {
-		$files = glob($pattern, $flags);
-		foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir) {
-			$files = array_merge($files, rglob($dir.'/'.basename($pattern), $flags));
-		}
-		return $files;
+	include 'app/storio.app.php';
+
+	// Redirect if not logged in
+	if(!Storio::LoggedIn()) {
+		header("Location: ?page=login");
 	}
 
+	// Check we are getting a search term
 	if(isset($_GET['sid']) && !empty($_GET['sid'])) {
-		// to find the all files that names ends with test.zip
-		$scResult = rglob('../users/alex' . '/*' . $_GET['sid'] . '*');
+		// Get the username
+		$stUser = $_SESSION['Username'];
+
+		// Wildcard search on the file within the users dir
+		$scResult = Storio::rglob('../users/' . $stUser . '/*' . $_GET['sid'] . '*');
 
 		// We have results
 		if(!empty($scResult)) {
@@ -30,6 +39,7 @@
 
 			echo '<div class="row">';
 
+			// Loop the search results
 			foreach($scResult as $res) {
 				// Get file name
 				$strExplode = explode('/', $res);
@@ -38,25 +48,15 @@
 				// Get path to file
 				$filePath = str_replace($fileName, "", $res);
 
+				// Build the result view
 				echo '<div class="col-8 col-md-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="far fa-folder"></i> <a href="?page=us-files&browse=">' . $fileName . '</a></div>';
 				echo '<div class="col-4 col-md-4" style="text-align:center;" style="margin-bottom:2px;"><a href="" class="">' . $filePath . '</a></div>';
-
 			}
 
 			echo '</div>';
+		}else{
+			// No results found from the search
+			echo 'No results have been found';
 		}
-
-		//echo '<pre>';
-		//print_r($result);
-		//echo '</pre>';
-		//var_dump($result);
 	}
-
-	// usage: to find the test.zip file recursively
-	//$result = rglob('../users/alex' . '/enVigil.zip');
-	//var_dump($result);
-
-	//echo '<br /><br />';
-
-	
 ?>
