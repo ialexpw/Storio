@@ -43,8 +43,9 @@
 			$siteCfg = array(
 				"siteName" => "Storio File Management",
 				"allowRegistration" => false,
-				"defaultAllowance" => 5000, // in MB
-				"uploadMaxMB" => 500 // in MB
+				"defaultAllowance" => 5000,				// in MB
+				"uploadMaxMB" => 500,					// in MB
+				"uploadFolder" => "../users/"
 			);
 
 			// JSON encode the configuration
