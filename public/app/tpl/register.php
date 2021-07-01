@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * login.php
+	 * register.php
 	 *
-	 * Log in page for users
+	 * Registration page for new users
 	 *
 	 * @package    Storio
 	 * @author     Alex White
@@ -28,7 +28,7 @@
 
 	// Log in to Storio
 	if(!empty($_POST)) {
-		$logUsr = Storio::LoginUser($_POST);
+		$logUsr = Storio::RegisterUser($_POST);
 
 		// If success
 		if($logUsr) {
@@ -60,7 +60,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Storio - Log in</title>
+		<title>Storio - Register</title>
 
 		<link rel="canonical" href="https://storio.aw0.uk">
 
@@ -100,14 +100,14 @@
 					<div class="card-header text-center">
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="true" href="?page=login">
+								<a class="nav-link" href="?page=login">
 									<i class="bi bi-door-open" style="font-size: 2rem;"></i>
 									<br />Log in
 								</a>
 							</li>
 
 							<li class="nav-item">
-								<a class="nav-link" href="?page=register">
+								<a class="nav-link active" aria-current="true" href="?page=register">
 									<i class="bi bi-door-open" style="font-size: 2rem;"></i>
 									<br />Register
 								</a>
@@ -115,7 +115,7 @@
 						</ul>
 					</div>
 					<div class="card-body">
-						<!-- Log in form -->
+						<!-- Register form -->
 						<br />
 						<h4 class="card-title">Log in to Storio</h4>
 						<div class="card-text" style="margin-top:15px;">
