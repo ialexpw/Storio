@@ -117,7 +117,7 @@
 					<div class="card-body">
 						<!-- Register form -->
 						<br />
-						<h4 class="card-title">Log in to Storio</h4>
+						<h4 class="card-title">Register for Storio</h4>
 						<div class="card-text" style="margin-top:15px;">
 							<form method="post" action="?page=login">
 								<div class="mb-3">
@@ -128,7 +128,7 @@
 									<label for="passInput" class="form-label">Password</label>
 									<input type="password" class="form-control" id="passInput" name="passInput">
 								</div>
-								<button type="submit" class="btn btn-primary">Log in</button>
+								<button type="submit" class="btn btn-primary">Register</button>
 							</form>
 						</div>
 					</div>
