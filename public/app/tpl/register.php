@@ -108,7 +108,7 @@
 
 							<li class="nav-item">
 								<a class="nav-link active" aria-current="true" href="?page=register">
-									<i class="bi bi-door-open" style="font-size: 2rem;"></i>
+									<i class="bi bi-door-closed" style="font-size: 2rem;"></i>
 									<br />Register
 								</a>
 							</li>
