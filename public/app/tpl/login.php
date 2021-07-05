@@ -25,6 +25,9 @@
 			header("Location: ?page=us-dashboard");
 		}
 	}
+	
+	// Load the site configuration
+	$siteCfg = Storio::SiteConfig();
 
 	// Log in to Storio
 	if(!empty($_POST)) {
@@ -105,13 +108,19 @@
 									<br />Log in
 								</a>
 							</li>
-
+							<?php
+								// Check whether registration is allowed
+								if($siteCfg['allowRegistration'] == 'true') {
+							?>
 							<li class="nav-item">
 								<a class="nav-link" href="?page=register">
 									<i class="bi bi-door-closed" style="font-size: 2rem;"></i>
 									<br />Register
 								</a>
 							</li>
+							<?php
+								}
+							?>
 						</ul>
 					</div>
 					<div class="card-body">

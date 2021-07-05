@@ -26,6 +26,14 @@
 		}
 	}
 
+	// Load the site configuration
+	$siteCfg = Storio::SiteConfig();
+
+	// Check whether registration is allowed
+	if($siteCfg['allowRegistration'] == 'false') {
+		header("Location: ?page=login");
+	}
+
 	// Log in to Storio
 	if(!empty($_POST)) {
 		$logUsr = Storio::RegisterUser($_POST);
@@ -119,7 +127,7 @@
 						<br />
 						<h4 class="card-title">Register for Storio</h4>
 						<div class="card-text" style="margin-top:15px;">
-							<form method="post" action="?page=login">
+							<form method="post" action="?page=register">
 								<div class="mb-3">
 									<label for="userInput" class="form-label">User name</label>
 									<input type="text" class="form-control" id="userInput" name="userInput">
