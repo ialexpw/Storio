@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * remoteUploadMultiple.php
+	 * rmUpload.php
 	 *
 	 * Upload mechanism
 	 *
