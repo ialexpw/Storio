@@ -95,6 +95,9 @@
 				// Set max upload
 				$siteCfg['uploadMaxMB'] = $_POST['maxUpload'];
 
+				// Set the reg on/off
+				$siteCfg['allowRegistration'] = $_POST['userRegCheck'] == 'true' ? true : false;				
+
 				// Encode and resave the config
 				$siteCfgEncode = json_encode($siteCfg);
 				file_put_contents('../users/configs/site-settings.json', $siteCfgEncode);
@@ -189,7 +192,7 @@
 
 									<div class="col">
 										<label class="form-check-label" for="userRegCheck">Allow user registration</label><br />
-										<input type="checkbox" class="form-check-input" id="userRegCheck" id="userRegCheck" name="userRegCheck" <?php echo $checkStat; ?>>
+										<input type="checkbox" class="form-check-input" id="userRegCheck" id="userRegCheck" name="userRegCheck" value="" <?php echo $checkStat; ?>>
 									</div>
 								</div>
 							</div>
