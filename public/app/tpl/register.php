@@ -36,29 +36,28 @@
 
 	// Log in to Storio
 	if(!empty($_POST)) {
-		$logUsr = Storio::RegisterUser($_POST);
+		// Create the array
+		$usrAr = array(
+			"inputUser" => $_POST['userInput'],
+			"inputPass" => $_POST['passInput'],
+			"inputEnab" => 'true',
+			"inputUpload" => 'true',
+			"inputAdmin" => 'false',
+			"inputStorage" => $siteCfg['defaultAllowance']
+		);
 
-		// If success
-		if($logUsr) {
+		// If user has been created
+		if(ValidateUserData($usrAr)) {
 			// Set sessions
 			$_SESSION['UserID'] = sha1($_POST['userInput'] . 'Storio');
 			$_SESSION['Username'] = $_POST['userInput'];
 
-			// Add to the log
-			//Storio::AddLog(time(), "Login Event", $_POST['userInput'] . ' has logged in');
-
-			// For admin users
-			if(isset($_SESSION['isAdmin'])) {
-				// Go to the admin dashboard
-				header("Location: ?page=ad-dashboard&li");
-			}else{
-				// Go to the dashboard
-				header("Location: ?page=us-dashboard&li");
-			}
+			// Go to the dashboard
+			header("Location: ?page=us-dashboard&li");
 		}else{
-			// Log in error
-			header("Location: ?page=login&le");
-        }
+			// Registration error
+			header("Location: ?page=register&le");
+		}
 	}
 ?>
 <!doctype html>
