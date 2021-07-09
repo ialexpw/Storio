@@ -86,8 +86,6 @@
 		if(is_numeric($_POST['defStore']) && is_numeric($_POST['maxUpload'])) {
 			// Validate the site name
 			if(preg_match('/^[a-z0-9 .\-]+$/i', $_POST['siteName'])) {
-				print_r($_POST);
-				exit();
 				// Set the new site name
 				$siteCfg['siteName'] = $_POST['siteName'];
 
