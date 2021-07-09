@@ -47,7 +47,7 @@
 		);
 
 		// If user has been created
-		if(ValidateUserData($usrAr)) {
+		if(Storio::ValidateUserData($usrAr)) {
 			// Set sessions
 			$_SESSION['UserID'] = sha1($_POST['userInput'] . 'Storio');
 			$_SESSION['Username'] = $_POST['userInput'];
