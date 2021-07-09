@@ -188,8 +188,8 @@
 									</div>
 
 									<div class="col">
+										<label class="form-check-label" for="userRegCheck">Allow user registration</label><br />
 										<input type="checkbox" class="form-check-input" id="userRegCheck" id="userRegCheck" name="userRegCheck" <?php echo $checkStat; ?>>
-										<label class="form-check-label" for="userRegCheck">Allow user registration</label>
 									</div>
 								</div>
 							</div>
