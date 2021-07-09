@@ -26,6 +26,12 @@
 	// Load the user configuration
 	$usrCfg = Storio::UserConfig($_SESSION['Username']);
 
+	if($siteCfg['allowRegistration'] == 'true') {
+		$checkStat = 'checked';
+	}else{
+		$checkStat = '';
+	}
+
 	// Changing the password
 	if(isset($_POST) && (!empty($_POST['currPass']) || !empty($_POST['newPass']) || !empty($_POST['usrMail']))) {
 		// Set an updated flag
@@ -174,8 +180,18 @@
 						<form method="post">
 							<!-- Site name -->
 							<div class="mb-3">
-								<label for="siteName" class="form-label">Site Name</label>
-								<input type="text" class="form-control" id="siteName" name="siteName" value="<?php echo $siteCfg['siteName']; ?>" aria-describedby="siteName">
+
+								<div class="row">
+									<div class="col">
+										<label for="siteName" class="form-label">Site Name</label>
+										<input type="text" class="form-control" id="siteName" name="siteName" value="<?php echo $siteCfg['siteName']; ?>" aria-describedby="siteName">
+									</div>
+
+									<div class="col">
+										<input type="checkbox" class="form-check-input" id="userRegCheck" id="userRegCheck" name="userRegCheck" <?php echo $checkStat; ?>>
+										<label class="form-check-label" for="userRegCheck">Allow user registration</label>
+									</div>
+								</div>
 							</div>
 
 							<div class="mb-3">
