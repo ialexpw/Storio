@@ -30,7 +30,7 @@
 	$siteCfg = Storio::SiteConfig();
 
 	// Check whether registration is allowed
-	if($siteCfg['allowRegistration'] == 'false') {
+	if($siteCfg['allowRegistration'] == false) {
 		header("Location: ?page=login");
 	}
 
