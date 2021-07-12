@@ -56,7 +56,7 @@
 			header("Location: ?page=us-dashboard&li");
 		}else{
 			// Registration error
-			header("Location: ?page=register&le");
+			header("Location: ?page=register&re");
 		}
 	}
 ?>
@@ -149,7 +149,7 @@
 		
 		<?php
 			// Updated details
-			if(isset($_GET['le'])) {
+			if(isset($_GET['re'])) {
 				?>
                 <script>
                     document.addEventListener("DOMContentLoaded", function(){
@@ -162,7 +162,7 @@
                     <div class="toast align-items-center bg-info bottom-0 end-0" style="background-color:#628EEB !important;" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="d-flex">
                             <div class="toast-body">
-                                Log in failed, please check your credentials and try again.
+                                Registration failed, please try again.
                             </div>
                             <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
