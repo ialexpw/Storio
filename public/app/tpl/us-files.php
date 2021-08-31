@@ -506,7 +506,7 @@
 						<div id="filename" style="text-align:center; margin-top:5px;"></div>
 
 						<!-- Max size label -->
-						<p style="text-align:center; margin-top:15px;"><?php echo $siteCfg['uploadMaxMB'] . 'MB Max'; ?></p>
+						<p style="text-align:center; margin-top:15px;"><?php echo $siteCfg['uploadMaxMB'] . ' MB Max'; ?></p>
 
 						<?php
 							// Disabled uploading
