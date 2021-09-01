@@ -13,6 +13,7 @@ Storio is a self-hosted file manager with multi-user capabilities. It includes p
 * Image & video preview
 * Share links
 * Site/user permissions stored in JSON
+* Fully responsive
 * CLI interface (WIP)
 
 ## Installation
