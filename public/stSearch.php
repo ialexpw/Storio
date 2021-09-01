@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * us-files.php
+	 * stSearch.php
 	 *
-	 * The file management page for users
+	 * File search utility for Storio
 	 *
 	 * @package    Storio
 	 * @author     Alex White
