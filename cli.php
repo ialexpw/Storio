@@ -3,6 +3,7 @@
 	 * cli.php
 	 *
 	 * Quick way to update some parts of Storio from the command line
+	 * Currently a WIP
 	 *
 	 * @package    Storio
 	 * @author     Alex White

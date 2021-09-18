@@ -4,6 +4,7 @@
 	 *
 	 * Cron to update file/folder sizes
 	 * Storio adds the file sizes on upload, the cron is here to update when files/folders get removed
+	 * Currently not needed as everything is self-updating
 	 *
 	 * @package    Storio
 	 * @author     Alex White

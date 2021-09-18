@@ -73,9 +73,6 @@
 		}
 	}
 
-	// Get IP
-	$usrIP = $_SERVER['REMOTE_ADDR'];
-
 	// File counter
 	$fileCount = 0;
 
