@@ -128,9 +128,6 @@
 			}
 		}
 
-		// Add to the log
-		//Storio::AddLog(time(), "Files Uploaded", $_SESSION['Username'] . ' has uploaded ' . $fileCount . ' new file(s)');
-
 		// Update folder sizes
 		Storio::UpdateStorageSize($_SESSION['Username']);
 
