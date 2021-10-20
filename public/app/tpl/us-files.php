@@ -321,8 +321,8 @@
 
 										// Show actions (download, copy and delete)
 										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;">';
-										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:18px;"><i class="fas fa-angle-double-down"></i></span></a> ';
-										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;"><span style="color:#A4B6DD; margin-right:18px;"><i class="fas fa-link"></i></span></a> ';
+										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:16px;"><i class="fas fa-angle-double-down"></i></span></a> ';
+										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;"><span style="color:#A4B6DD; margin-right:16px;"><i class="fas fa-link"></i></span></a> ';
 										
 										// When deleting a file, ensure we are redirected back
 										if(!empty($_GET['browse'])) {

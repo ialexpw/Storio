@@ -4,7 +4,7 @@ Storio is a self-hosted file manager with multi-user capabilities. It includes p
 
 ## Features
 
-* Admin user to manage sub-user permissions
+* Admin user(s) to manage sub-user permissions
 * Ability to set default storage or allocate per-user
 * Enable/disable user registration
 * JavaScript multiple upload with progress
