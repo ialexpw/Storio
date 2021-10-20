@@ -24,7 +24,8 @@
 			////
 			$docArr = array(
 				"doc",
-				"docx"
+				"docx",
+				"rtf"
 			);
 
 			// In arr
