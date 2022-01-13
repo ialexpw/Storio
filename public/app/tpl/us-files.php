@@ -324,6 +324,8 @@
 										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:16px;"><i class="fas fa-angle-double-down"></i></span></a> ';
 										echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;"><span style="color:#A4B6DD; margin-right:16px;"><i class="fas fa-link"></i></span></a> ';
 										
+										echo '<a href="#" data-bs-toggle="modal" data-bs-target="#moveModal">m</a>';
+
 										// When deleting a file, ensure we are redirected back
 										if(!empty($_GET['browse'])) {
 											echo '<a alt="Delete file" href="?page=us-files&browse=' . $_GET['browse'] . '&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure you would like to delete this file?"><span style="color:#D09292;"><i class="far fa-trash-alt"></i></span></a>';
@@ -414,7 +416,31 @@
 		<!-- Copy text to clipboard -->
 		<script>
 			new ClipboardJS(".copyText");
-		</script>		
+		</script>
+
+		<!-- Modal for a moving files -->
+		<div class="modal fade" id="moveModal" tabindex="-1" aria-labelledby="moveModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="moveModalLabel">Move file</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<!-- Form for creating a new folder -->
+						<form action="?page=us-files" method="post">
+							<div class="mb-3">
+								<label for="inpFolder" class="form-label">Moving file</label>
+								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" maxlength="26" />
+								<input type="text" id="uplFldr" name="uplFldr" value="<?php echo $getBrowse; ?>"/>
+								<input type="hidden" id="usrSesr" name="usrSesr" value="<?php echo $_SESSION['Username']; ?>"/>
+							</div>
+							<button type="submit" class="btn btn-primary">Move</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>		
 
 		<!-- Modal for a new folder -->
 		<div class="modal fade" id="folderModal" tabindex="-1" aria-labelledby="folderModalLabel" aria-hidden="true">

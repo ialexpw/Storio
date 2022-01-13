@@ -522,5 +522,23 @@
 				file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
 			}
 		}
+
+		/**
+		 * Storio::MoveFile()
+		 * Moves a file from one folder to another
+		 */
+		public static function MoveFile($source, $destination, $file,  $user) {
+			// Check the file exists
+			if(file_exists('../users/' . $user . '/' . $source)) {
+				// Check the destination folder exists
+				if(is_dir('../users/' . $user . '/' . $destination)) {
+					if(rename('../users/' . $user . '/' . $source, '../users/' . $user . '/' . $destination . '/' . $file)) {
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
 	}
 ?>
