@@ -298,6 +298,9 @@
 										// Generate the download link
 										$shareId = sha1($_SESSION['Username'] . $usrDir . $getBrowse. '/' . $file);
 
+										// Convert to chars with md5
+										$shareId = md5('STR' . $shareId);
+
 										// Cut the length of the string down
 										$shareId = substr($shareId, 0, 15);
 

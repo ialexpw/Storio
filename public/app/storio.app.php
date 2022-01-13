@@ -506,8 +506,8 @@
 				// Generate string for the share link
 				$shareId = sha1($user . $fullPath);
 
-				// Convert to chars with md5 + time
-				$shareId = md5(microtime() . $shareId);
+				// Convert to chars with md5
+				$shareId = md5('STR' . $shareId);
 
 				// Cut the length of the string down
 				$shareId = substr($shareId, 0, 15);
