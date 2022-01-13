@@ -30,9 +30,6 @@
 	if(!empty($_POST)) {
 		// If user validates/creates, reload page (avoid re-post)
 		if(Storio::ValidateUserData($_POST)) {
-			// Add to the log
-			Storio::AddLog(time(), "User Added", $_POST['inputUser'] . ' has been created');
-
 			// Reload
 			header("Location: ?page=ad-users");
 		}
