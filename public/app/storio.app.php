@@ -182,9 +182,9 @@
 				fclose($usrFile);
 
 				return true;
-			}else{
-				return false;
 			}
+
+			return false;
 		}
 		
 		/**
@@ -222,9 +222,9 @@
 				}else{
 					return true;
 				}
-			}else{
-				return false;
 			}
+
+			return false;
 		}
 		
 		/**
@@ -295,15 +295,11 @@
 						}else{
 							return true;
 						}
-					}else{
-						return false;
 					}
-				}else{
-					return false;
 				}
-			}else{
-				return false;
 			}
+
+			return false;
 		}
 		
 		/**
