@@ -490,24 +490,6 @@
 		}
 		
 		/**
-		 * Storio::AddLog()
-		 * Used to add logs to the system of events
-		 * @param $time
-		 * @param $type
-		 * @param $msg
-		 */
-		public static function AddLog($time, $type, $msg) {
-			// Format the time
-			$logData = "\n" . date("H:i:s - d M Y : <", $time);
-
-			// Append the type and message
-			$logData .= $type . '> ' . $msg;
-
-			// Insert the data
-			file_put_contents('../users/configs/site-logs.txt', $logData, FILE_APPEND);
-		}
-		
-		/**
 		 * Storio::AddShareLink()
 		 * Generate a share link
 		 * @param $path
@@ -515,7 +497,6 @@
 		 * @param $user
 		 * @param int $len
 		 * @return void
-		 * @throws Exception
 		 */
 		public static function AddShareLink($path, $file, $user) {
 			// Build the path
@@ -528,6 +509,9 @@
 
 				// Generate string for the share link
 				$shareId = sha1($user . $fullPath);
+
+				// Convert to chars with md5 + time
+				$shareId = md5(microtime() . $shareId);
 
 				// Cut the length of the string down
 				$shareId = substr($shareId, 0, 15);
