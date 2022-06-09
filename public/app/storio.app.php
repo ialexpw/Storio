@@ -45,7 +45,7 @@
 				"defaultAllowance" => 5000,				// in MB
 				"uploadMaxMB" => 500,					// in MB
 				"uploadFolder" => "../users/",
-				"downloadPage" => false
+				"downloadPage" => true
 			);
 
 			// JSON encode the configuration
