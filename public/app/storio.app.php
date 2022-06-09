@@ -34,10 +34,9 @@
 			);
 
 			// Add the admin user
-			if(!Storio::AddUser('admin', $usrPass, 0, $usrAr)) {
+			if(!Storio::AddUser('admin', $usrPass, 0, $usrAr, "admin@sbx.sx")) {
 				exit('Error creating admin user.');
 			}
-
 
 			// Set up the default settings
 			$siteCfg = array(
