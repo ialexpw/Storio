@@ -56,9 +56,9 @@
 		<main class="container">
 			<div class="starter-template py-5 px-3">
 				<div class="row">
-					<div class="col-4"></div>
+					<div class="col-3"></div>
 
-					<div class="col-4">
+					<div class="col-6">
 						<div class="card">
 							<div class="card-body" style="text-align: center;">
 								<!-- Download files -->
@@ -68,12 +68,12 @@
 								<pre><?php echo $shareCfg['ShareLinks'][$shareHash]['File']; ?></pre>
 
 								<a class="btn btn-outline-dark" href="/?dl=<?php echo $shareHash; ?>" role="button">Download File(s)</a>
-								<br />
+								<br /><br />
 							</div>
 						</div>
 					</div>
 
-					<div class="col-4"></div>
+					<div class="col-3"></div>
 				</div>
 				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
 			</div>
