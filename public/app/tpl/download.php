@@ -18,12 +18,12 @@
 	// Load the site configuration
 	$siteCfg = Storio::SiteConfig();
 
-    // Load the share links configuration
+	// Load the share links configuration
 	$shareCfg = Storio::ShareLinks();
 
-    if(isset($_GET['id'])) {
-        $shareHash = $_GET['id'];
-    }
+	if(isset($_GET['id'])) {
+		$shareHash = $_GET['id'];
+	}
 ?>
 <!doctype html>
 <html lang="en">
@@ -55,16 +55,25 @@
 
 		<main class="container">
 			<div class="starter-template py-5 px-3">
-				<div class="card">
-					<div class="card-body" style="text-align: center;">
-						<!-- Intro to the dashboard -->
-						<br />
-						<h4 class="card-title">Download your files</h4>
+				<div class="row">
+					<div class="col-4"></div>
 
-                        <pre><?php echo $shareCfg['ShareLinks'][$shareHash]['File']; ?></pre>
+					<div class="col-4">
+						<div class="card">
+							<div class="card-body" style="text-align: center;">
+								<!-- Download files -->
+								<br />
+								<h4 class="card-title">Download your files</h4>
 
-                        <a class="btn btn-outline-dark" href="/?dl=<?php echo $shareHash; ?>" role="button">Download File(s)</a>
+								<pre><?php echo $shareCfg['ShareLinks'][$shareHash]['File']; ?></pre>
+
+								<a class="btn btn-outline-dark" href="/?dl=<?php echo $shareHash; ?>" role="button">Download File(s)</a>
+								<br />
+							</div>
+						</div>
 					</div>
+
+					<div class="col-4"></div>
 				</div>
 				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
 			</div>
