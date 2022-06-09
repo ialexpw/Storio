@@ -49,13 +49,10 @@
 		<main class="container">
 			<div class="starter-template py-5 px-3">
 				<div class="card">
-					<div class="card-header text-center">
-						
-					</div>
-					<div class="card-body">
+					<div class="card-body" style="text-align: center;">
 						<!-- Intro to the dashboard -->
 						<br />
-						<h4 class="card-title">Welcome to your Dashboard</h4>
+						<h4 class="card-title">Download your files</h4>
 						<p class="card-text" style="margin-top:15px;">This is Storio!</p>
 					</div>
 				</div>
