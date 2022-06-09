@@ -6,13 +6,9 @@
 	 *
 	 * @package    Storio
 	 * @author     Alex White
-	 * @copyright  2021 Storio
-	 * @link       https://storio.uk
+	 * @copyright  2022 Storio
+	 * @link       https://github.com/ialexpw/Storio
 	 */
-
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
 
 	// No direct access
 	if(!defined('INC_DATA')) {
@@ -125,7 +121,7 @@
 		<meta name="author" content="">
 		<title>Storio - Settings</title>
 
-		<link rel="canonical" href="https://storio.aw0.uk">
+		<link rel="canonical" href="">
 
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="app/css/bootstrap.min.css">
@@ -245,7 +241,7 @@
 						</form>
 					</div>
 				</div>
-				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
+				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://github.com/ialexpw/Storio">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
 			</div>
 		</main>
 

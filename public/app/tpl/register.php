@@ -6,8 +6,8 @@
 	 *
 	 * @package    Storio
 	 * @author     Alex White
-	 * @copyright  2021 Storio
-	 * @link       https://storio.uk
+	 * @copyright  2022 Storio
+	 * @link       https://github.com/ialexpw/Storio
 	 */
 
 	// No direct access
@@ -69,7 +69,7 @@
 		<meta name="author" content="">
 		<title>Storio - Register</title>
 
-		<link rel="canonical" href="https://storio.aw0.uk">
+		<link rel="canonical" href="">
 
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="app/css/bootstrap.min.css">
@@ -140,7 +140,7 @@
 						</div>
 					</div>
 				</div>
-				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
+				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://github.com/ialexpw/Storio">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
 			</div>
 		</main>
 

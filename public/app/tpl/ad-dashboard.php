@@ -6,8 +6,8 @@
 	 *
 	 * @package    Storio
 	 * @author     Alex White
-	 * @copyright  2021 Storio
-	 * @link       https://storio.uk
+	 * @copyright  2022 Storio
+	 * @link       https://github.com/ialexpw/Storio
 	 */
 
 	// No direct access
@@ -32,7 +32,7 @@
 		<meta name="author" content="">
 		<title>Storio - Dashboard</title>
 
-		<link rel="canonical" href="https://storio.aw0.uk">
+		<link rel="canonical" href="">
 
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="app/css/bootstrap.min.css">
