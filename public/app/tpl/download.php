@@ -22,7 +22,7 @@
 	$shareCfg = Storio::ShareLinks();
 
     if(isset($_GET['id'])) {
-        $file_id = $_GET['id'];
+        $shareHash = $_GET['id'];
     }
 ?>
 <!doctype html>
