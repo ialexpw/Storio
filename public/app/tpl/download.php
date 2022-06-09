@@ -60,7 +60,7 @@
 						<!-- Intro to the dashboard -->
 						<br />
 						<h4 class="card-title">Download your files</h4>
-						<p class="card-text" style="margin-top:15px;">Download <?php $shareCfg['ShareLinks'][$shareHash]['File'] ?> by clicking the button below.</p>
+						<p class="card-text" style="margin-top:15px;">Download <?php echo $shareCfg['ShareLinks'][$shareHash]['File']; ?> by clicking the button below.</p>
 					</div>
 				</div>
 				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
