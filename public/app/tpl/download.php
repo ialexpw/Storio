@@ -23,6 +23,12 @@
 
 	if(isset($_GET['id'])) {
 		$shareHash = $_GET['id'];
+
+		if(empty($shareCfg['ShareLinks'][$shareHash]['File'])) {
+			header("Location: /?page=404");
+		}
+	}else{
+		header("Location: /?page=404");
 	}
 ?>
 <!doctype html>
@@ -63,7 +69,7 @@
 							<div class="card-body" style="text-align: center;">
 								<!-- Download files -->
 								<br />
-								<h4 class="card-title">Download your files</h4>
+								<h4 class="card-title">Download files</h4>
 
 								<pre><?php echo $shareCfg['ShareLinks'][$shareHash]['File']; ?></pre>
 
