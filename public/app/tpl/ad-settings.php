@@ -236,8 +236,6 @@
 								<div id="passHelp" class="form-text">Make it a good one!</div>
 							</div>
 
-							<?php print_r($usrCfg); ?>
-
 							<!-- Email -->
 							<div class="mb-3">
 								<label for="usrMail" class="form-label">Email</label>
