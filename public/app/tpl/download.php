@@ -61,6 +61,7 @@
 						<br />
 						<h4 class="card-title">Download your files</h4>
 						<p class="card-text" style="margin-top:15px;">Download <?php echo $shareCfg['ShareLinks'][$shareHash]['File']; ?> by clicking the button below.</p>
+                        <a class="btn btn-primary" href="/?dl=<?php echo $shareHash; ?>" role="button">Download File(s)</a>
 					</div>
 				</div>
 				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
