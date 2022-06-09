@@ -327,7 +327,6 @@
 										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:16px;"><i class="fas fa-angle-double-down"></i></span></a> ';
 
 										// Whether to have the direct download or the download page
-										print_r($siteCfg);
 										if($siteCfg['downloadPage']) {
 											echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?page=download&id=' . $shareId . '" href="javascript:;"><span style="color:#A4B6DD; margin-right:16px;"><i class="fas fa-link"></i></span></a> ';
 										}else{
