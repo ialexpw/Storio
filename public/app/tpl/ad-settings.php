@@ -240,7 +240,6 @@
 							<div class="mb-3">
 								<label for="usrMail" class="form-label">Email</label>
 								<input type="email" class="form-control" id="usrMail" name="usrMail" value="<?php echo $usrCfg['usrEmail']; ?>" aria-describedby="usrMail">
-								<div id="passHelp" class="form-text">Optional</div>
 							</div>
 							<button type="submit" class="btn btn-primary">Update</button>
 						</form>
