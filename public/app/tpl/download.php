@@ -69,7 +69,7 @@
 							<div class="card-body" style="text-align: center;">
 								<!-- Download files -->
 								<br />
-								<h4 class="card-title">Download files</h4>
+								<h4 class="card-title">Download files</h4><hr>
 
 								<pre><?php echo $shareCfg['ShareLinks'][$shareHash]['File']; ?></pre>
 
