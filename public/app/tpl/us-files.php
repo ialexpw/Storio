@@ -331,7 +331,7 @@
 										// Show actions (download, copy and delete)
 										echo '<div class="col-4 col-md-2" style="text-align:center; margin-bottom:2px;">';
 										
-										echo '<div class="btn-group">';
+										echo '<div class="btn-group dropup">';
 										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
 										echo 'Options..';
 										echo '</a>';
