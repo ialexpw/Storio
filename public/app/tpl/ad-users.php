@@ -318,7 +318,7 @@
 						</p>
 					</div>
 				</div>
-				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
+				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a></p>
 			</div>
 		</main>
 
