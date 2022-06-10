@@ -30,6 +30,8 @@
 	// Load the user configuration
 	$usrCfg = Storio::UserConfig($_SESSION['Username']);
 
+	print_r($usrCfg);
+
 	if($siteCfg['allowRegistration'] == 'true') {
 		$checkStat = 'checked';
 	}else{
