@@ -74,7 +74,7 @@
 
 									// If folders need changing, echo the messages
 									if(!empty($dirCheck)) {
-										exit($dirCheck);
+										echo $dirCheck;
 									}
 								?>
 								<br /><br />
