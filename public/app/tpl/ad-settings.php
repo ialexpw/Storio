@@ -32,7 +32,7 @@
 		$checkStat = '';
 	}
 
-	if($siteCfg['showDownload'] == 'true') {
+	if($siteCfg['downloadPage'] == 'true') {
 		$checkDown = 'checked';
 	}else{
 		$checkDown = '';
@@ -110,9 +110,9 @@
 
 				// Whether to show the download page or not
 				if(isset($_POST['userDlPage']) && $_POST['userDlPage'] == 'AllowDownload') {
-					$siteCfg['showDownload'] = true;
+					$siteCfg['downloadPage'] = true;
 				}else{
-					$siteCfg['showDownload'] = false;
+					$siteCfg['downloadPage'] = false;
 				}
 
 				// Encode and resave the config
