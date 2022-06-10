@@ -97,6 +97,9 @@
 		 * @return array
 		 */
 		public static function UserConfig($user) {
+			// Lower case
+			$user = strtolower($user);
+
 			// Attempt both paths to include the json file
 			if(file_exists('../users/configs/' . $user . '-cfg.json')) {
 				return json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
