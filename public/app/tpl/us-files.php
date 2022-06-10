@@ -328,6 +328,9 @@
 										// Show file size
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 
+										// Show actions (download, copy and delete)
+										echo '<div class="col-4 col-md-2" style="text-align:center; margin-bottom:2px;">';
+										
 										echo '<div class="btn-group">';
 										echo '<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
 										echo 'Small button';
@@ -336,9 +339,8 @@
 										echo '<li>Test</li>';
 										echo '</ul>';
 										echo '</div>';
+
 /*
-										// Show actions (download, copy and delete)
-										echo '<div class="col-4 col-md-2" style="text-align:center; margin-bottom:2px;">';
 										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:16px;"><i class="fas fa-angle-double-down"></i></span></a> ';
 
 										// Whether to have the direct download or the download page
