@@ -331,11 +331,11 @@
 										// Show actions (download, copy and delete)
 										echo '<div class="col-4 col-md-2" style="text-align:center; margin-bottom:2px;">';
 										
-										echo '<div class="btn-group dropstart">';
-										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
+										echo '<div class="btn-group">';
+										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
 										echo 'Options..';
 										echo '</a>';
-										echo '<ul class="dropdown-menu">';
+										echo '<ul class="dropdown-menu dropdown-menu-lg-end">';
 										echo '<li><a class="dropdown-item" href="#">Direct Download</a></li>';
 										echo '<li><a class="dropdown-item" href="#">Copy Share Link</a></li>';
 										echo '<li><a class="dropdown-item" href="#">Move File</a></li>';
