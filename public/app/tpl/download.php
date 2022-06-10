@@ -73,7 +73,7 @@
 
 								<pre><?php echo $shareCfg['ShareLinks'][$shareHash]['File']; ?></pre>
 
-								<a class="btn btn-outline-dark" href="/?dl=<?php echo $shareHash; ?>" role="button">Download File(s)</a>
+								<a class="btn btn-outline-dark" href="/?dl=<?php echo $shareHash; ?>" role="button">Download</a>
 								<br /><br />
 							</div>
 						</div>
