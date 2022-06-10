@@ -64,7 +64,7 @@
 		if($strUpd) {
 			// Encode and resave the config
 			$usrCfgEncode = json_encode($usrCfg);
-			file_put_contents('../users/configs/' . $_SESSION['Username'] . '-cfg.json', $usrCfgEncode);
+			file_put_contents('../users/configs/' . USER . '-cfg.json', $usrCfgEncode);
 
 			// Redirect
 			header("Location: ?page=us-settings&success");
