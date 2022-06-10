@@ -332,9 +332,9 @@
 										echo '<div class="col-4 col-md-2" style="text-align:center; margin-bottom:2px;">';
 										
 										echo '<div class="btn-group">';
-										echo '<button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
+										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
 										echo 'Options..';
-										echo '</button>';
+										echo '</a>';
 										echo '<ul class="dropdown-menu">';
 										echo '<li><a class="dropdown-item" href="#">Direct Download</a></li>';
 										echo '<li><a class="dropdown-item" href="#">Copy Share Link</a></li>';
