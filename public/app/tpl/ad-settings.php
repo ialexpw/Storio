@@ -110,7 +110,7 @@
 				}
 
 				// Whether to show the download page or not
-				if(isset($_POST['userDlPage']) && $_POST['userDlPage'] == 'AllowDownload') {
+				if(isset($_POST['userDlPage']) && $_POST['userDlPage'] == 'DownloadPage') {
 					$siteCfg['downloadPage'] = true;
 				}else{
 					$siteCfg['downloadPage'] = false;
