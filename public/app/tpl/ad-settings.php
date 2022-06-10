@@ -199,7 +199,7 @@
 									</div>
 
 									<div class="col">
-										<label class="form-check-label" for="userDlPage">Show download page</label><br />
+										<label class="form-check-label" for="userDlPage">Show page before download</label><br />
 										<input type="checkbox" class="form-check-input" id="userDlPage" id="userDlPage" name="userDlPage" value="DownloadPage" <?php echo $checkDown; ?>>
 									</div>
 								</div>
