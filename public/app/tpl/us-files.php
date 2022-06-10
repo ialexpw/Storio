@@ -347,7 +347,7 @@
 											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
 										}
 										
-										echo '<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#moveModal" href="#">Move File</a></li>';
+										echo '<li><a class="dropdown-item disabled" data-bs-toggle="modal" data-bs-target="#moveModal" href="#">Move File</a></li>';
 
 										// When deleting a file, ensure we are redirected back
 										if(!empty($_GET['browse'])) {
