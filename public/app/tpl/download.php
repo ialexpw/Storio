@@ -62,9 +62,9 @@
 		<main class="container">
 			<div class="starter-template py-5 px-3">
 				<div class="row">
-					<div class="col-3"></div>
+					<div class="col-3 col-sm-2"></div>
 
-					<div class="col-6">
+					<div class="col-6 col-sm-8">
 						<div class="card">
 							<div class="card-body" style="text-align: center;">
 								<!-- Download files -->
@@ -79,7 +79,7 @@
 						</div>
 					</div>
 
-					<div class="col-3"></div>
+					<div class="col-3 col-sm-2"></div>
 				</div>
 				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://github.com/ialexpw/Storio">Storio</a> - <?php echo 'b. ' . shell_exec("git log -1 --pretty=format:'%h'"); ?></p>
 			</div>
