@@ -69,7 +69,7 @@ html.with-featherlight {
 
 @media only screen and (max-width: 768px) {
 	.nav-item {
-		width: 33%;
+		width: 24%;
 	}
 
 	.left-indent {
