@@ -68,6 +68,8 @@
 										}else{
 											$dirCheck .= '<p>Permissions for the <b>users/configs</b> folder are correct</p>';
 										}
+									}else{
+										$dirCheck .= 'It seems like Storio is already installed. Trying <a href="/?page=login">logging in</a>.';
 									}
 
 									// If folders need changing, echo the messages
