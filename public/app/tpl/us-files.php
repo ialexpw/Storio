@@ -188,7 +188,7 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="?logout">
+								<a class="nav-link" href="?logout" style="color: indianred;">
 									<i class="bi bi-x-octagon" style="font-size: 2rem; color: indianred;"></i>
 									<br />Logout
 								</a>
