@@ -28,7 +28,7 @@
 	$siteCfg = Storio::SiteConfig();
 
 	// Load the user configuration
-	$usrCfg = Storio::UserConfig($_SESSION['Username']);
+	$usrCfg = Storio::UserConfig(USER);
 
 	print_r($usrCfg);
 

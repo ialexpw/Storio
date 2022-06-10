@@ -15,6 +15,11 @@
 
 	define('INC_DATA', true);
 
+	if(Storio::LoggedIn()) {
+		define('USER', $_SESSION['Username']);
+	}
+	
+
 	// Check for the install file
 	if(!file_exists('../users/configs/site-settings.json')) {
 		// Check the users dir permissions
