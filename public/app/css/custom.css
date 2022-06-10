@@ -72,6 +72,10 @@ html.with-featherlight {
 		width: 24%;
 	}
 
+	.nav-link {
+		font-size: 0.5rem;
+	}
+
 	.left-indent {
 		padding-left:0.6rem;
 	}
