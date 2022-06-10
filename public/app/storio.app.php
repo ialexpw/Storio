@@ -96,21 +96,17 @@
 		 * @param $user
 		 * @return array
 		 */
-		public static function UserConfig($user, $cron = 0) {
-			// Default to standard
-			$usrPath = '../';
-
-			// if running from the cron, use same dir
-			if($cron) {
-				$usrPath = '';
-			}
-
-			// Check for the file, otherwise fail
-			if(file_exists($usrPath . 'users/configs/' . $user . '-cfg.json')) {
-				return json_decode(file_get_contents($usrPath . 'users/configs/' . $user . '-cfg.json'), true);
+		public static function UserConfig($user) {
+			// Attempt both paths to include the json file
+			if(file_exists('../users/configs/' . $user . '-cfg.json')) {
+				return json_decode(file_get_contents('../users/configs/' . $user . '-cfg.json'), true);
 			}else{
-				return 'error';
+				if(file_exists('users/configs/' . $user . '-cfg.json')) {
+					return json_decode(file_get_contents('users/configs/' . $user . '-cfg.json'), true);
+				}
 			}
+
+			return 'error';
 		}
 		
 		/**

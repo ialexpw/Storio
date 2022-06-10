@@ -52,7 +52,7 @@
 					// Password supplied
 					if(isset($argv[3])) {
 						// Load the user configuration
-						$usrCfg = Storio::UserConfig($argv[2], 1);
+						$usrCfg = Storio::UserConfig($argv[2]);
 
 						// Hash the new password
 						$usrCfg['passWord'] = password_hash($argv[3], PASSWORD_DEFAULT);
