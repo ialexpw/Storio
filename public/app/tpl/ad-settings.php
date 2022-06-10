@@ -188,7 +188,7 @@
 							<div class="mb-3">
 
 								<div class="row">
-									<div class="col">
+									<div class="col-6">
 										<label for="siteName" class="form-label">Site Name</label>
 										<input type="text" class="form-control" id="siteName" name="siteName" value="<?php echo $siteCfg['siteName']; ?>" aria-describedby="siteName">
 									</div>
