@@ -334,7 +334,7 @@
 										
 										//dropup
 										echo '<div class="btn-group">';
-										echo '<a style="color:cornflowerblue;" class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
+										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
 										echo 'Options..';
 										echo '</a>';
 										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">';
