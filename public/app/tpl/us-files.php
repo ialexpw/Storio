@@ -332,7 +332,7 @@
 										echo '<div class="col-4 col-md-2" style="text-align:center; margin-bottom:2px;">';
 										
 										echo '<div class="btn-group">';
-										echo '<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
+										echo '<button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
 										echo 'Options..';
 										echo '</button>';
 										echo '<ul class="dropdown-menu">';
