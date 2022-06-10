@@ -24,7 +24,7 @@
 	$siteCfg = Storio::SiteConfig();
 
 	// Load the user configuration
-	$usrCfg = Storio::UserConfig($_SESSION['Username']);
+	$usrCfg = Storio::UserConfig(USER);
 
 	// Changing the password
 	if(isset($_POST)) {

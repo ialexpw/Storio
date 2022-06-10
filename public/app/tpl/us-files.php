@@ -50,10 +50,10 @@
 	$shareCfg = Storio::ShareLinks();
 
 	// Load the user configuration
-	$usrCfg = Storio::UserConfig($_SESSION['Username']);
+	$usrCfg = Storio::UserConfig(USER);
 
 	// Creating a new folder
-	if(!empty($_POST['inpFolder']) && $_POST['usrSesr'] == $_SESSION['Username']) {
+	if(!empty($_POST['inpFolder']) && $_POST['usrSesr'] == USER) {
 		// Validate folder here
 
 		// If folder does not already exist
@@ -78,7 +78,7 @@
 					Storio::delTree($rmFolder);
 
 					// Update folder sizes
-					Storio::UpdateStorageSize($_SESSION['Username']);
+					Storio::UpdateStorageSize(USER);
 
 					// Reload
 					if(!empty($_GET['browse'])) {
@@ -98,7 +98,7 @@
 					unlink($rmFile);
 
 					// Remove the share link entry - Generate string for the share link
-					$shareId = sha1($_SESSION['Username'] . $rmFile);
+					$shareId = sha1(USER . $rmFile);
 
 					// Cut the length of the string down
 					$shareId = substr($shareId, 0, 15);
@@ -113,7 +113,7 @@
 					}
 
 					// Update folder sizes
-					Storio::UpdateStorageSize($_SESSION['Username']);
+					Storio::UpdateStorageSize(USER);
 
 					// Reload
 					if(!empty($_GET['browse'])) {
@@ -296,7 +296,7 @@
 										$fileIco = '<i style="font-size: 1.4rem; margin-right:12px;" class="' . $fIco . '"></i>';
 
 										// Generate the download link
-										$shareId = sha1($_SESSION['Username'] . $usrDir . $getBrowse. '/' . $file);
+										$shareId = sha1(USER . $usrDir . $getBrowse. '/' . $file);
 
 										// Convert to chars with md5
 										$shareId = md5('STR' . $shareId);
@@ -314,7 +314,7 @@
 										if(strpos($mimeType, 'image') !== false) {
 											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
 										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
-											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . $_SESSION['Username'] . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
+											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
 											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
 										}
@@ -443,7 +443,7 @@
 								<label for="inpFolder" class="form-label">Moving file</label>
 								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" maxlength="26" />
 								<input type="text" id="uplFldr" name="uplFldr" value="<?php echo $getBrowse; ?>"/>
-								<input type="hidden" id="usrSesr" name="usrSesr" value="<?php echo $_SESSION['Username']; ?>"/>
+								<input type="hidden" id="usrSesr" name="usrSesr" value="<?php echo USER; ?>"/>
 							</div>
 							<button type="submit" class="btn btn-primary">Move</button>
 						</form>
@@ -488,7 +488,7 @@
 								<label for="inpFolder" class="form-label">Folder name</label>
 								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" maxlength="26" />
 								<input type="hidden" id="uplFldr" name="uplFldr" value="<?php echo $getBrowse; ?>"/>
-								<input type="hidden" id="usrSesr" name="usrSesr" value="<?php echo $_SESSION['Username']; ?>"/>
+								<input type="hidden" id="usrSesr" name="usrSesr" value="<?php echo USER; ?>"/>
 							</div>
 							<button type="submit" class="btn btn-primary">Create</button>
 						</form>
@@ -525,7 +525,7 @@
 									<label for="fileInput" id="custom-file-label" class="form-label">Select up to 25 files</label>
 									<input class="form-control" type="file" name="file[]" id="fileInput" multiple>
 									<input type="hidden" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
-									<input type="hidden" id="usrSes" name="usrSes" value="<?php echo $_SESSION['Username']; ?>"/>
+									<input type="hidden" id="usrSes" name="usrSes" value="<?php echo USER; ?>"/>
 								</div>
 							</div>
 						</form>
