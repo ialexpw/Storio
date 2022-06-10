@@ -10,6 +10,10 @@
 	 * @link       https://github.com/ialexpw/Storio
 	 */
 
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
 	// No direct access
 	if(!defined('INC_DATA')) {
 		exit('error');
@@ -191,12 +195,12 @@
 									</div>
 
 									<div class="col">
-										<label class="form-check-label" for="userRegCheck">Allow user registration</label><br />
+										<label class="form-check-label" for="userRegCheck">User registration</label><br />
 										<input type="checkbox" class="form-check-input" id="userRegCheck" id="userRegCheck" name="userRegCheck" value="AllowReg" <?php echo $checkStat; ?>>
 									</div>
 
 									<div class="col">
-										<label class="form-check-label" for="userDlPage">Show page before download</label><br />
+										<label class="form-check-label" for="userDlPage">Download page</label><br />
 										<input type="checkbox" class="form-check-input" id="userDlPage" id="userDlPage" name="userDlPage" value="DownloadPage" <?php echo $checkDown; ?>>
 									</div>
 								</div>
