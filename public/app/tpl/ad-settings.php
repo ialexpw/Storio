@@ -24,7 +24,7 @@
 	$siteCfg = Storio::SiteConfig();
 
 	// Load the user configuration
-	//$usrCfg = Storio::UserConfig($_SESSION['Username']);
+	$usrCfg = Storio::UserConfig($_SESSION['Username']);
 
 	if($siteCfg['allowRegistration'] == 'true') {
 		$checkStat = 'checked';
@@ -42,9 +42,6 @@
 	if(isset($_POST)) {
 		// Set an updated flag
 		$strUpd = 0;
-
-		// Load the user configuration
-		$usrCfg = Storio::UserConfig($_SESSION['Username']);
 
 		// Updating password
 		if(!empty($_POST['currPass']) && !empty($_POST['newPass'])) {
