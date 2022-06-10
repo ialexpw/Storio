@@ -23,13 +23,13 @@
 	// Load the site configuration
 	$siteCfg = Storio::SiteConfig();
 
+	// Load the user configuration
+	$usrCfg = Storio::UserConfig($_SESSION['Username']);
+
 	// Changing the password
 	if(isset($_POST)) {
 		// Set an updated flag
 		$strUpd = 0;
-
-		// Load the user configuration
-		$usrCfg = Storio::UserConfig($_SESSION['Username']);
 
 		// Updating password
 		if(!empty($_POST['currPass']) && !empty($_POST['newPass'])) {

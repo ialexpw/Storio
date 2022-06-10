@@ -109,7 +109,7 @@
 			if(file_exists($usrPath . 'users/configs/' . $user . '-cfg.json')) {
 				return json_decode(file_get_contents($usrPath . 'users/configs/' . $user . '-cfg.json'), true);
 			}else{
-				return '';
+				return 'error';
 			}
 		}
 		
