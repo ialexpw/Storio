@@ -122,6 +122,12 @@
 									<br />Settings
 								</a>
 							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="?logout">
+									<i class="bi bi-x-octagon" style="font-size: 2rem; color: cornflowerblue;"></i>
+									<br />Logout
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div class="card-body">
