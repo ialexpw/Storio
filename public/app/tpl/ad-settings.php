@@ -32,6 +32,12 @@
 		$checkStat = '';
 	}
 
+	if($siteCfg['showDownload'] == 'true') {
+		$checkDown = 'checked';
+	}else{
+		$checkDown = '';
+	}
+
 	// Changing the password
 	if(isset($_POST)) {
 		// Set an updated flag
@@ -100,7 +106,14 @@
 					$siteCfg['allowRegistration'] = true;
 				}else{
 					$siteCfg['allowRegistration'] = false;
-				}				
+				}
+
+				// Whether to show the download page or not
+				if(isset($_POST['userDlPage']) && $_POST['userDlPage'] == 'AllowDownload') {
+					$siteCfg['showDownload'] = true;
+				}else{
+					$siteCfg['showDownload'] = false;
+				}
 
 				// Encode and resave the config
 				$siteCfgEncode = json_encode($siteCfg);
@@ -183,6 +196,11 @@
 									<div class="col">
 										<label class="form-check-label" for="userRegCheck">Allow user registration</label><br />
 										<input type="checkbox" class="form-check-input" id="userRegCheck" id="userRegCheck" name="userRegCheck" value="AllowReg" <?php echo $checkStat; ?>>
+									</div>
+
+									<div class="col">
+										<label class="form-check-label" for="userDlPage">Show download page</label><br />
+										<input type="checkbox" class="form-check-input" id="userDlPage" id="userDlPage" name="userDlPage" value="DownloadPage" <?php echo $checkDown; ?>>
 									</div>
 								</div>
 							</div>
