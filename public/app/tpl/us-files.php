@@ -336,7 +336,10 @@
 										echo 'Small button';
 										echo '</button>';
 										echo '<ul class="dropdown-menu">';
-										echo '<li>Test</li>';
+										echo '<li><a class="dropdown-item" href="#">Direct Download</a></li>';
+										echo '<li><a class="dropdown-item" href="#">Copy Share Link</a></li>';
+										echo '<li><a class="dropdown-item" href="#">Move File</a></li>';
+										echo '<li><a class="dropdown-item" href="#">Delete File</a></li>';
 										echo '</ul>';
 										echo '</div>';
 
