@@ -9,6 +9,8 @@
 	 * @copyright  2022 Storio
 	 * @link       https://github.com/ialexpw/Storio
 	 */
+
+	$dirCheck = '';
 ?>
 <!doctype html>
 <html lang="en">
