@@ -7,8 +7,8 @@
 	 *
 	 * @package    Storio
 	 * @author     Alex White
-	 * @copyright  2021 Storio
-	 * @link       https://storio.uk
+	 * @copyright  2022 Storio
+	 * @link       https://github.com/ialexpw/Storio
 	 */
 
 	include 'public/app/storio.app.php';
