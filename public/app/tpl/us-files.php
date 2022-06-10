@@ -328,6 +328,15 @@
 										// Show file size
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
 
+										echo '<div class="btn-group">';
+										echo '<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">';
+										echo 'Small button';
+										echo '</button>';
+										echo '<ul class="dropdown-menu">';
+										echo '<li>Test</li>';
+										echo '</ul>';
+										echo '</div>';
+/*
 										// Show actions (download, copy and delete)
 										echo '<div class="col-4 col-md-2" style="text-align:center; margin-bottom:2px;">';
 										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:16px;"><i class="fas fa-angle-double-down"></i></span></a> ';
@@ -341,14 +350,13 @@
 
 										//echo '<a href="#" data-bs-toggle="modal" data-bs-target="#moveModal"><i class="fas fa-angle-double-down"></i></a>';
 
-
 										// When deleting a file, ensure we are redirected back
 										if(!empty($_GET['browse'])) {
 											echo '<a alt="Delete file" href="?page=us-files&browse=' . $_GET['browse'] . '&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure you would like to delete this file?"><span style="color:#D09292;"><i class="far fa-trash-alt"></i></span></a>';
 										}else{
 											echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure you would like to delete this file?"><span style="color:#D09292;"><i class="far fa-trash-alt"></i></span></a>';
 										}
-										
+*/
 										echo '</div>';
 									}
 								}
