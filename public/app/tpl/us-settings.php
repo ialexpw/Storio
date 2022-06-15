@@ -182,8 +182,10 @@
 
 							echo '<div class="row">';
 
-							echo '<div class="col-md-4">';
-							echo '<h5 class="text-center" style="margin-bottom:10px;">Storage</h5>';
+							echo '<div class="col-md-3">';
+							echo '</div>';
+
+							echo '<div class="col-md-6">';
 							echo '<div class="progress" style="border: 1px solid #000; width:75%;">';
 							echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
 							//echo '<small class="justify-content-center d-flex position-absolute" style="width: 24%!important;">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</small>';
@@ -191,12 +193,7 @@
 							echo '<p class="text-center">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</p>';
 							echo '</div>';
 
-							echo '<div class="col-md-4">';
-							echo '<h5 class="text-center" style="margin-bottom:10px;">Test</h5>';
-							echo '</div>';
-
-							echo '<div class="col-md-4">';
-							echo '<h5 class="text-center" style="margin-bottom:10px;">Test</h5>';
+							echo '<div class="col-md-3">';
 							echo '</div>';
 
 							echo '<br />';
