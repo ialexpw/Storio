@@ -318,7 +318,7 @@
 						</p>
 					</div>
 				</div>
-				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://storio.uk">Storio</a></p>
+				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://github.com/ialexpw/Storio">Storio</a></p>
 			</div>
 		</main>
 
