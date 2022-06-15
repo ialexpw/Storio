@@ -71,6 +71,23 @@
 								<br />
 								<h4 class="card-title">Download files</h4><hr>
 
+								<?php
+									// Get the files extension
+									$ext = pathinfo($shareCfg['ShareLinks'][$shareHash]['File'], PATHINFO_EXTENSION);
+
+									// Grab the mime type
+									$mimeType = mime_content_type($shareCfg['ShareLinks'][$shareHash]['File']);
+
+									// Lightbox use
+									if(strpos($mimeType, 'image') !== false) {
+										echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $shareCfg['ShareLinks'][$shareHash]['User'] .'&p=' . $shareCfg['ShareLinks'][$shareHash]['Path'] .'">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></div>';
+									}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
+										echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . $shareCfg['ShareLinks'][$shareHash]['User'] . '+Sto+' . $shareCfg['ShareLinks'][$shareHash]['Path'] . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></div>';
+									}else{
+										echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</div>';
+									}
+								?>
+
 								<pre><?php echo $shareCfg['ShareLinks'][$shareHash]['File']; ?></pre>
 
 								<a class="btn btn-outline-dark" href="/?dl=<?php echo $shareHash; ?>" role="button">Download</a>
