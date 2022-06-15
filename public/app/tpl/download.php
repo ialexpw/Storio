@@ -76,7 +76,7 @@
 									$ext = pathinfo($shareCfg['ShareLinks'][$shareHash]['File'], PATHINFO_EXTENSION);
 
 									// Grab the mime type
-									$mimeType = mime_content_type($shareCfg['ShareLinks'][$shareHash]['File']);
+									$mimeType = mime_content_type($shareCfg['ShareLinks'][$shareHash]['Path']);
 
 									// Encrypt file name
 									$encFile = Storio::SimpleCrypt($shareCfg['ShareLinks'][$shareHash]['Path']);
