@@ -42,6 +42,11 @@
 	}
 
 	// Download a file
+	if(isset($_GET['id']) && !empty($_GET['id'])) {
+		exit(Storio::LoadView('download'));
+	}
+
+	// Download a file
 	if(isset($_GET['dl']) && !empty($_GET['dl'])) {
 		// Store the hash
 		$shareHash = $_GET['dl'];
