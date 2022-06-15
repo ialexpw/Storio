@@ -107,6 +107,9 @@
 		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
 		<script type="text/javascript" src="app/js/session.js"></script>
 
+		<!-- Lightbox script -->
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js"></script>
+
 		<!-- Modal for video -->
 		<div class="modal fade" id="reqModal" tabindex="-1" aria-labelledby="reqModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl" role="document">
