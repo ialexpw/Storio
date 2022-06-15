@@ -86,11 +86,11 @@
 
 									// Lightbox use
 									if(strpos($mimeType, 'image') !== false) {
-										echo '<pre><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $shareCfg['ShareLinks'][$shareHash]['User'] .'&p=' . $encFile .'">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></pre>';
+										echo '<div style="font-size:12px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $shareCfg['ShareLinks'][$shareHash]['User'] .'&p=' . $encFile .'">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></div>';
 									}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
-										echo '<pre><a class="noLink reqBtn" name="' . $shareCfg['ShareLinks'][$shareHash]['User'] . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></pre>';
+										echo '<div style="font-size:12px;"><a class="noLink reqBtn" name="' . $shareCfg['ShareLinks'][$shareHash]['User'] . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></div>';
 									}else{
-										echo '<pre>' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</pre>';
+										echo '<div style="font-size:12px;">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</div>';
 									}
 								?>
 
