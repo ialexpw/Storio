@@ -86,8 +86,7 @@
 						<!-- Intro to the dashboard -->
 						<br />
 						<h4 class="card-title">Welcome to your Dashboard</h4>
-						<p class="card-text" style="margin-top:15px;">This is Storio!</p>
-
+						
 						<p class="card-text">Welcome to the Admin Dashboard for Storio! Manage your website easily with the built-in controls on this panel and monitor the activity and usage of your users through the different tabs.</p>
 						
 						<h5 class="card-title">Users</h5>
