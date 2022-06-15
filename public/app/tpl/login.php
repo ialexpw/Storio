@@ -37,7 +37,7 @@
 		if($logUsr) {
 			// Set sessions
 			$_SESSION['UserID'] = sha1($_POST['userInput'] . 'Storio');
-			$_SESSION['Username'] = $_POST['userInput'];
+			$_SESSION['Username'] = strtolower($_POST['userInput']);
 
 			// For admin users
 			if(isset($_SESSION['isAdmin'])) {
