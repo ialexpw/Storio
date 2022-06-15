@@ -41,7 +41,7 @@
 		session_start();
 	}
 
-	// Download a file
+	// Show the download page
 	if(isset($_GET['id']) && !empty($_GET['id'])) {
 		exit(Storio::LoadView('download'));
 	}

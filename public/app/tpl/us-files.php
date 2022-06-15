@@ -342,7 +342,7 @@
 
 										// Whether to have the direct download or the download page
 										if($siteCfg['downloadPage']) {
-											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?page=download&id=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
+											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?id=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
 										}else{
 											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
 										}
@@ -358,26 +358,6 @@
 										
 										echo '</ul>';
 										echo '</div>';
-
-/*
-										echo '<a alt="Download file" href="?dl=' . $shareId . '"><span style="color:#A2D0C0; margin-right:16px;"><i class="fas fa-angle-double-down"></i></span></a> ';
-
-										// Whether to have the direct download or the download page
-										if($siteCfg['downloadPage']) {
-											echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?page=download&id=' . $shareId . '" href="javascript:;"><span style="color:#A4B6DD; margin-right:16px;"><i class="fas fa-link"></i></span></a> ';
-										}else{
-											echo '<a alt="Copy link" class="copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;"><span style="color:#A4B6DD; margin-right:16px;"><i class="fas fa-link"></i></span></a> ';
-										}
-
-										//echo '<a href="#" data-bs-toggle="modal" data-bs-target="#moveModal"><i class="fas fa-angle-double-down"></i></a>';
-
-										// When deleting a file, ensure we are redirected back
-										if(!empty($_GET['browse'])) {
-											echo '<a alt="Delete file" href="?page=us-files&browse=' . $_GET['browse'] . '&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure you would like to delete this file?"><span style="color:#D09292;"><i class="far fa-trash-alt"></i></span></a>';
-										}else{
-											echo '<a alt="Delete file" href="?page=us-files&del=' . $encFile . '&type=file" class="delete" data-confirm="Are you sure you would like to delete this file?"><span style="color:#D09292;"><i class="far fa-trash-alt"></i></span></a>';
-										}
-*/
 										echo '</div>';
 									}
 								}
@@ -394,51 +374,6 @@
 					</div>
 				</div>
 
-				<!--<br />
-
-				<div class="card">
-					<div class="card-body">
-						<?php
-							// Work out the percentage of used space
-							/*if($usrCfg['usedStorage'] > 0) {
-								// Work out the percentage
-								$percUsed = number_format($usrCfg['usedStorage'] * (100/$usrCfg['maxStorage']));
-
-								// Round down if over
-								if($percUsed > 100) {
-									$percUsed = 100;
-								}
-							}else{
-								$percUsed = 0;
-							}
-
-							echo '<h4 class="card-title">File Statistics</h4><br />';
-
-							echo '<div class="row">';
-
-							echo '<div class="col-md-4">';
-							echo '<h5 class="text-center" style="margin-bottom:10px;">Storage</h5>';
-							echo '<div class="progress" style="border: 1px solid #000; width:75%;">';
-							echo '<div class="progress-bar" role="progressbar" style="color:black; width: ' . $percUsed . '%" aria-valuenow="' . $percUsed . '" aria-valuemin="0" aria-valuemax="100"></div>';
-							//echo '<small class="justify-content-center d-flex position-absolute" style="width: 24%!important;">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</small>';
-							echo '</div>';
-							echo '<p class="text-center">' . number_format($usrCfg['usedStorage'], 2) . 'MB / ' . number_format($usrCfg['maxStorage']) . 'MB</p>';
-							echo '</div>';
-
-							echo '<div class="col-md-4">';
-							echo '<h5 class="text-center" style="margin-bottom:10px;">Test</h5>';
-							echo '</div>';
-
-							echo '<div class="col-md-4">';
-							echo '<h5 class="text-center" style="margin-bottom:10px;">Test</h5>';
-							echo '</div>';
-
-							echo '<br />';
-
-							echo '</div>';*/
-						?>
-					</div>
-				</div> -->
 				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://github.com/ialexpw/Storio">Storio</a></p>
 			</div>
 		</main>
