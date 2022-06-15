@@ -50,6 +50,9 @@
 
 		<!-- Custom styles -->
 		<link rel="stylesheet" href="app/css/custom.css">
+
+		<!-- Featherlight lightbox -->
+		<link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
