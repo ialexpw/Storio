@@ -28,19 +28,32 @@ Then direct your browser to the install directory and follow the steps from ther
 ## Screenshots
 
 ### Login screen
-![image](https://user-images.githubusercontent.com/7994724/131663971-058c7d71-2352-4859-9b04-6e4b8d3eb3ff.png)
+![image](https://user-images.githubusercontent.com/7994724/174810368-ab1a3a19-3043-4871-a3aa-d3b21068a1da.png)
+
 
 ### Admin screenshots
-![image](https://user-images.githubusercontent.com/7994724/131664102-6a2bf072-7f58-4e05-9dfc-a31264b88efa.png)
+![image](https://user-images.githubusercontent.com/7994724/174809288-ea4ddcaa-9f0d-4483-8cf6-6875bc0e1ff7.png)
 
-![image](https://user-images.githubusercontent.com/7994724/131664162-ddfe28c3-3aa9-4a9e-8f78-482b3d422848.png)
+![image](https://user-images.githubusercontent.com/7994724/174809495-6c91f6d0-bf7b-480a-97aa-4afbbc377698.png)
+
+![image](https://user-images.githubusercontent.com/7994724/174809668-7dfeaccf-78cf-4777-8c65-505817f65765.png)
+
 
 ### User screenshots
-![image](https://user-images.githubusercontent.com/7994724/131664635-3c8208a9-0745-4f7a-a3f9-b2de12097487.png)
+![image](https://user-images.githubusercontent.com/7994724/174809823-737e9067-8356-49bc-95a5-1ac278535cee.png)
 
-![image](https://user-images.githubusercontent.com/7994724/131664478-1341cb83-8d4a-41b3-a21a-fd39fae37928.png)
+![image](https://user-images.githubusercontent.com/7994724/174809919-3eb3e7d9-20a5-459e-985e-4a884d98eaa7.png)
 
-![image](https://user-images.githubusercontent.com/7994724/131664510-073ac1e9-79e6-4eb9-8d59-5af074aaf696.png)
+![image](https://user-images.githubusercontent.com/7994724/174810028-7acb7140-5ca7-4a05-a76b-a47b733fc2b1.png)
+
+![image](https://user-images.githubusercontent.com/7994724/174810122-a99ff653-8512-4513-856d-a225f563526c.png)
+
+![image](https://user-images.githubusercontent.com/7994724/174810175-1162216f-538e-4109-8908-81229de22c91.png)
+
+
+### Sharing
+![image](https://user-images.githubusercontent.com/7994724/174810556-209d1c2f-e810-4c89-9ebd-ec7da8bdc34d.png)
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
