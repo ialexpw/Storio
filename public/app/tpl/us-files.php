@@ -20,6 +20,12 @@
 		header("Location: ?page=login");
 	}
 
+	if(!empty($_POST)) {
+		echo '<pre>';
+		print_r($_POST);
+		echo '</pre>';
+	}
+
 	// Get the user dir structure
 	if(is_dir('../users/' . $_SESSION['Username'])) {
 		$dirs = array_filter(glob('../users/' . $_SESSION['Username'] . '/*'), 'is_dir');
@@ -158,7 +164,7 @@
 
 		<style>
 			.selected {
-				border: 1px solid red;
+				border: 1px solid #ccc;
 				border-radius: 8px;
 			}
 		</style>
@@ -292,6 +298,8 @@
 
 								// Check if there are files first (avoid warnings)
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
+									//Test
+									echo '<form method="post">';
 									// Loop the files after
 									foreach($fldArr['dirview'][$usrDir.$getBrowse]['files'] as $file) {
 										// Replace the beginning of the path
@@ -328,7 +336,7 @@
 										echo '<div class="col-8 col-md-8 stop-wrap" style="margin-bottom:2px;">';
 										//echo '<span class="myDivs" style="padding-right:5px; padding-left:5px; margin-right:4px;">x</span>';
 
-										echo '<span><input type="checkbox" id="' . $shareId . '" class="myDivs" name="' . $shareId . '" value="' . $shareId . '" style="margin-right:10px;"></span>';
+										echo '<span><input type="checkbox" id="' . $shareId . '" class="multiSelect" name="' . $shareId . '" value="' . $shareId . '" style="margin-right:10px;"></span>';
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
@@ -373,6 +381,8 @@
 										echo '</div>';
 										echo '</div>';
 									}
+									//Test
+									echo '</form>';
 								}
 
 								// Empty dir
@@ -559,7 +569,7 @@
 			}
 
 			// For multi-select
-			$(".myDivs").on("click", function() {
+			$(".multiSelect").on("click", function() {
 				$(this).toggleClass('selected');
 				var selectedIds = $('.selected').map(function() {
 					return this.id;
