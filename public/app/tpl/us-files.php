@@ -155,6 +155,12 @@
 
 		<!-- Custom styles -->
 		<link rel="stylesheet" href="app/css/custom.css">
+
+		<style>
+			.selected {
+				border: 1px solid #ccc;
+			}
+		</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -317,13 +323,15 @@
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
+										echo '<div class="col-8 col-md-8 left-indent stop-wrap myDivs" style="margin-bottom:2px;">';
+
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
-											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
+											echo '<a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></div>';
 										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
-											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;"><a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
+											echo '<a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></div>';
 										}else{
-											echo '<div class="col-8 col-md-8 left-indent stop-wrap" style="margin-bottom:2px;">' . $fileIco . ' ' . $file . '</div>';
+											echo $fileIco . ' ' . $file . '</div>';
 										}
 
 										// Show file size
@@ -544,6 +552,14 @@
 			function showAlert(){
 				$('.toast').toast('show');
 			}
+
+			$(".myDivs").on("click", function() {
+				$(this).toggleClass('selected');
+				var selectedIds = $('.selected').map(function() {
+					return this.id;
+				}).get();
+				console.log(selectedIds);
+			});
 
 			// Pop up modal for the video player
 			$(document).ready(function(){
