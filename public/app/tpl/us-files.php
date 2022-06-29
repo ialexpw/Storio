@@ -326,7 +326,7 @@
 
 										//echo '<div class="col-8 col-md-8 left-indent stop-wrap myDivs" style="margin-bottom:2px;">';
 										echo '<div class="col-8 col-md-8 stop-wrap" style="margin-bottom:2px;">';
-										echo '<span class="myDivs" style="padding-right:5px; padding-left:5px;">x</span>';
+										echo '<span class="myDivs" style="padding-right:5px; padding-left:5px; margin-right:4px;">x</span>';
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
