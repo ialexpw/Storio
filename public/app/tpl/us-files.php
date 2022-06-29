@@ -323,7 +323,9 @@
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-										echo '<div class="col-8 col-md-8 left-indent stop-wrap myDivs" style="margin-bottom:2px;">';
+										//echo '<div class="col-8 col-md-8 left-indent stop-wrap myDivs" style="margin-bottom:2px;">';
+										echo '<div class="col-8 col-md-8 stop-wrap" style="margin-bottom:2px;">';
+										echo '<span class="myDivs">x</span>';
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
@@ -553,6 +555,7 @@
 				$('.toast').toast('show');
 			}
 
+			// For multi-select
 			$(".myDivs").on("click", function() {
 				$(this).toggleClass('selected');
 				var selectedIds = $('.selected').map(function() {
