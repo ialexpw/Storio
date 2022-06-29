@@ -20,12 +20,6 @@
 		header("Location: ?page=login");
 	}
 
-	if(!empty($_POST)) {
-		echo '<pre>';
-		print_r($_POST);
-		echo '</pre>';
-	}
-
 	// Get the user dir structure
 	if(is_dir('../users/' . $_SESSION['Username'])) {
 		$dirs = array_filter(glob('../users/' . $_SESSION['Username'] . '/*'), 'is_dir');
@@ -298,8 +292,6 @@
 
 								// Check if there are files first (avoid warnings)
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
-									//Test
-									echo '<form method="post">';
 									// Loop the files after
 									foreach($fldArr['dirview'][$usrDir.$getBrowse]['files'] as $file) {
 										// Replace the beginning of the path
@@ -381,8 +373,6 @@
 										echo '</div>';
 										echo '</div>';
 									}
-									//Test
-									echo '</form>';
 								}
 
 								// Empty dir
