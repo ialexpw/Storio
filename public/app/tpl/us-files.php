@@ -328,7 +328,7 @@
 										echo '<div class="col-8 col-md-8 stop-wrap" style="margin-bottom:2px;">';
 										//echo '<span class="myDivs" style="padding-right:5px; padding-left:5px; margin-right:4px;">x</span>';
 
-										echo '<span><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" style="margin-right:10px;"></span>';
+										echo '<span><input type="checkbox" id="vehicle1" class="myDivs" name="vehicle1" value="Bike" style="margin-right:10px;"></span>';
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
