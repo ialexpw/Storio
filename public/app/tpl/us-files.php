@@ -158,7 +158,7 @@
 
 		<style>
 			.selected {
-				border: 1px solid #ccc;
+				border: 1px solid red;
 				border-radius: 8px;
 			}
 		</style>
