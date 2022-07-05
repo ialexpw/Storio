@@ -22,6 +22,12 @@
 
 	// Check for the install file
 	if(!file_exists('../users/configs/site-settings.json')) {
+		if(isset($_POST) && !empty($_POST['uploadPath'])) {
+			if(is_writable($_POST['uploadPath']) && is_writable('../users/') && is_writable('../users/configs/')) {
+				Storio::Install($_POST['uploadPath']);
+			}
+		}
+		
 		exit(Storio::LoadView('install'));
 	}
 
