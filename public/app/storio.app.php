@@ -403,25 +403,19 @@
 		 * @param $user
 		 */
 		public static function UpdateStorageSize($user, $cron = 0) {
-			// Default to standard
-			$usrPath = '../';
-
-			// if running from the cron, use same dir
-			if($cron) {
-				$usrPath = '';
-			}
-			
 			// Check directory and config file
-			if(is_dir($usrPath . 'users/' . $user) && file_exists($usrPath . 'users/configs/' . $user . '-cfg.json')) {
+			if(is_dir('../users/' . $user) && file_exists('../users/configs/' . $user . '-cfg.json')) {
 				// Load the configuration based on cron
-				if($cron) {
-					$usrCfg = Storio::UserConfig($user, 1);
-				}else{
-					$usrCfg = Storio::UserConfig($user);
-				}
+				$usrCfg = Storio::UserConfig($user);
+
+				// Get the site configuration
+				$site_cfg = Storio::SiteConfig();
+
+				// Users upload folder
+				$usr_folder = str_replace("{user}", $user, $site_cfg['uploadFolder']);
 
 				// Get dir size
-				$dirSize = Storio::getDirectorySize($usrPath . 'users/' . $user);
+				$dirSize = Storio::getDirectorySize($usr_folder);
 
 				// Add the usage
 				if($dirSize > 0) {
@@ -433,7 +427,7 @@
 
 				// Encode and resave the config
 				$usrCfgEncode = json_encode($usrCfg);
-				file_put_contents($usrPath . 'users/configs/' . $user . '-cfg.json', $usrCfgEncode);
+				file_put_contents('../users/configs/' . $user . '-cfg.json', $usrCfgEncode);
 			}
 		}
 		
