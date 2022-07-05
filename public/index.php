@@ -26,7 +26,11 @@
 		if(is_writable('../users/')) {
 			// Check the configs dir permissions
 			if(is_writable('../users/configs/')) {
-				Storio::Install();
+				if(isset($_POST) && !empty($_POST['uploadPath'])) {
+					if(is_writable($_POST['uploadPath'])) {
+						Storio::Install($_POST['uploadPath']);
+					}
+				}
 			}else{
 				exit(Storio::LoadView('install'));
 			}

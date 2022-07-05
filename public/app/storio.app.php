@@ -22,7 +22,7 @@
 		 * Storio::Install()
 		 * Install Storio
 		 */
-		public static function Install() {
+		public static function Install($dataPath = '') {
 			// Hash the admin password
 			$usrPass = password_hash("AdminUser123", PASSWORD_DEFAULT);
 
@@ -38,13 +38,18 @@
 				exit('Error creating admin user.');
 			}
 
+			// Check the data path
+			if(empty($dataPath)) {
+				$dataPath = '../users/{user}';
+			}
+
 			// Set up the default settings
 			$siteCfg = array(
 				"siteName" => "Storio File Management",
 				"allowRegistration" => false,
 				"defaultAllowance" => 5000,				// in MB
 				"uploadMaxMB" => 500,					// in MB
-				"uploadFolder" => "../users/{user}",
+				"uploadFolder" => "$dataPath",
 				"downloadPage" => true
 			);
 

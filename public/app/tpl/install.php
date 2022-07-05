@@ -11,9 +11,6 @@
 	 */
 
 	$dirCheck = '';
-
-	// Load the site configuration
-	$siteCfg = Storio::SiteConfig();
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,7 +36,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
 				<i class="bi bi-droplet" style="font-size: 2rem; margin-right:12px; margin-bottom:6px; color: cornflowerblue;"></i>
-				<a class="navbar-brand" href="?page=ad-dashboard"> <?php echo $siteCfg['siteName']; ?></a>
+				<a class="navbar-brand" href="#"> Installer</a>
 			</div>
 		</nav>
 
@@ -80,10 +77,10 @@
 										echo $dirCheck;
 									}
 
-									echo '<form>';
+									echo '<form method="post">';
 									echo '<div class="mb-3">';
 									echo '<label for="uploadPath" class="form-label">Upload path</label>';
-									echo '<input type="text" class="form-control" id="uploadPath" name="uploadPath" value="">';
+									echo '<input type="text" class="form-control" id="uploadPath" name="uploadPath" value="../users/{user}">';
 									echo '</div>';
 
 									echo '<button type="submit" class="btn btn-primary">Install</button>';
