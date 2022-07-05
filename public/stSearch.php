@@ -18,6 +18,12 @@
 		header("Location: ?page=login");
 	}
 
+	// Load the site configuration
+	$siteCfg = Storio::SiteConfig();
+
+	// Users upload folder
+	$usrDir = str_replace("{user}", $_SESSION['Username'], $siteCfg['uploadFolder']);
+
 	// Check we are getting a search term
 	if(isset($_GET['sid']) && !empty($_GET['sid'])) {
 		// Get the username
@@ -26,7 +32,7 @@
 		// Ensure there is a users folder
 		if(is_dir('../users/' . $stUser)) {
 			// Wildcard search on the file within the users dir
-			$scResult = Storio::rglob('../users/' . $stUser . '/*' . $_GET['sid'] . '*');
+			$scResult = Storio::rglob($usrDir . '/*' . $_GET['sid'] . '*');
 
 			// We have results
 			if(!empty($scResult)) {
@@ -52,7 +58,7 @@
 					$filePath = str_replace($fileName, "", $res);
 
 					// Strip out the users/username structure
-					$filePath = str_replace("../users/" . $stUser, "", $filePath);
+					$filePath = str_replace($usrDir, "", $filePath);
 
 					// Work out the icon to use
 					if(is_dir($res)) {
