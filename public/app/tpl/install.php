@@ -13,7 +13,10 @@
 	$dirCheck = '';
 
 	if(isset($_POST['uploadPath']) && !empty($_POST['uploadPath'])) {
+		echo 'a';
 		if(is_writable($_POST['uploadPath']) && is_writable('../users/') && is_writable('../users/configs/')) {
+			echo 'b';
+			die;
 			Storio::Install($_POST['uploadPath']);
 		}
 	}
