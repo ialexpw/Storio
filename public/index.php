@@ -22,25 +22,7 @@
 
 	// Check for the install file
 	if(!file_exists('../users/configs/site-settings.json')) {
-		// Check the users dir permissions
-		if(is_writable('../users/')) {
-			// Check the configs dir permissions
-			if(is_writable('../users/configs/')) {
-				if(isset($_POST) && !empty($_POST['uploadPath'])) {
-					if(is_writable($_POST['uploadPath'])) {
-						Storio::Install($_POST['uploadPath']);
-					}else{
-						exit(Storio::LoadView('install'));
-					}
-				}else{
-					exit(Storio::LoadView('install'));
-				}
-			}else{
-				exit(Storio::LoadView('install'));
-			}
-		}else{
-			exit(Storio::LoadView('install'));
-		}
+		exit(Storio::LoadView('install'));
 	}
 
 	// Logout

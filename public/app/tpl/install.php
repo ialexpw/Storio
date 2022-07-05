@@ -11,6 +11,12 @@
 	 */
 
 	$dirCheck = '';
+
+	if(isset($_POST) && !empty($_POST['uploadPath'])) {
+		if(is_writable($_POST['uploadPath']) && is_writable('../users/') && is_writable('../users/configs/')) {
+			Storio::Install($_POST['uploadPath']);
+		}
+	}
 ?>
 <!doctype html>
 <html lang="en">
