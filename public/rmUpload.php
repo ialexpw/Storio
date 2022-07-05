@@ -42,10 +42,13 @@
 	$siteCfg = Storio::SiteConfig();
 
 	// Load the user configuration
-	$usrCfg = Storio::UserConfig($_SESSION['Username']);
+	$usrCfg = Storio::UserConfig($_POST['usrSes']);
+
+	// Upload folder
+	$usr_folder = str_replace("{user}", $_POST['usrSes'], $siteCfg['uploadFolder']);
 
 	// Check directory and config file
-	if(file_exists('../users/configs/' . $_SESSION['Username'] . '-cfg.json')) {
+	if(file_exists('../users/configs/' . $_POST['usrSes'] . '-cfg.json')) {
 		// Check if user can upload
 		if($usrCfg['canUpload'] != 'true') {
 			$output = array(
@@ -80,9 +83,10 @@
 	$fileSize = 0;
 
 	// Check the directory exists where you want to upload
-	if(is_dir('../users/' . $_POST['usrSes'] . $_POST['uplFld'])) {
+	//if(is_dir('../users/' . $_POST['usrSes'] . $_POST['uplFld'])) {
+	if(is_dir($usr_folder . $_POST['uplFld'])) {
 		// Save the upload dir
-		$dirUpl = '../users/' . $_POST['usrSes'] . $_POST['uplFld'];
+		$dirUpl = $usr_folder . $_POST['uplFld'];
 
 		// Get total file size
 		$totalFileSize = array_sum($_FILES['file']['size']);

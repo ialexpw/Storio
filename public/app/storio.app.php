@@ -44,7 +44,7 @@
 				"allowRegistration" => false,
 				"defaultAllowance" => 5000,				// in MB
 				"uploadMaxMB" => 500,					// in MB
-				"uploadFolder" => "../users/",
+				"uploadFolder" => "../users/{user}",
 				"downloadPage" => true
 			);
 
