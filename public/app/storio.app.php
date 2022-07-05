@@ -157,13 +157,19 @@
 		 * @return bool
 		 */
 		public static function AddUser($user, $password, $size_mb, $settings, $email="") {
+			// Load the site config
+			$site_cfg = Storio::SiteConfig();
+
+			// Users upload folder
+			$usrDir = str_replace("{user}", $user, $site_cfg['uploadFolder']);
+
 			// Check if a user already exists
-			if(file_exists('../users/' . $user)) {
+			if(file_exists($usrDir)) {
 				return false;
 			}
 
 			// Create the user directory
-			if(mkdir('../users/' . $user)) {
+			if(mkdir($usrDir)) {
 				// Create the user config
 				$usrCfg = array(
 					"userName" => $user,
