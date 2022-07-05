@@ -76,6 +76,15 @@
 									if(!empty($dirCheck)) {
 										echo $dirCheck;
 									}
+
+									echo '<form>';
+									echo '<div class="mb-3">';
+									echo '<label for="uploadPath" class="form-label">Upload path</label>';
+									echo '<input type="text" class="form-control" id="uploadPath" name="uploadPath">';
+									echo '</div>';
+
+									echo '<button type="submit" class="btn btn-primary">Install</button>';
+									echo '</form>';
 								?>
 								<br /><br />
 							</div>
