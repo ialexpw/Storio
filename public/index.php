@@ -29,7 +29,11 @@
 				if(isset($_POST) && !empty($_POST['uploadPath'])) {
 					if(is_writable($_POST['uploadPath'])) {
 						Storio::Install($_POST['uploadPath']);
+					}else{
+						exit(Storio::LoadView('install'));
 					}
+				}else{
+					exit(Storio::LoadView('install'));
 				}
 			}else{
 				exit(Storio::LoadView('install'));
