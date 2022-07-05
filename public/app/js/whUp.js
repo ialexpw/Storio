@@ -67,7 +67,7 @@ $(document).ready(function(){
 
 						// Complete, wait
 						if (percentComplete === 100) {
-							$('#progress').html("Syncing with download server, please wait...");
+							$('#progress').html("Syncing with storage folder, please wait...");
 						}
 					}
 				}, false);
@@ -85,8 +85,6 @@ $(document).ready(function(){
 				// If error with the upload
 				if(!data.success) {
 					// Upload failed
-					//$('#progress').html("Upload failed");
-					//$('#filename').html(data.verbose);
 					$('#progress').html(data.verbose);
 					return;
 				}
