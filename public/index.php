@@ -13,6 +13,10 @@
 	include 'app/storio.app.php';
 	include 'app/icons.class.php';
 
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
 	define('INC_DATA', true);
 
 	if(Storio::LoggedIn()) {
@@ -27,7 +31,7 @@
 				Storio::Install($_POST['uploadPath']);
 			}
 		}
-		
+
 		exit(Storio::LoadView('install'));
 	}
 
