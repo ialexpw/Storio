@@ -17,7 +17,7 @@
 		die;
 	}
 
-	if(isset($_POST) && !empty($_POST['uploadPath'])) {
+	if(isset($_POST['uploadPath']) && !empty($_POST['uploadPath'])) {
 		if(is_writable($_POST['uploadPath']) && is_writable('../users/') && is_writable('../users/configs/')) {
 			Storio::Install($_POST['uploadPath']);
 		}
