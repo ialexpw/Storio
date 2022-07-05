@@ -326,7 +326,7 @@
 										echo '<div class="col-8 col-md-8 stop-wrap" style="margin-bottom:2px;">';
 										//echo '<span class="myDivs" style="padding-right:5px; padding-left:5px; margin-right:4px;">x</span>';
 
-										echo '<span><input type="checkbox" id="' . $shareId . '" class="multiSelect" name="' . $shareId . '" value="' . $shareId . '" style="margin-right:10px;"></span>';
+										echo '<span><input type="checkbox" id="' . $shareId . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span>';
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
@@ -390,7 +390,7 @@
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 									<li><a class="dropdown-item" href="#">Copy Share Link</a></li>
-									<li><a class="dropdown-item" href="#" style="color:indianred;">Delete Selected</a></li>
+									<li><a class="dropdown-item" href="#" style="color:indianred;" onClick="count('checkBox')">Delete Selected</a></li>
 								</ul>
 							</div>
 
@@ -567,6 +567,22 @@
 		<script>
 			function showAlert(){
 				$('.toast').toast('show');
+			}
+
+			function getCheckedBoxes(boxName) {
+				var checkboxes = document.getElementsByName(boxName);
+				var checkboxesChecked = [];
+
+				for (var i=0; i<checkboxes.length; i++) {
+					if (checkboxes[i].checked) {
+						checkboxesChecked.push(i); // or i+1 if you want 1-based 
+					}
+				}
+				return checkboxesChecked.length > 0 ? checkboxesChecked : "none";
+			}
+
+			function count(name) {
+				alert ("Checked boxes: " + getCheckedBoxes(name));
 			}
 
 			// For multi-select
