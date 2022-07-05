@@ -13,8 +13,10 @@
 	$dirCheck = '';
 
 	if(isset($_POST['uploadPath']) && !empty($_POST['uploadPath'])) {
+		// Remove the user tag while checking permissions
+		$tempUpload = str_replace("{user}", "", $_POST['uploadPath']);
 		echo 'a';
-		if(is_writable($_POST['uploadPath']) && is_writable('../users/') && is_writable('../users/configs/')) {
+		if(is_writable($tempUpload) && is_writable('../users/') && is_writable('../users/configs/')) {
 			echo 'b';
 			die;
 			Storio::Install($_POST['uploadPath']);
