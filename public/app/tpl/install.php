@@ -79,7 +79,7 @@
 
 									echo '<form method="post">';
 									echo '<div class="mb-3">';
-									echo '<label for="uploadPath" class="form-label">Upload path</label>';
+									echo '<label for="uploadPath" class="form-label">Upload path ({user} gets replaced by each user)</label>';
 									echo '<input type="text" class="form-control" id="uploadPath" name="uploadPath" value="../users/{user}">';
 									echo '</div>';
 
