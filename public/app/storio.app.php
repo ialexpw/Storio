@@ -169,7 +169,7 @@
 			}
 
 			// Create the user directory
-			if(mkdir($usrDir)) {
+			if(mkdir($usrDir) && mkdir('../users/' . $user)) {
 				// Create the user config
 				$usrCfg = array(
 					"userName" => $user,

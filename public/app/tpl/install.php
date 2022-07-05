@@ -78,23 +78,23 @@
 										}else{
 											$dirCheck .= '<p>Permissions for the <b>users/configs</b> folder are correct</p>';
 										}
+
+										$dirCheck .= '<hr><form method="post" action="?page=install">';
+										$dirCheck .= '<div class="mb-3">';
+										$dirCheck .= '<label for="uploadPath" class="form-label">Upload path ({user} gets replaced by each user)</label>';
+										$dirCheck .= '<input type="text" class="form-control" id="uploadPath" name="uploadPath" value="../users/{user}">';
+										$dirCheck .= '</div>';
+
+										$dirCheck .= '<button type="submit" class="btn btn-primary">Install</button>';
+										$dirCheck .= '</form>';
 									}else{
-										$dirCheck .= 'It seems like Storio is already installed. Trying <a href="/?page=login">logging in</a>.';
+										$dirCheck .= 'Storio has been installed! Trying <a href="/?page=login">logging in</a>.';
 									}
 
 									// If folders need changing, echo the messages
 									if(!empty($dirCheck)) {
 										echo $dirCheck;
 									}
-
-									echo '<hr><form method="post" action="?page=install">';
-									echo '<div class="mb-3">';
-									echo '<label for="uploadPath" class="form-label">Upload path ({user} gets replaced by each user)</label>';
-									echo '<input type="text" class="form-control" id="uploadPath" name="uploadPath" value="../users/{user}">';
-									echo '</div>';
-
-									echo '<button type="submit" class="btn btn-primary">Install</button>';
-									echo '</form>';
 								?>
 								<br /><br />
 							</div>
