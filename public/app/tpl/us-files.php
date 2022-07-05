@@ -20,12 +20,24 @@
 		header("Location: ?page=login");
 	}
 
+	// Load the site configuration
+	$siteCfg = Storio::SiteConfig();
+	
+	// Load the share links configuration
+	$shareCfg = Storio::ShareLinks();
+
+	// Load the user configuration
+	$usrCfg = Storio::UserConfig(USER);
+
 	// Get the user dir structure
 	if(is_dir('../users/' . $_SESSION['Username'])) {
 		$dirs = array_filter(glob('../users/' . $_SESSION['Username'] . '/*'), 'is_dir');
 
 		// Set the static path (e.g. users/username)
-		$usrDir = '../users/' . $_SESSION['Username'];
+		//$usrDir = '../users/' . $_SESSION['Username'];
+
+		// Users upload folder
+		$usrDir = str_replace("{user}", $_SESSION['Username'], $siteCfg['uploadFolder']);
 
 		// Store the browse (if any)
 		if(!empty($_GET['browse'])) {
@@ -42,15 +54,6 @@
 		// Something has gone wrong - user possibly deleted while logged in?
 		header("Location: ?logout");
 	}
-
-	// Load the site configuration
-	$siteCfg = Storio::SiteConfig();
-	
-	// Load the share links configuration
-	$shareCfg = Storio::ShareLinks();
-
-	// Load the user configuration
-	$usrCfg = Storio::UserConfig(USER);
 
 	// Creating a new folder
 	if(!empty($_POST['inpFolder']) && $_POST['usrSesr'] == USER) {
