@@ -88,7 +88,7 @@
 
 											// Lightbox use
 											if(strpos($mimeType, 'image') !== false) {
-												echo '<p><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $shareCfg['ShareLinks'][$shareHash]['User'] .'&p=' . $encFile .'">' . $file['File'] . '</a></p>';
+												echo '<p><a class="noLink" href="#" data-featherlight="viewSource.php?u=alex&p=' . $encFile .'">' . $file['File'] . '</a></p>';
 											}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
 												echo '<p><a class="noLink reqBtn" name="' . $shareCfg['ShareLinks'][$shareHash]['User'] . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file['File'] . '</a></p>';
 											}else{
