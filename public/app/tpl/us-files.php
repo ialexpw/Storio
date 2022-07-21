@@ -574,7 +574,8 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body" style="margin-bottom:-10px;">
-					<input type="text" class="form-control" id="shareLinkML" name="shareLinkML" />
+						<p>Copy the link below to share the selected files</p>
+						<input type="text" class="form-control" id="shareLinkML" name="shareLinkML" /><br />
 					</div>
 				</div>
 			</div>
@@ -600,8 +601,6 @@
 			function count(name) {
 				alert ("Checked boxes: " + getCheckedBoxes(name));
 			}
-
-			
 
 			// When document ready
 			$(document).ready(function(){
