@@ -76,10 +76,29 @@
 
 								<?php
 									if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 1) {
-										foreach($shareCfg['ShareLinks'][$shareHash] as $file) {
+										foreach($shareCfg['ShareLinks'] as $file) {
 											echo '<pre>';
 											print_r($file);
 											echo '</pre>';
+/*
+											// Get the files extension
+											$ext = pathinfo($file['File'], PATHINFO_EXTENSION);
+
+											// Grab the mime type
+											$mimeType = mime_content_type($file['Path']);
+
+											// Encrypt file name
+											$encFile = Storio::SimpleCrypt($file['Path']);
+
+											// Lightbox use
+											if(strpos($mimeType, 'image') !== false) {
+												echo '<p><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $shareCfg['ShareLinks'][$shareHash]['User'] .'&p=' . $encFile .'">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></p>';
+											}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
+												echo '<p><a class="noLink reqBtn" name="' . $shareCfg['ShareLinks'][$shareHash]['User'] . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></p>';
+											}else{
+												echo '<p>' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</p>';
+											}
+				*/
 										}
 									}else if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 0) {
 										// Get the files extension
