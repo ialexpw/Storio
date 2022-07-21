@@ -104,7 +104,7 @@
 												echo '<p>' . $file['File'] . '</p>';
 											}
 
-											echo '<a class="btn btn-outline-dark" href="/?dl=' . $shareHash . '&file=' . $file['File'] . '" role="button">Download</a>';
+											echo '<a class="btn btn-outline-dark" href="/?dl=' . $shareHash . '&hash=' . $encFile . '" role="button">Download</a>';
 										}
 									}else if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 0) {
 										// Get the files extension

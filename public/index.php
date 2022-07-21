@@ -43,27 +43,28 @@
 		// Load the share links configuration
 		$shareCfg = Storio::ShareLinks();
 
-		// Check there is a value
-		if(isset($shareCfg['ShareLinks'][$shareHash]['Path'])) {
-			// Store the path
+		// Check if there is a hash
+		if(isset($_GET['hash']) && !empty($_GET['hash'])) {
+			$dlFile = Storio::SimpleCrypt($_GET['hash'], 'd');
+		}else if(isset($shareCfg['ShareLinks'][$shareHash]['Path'])){
 			$dlFile = $shareCfg['ShareLinks'][$shareHash]['Path'];
-
-			// Check if the file exists
-			if(file_exists($dlFile)) {
-				// Download it
-				header('Content-Description: File Transfer');
-				header('Content-Type: application/octet-stream');
-				header('Content-Disposition: attachment; filename="'.basename($dlFile).'"');
-				header('Expires: 0');
-				header('Cache-Control: must-revalidate');
-				header('Pragma: public');
-				header('Content-Length: ' . filesize($dlFile));
-				readfile($dlFile);
-				exit();
-			}
 		}else{
 			// No value - send to 404
 			exit(Storio::LoadView('404'));
+		}
+
+		// Check if the file exists
+		if(file_exists($dlFile)) {
+			// Download it
+			header('Content-Description: File Transfer');
+			header('Content-Type: application/octet-stream');
+			header('Content-Disposition: attachment; filename="'.basename($dlFile).'"');
+			header('Expires: 0');
+			header('Cache-Control: must-revalidate');
+			header('Pragma: public');
+			header('Content-Length: ' . filesize($dlFile));
+			readfile($dlFile);
+			exit();
 		}
 	}
 
