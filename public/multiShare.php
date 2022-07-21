@@ -44,10 +44,10 @@
 			// Build an array
 			$fileArr[$fc]['name'] = $file;
 			$fileArr[$fc]['path'] = $file_loc;
-			
-			print_r($fileArr);
 
 			$fc++;
 		}
+
+		print_r($fileArr);
 	}
 ?>
