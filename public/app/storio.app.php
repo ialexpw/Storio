@@ -502,7 +502,7 @@
 			$fullPath = $path . '/' . $file;
 			
 			// Check the path
-			if(file_exists($fullPath)) {	
+			if(file_exists($fullPath)) {
 				// Decode the share links file
 				$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
 
@@ -524,6 +524,44 @@
 				$shareCfgEncode = json_encode($shareCfg);
 				file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
 			}
+		}
+
+		public static function AddMultiShareLink($files, $user) {
+			// Decode the share links file
+			$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
+
+			// Keep track of the loop
+			$f = 0;
+
+			// Loop through the files
+			foreach($files as $file) {
+				// Build the path
+				$fullPath = $file['path'] . '/' . $file['name'];
+
+				// Generate string for the share link
+				$shareId = sha1(microtime() . 'STOR');
+
+				// Convert to chars with md5
+				$shareId = md5('STR' . $shareId);
+
+				// Cut the length of the string down
+				$shareId = substr($shareId, 0, 16);
+
+				// Add the required strings
+				$shareCfg['ShareLinks'][$shareId][$f]['File'] = $file;
+				$shareCfg['ShareLinks'][$shareId][$f]['Path'] = $fullPath;
+
+				$f++;
+			}
+
+			// Add after the loop
+			$shareCfg['ShareLinks'][$shareId]['User'] = $user;
+
+			// Encode and resave the config
+			$shareCfgEncode = json_encode($shareCfg);
+			file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
+
+			return $shareId;
 		}
 
 		/**

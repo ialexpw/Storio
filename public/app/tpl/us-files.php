@@ -389,7 +389,7 @@
 									Group actions
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-									<li><a class="dropdown-item" href="#">Copy Share Link</a></li>
+									<li><a class="dropdown-item" id="multiSelectCopy" href="#">Copy Share Link</a></li>
 									<li><a class="dropdown-item" href="#" style="color:indianred;" onClick="count('checkBox')">Delete Selected</a></li>
 								</ul>
 							</div>
@@ -564,6 +564,21 @@
 			</div>
 		</div>
 
+		<!-- Multi share link -->
+		<div class="modal fade" id="reqModal" tabindex="-1" aria-labelledby="reqModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="reqModalLabel">Share link</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body" style="margin-bottom:-10px;">
+					<input type="text" class="form-control" id="shareLinkML" name="shareLinkML" />
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<script>
 			function showAlert(){
 				$('.toast').toast('show');
@@ -594,9 +609,14 @@
 				console.log(selectedIds);
 			});
 
-			// Pop up modal for the video player
+			// When document ready
 			$(document).ready(function(){
-				// Click the video to preview
+				// 
+				$('#multiSelectCopy').click(function() {
+					alert("Test");
+				}
+
+				// Pop up modal for the video player - Click the video to preview
 				$('.reqBtn').click(function() {
 					// Store the name
 					var vidSplit = this.name;

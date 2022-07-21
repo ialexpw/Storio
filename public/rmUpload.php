@@ -26,7 +26,7 @@
 	}
 
 	// Check the logged in user with the hidden field
-	if($_POST['usrSes'] != $_SESSION['Username']) {
+	if($_POST['usrSes'] != $_SESSION['Username'] || empty($_POST['usrSes']) || empty($_SESSION['Username'])) {
 		$output = array(
 			"success" => false,
 			"message" => "failed_upload",
@@ -83,7 +83,6 @@
 	$fileSize = 0;
 
 	// Check the directory exists where you want to upload
-	//if(is_dir('../users/' . $_POST['usrSes'] . $_POST['uplFld'])) {
 	if(is_dir($usr_folder . $_POST['uplFld'])) {
 		// Save the upload dir
 		$dirUpl = $usr_folder . $_POST['uplFld'];
