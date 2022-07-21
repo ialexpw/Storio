@@ -161,18 +161,22 @@
 			$site_cfg = Storio::SiteConfig();
 
 			// Users upload folder
-			$usrDir = str_replace("{user}", $user, $site_cfg['uploadFolder']);
+			$usrDir = str_replace("{user}", strtolower($user), $site_cfg['uploadFolder']);
 
 			// Check if a user already exists
 			if(file_exists($usrDir)) {
 				return false;
 			}
 
+			// Create directories needed
+			@mkdir($usrDir);
+			@mkdir('../users/' . strtolower($user));
+
 			// Create the user directory
-			if(mkdir($usrDir) && mkdir('../users/' . $user)) {
+			if(is_dir($usrDir) && is_dir('../users/' . strtolower($user))) {
 				// Create the user config
 				$usrCfg = array(
-					"userName" => $user,
+					"userName" => strtolower($user),
 					"usrEmail" => $email,
 					"passWord" => $password,
 					"usedStorage" => 0,
@@ -186,7 +190,7 @@
 				$jsonCfg = json_encode($usrCfg);
 
 				// Create the json configuration file and write the contents
-				$usrFile = fopen('../users/configs/' . $user . '-cfg.json','w+');
+				$usrFile = fopen('../users/configs/' . strtolower($user) . '-cfg.json','w+');
 				fwrite($usrFile, $jsonCfg);
 				fclose($usrFile);
 
