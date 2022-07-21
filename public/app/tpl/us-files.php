@@ -614,7 +614,7 @@
 				// 
 				$('#multiSelectCopy').click(function() {
 					alert("Test");
-				}
+				});
 
 				// Pop up modal for the video player - Click the video to preview
 				$('.reqBtn').click(function() {
