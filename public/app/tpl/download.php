@@ -83,6 +83,7 @@
 										foreach($shareCfg['ShareLinks'][$shareHash] as $file) {
 											// Get the files extension
 											$ext = pathinfo($file['File'], PATHINFO_EXTENSION);
+											echo $ext.' ';
 
 											// Grab the mime type
 											$mimeType = mime_content_type($file['Path']);
