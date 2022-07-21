@@ -563,11 +563,11 @@
 		</div>
 
 		<!-- Multi share link -->
-		<div class="modal fade" id="reqModal" tabindex="-1" aria-labelledby="reqModalLabel" aria-hidden="true">
+		<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="reqModalLabel">Share link</h5>
+						<h5 class="modal-title" id="shareModalLabel">Share link</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body" style="margin-bottom:-10px;">
@@ -615,9 +615,27 @@
 
 				// 
 				$('#multiSelectCopy').click(function() {
-					
+					// Ensure html is empty first
+					$('#shareLinkML').html("");
 
-					alert(selectedIds);
+					// Request the share link
+					$.ajax({
+						type: 'GET',
+						url: "multiShare.php?sid="+selectedIds,
+						success:function(data){
+							// Display the html and then clean up the vars
+							$('#shareLinkML').html(data);
+							//delete formPath;
+						}
+					});
+
+					// Show modal
+					$('#shareModal').on('shown.bs.modal', function () {
+					});
+						// Load the iframe html in
+						//$('#shareLinkML').html(ifContent);
+
+					//alert(selectedIds);
 				});
 
 				// Pop up modal for the video player - Click the video to preview
@@ -633,6 +651,8 @@
 
 					// Ensure html is empty first
 					$('#showVid').html("");
+
+					// Show modal
 					$('#reqModal').on('shown.bs.modal', function () {
 						// Load the iframe html in
 						$('#showVid').html(ifContent);
