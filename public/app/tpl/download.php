@@ -80,10 +80,18 @@
 
 								<?php
 									if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 1) {
+										// Counter
+										$fc = 0;
+
 										foreach($shareCfg['ShareLinks'][$shareHash] as $file) {
 											// To avoid an error with file listing due to user at the bottom of array
 											if(!isset($file['File'])) {
 												continue;
+											}
+
+											// Add spacing
+											if($fc > 0) {
+												echo '<br />';
 											}
 
 											// Get the files extension
@@ -105,6 +113,8 @@
 											}
 
 											echo '<a class="btn btn-outline-dark" href="/?dl=' . $shareHash . '&hash=' . $encFile . '" role="button">Download</a>';
+
+											$fc++;
 										}
 									}else if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 0) {
 										// Get the files extension
