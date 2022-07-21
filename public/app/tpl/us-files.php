@@ -623,15 +623,17 @@
 						type: 'GET',
 						url: "multiShare.php?sid="+selectedIds,
 						success:function(data){
+							$('#shareModal').on('shown.bs.modal', function () {
+								$('#shareLinkML').html(data);
+							});
 							// Display the html and then clean up the vars
-							$('#shareLinkML').html(data);
+							
 							//delete formPath;
 						}
 					});
 
 					// Show modal
-					$('#shareModal').on('shown.bs.modal', function () {
-					});
+					
 						// Load the iframe html in
 						//$('#shareLinkML').html(ifContent);
 
