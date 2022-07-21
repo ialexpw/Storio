@@ -316,15 +316,18 @@
 										// Cut the length of the string down
 										$shareId = substr($shareId, 0, 15);
 
-										// Encrypt file name
+										// Encrypt file path
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $file);
+
+										// For multi share links
+										$encMultiShare = Storio::SimpleCrypt($usrDir . $getBrowse. ':::' . $file);
 
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										echo '<div class="col-8 col-md-8 stop-wrap" style="margin-bottom:2px;">';
 
-										echo '<span><input type="checkbox" id="' . $encFile . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span>';
+										echo '<span><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span>';
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
