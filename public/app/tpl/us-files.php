@@ -567,7 +567,7 @@
 
 		<!-- Multi share link -->
 		<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="shareModalLabel">Share link</h5>
@@ -631,6 +631,12 @@
 
 					// Show modal
 					$("#shareModal").modal('show');
+				});
+
+				// When modal is closed, blank the input
+				$('#shareModal').on('hidden.bs.modal', function () {
+					// Delete the video
+					$('#shareLinkML').val("");
 				});
 
 				// Pop up modal for the video player - Click the video to preview
