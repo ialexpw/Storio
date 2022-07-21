@@ -85,6 +85,7 @@
 
 											// Encrypt file name
 											$encFile = Storio::SimpleCrypt($file['Path']);
+											
 
 											// Lightbox use
 											if(strpos($mimeType, 'image') !== false) {
