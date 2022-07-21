@@ -600,17 +600,19 @@
 				alert ("Checked boxes: " + getCheckedBoxes(name));
 			}
 
-			// For multi-select
-			$(".multiSelect").on("click", function() {
-				$(this).toggleClass('selected');
-				var selectedIds = $('.selected').map(function() {
-					return this.id;
-				}).get();
-				console.log(selectedIds);
-			});
+			
 
 			// When document ready
 			$(document).ready(function(){
+				// For multi-select
+				$(".multiSelect").on("click", function() {
+					$(this).toggleClass('selected');
+					var selectedIds = $('.selected').map(function() {
+						return this.id;
+					}).get();
+					console.log(selectedIds);
+				});
+
 				// 
 				$('#multiSelectCopy').click(function() {
 					
