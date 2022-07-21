@@ -48,6 +48,8 @@
 			$fc++;
 		}
 
-		print_r($fileArr);
+		$multiLink = Storio::AddMultiShareLink($fileArr, $_SESSION['Username']);
+
+		echo $multiLink;
 	}
 ?>
