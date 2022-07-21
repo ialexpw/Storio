@@ -53,6 +53,7 @@
 		// For copy share url
 		$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'], '/') + 1);
 
+		// Echo the path to share
 		echo $webPath . '?id=' .  $multiLink;
 	}
 ?>
