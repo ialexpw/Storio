@@ -626,21 +626,12 @@
 						type: 'GET',
 						url: "multiShare.php?sid="+selectedIds,
 						success:function(data){
-							
-								$('#shareLinkML').val(data);
-							
-							// Display the html and then clean up the vars
-							
-							//delete formPath;
+							$('#shareLinkML').val(data);
 						}
 					});
 
 					// Show modal
 					$("#shareModal").modal('show');
-						// Load the iframe html in
-						//$('#shareLinkML').html(ifContent);
-
-					//alert(selectedIds);
 				});
 
 				// Pop up modal for the video player - Click the video to preview
