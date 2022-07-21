@@ -523,6 +523,7 @@
 				$shareCfg['ShareLinks'][$shareId]['File'] = $file;
 				$shareCfg['ShareLinks'][$shareId]['Path'] = $fullPath;
 				$shareCfg['ShareLinks'][$shareId]['User'] = $user;
+				$shareCfg['ShareLinks'][$shareId]['Multi'] = 0;
 				
 				// Encode and resave the config
 				$shareCfgEncode = json_encode($shareCfg);
@@ -548,9 +549,6 @@
 
 			// Loop through the files
 			foreach($files as $file) {
-				// Build the path
-				//$fullPath = $file['path'] . '/' . $file['name'];
-
 				// Add the required strings
 				$shareCfg['ShareLinks'][$shareId][$f]['File'] = $file['name'];
 				$shareCfg['ShareLinks'][$shareId][$f]['Path'] = $file['path'];
@@ -560,6 +558,7 @@
 
 			// Add after the loop
 			$shareCfg['ShareLinks'][$shareId]['User'] = $user;
+			$shareCfg['ShareLinks'][$shareId]['Multi'] = 1;
 
 			// Encode and resave the config
 			$shareCfgEncode = json_encode($shareCfg);
