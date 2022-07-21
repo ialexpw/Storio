@@ -604,10 +604,12 @@
 
 			// When document ready
 			$(document).ready(function(){
+				var selectedIds = "";
+				
 				// For multi-select
 				$(".multiSelect").on("click", function() {
 					$(this).toggleClass('selected');
-					var selectedIds = $('.selected').map(function() {
+					selectedIds = $('.selected').map(function() {
 						return this.id;
 					}).get();
 					console.log(selectedIds);
