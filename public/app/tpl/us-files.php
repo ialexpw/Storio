@@ -624,7 +624,7 @@
 						url: "multiShare.php?sid="+selectedIds,
 						success:function(data){
 							
-								$('#shareLinkML').html(data);
+								$('#shareLinkML').val(data);
 							
 							// Display the html and then clean up the vars
 							
