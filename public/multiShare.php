@@ -25,6 +25,9 @@
 		// File counter
 		$fc = 0;
 
+		// Store the array
+		$fileArr = array();
+
 		// Loop the file to create an array
 		foreach($file_ids as $id) {
 			$file_dec = Storio::SimpleCrypt($id, 'd');
@@ -32,10 +35,17 @@
 			// Separate the path and file
 			$file_info = explode(":::", $file_dec);
 
-			$file_loc = $file_info[0];
+			// Store just the name
 			$file = $file_info[1];
 
-			echo 'Loc: ' . $file_loc . ' File: ' . $file;
+			// Store the location with file name
+			$file_loc = $file_info[0] . '/' . $file;
+
+			// Build an array
+			$fileArr[$fc]['name'] = $file;
+			$fileArr[$fc]['path'] = $file_loc;
+			
+			print_r($fileArr);
 		}
 	}
 ?>
