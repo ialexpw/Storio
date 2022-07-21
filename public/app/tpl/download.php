@@ -76,7 +76,7 @@
 
 								<?php
 									if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 1) {
-										foreach($shareCfg['ShareLinks'] as $file) {
+										foreach($shareCfg['ShareLinks'][$shareHash] as $file) {
 											echo '<pre>';
 											print_r($file);
 											echo '</pre>';
