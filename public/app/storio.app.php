@@ -540,7 +540,7 @@
 			// Loop through the files
 			foreach($files as $file) {
 				// Build the path
-				$fullPath = $file['path'] . '/' . $file['name'];
+				//$fullPath = $file['path'] . '/' . $file['name'];
 
 				// Generate string for the share link
 				$shareId = sha1(microtime() . 'STOR');
@@ -552,8 +552,8 @@
 				$shareId = substr($shareId, 0, 16);
 
 				// Add the required strings
-				$shareCfg['ShareLinks'][$shareId][$f]['File'] = $file;
-				$shareCfg['ShareLinks'][$shareId][$f]['Path'] = $fullPath;
+				$shareCfg['ShareLinks'][$shareId][$f]['File'] = $file['name'];
+				$shareCfg['ShareLinks'][$shareId][$f]['Path'] = $file['path'];
 
 				$f++;
 			}
