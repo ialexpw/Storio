@@ -81,13 +81,13 @@
 								<?php
 									if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 1) {
 										foreach($shareCfg['ShareLinks'][$shareHash] as $file) {
+											// To avoid an error with file listing due to user at the bottom of array
 											if(!isset($file['File'])) {
 												continue;
 											}
-											
+
 											// Get the files extension
 											$ext = pathinfo($file['File'], PATHINFO_EXTENSION);
-											echo $ext.' ';
 
 											// Grab the mime type
 											$mimeType = mime_content_type($file['Path']);
