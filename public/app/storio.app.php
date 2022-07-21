@@ -23,21 +23,6 @@
 		 * Install Storio
 		 */
 		public static function Install($dataPath = '') {
-			// Hash the admin password
-			$usrPass = password_hash("AdminUser123", PASSWORD_DEFAULT);
-
-			// Create the array for admin
-			$usrAr = array(
-				"enabled" => 'true',
-				"upload" => 'true',
-				"admin" => 'true'
-			);
-
-			// Add the admin user
-			if(!Storio::AddUser('admin', $usrPass, 0, $usrAr, "admin@sbx.sx")) {
-				exit('Error creating admin user.');
-			}
-
 			// Check the data path
 			if(empty($dataPath)) {
 				$dataPath = '../users/{user}';
@@ -75,6 +60,21 @@
 			$shareFile = fopen('../users/configs/share-links.json','w+');
 			fwrite($shareFile, $jsonShareCfg);
 			fclose($shareFile);
+
+			// Hash the admin password
+			$usrPass = password_hash("AdminUser123", PASSWORD_DEFAULT);
+
+			// Create the array for admin
+			$usrAr = array(
+				"enabled" => 'true',
+				"upload" => 'true',
+				"admin" => 'true'
+			);
+
+			// Add the admin user
+			if(!Storio::AddUser('admin', $usrPass, 0, $usrAr, "admin@sbx.sx")) {
+				exit('Error creating admin user.');
+			}
 
 			return true;
 		}
