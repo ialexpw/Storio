@@ -10,6 +10,10 @@
 	 * @link       https://github.com/ialexpw/Storio
 	 */
 
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
 	// No direct access
 	if(!defined('INC_DATA')) {
 		exit('error');
