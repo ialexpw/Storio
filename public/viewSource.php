@@ -20,7 +20,7 @@
 	// Grab the path and user
 	if(isset($_GET['p']) && !empty($_GET['p']) && isset($_GET['u']) && !empty($_GET['u'])) {
 		// Users directory
-		if(is_dir('../users/' . $_GET['u']) && $_SESSION['Username'] == $_GET['u']) {
+		//if(is_dir('../users/' . $_GET['u']) && $_SESSION['Username'] == $_GET['u']) {
 			// Decrypt the string
 			$usrFile = Storio::SimpleCrypt($_GET['p'], 'd');
 
@@ -114,10 +114,10 @@
 					exit();
 				}
 			}
-		}else{
+		//}else{
 			// Redirect if not logged in/folder does not exist
-			header("Location: ?page=login");
-		}
+		//	header("Location: ?page=login");
+		//}
 	}
 
 	// Grab the path and user for the iframe
