@@ -575,7 +575,7 @@
 					</div>
 					<div class="modal-body" style="margin-bottom:-10px;">
 						<p>Copy the link below to share the selected files</p>
-						<input type="text" class="form-control" id="shareLinkML" name="shareLinkML" /><br />
+						<input type="text" onClick="this.setSelectionRange(0, this.value.length)" class="form-control" id="shareLinkML" name="shareLinkML" readonly/><br />
 					</div>
 				</div>
 			</div>
