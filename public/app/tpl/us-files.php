@@ -322,11 +322,9 @@
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-										//echo '<div class="col-8 col-md-8 left-indent stop-wrap myDivs" style="margin-bottom:2px;">';
 										echo '<div class="col-8 col-md-8 stop-wrap" style="margin-bottom:2px;">';
-										//echo '<span class="myDivs" style="padding-right:5px; padding-left:5px; margin-right:4px;">x</span>';
 
-										echo '<span><input type="checkbox" id="' . $shareId . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span>';
+										echo '<span><input type="checkbox" id="' . $encFile . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span>';
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
@@ -605,7 +603,7 @@
 			// When document ready
 			$(document).ready(function(){
 				var selectedIds = "";
-				
+
 				// For multi-select
 				$(".multiSelect").on("click", function() {
 					$(this).toggleClass('selected');
