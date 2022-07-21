@@ -125,7 +125,7 @@
 											echo '<p>' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</p>';
 										}
 
-										echo '<a class="btn btn-outline-dark" href="/?dl=<?php echo $shareHash; ?>" role="button">Download</a>';
+										echo '<a class="btn btn-outline-dark" href="/?dl=' . $shareHash . '" role="button">Download</a>';
 									}
 								?>
 								
