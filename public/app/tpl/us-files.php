@@ -623,9 +623,9 @@
 						type: 'GET',
 						url: "multiShare.php?sid="+selectedIds,
 						success:function(data){
-							$('#shareModal').on('shown.bs.modal', function () {
+							
 								$('#shareLinkML').html(data);
-							});
+							
 							// Display the html and then clean up the vars
 							
 							//delete formPath;
@@ -633,7 +633,7 @@
 					});
 
 					// Show modal
-					
+					$("#shareModal").modal('show');
 						// Load the iframe html in
 						//$('#shareLinkML').html(ifContent);
 
