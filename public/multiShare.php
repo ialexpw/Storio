@@ -50,6 +50,9 @@
 
 		$multiLink = Storio::AddMultiShareLink($fileArr, $_SESSION['Username']);
 
-		echo $multiLink;
+		// For copy share url
+		$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+
+		echo $webPath . '?id=' .  $multiLink;
 	}
 ?>
