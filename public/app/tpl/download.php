@@ -24,7 +24,7 @@
 	if(isset($_GET['id'])) {
 		$shareHash = $_GET['id'];
 
-		if(empty($shareCfg['ShareLinks'][$shareHash]['File'])) {
+		if(empty($shareCfg['ShareLinks'][$shareHash]['User'])) {
 			header("Location: /?page=404");
 		}
 	}else{
@@ -75,26 +75,31 @@
 								<h4 class="card-title">Download files</h4><hr>
 
 								<?php
-									// Get the files extension
-									$ext = pathinfo($shareCfg['ShareLinks'][$shareHash]['File'], PATHINFO_EXTENSION);
+									if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 1) {
+										echo 'Multi';
+									}else if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 0) {
+										// Get the files extension
+										$ext = pathinfo($shareCfg['ShareLinks'][$shareHash]['File'], PATHINFO_EXTENSION);
 
-									// Grab the mime type
-									$mimeType = mime_content_type($shareCfg['ShareLinks'][$shareHash]['Path']);
+										// Grab the mime type
+										$mimeType = mime_content_type($shareCfg['ShareLinks'][$shareHash]['Path']);
 
-									// Encrypt file name
-									$encFile = Storio::SimpleCrypt($shareCfg['ShareLinks'][$shareHash]['Path']);
+										// Encrypt file name
+										$encFile = Storio::SimpleCrypt($shareCfg['ShareLinks'][$shareHash]['Path']);
 
-									// Lightbox use
-									if(strpos($mimeType, 'image') !== false) {
-										echo '<p><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $shareCfg['ShareLinks'][$shareHash]['User'] .'&p=' . $encFile .'">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></p>';
-									}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
-										echo '<p><a class="noLink reqBtn" name="' . $shareCfg['ShareLinks'][$shareHash]['User'] . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></p>';
-									}else{
-										echo '<p>' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</p>';
+										// Lightbox use
+										if(strpos($mimeType, 'image') !== false) {
+											echo '<p><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $shareCfg['ShareLinks'][$shareHash]['User'] .'&p=' . $encFile .'">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></p>';
+										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
+											echo '<p><a class="noLink reqBtn" name="' . $shareCfg['ShareLinks'][$shareHash]['User'] . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</a></p>';
+										}else{
+											echo '<p>' . $shareCfg['ShareLinks'][$shareHash]['File'] . '</p>';
+										}
+
+										echo '<a class="btn btn-outline-dark" href="/?dl=<?php echo $shareHash; ?>" role="button">Download</a>';
 									}
 								?>
-
-								<a class="btn btn-outline-dark" href="/?dl=<?php echo $shareHash; ?>" role="button">Download</a>
+								
 								<br /><br />
 							</div>
 						</div>
