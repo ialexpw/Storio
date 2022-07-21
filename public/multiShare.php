@@ -46,6 +46,8 @@
 			$fileArr[$fc]['path'] = $file_loc;
 			
 			print_r($fileArr);
+
+			$fc++;
 		}
 	}
 ?>
