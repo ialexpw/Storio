@@ -91,7 +91,7 @@
 
 											// Add spacing
 											if($fc > 0) {
-												echo '<br />';
+												echo '<br /><br />';
 											}
 
 											// Get the files extension
