@@ -613,17 +613,9 @@
 			$(document).ready(function(){
 				// 
 				$('#multiSelectCopy').click(function() {
-					var checkboxes = document.getElementsByName(boxName);
-					var checkboxesChecked = [];
+					
 
-					for (var i=0; i<checkboxes.length; i++) {
-						if (checkboxes[i].checked) {
-							alert(checkboxes.id);
-							checkboxesChecked.push(i); // or i+1 if you want 1-based 
-						}
-					}
-
-					alert("Test");
+					alert(selectedIds);
 				});
 
 				// Pop up modal for the video player - Click the video to preview
