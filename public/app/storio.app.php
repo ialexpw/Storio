@@ -534,6 +534,15 @@
 			// Decode the share links file
 			$shareCfg = json_decode(file_get_contents('../users/configs/share-links.json'), true);
 
+			// Generate string for the share link
+			$shareId = sha1(microtime() . 'STOR');
+
+			// Convert to chars with md5
+			$shareId = md5('STR' . $shareId);
+
+			// Cut the length of the string down
+			$shareId = substr($shareId, 0, 16);
+
 			// Keep track of the loop
 			$f = 0;
 
@@ -541,15 +550,6 @@
 			foreach($files as $file) {
 				// Build the path
 				//$fullPath = $file['path'] . '/' . $file['name'];
-
-				// Generate string for the share link
-				$shareId = sha1(microtime() . 'STOR');
-
-				// Convert to chars with md5
-				$shareId = md5('STR' . $shareId);
-
-				// Cut the length of the string down
-				$shareId = substr($shareId, 0, 16);
 
 				// Add the required strings
 				$shareCfg['ShareLinks'][$shareId][$f]['File'] = $file['name'];
