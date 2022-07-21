@@ -390,8 +390,8 @@
 									Group actions
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-									<li><a class="dropdown-item" id="multiSelectCopy" href="#">Copy Share Link</a></li>
-									<li><a class="dropdown-item" href="#" style="color:indianred;" onClick="count('checkBox')">Delete Selected</a></li>
+									<li><a class="dropdown-item" id="multiSelectCopy" href="javascript:;">Copy Share Link</a></li>
+									<li><a class="dropdown-item" href="javascript:;" style="color:indianred;" onClick="count('checkBox')">Delete Selected</a></li>
 								</ul>
 							</div>
 
