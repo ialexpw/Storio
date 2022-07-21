@@ -77,10 +77,6 @@
 								<?php
 									if($shareCfg['ShareLinks'][$shareHash]['Multi'] == 1) {
 										foreach($shareCfg['ShareLinks'][$shareHash] as $file) {
-											echo '<pre>';
-											print_r($file);
-											echo '</pre>';
-
 											// Get the files extension
 											$ext = pathinfo($file['File'], PATHINFO_EXTENSION);
 
