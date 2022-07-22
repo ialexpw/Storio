@@ -274,11 +274,11 @@
 											</svg>';
 
 										// Folder icon/name
-										echo '<div class="col-8 col-md-8 " style="margin-bottom:2px;">' . $fol_icon . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
+										echo '<div class="col-8 col-md-8 " style="margin-bottom:2px;"><span><input type="checkbox" name="checkBox" value="" style="margin-right:10px;" disabled /></span>' . $fol_icon . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 
 										//echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-" style="margin-bottom:2px;">';
 
-										echo '<span><input type="checkbox" name="checkBox" value="" style="margin-right:10px;" disabled /></span>';
+										echo '';
 
 										// No size shown for directories
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">n/a</div>';
