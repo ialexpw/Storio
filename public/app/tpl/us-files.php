@@ -639,7 +639,7 @@
 								var tdiv = document.getElementById(tostr);
 								$(tdiv).fadeOut('slow');
 								
-								//$("tostr").hide();
+								$(tdiv).hide();
 								//text += cars[i] + "<br>";
 							} 
 							//$('#shareLinkML').val(data);
