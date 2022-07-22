@@ -313,7 +313,8 @@
 										$mimeType = mime_content_type($usrDir . $getBrowse. '/' . $file);
 
 										// Config the user icon
-										$fileIco = '<i style="font-size: 1.4rem; margin-right:12px;" class="' . $fIco . '"></i>';
+										//$fileIco = '<i style="font-size: 1.4rem; margin-right:12px;" class="' . $fIco . '"></i>';
+										$fileIco = $fIco;
 
 										// Generate the download link
 										$shareId = sha1(USER . $usrDir . $getBrowse. '/' . $file);
