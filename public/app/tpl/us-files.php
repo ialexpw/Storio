@@ -636,7 +636,7 @@
 
 							for (let i = 0; i < fileId.length; i++) {
 								var tostr = "#"+fileId[i];
-								var tdiv = document.getElementById(tostr);
+								var tdiv = document.getElementById("#file-1");
 								$(tdiv).fadeOut('slow');
 								
 								$(tdiv).hide();
