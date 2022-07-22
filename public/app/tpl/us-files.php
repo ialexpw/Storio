@@ -328,7 +328,9 @@
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-										echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-hide" style="margin-bottom:2px;">';
+										echo '<span id="' . $encMultiShare . '-hide">';
+
+										echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-" style="margin-bottom:2px;">';
 
 										echo '<span><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span>';
 
@@ -374,6 +376,8 @@
 										echo '</ul>';
 										echo '</div>';
 										echo '</div>';
+
+										echo '</span>';
 
 										$fc++;
 									}
