@@ -146,9 +146,6 @@
 		<!-- Featherlight lightbox -->
 		<link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 
-		<!-- Font awesome -->
-		<link rel="stylesheet" href="app/css/all.css">
-
 		<!-- Copy to clipboard -->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 
