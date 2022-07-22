@@ -65,8 +65,10 @@
 		<link rel="canonical" href="">
 
 		<!-- Bootstrap core CSS -->
-		<link rel="stylesheet" href="app/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+		<!-- Google fonts -->
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
 
@@ -144,7 +146,9 @@
 		</main>
 
 		<script type="text/javascript" src="app/js/jquery.min.js"></script>
-		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 		
 		<?php
 			// Updated details

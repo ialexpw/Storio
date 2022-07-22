@@ -137,7 +137,7 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 		<!-- Google fonts -->
 		<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -149,6 +149,7 @@
 		<!-- Font awesome -->
 		<link rel="stylesheet" href="app/css/all.css">
 
+		<!-- Copy to clipboard -->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 
 		<!-- Custom styles -->
