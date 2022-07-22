@@ -276,6 +276,8 @@
 										// Folder icon/name
 										echo '<div class="col-8 col-md-8 left-indent" style="margin-bottom:2px;">' . $fol_icon . ' <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
 
+										echo '<span><input type="checkbox" name="checkBox" value="" style="margin-right:10px;" disabled /></span>';
+
 										// No size shown for directories
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">n/a</div>';
 
