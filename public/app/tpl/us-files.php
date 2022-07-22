@@ -629,29 +629,21 @@
 
 				// Multiselect to share
 				$('#multiSelectDelete').click(function() {
-					// Ensure html is empty first
-					//$('#shareLinkML').html("");
-
-					// Request the share link
+					// Request to delete the files
 					$.ajax({
 						type: 'GET',
 						url: "multiDelete.php?sid="+selectedIds,
 						success:function(data){
 							var fileId = selectedIds.toString().split(',');
 
+							// Loop the files to hide the divs
 							for (let i = 0; i < fileId.length; i++) {
 								//var tostr = "#"+fileId[i];
 								var tdiv = document.getElementById(fileId[i]+"-hide");
 								$(tdiv).fadeOut('slow');
-								
-								$(tdiv).hide();
 							} 
-							//$('#shareLinkML').val(data);
 						}
 					});
-
-					// Show modal
-					//$("#shareModal").modal('show');
 				});
 
 				// When modal is closed, blank the input
