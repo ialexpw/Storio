@@ -283,7 +283,7 @@
 								}
 
 								// Create a counter for file loop
-								$fc = 1;
+								$fc = 0;
 
 								// Check & sort
 								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
@@ -328,9 +328,9 @@
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-										echo '<div class="col-8 col-md-8 stop-wrap" id="file-' . $fc . '" style="margin-bottom:2px;">';
+										echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-hide" style="margin-bottom:2px;">';
 
-										echo '<span><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox-' . $fc . '" value="' . $shareId . '" style="margin-right:10px;"></span>';
+										echo '<span><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span>';
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
@@ -636,11 +636,10 @@
 
 							for (let i = 0; i < fileId.length; i++) {
 								//var tostr = "#"+fileId[i];
-								var tdiv = document.getElementById(fileId[i]);
+								var tdiv = document.getElementById(fileId[i]+"-hide");
 								$(tdiv).fadeOut('slow');
 								
 								$(tdiv).hide();
-								//text += cars[i] + "<br>";
 							} 
 							//$('#shareLinkML').val(data);
 						}
