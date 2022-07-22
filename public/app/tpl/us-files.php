@@ -630,7 +630,8 @@
 							var fileId = selectedIds.toString().split(',');
 
 							for (let i = 0; i < fileId.length; i++) {
-								$('#'+fileId[i]).hide();
+								var tostr = "#"+fileId[i];
+								$(tostr).hide();
 								//text += cars[i] + "<br>";
 							} 
 							//$('#shareLinkML').val(data);
