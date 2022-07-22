@@ -136,7 +136,7 @@
 		<link rel="canonical" href="">
 
 		<!-- Bootstrap core CSS -->
-		<link rel="stylesheet" href="app/css/bootstrap.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 		<!-- Google fonts -->
@@ -419,7 +419,7 @@
 		<script type="text/javascript" src="app/js/whUp.js"></script>
 
 		<!-- Bootstrap JS -->
-		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
 		<!-- Keep sessions alive while browser is open -->
 		<script type="text/javascript" src="app/js/session.js"></script>
