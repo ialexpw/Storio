@@ -391,7 +391,7 @@
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 									<li><a class="dropdown-item" id="multiSelectCopy" href="javascript:;">Copy Share Link</a></li>
-									<li><a class="dropdown-item" href="javascript:;" style="color:indianred;" onClick="count('checkBox')">Delete Selected</a></li>
+									<li><a class="dropdown-item" id="multiSelectDelete" href="javascript:;" style="color:indianred;">Delete Selected</a></li>
 								</ul>
 							</div>
 
@@ -586,22 +586,6 @@
 				$('.toast').toast('show');
 			}
 
-			function getCheckedBoxes(boxName) {
-				var checkboxes = document.getElementsByName(boxName);
-				var checkboxesChecked = [];
-
-				for (var i=0; i<checkboxes.length; i++) {
-					if (checkboxes[i].checked) {
-						checkboxesChecked.push(i); // or i+1 if you want 1-based 
-					}
-				}
-				return checkboxesChecked.length > 0 ? checkboxesChecked : "none";
-			}
-
-			function count(name) {
-				alert ("Checked boxes: " + getCheckedBoxes(name));
-			}
-
 			// When document ready
 			$(document).ready(function(){
 				var selectedIds = "";
@@ -615,7 +599,7 @@
 					console.log(selectedIds);
 				});
 
-				// 
+				// Multiselect to share
 				$('#multiSelectCopy').click(function() {
 					// Ensure html is empty first
 					$('#shareLinkML').html("");
@@ -631,6 +615,30 @@
 
 					// Show modal
 					$("#shareModal").modal('show');
+				});
+
+				// Multiselect to share
+				$('#multiSelectDelete').click(function() {
+					// Ensure html is empty first
+					//$('#shareLinkML').html("");
+
+					// Request the share link
+					$.ajax({
+						type: 'GET',
+						url: "multiDelete.php?sid="+selectedIds,
+						success:function(data){
+							var fileId = selectedIds.split(',');
+
+							for (let i = 0; i < fileId.length; i++) {
+								$('#'+fileId[i]).hide();
+								//text += cars[i] + "<br>";
+							} 
+							//$('#shareLinkML').val(data);
+						}
+					});
+
+					// Show modal
+					//$("#shareModal").modal('show');
 				});
 
 				// When modal is closed, blank the input
