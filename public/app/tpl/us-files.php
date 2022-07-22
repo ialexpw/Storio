@@ -328,7 +328,7 @@
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-										echo '<span id="' . $encMultiShare . '-hide">';
+										echo '<span style="all:unset;" id="' . $encMultiShare . '-hide">';
 
 										echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-" style="margin-bottom:2px;">';
 
