@@ -627,7 +627,7 @@
 						type: 'GET',
 						url: "multiDelete.php?sid="+selectedIds,
 						success:function(data){
-							var fileId = selectedIds.split(',');
+							var fileId = selectedIds.toString().split(',');
 
 							for (let i = 0; i < fileId.length; i++) {
 								$('#'+fileId[i]).hide();
