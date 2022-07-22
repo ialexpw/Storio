@@ -282,6 +282,9 @@
 									}
 								}
 
+								// Create a counter for file loop
+								$fc = 1;
+
 								// Check & sort
 								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
 									// Sort files
@@ -325,9 +328,9 @@
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-										echo '<div class="col-8 col-md-8 stop-wrap" style="margin-bottom:2px;">';
+										echo '<div class="col-8 col-md-8 stop-wrap" id="file-' . $fc . '" style="margin-bottom:2px;">';
 
-										echo '<span><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span>';
+										echo '<span><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox-' . $fc . '" value="' . $shareId . '" style="margin-right:10px;"></span>';
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
@@ -371,6 +374,8 @@
 										echo '</ul>';
 										echo '</div>';
 										echo '</div>';
+
+										$fc++;
 									}
 								}
 
@@ -631,7 +636,10 @@
 
 							for (let i = 0; i < fileId.length; i++) {
 								var tostr = "#"+fileId[i];
-								$(tostr).hide();
+								var tdiv = document.getElementById(tostr);
+								$(tdiv).fadeOut('slow');
+								
+								//$("tostr").hide();
 								//text += cars[i] + "<br>";
 							} 
 							//$('#shareLinkML').val(data);
