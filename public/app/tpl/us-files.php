@@ -635,8 +635,8 @@
 							var fileId = selectedIds.toString().split(',');
 
 							for (let i = 0; i < fileId.length; i++) {
-								var tostr = "#"+fileId[i];
-								var tdiv = document.getElementById("file-1");
+								//var tostr = "#"+fileId[i];
+								var tdiv = document.getElementById(fileId[i]);
 								$(tdiv).fadeOut('slow');
 								
 								$(tdiv).hide();
