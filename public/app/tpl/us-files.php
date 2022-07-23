@@ -638,10 +638,10 @@
 				// Multiselect to share
 				$('#multiSelectDelete').click(function() {
 					// No IDs selected
-					if(selectedIds == "") {
-						return;
-					}
-					
+					//if(selectedIds == "") {
+					//	return;
+					//}
+
 					// Request to delete the files
 					$.ajax({
 						type: 'GET',
