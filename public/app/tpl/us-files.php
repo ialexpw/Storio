@@ -616,9 +616,9 @@
 					$('#shareLinkML').html("");
 
 					// No IDs selected
-					if(selectedIds == "") {
-						return;
-					}
+					//if(selectedIds == "") {
+					//	return;
+					//}
 
 					// Request the share link
 					$.ajax({
@@ -632,7 +632,7 @@
 					// Show modal
 					$("#shareModal").modal('show');
 
-					selectedIds = "";
+					//selectedIds = "";
 				});
 
 				// Multiselect to share
@@ -658,7 +658,7 @@
 						}
 					});
 
-					selectedIds = "";
+					//selectedIds = "";
 				});
 
 				// When modal is closed, blank the input
