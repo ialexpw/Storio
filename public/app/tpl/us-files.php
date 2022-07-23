@@ -615,6 +615,11 @@
 					// Ensure html is empty first
 					$('#shareLinkML').html("");
 
+					// No IDs selected
+					if(selectedIds == "") {
+						return;
+					}
+
 					// Request the share link
 					$.ajax({
 						type: 'GET',
@@ -626,10 +631,17 @@
 
 					// Show modal
 					$("#shareModal").modal('show');
+
+					selectedIds = "";
 				});
 
 				// Multiselect to share
 				$('#multiSelectDelete').click(function() {
+					// No IDs selected
+					if(selectedIds == "") {
+						return;
+					}
+					
 					// Request to delete the files
 					$.ajax({
 						type: 'GET',
@@ -645,6 +657,8 @@
 							} 
 						}
 					});
+
+					selectedIds = "";
 				});
 
 				// When modal is closed, blank the input
