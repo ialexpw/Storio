@@ -492,7 +492,7 @@
 						<form action="?page=us-files<?php echo $post; ?>" method="post">
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Folder name</label>
-								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" maxlength="26" />
+								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s.]){2,}" maxlength="26" />
 								<input type="hidden" id="uplFldr" name="uplFldr" value="<?php echo $getBrowse; ?>"/>
 								<input type="hidden" id="usrSesr" name="usrSesr" value="<?php echo USER; ?>"/>
 							</div>
@@ -615,6 +615,11 @@
 					// Ensure html is empty first
 					$('#shareLinkML').html("");
 
+					// No IDs selected
+					//if(selectedIds == "") {
+					//	return;
+					//}
+
 					// Request the share link
 					$.ajax({
 						type: 'GET',
@@ -626,10 +631,17 @@
 
 					// Show modal
 					$("#shareModal").modal('show');
+
+					//selectedIds = "";
 				});
 
 				// Multiselect to share
 				$('#multiSelectDelete').click(function() {
+					// No IDs selected
+					//if(selectedIds == "") {
+					//	return;
+					//}
+
 					// Request to delete the files
 					$.ajax({
 						type: 'GET',
@@ -645,6 +657,8 @@
 							} 
 						}
 					});
+
+					//selectedIds = "";
 				});
 
 				// When modal is closed, blank the input
