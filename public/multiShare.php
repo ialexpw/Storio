@@ -55,5 +55,7 @@
 
 		// Echo the path to share
 		echo $webPath . '?id=' .  $multiLink;
+	}else{
+		echo "Select files to share.";
 	}
 ?>
