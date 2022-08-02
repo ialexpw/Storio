@@ -121,11 +121,11 @@
 					Storio::AddShareLink($dirUpl, $_FILES["file"]["name"][$index], $_SESSION['Username']);
 
 					// Grab the mime type
-					//$mimeType = mime_content_type($dirUpl . '/' . $_FILES["file"]["name"][$index]);
+					$mimeType = mime_content_type($dirUpl . '/' . $_FILES["file"]["name"][$index]);
 
-					//if(strpos($mimeType, 'image') !== false) {
-					//	Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], $thumbpath, $thumbnail_width, $thumbnail_height, $background=false)
-					//}
+					if(strpos($mimeType, 'image') !== false) {
+						Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], $dirUpl . '/_thumb_' . $_FILES["file"]["name"][$index], 100, 100);
+					}
 				}else{
 					return false;
 				}

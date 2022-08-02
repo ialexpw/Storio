@@ -2,7 +2,7 @@
 	/**
 	 * viewSource.php
 	 *
-	 * Use for showing images/video files directly within a lightbox or media player
+	 * Used for showing images/video files directly within a lightbox or media player
 	 *
 	 * @package    Storio
 	 * @author     Alex White
