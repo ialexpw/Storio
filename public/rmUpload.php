@@ -123,8 +123,9 @@
 					// Grab the mime type
 					$mimeType = mime_content_type($dirUpl . '/' . $_FILES["file"]["name"][$index]);
 
+					// If it is an image, create a thumbnail
 					if(strpos($mimeType, 'image') !== false) {
-						Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], $dirUpl . '/_thumb_' . $_FILES["file"]["name"][$index], 100, 100);
+						Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '..users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 100, 100);
 					}
 				}else{
 					return false;
