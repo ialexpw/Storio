@@ -367,9 +367,9 @@
 											echo $fileIco . ' ' . $file . '</div>';
 										}
 
-										if(file_exists('../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file)) {
-											echo '<img src="../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file . '" class="img-thumbnail" alt="...">';
-										}
+										//if(file_exists('../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file)) {
+										//	echo '<img src="../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file . '" class="img-thumbnail" alt="...">';
+										//}
 
 										// Show file size
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';

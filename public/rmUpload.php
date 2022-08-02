@@ -121,12 +121,12 @@
 					Storio::AddShareLink($dirUpl, $_FILES["file"]["name"][$index], $_SESSION['Username']);
 
 					// Grab the mime type
-					$mimeType = mime_content_type($dirUpl . '/' . $_FILES["file"]["name"][$index]);
+					//$mimeType = mime_content_type($dirUpl . '/' . $_FILES["file"]["name"][$index]);
 
 					// If it is an image, create a thumbnail
-					if(strpos($mimeType, 'image') !== false) {
-						Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 100, 100);
-					}
+					//if(strpos($mimeType, 'image') !== false) {
+					//	Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 100, 100);
+					//}
 				}else{
 					return false;
 				}
