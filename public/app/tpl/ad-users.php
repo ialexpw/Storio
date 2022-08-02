@@ -324,8 +324,13 @@
 			</div>
 		</main>
 
+		<!-- JQuery -->
 		<script type="text/javascript" src="app/js/jquery.min.js"></script>
-		<script type="text/javascript" src="app/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Keep sessions alive while browser is open -->
 		<script type="text/javascript" src="app/js/session.js"></script>
 
 		<!-- Modal -->
