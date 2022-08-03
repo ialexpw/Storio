@@ -295,9 +295,9 @@ echo '<tbody>';
 
 										echo '<td><img src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
 
-										echo '<td>n/a</td>';
+										echo '<td class="text-center">n/a</td>';
 
-										echo '<td><a style="color:indianred;" href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></td>';
+										echo '<td class="text-center"><a style="color:indianred;" href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></td>';
 
 										echo '</tr>';
 
