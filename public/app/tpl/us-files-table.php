@@ -386,11 +386,11 @@ echo '<tbody>';
 											echo '<td><img src="https://placeimg.com/25/25" class="img-thumbnail" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
 										}
 
-										echo '<td>' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
+										echo '<td class="text-center">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
 
 
 										//echo '<td>Options</td>';
-										echo '<td>';
+										echo '<td class="text-center">';
 										echo '<div class="btn-group">';
 										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
 										echo 'Options..';
