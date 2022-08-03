@@ -141,7 +141,7 @@
 
 					// If it is an image, create a thumbnail
 					if(strpos($mimeType, 'image') !== false) {
-						Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 25, 25);
+						Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 50, 50);
 					}
 				}else{
 					return false;
