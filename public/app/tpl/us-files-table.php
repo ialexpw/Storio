@@ -231,15 +231,15 @@
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
 								// Start the row
-								echo '<div class="row">';
+								//echo '<div class="row">';
 
 								//echo '<div class="col-8 col-md-8 left-indent"><b>File name</b></div>';
 								//echo '<div class="col-md-2 d-none d-sm-block"><b>Size</b></div>';
 								//echo '<div class="col-4 col-md-2" style="text-align:center;"><b>Actions</b></div>';
 
 								// End the row
-								echo '</div>';
-								echo '<hr>';
+								//echo '</div>';
+								//echo '<hr>';
 
 								echo '<div class="row">';
 
