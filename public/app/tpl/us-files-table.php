@@ -295,7 +295,7 @@ echo '<tbody>';
 										//echo '<td class="text-center"><input type="checkbox" name="checkBox" value="" disabled /></td>';
 										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value=""></td>';
 
-										echo '<td style="word-wrap: break-word;min-width: 5%;max-width: 5%;white-space:normal;"><img src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
+										echo '<td><img src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
 
 										echo '<td class="text-center">n/a</td>';
 
@@ -423,7 +423,7 @@ echo '<tbody>';
 										//echo '<td><img src="https://placeimg.com/25/25" class="img-thumbnail" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
-											echo '<tdstyle="word-wrap: break-word;min-width: 160px;max-width: 160px;white-space:normal;"><img src="' . $img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
+											echo '<td><img src="' . $img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
 										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
 											echo '<td><img src="https://placeimg.com/25/25" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
 										}else{
