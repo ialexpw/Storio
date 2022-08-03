@@ -171,6 +171,7 @@
 			// Create directories needed
 			@mkdir($usrDir);
 			@mkdir('../users/' . strtolower($user));
+			@mkdir('../users/configs/_thumbs/' . strtolower($user));
 
 			// Create the user directory
 			if(is_dir($usrDir) && is_dir('../users/' . strtolower($user))) {

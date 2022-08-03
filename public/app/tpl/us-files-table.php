@@ -368,7 +368,16 @@ echo '<tbody>';
 										///////
 
 
-										
+										if(strpos($mimeType, 'image') !== false) {
+											if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file)) {
+												$type = pathinfo($path, PATHINFO_EXTENSION);
+												$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file;
+												$thumb = file_get_contents($thumb);
+												$img = 'data:image/' . $type . ';base64,' . base64_encode($thumb);
+											}
+										}else{
+											$img = 'https://placeimg.com/25/25';
+										}
 
 										echo '<tr>';
 
@@ -379,7 +388,7 @@ echo '<tbody>';
 										//echo '<td><img src="https://placeimg.com/25/25" class="img-thumbnail" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
-											echo '<td><img src="https://placeimg.com/25/25" class="img-thumbnail" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
+											echo '<td><img src="' . $img . '" class="img-thumbnail" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
 										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
 											echo '<td><img src="https://placeimg.com/25/25" class="img-thumbnail" alt="..." style="margin-right: 25px;"> <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
 										}else{
