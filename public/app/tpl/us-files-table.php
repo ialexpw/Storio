@@ -389,7 +389,32 @@ echo '<tbody>';
 										echo '<td>' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
 
 
-										echo '<td>Options</td>';
+										//echo '<td>Options</td>';
+										echo '<div class="btn-group">';
+										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
+										echo 'Options..';
+										echo '</a>';
+										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">';
+										echo '<li><a class="dropdown-item" href="?dl=' . $shareId . '">Direct Download</a></li>';
+
+										// Whether to have the direct download or the download page
+										if($siteCfg['downloadPage']) {
+											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?id=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
+										}else{
+											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
+										}
+										
+										echo '<li><a class="dropdown-item disabled" data-bs-toggle="modal" data-bs-target="#moveModal" href="#">Move File</a></li>';
+
+										// When deleting a file, ensure we are redirected back
+										if(!empty($_GET['browse'])) {
+											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files&browse=' . $_GET['browse'] . '&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
+										}else{
+											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
+										}
+										
+										echo '</ul>';
+										echo '</div>';
 
 
 										echo '</tr>';
