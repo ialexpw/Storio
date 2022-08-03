@@ -369,7 +369,7 @@ echo '<tbody>';
 
 										echo '<tr>';
 										echo '<td class="text-center"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
-										echo '<td><img src="https://placeimg.com/25/25" class="img-thumbnail" alt="..."> ' . $file . '</td>';
+										echo '<td><img src="https://placeimg.com/25/25" class="img-thumbnail" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
 										echo '<td>' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
 										echo '<td>Options</td>';
 										echo '</tr>';
