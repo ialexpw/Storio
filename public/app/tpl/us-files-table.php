@@ -510,8 +510,6 @@ echo '</div>';
 								echo '</div>';
 							?>
 
-							<hr>
-
 							<div class="dropdown">
 								<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 									Group actions
