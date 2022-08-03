@@ -157,6 +157,10 @@
 				border: 1px solid #ccc;
 				border-radius: 8px;
 			}
+
+			td {
+  white-space: normal !important; // To consider whitespace.
+}
 		</style>
 	</head>
 	<body>
