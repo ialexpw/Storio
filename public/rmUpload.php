@@ -93,15 +93,28 @@
 		// Work out if the file size is too big 
 		$maxFileSize = $siteCfg['uploadMaxMB'] * 1024 * 1024;
 
-		echo 'Total: ' . $totalFileSize . ' Max: ' . $maxFileSize;
-		exit();
-
-		// If files exceed size, error
+		// If file total exceed static size limit, error
 		if($totalFileSize > $maxFileSize) {
 			$output = array(
 				"success" => false,
 				"message" => "file_size",
 				"verbose" => "Size of files exceeds the max upload size, please check and try again"
+			);
+	
+			header("Content-Type: application/json; charset=utf-8");
+			echo json_encode($output);
+			exit();
+		}
+
+		// Lastly check if we have enough space left for all of the files combined
+		$spaceLeft = ($usrCfg['maxStorage'] - $usrCfg['usedStorage']) * 1024 * 1024;
+
+		// If total size is more than the free space left
+		if($totalFileSize > $spaceLeft) {
+			$output = array(
+				"success" => false,
+				"message" => "file_size",
+				"verbose" => "Not enough room for all of these files, remove some files to free up some space"
 			);
 	
 			header("Content-Type: application/json; charset=utf-8");
