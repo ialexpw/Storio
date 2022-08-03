@@ -328,7 +328,6 @@ echo '<th scope="col">Actions</th>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
-echo '<tr>';
 									// Loop the files after
 									foreach($fldArr['dirview'][$usrDir.$getBrowse]['files'] as $file) {
 										// Replace the beginning of the path
@@ -368,11 +367,12 @@ echo '<tr>';
 
 										///////
 
+										echo '<tr>';
 										echo '<td><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
 										echo '<td>' . $fileIco . ' ' . $file . '</td>';
 										echo '<td>' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
 										echo '<td>Options</td>';
-
+										echo '</tr>';
 
 										///////
 
@@ -449,7 +449,6 @@ echo '<tr>';
 */
 										$fc++;
 									}
-echo '</tr>';
 echo '</tbody>';
 echo '</table>';
 echo '</div>';
