@@ -141,7 +141,14 @@
 
 					// If it is an image, create a thumbnail
 					if(strpos($mimeType, 'image') !== false) {
-						Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 50, 50);
+						// Get the extension
+						$path = $_FILES["file"]["name"][$index];
+						$ext = pathinfo($path, PATHINFO_EXTENSION);
+
+						// Only create thumbs for png/jpg/gif
+						if($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif') {
+							Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 50, 50);
+						}
 					}
 				}else{
 					return false;
