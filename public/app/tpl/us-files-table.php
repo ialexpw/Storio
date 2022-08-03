@@ -159,7 +159,8 @@
 			}
 
 			td {
-  white-space: normal !important; // To consider whitespace.
+				word-wrap: break-word;min-width: 160px;max-width: 160px;white-space:normal;
+
 }
 		</style>
 	</head>
