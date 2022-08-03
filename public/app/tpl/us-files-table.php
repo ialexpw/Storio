@@ -157,11 +157,6 @@
 				border: 1px solid #ccc;
 				border-radius: 8px;
 			}
-
-			td {
-				word-wrap: break-word;min-width: 160px;max-width: 160px;white-space:normal;
-
-}
 		</style>
 	</head>
 	<body>
@@ -300,7 +295,7 @@ echo '<tbody>';
 										//echo '<td class="text-center"><input type="checkbox" name="checkBox" value="" disabled /></td>';
 										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value=""></td>';
 
-										echo '<td><img src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
+										echo '<td style="word-wrap: break-word;min-width: 5%;max-width: 5%;white-space:normal;"><img src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
 
 										echo '<td class="text-center">n/a</td>';
 
