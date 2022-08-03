@@ -364,15 +364,39 @@ echo '<tr>';
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
+
+
+										///////
+
+										echo '<td><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
+										echo '<td>' . $fileIco . ' ' . $file . '</td>';
+										echo '<td>' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
+										echo '<td>Options</td>';
+
+
+										///////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 										echo '<div class="row" id="' . $encMultiShare . '-hide">';
 
 										echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-" style="margin-bottom:2px;">';
 
 										echo '<td><span><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span></td>';
-										//echo '<td></td>';
-										//echo '<td></td>';
-										//echo '<td></td>';
-
 
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
@@ -392,7 +416,7 @@ echo '<tr>';
 
 										// Show actions (download, copy and delete)
 										echo '<div class="col-4 col-md-2" style="text-align:center; margin-bottom:2px;">';
-										
+
 										// Dropdown selection
 										echo '<div class="btn-group">';
 										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
@@ -422,9 +446,13 @@ echo '<tr>';
 										echo '</div>';
 
 										echo '</div>';
-
+*/
 										$fc++;
 									}
+echo '</tr>';
+echo '</tbody>';
+echo '</table>';
+echo '</div>';
 								}
 
 								// Empty dir
