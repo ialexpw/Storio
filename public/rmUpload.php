@@ -93,6 +93,9 @@
 		// Work out if the file size is too big 
 		$maxFileSize = $siteCfg['uploadMaxMB'] * 1024 * 1024;
 
+		echo 'Total: ' . $totalFileSize . ' Max: ' . $maxFileSize;
+		exit();
+
 		// If files exceed size, error
 		if($totalFileSize > $maxFileSize) {
 			$output = array(
