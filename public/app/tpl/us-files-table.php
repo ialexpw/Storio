@@ -250,14 +250,6 @@
 									echo '</div>';
 								}
 
-								// Check & sort
-								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
-									// Sort folders
-									sort($fldArr['dirview'][$usrDir.$getBrowse]['folders']);
-								}
-
-								// Check if there are subfolders first (avoid warnings)
-								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
 echo '<div class="table-responsive">';
 echo '<table class="table align-middle">';
 echo '<thead>';
@@ -269,6 +261,15 @@ echo '<th scope="col" style="width:20%"></th>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
+
+								// Check & sort
+								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
+									// Sort folders
+									sort($fldArr['dirview'][$usrDir.$getBrowse]['folders']);
+								}
+
+								// Check if there are subfolders first (avoid warnings)
+								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
 									foreach($fldArr['dirview'][$usrDir.$getBrowse]['folders'] as $dir) {
 										// Replace the beginning of the path
 										$dir = str_replace($usrDir.$getBrowse.'/', "", $dir);
@@ -349,9 +350,6 @@ echo '<tbody>';
 										//echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;"><a style="color:indianred;" href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></div>';
 									
 									}
-echo '</tbody>';
-echo '</table>';
-echo '</div>';
 								}
 
 								// Create a counter for file loop
@@ -365,17 +363,6 @@ echo '</div>';
 
 								// Check if there are files first (avoid warnings)
 								if(!empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
-echo '<div class="table-responsive">';
-echo '<table class="table align-middle">';
-echo '<thead>';
-echo '<tr>';
-echo '<th scope="col" style="width:5%"></th>';
-echo '<th scope="col" style="width:70%"></th>';
-echo '<th scope="col" style="width:5%"></th>';
-echo '<th scope="col" style="width:20%"></th>';
-echo '</tr>';
-echo '</thead>';
-echo '<tbody>';
 									// Loop the files after
 									foreach($fldArr['dirview'][$usrDir.$getBrowse]['files'] as $file) {
 										// Replace the beginning of the path
@@ -553,10 +540,11 @@ echo '<tbody>';
 */
 										$fc++;
 									}
+								}
+
 echo '</tbody>';
 echo '</table>';
 echo '</div>';
-								}
 
 								// Empty dir
 								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
