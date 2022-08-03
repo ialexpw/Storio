@@ -390,6 +390,7 @@ echo '<tbody>';
 
 
 										//echo '<td>Options</td>';
+										echo '<td>';
 										echo '<div class="btn-group">';
 										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
 										echo 'Options..';
@@ -415,6 +416,7 @@ echo '<tbody>';
 										
 										echo '</ul>';
 										echo '</div>';
+										echo '</td>';
 
 
 										echo '</tr>';
