@@ -586,7 +586,7 @@
 			return false;
 		}
 
-		public static function CreateThumb($filepath, $thumbpath, $thumbnail_width, $thumbnail_height, $background=false) {
+		public static function CreateThumb($filepath, $thumbpath, $thumbnail_width, $thumbnail_height, $background=true) {
 			list($original_width, $original_height, $original_type) = getimagesize($filepath);
 			if ($original_width > $original_height) {
 				$new_width = $thumbnail_width;
