@@ -368,7 +368,7 @@ echo '<tbody>';
 										///////
 
 										echo '<tr>';
-										echo '<td class="align-middle"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
+										echo '<td class="text-center"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
 										echo '<td><img src="https://placeimg.com/30/30" class="img-thumbnail" alt="..."> ' . $file . '</td>';
 										echo '<td>' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
 										echo '<td>Options</td>';
