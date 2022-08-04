@@ -274,7 +274,7 @@
 
 										echo '<tr>';
 
-										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value=""></td>';
+										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value="" disabled></td>';
 
 										echo '<td><img width="50" height="50" src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
 
