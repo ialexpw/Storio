@@ -237,7 +237,14 @@
 									echo '<div class="col-md-12 left-indent" style="margin-bottom:8px;">';
 									echo '<a href="?page=us-files-table' . Storio::GoBack($_GET['browse']) . '"><i class="bi bi-arrow-left"></i></a>';
 									echo '</div>';
+								}else{
+									echo '<div class="col-md-12 left-indent" style="margin-bottom:8px; text-align:right;">';
+									echo '<i class="bi bi-card-text"></i> <i class="bi bi-card-list"></i>';
+									//echo '<a href="?page=us-files-table' . Storio::GoBack($_GET['browse']) . '"><i class="bi bi-arrow-left"></i></a>';
+									echo '</div>';
 								}
+
+								
 
 								echo '<div class="table-responsive">';
 								echo '<table class="table align-middle">';
