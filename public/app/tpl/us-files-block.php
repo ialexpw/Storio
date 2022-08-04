@@ -40,7 +40,7 @@
 
 			// Viewing an invalid folder
 			if(!is_dir($usrDir . $getBrowse)) {
-				header("Location: ?page=us-files-table");
+				header("Location: ?page=us-files-block");
 			}
 		}else{
 			$getBrowse = '';
@@ -80,9 +80,9 @@
 
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files-table&browse=' . $_GET['browse']);
+						header('Location: ?page=us-files-block&browse=' . $_GET['browse']);
 					}else{
-						header('Location: ?page=us-files-table');
+						header('Location: ?page=us-files-block');
 					}
 				}
 			}
@@ -115,9 +115,9 @@
 
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files-table&browse=' . $_GET['browse']);
+						header('Location: ?page=us-files-block&browse=' . $_GET['browse']);
 					}else{
-						header('Location: ?page=us-files-table');
+						header('Location: ?page=us-files-block');
 					}
 				}
 			}
@@ -179,7 +179,7 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="true" href="?page=us-files-table">
+								<a class="nav-link active" aria-current="true" href="?page=us-files-block">
 									<i class="bi bi-folder" style="font-size: 2rem;"></i>
 									<br />Files
 								</a>
@@ -235,7 +235,7 @@
 								// Show the back button if needed
 								if(!empty($_GET['browse'])) {
 									echo '<div class="col-md-12 left-indent" style="margin-bottom:8px;">';
-									echo '<a href="?page=us-files-table' . Storio::GoBack($_GET['browse']) . '"><i class="bi bi-arrow-left"></i></a>';
+									echo '<a href="?page=us-files-block' . Storio::GoBack($_GET['browse']) . '"><i class="bi bi-arrow-left"></i></a>';
 									echo '</div>';
 								}
 
@@ -261,7 +261,7 @@
 										$fold_img = 'data:image/png;base64,' . base64_encode($folder);
 
 										echo '<div class="col-md-3" style="text-align:center;">';
-										echo '<a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '"><img width="150" height="150" src="' . $fold_img . '" class="rounded" alt="..."><br />' . $dir . '</a>';
+										echo '<a href="?page=us-files-block&browse=' . ltrim($subLink, '/') . '"><img width="150" height="150" src="' . $fold_img . '" class="rounded" alt="..."><br />' . $dir . '</a>';
 										echo '</div>';
 /*
 										echo '<tr>';
