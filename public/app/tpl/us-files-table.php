@@ -393,30 +393,30 @@ echo '<tbody>';
 										// For copy share url
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-
-
-										///////
-
-
+										// If an image, check for a thumbnail
 										if(strpos($mimeType, 'image') !== false) {
 											if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file)) {
 												$type = pathinfo($path, PATHINFO_EXTENSION);
 												$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file;
 												$thumb = file_get_contents($thumb);
 												$img = 'data:image/' . $type . ';base64,' . base64_encode($thumb);
+											}else{
+												$img = 'https://placeimg.com/25/25';
 											}
 										}else{
 											$img = 'https://placeimg.com/25/25';
 										}
 
-										echo '<tr>';
+										////
+										echo '<div class="row" id="' . $encMultiShare . '-hide">';
+										echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-" style="margin-bottom:2px;">';
+										////
 
+										echo '<tr>';
 
 										echo '<td class="text-center"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
 
-
-										//echo '<td><img src="https://placeimg.com/25/25" class="img-thumbnail" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
-										// Lightbox use
+										// Thumbnail & name
 										if(strpos($mimeType, 'image') !== false) {
 											echo '<td><img width="50" height="50" src="' . $img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
 										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
@@ -425,10 +425,10 @@ echo '<tbody>';
 											echo '<td><img width="50" height="50" src="https://placeimg.com/50/50" class="rounded" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
 										}
 
+										// Size
 										echo '<td class="text-center">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
 
-
-										//echo '<td>Options</td>';
+										// Options
 										echo '<td class="text-center">';
 										echo '<div class="btn-group">';
 										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
@@ -457,8 +457,12 @@ echo '<tbody>';
 										echo '</div>';
 										echo '</td>';
 
-
 										echo '</tr>';
+
+										////
+										echo '</div>';
+										echo '</div>';
+										////
 
 										///////
 
