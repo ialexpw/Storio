@@ -230,17 +230,6 @@
 								// Save the arrays
 								$fldArr = Storio::DirList($usrDir . $getBrowse);
 
-								// Start the row
-								//echo '<div class="row">';
-
-								//echo '<div class="col-8 col-md-8 left-indent"><b>File name</b></div>';
-								//echo '<div class="col-md-2 d-none d-sm-block"><b>Size</b></div>';
-								//echo '<div class="col-4 col-md-2" style="text-align:center;"><b>Actions</b></div>';
-
-								// End the row
-								//echo '</div>';
-								//echo '<hr>';
-
 								echo '<div class="row">';
 
 								// Show the back button if needed
@@ -250,17 +239,17 @@
 									echo '</div>';
 								}
 
-echo '<div class="table-responsive">';
-echo '<table class="table align-middle">';
-echo '<thead>';
-echo '<tr>';
-echo '<th scope="col" style="width:5%"></th>';
-echo '<th scope="col" style="width:70%"></th>';
-echo '<th scope="col" style="width:5%"></th>';
-echo '<th scope="col" style="width:20%"></th>';
-echo '</tr>';
-echo '</thead>';
-echo '<tbody>';
+								echo '<div class="table-responsive">';
+								echo '<table class="table align-middle">';
+								echo '<thead>';
+								echo '<tr>';
+								echo '<th scope="col" style="width:5%"></th>';
+								echo '<th scope="col" style="width:70%"></th>';
+								echo '<th scope="col" style="width:5%"></th>';
+								echo '<th scope="col" style="width:20%"></th>';
+								echo '</tr>';
+								echo '</thead>';
+								echo '<tbody>';
 
 								// Check & sort
 								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
@@ -283,11 +272,8 @@ echo '<tbody>';
 										$folder = file_get_contents('../users/configs/_thumbs/folder.png');
 										$fold_img = 'data:image/png;base64,' . base64_encode($folder);
 
-										//////
-
 										echo '<tr>';
 
-										//echo '<td class="text-center"><input type="checkbox" name="checkBox" value="" disabled /></td>';
 										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value=""></td>';
 
 										echo '<td><img width="50" height="50" src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
@@ -297,53 +283,6 @@ echo '<tbody>';
 										echo '<td class="text-center"><a style="color:indianred;" href="?page=us-files-table&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></td>';
 
 										echo '</tr>';
-
-										//////
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-										// Folder icon/name
-										echo '<div class="col-8 col-md-8" style="margin-bottom:2px;"><span><input type="checkbox" name="checkBox" value="" style="margin-right:10px;" disabled /></span><img src="' . $fold_img . '"> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></div>';
-
-										// No size shown for directories
-										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">n/a</div>';
-
-										// Dropdown selection
-/*
-										echo '<div class="btn-group">';
-										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
-										echo 'Options..';
-										echo '</a>';
-										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">';
-
-										// Whether to have the direct download or the download page
-										if($siteCfg['downloadPage']) {
-											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?id=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
-										}else{
-											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
-										}
-
-										// When deleting a file, ensure we are redirected back
-										echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files&del=' . $encFile . '&type=folder" data-confirm="Are you sure you would like to delete this folder?">Delete File</a></li>';
-										
-										echo '</ul>';
-										echo '</div>';
-*/
-
-										// Delete folder option
-										//echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;"><a style="color:indianred;" href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></div>';
-									
 									}
 								}
 
@@ -407,11 +346,6 @@ echo '<tbody>';
 											$img = 'https://placeimg.com/25/25';
 										}
 
-										////
-										//echo '<div class="row" id="' . $encMultiShare . '-hide">';
-										//echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-" style="margin-bottom:2px;">';
-										////
-
 										echo '<tr id="' . $encMultiShare . '-hide">';
 
 										echo '<td class="text-center"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
@@ -459,91 +393,13 @@ echo '<tbody>';
 
 										echo '</tr>';
 
-										////
-										//echo '</div>';
-										//echo '</div>';
-										////
-
-										///////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-										echo '<div class="row" id="' . $encMultiShare . '-hide">';
-
-										echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-" style="margin-bottom:2px;">';
-
-										echo '<td><span><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '" style="margin-right:10px;"></span></td>';
-
-										// Lightbox use
-										if(strpos($mimeType, 'image') !== false) {
-											echo '<td><a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $fileIco . ' ' . $file . '</a></td></div>';
-										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
-											echo '<td><a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $fileIco . ' ' . $file . '</a></td></div>';
-										}else{
-											echo '<td>' . $fileIco . ' ' . $file . '</td></div>';
-										}
-
-										//if(file_exists('../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file)) {
-										//	echo '<img src="../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file . '" class="img-thumbnail" alt="...">';
-										//}
-
-										// Show file size
-										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
-
-										// Show actions (download, copy and delete)
-										echo '<div class="col-4 col-md-2" style="text-align:center; margin-bottom:2px;">';
-
-										// Dropdown selection
-										echo '<div class="btn-group">';
-										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
-										echo 'Options..';
-										echo '</a>';
-										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">';
-										echo '<li><a class="dropdown-item" href="?dl=' . $shareId . '">Direct Download</a></li>';
-
-										// Whether to have the direct download or the download page
-										if($siteCfg['downloadPage']) {
-											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?id=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
-										}else{
-											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
-										}
-										
-										echo '<li><a class="dropdown-item disabled" data-bs-toggle="modal" data-bs-target="#moveModal" href="#">Move File</a></li>';
-
-										// When deleting a file, ensure we are redirected back
-										if(!empty($_GET['browse'])) {
-											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files&browse=' . $_GET['browse'] . '&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
-										}else{
-											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
-										}
-										
-										echo '</ul>';
-										echo '</div>';
-										echo '</div>';
-
-										echo '</div>';
-*/
 										$fc++;
 									}
 								}
 
-echo '</tbody>';
-echo '</table>';
-echo '</div>';
+								echo '</tbody>';
+								echo '</table>';
+								echo '</div>';
 
 								// Empty dir
 								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
