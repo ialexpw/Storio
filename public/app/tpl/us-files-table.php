@@ -408,11 +408,11 @@ echo '<tbody>';
 										}
 
 										////
-										echo '<div class="row" id="' . $encMultiShare . '-hide">';
-										echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-" style="margin-bottom:2px;">';
+										//echo '<div class="row" id="' . $encMultiShare . '-hide">';
+										//echo '<div class="col-8 col-md-8 stop-wrap" id="' . $encMultiShare . '-" style="margin-bottom:2px;">';
 										////
 
-										echo '<tr>';
+										echo '<tr id="' . $encMultiShare . '-hide">';
 
 										echo '<td class="text-center"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
 
@@ -460,8 +460,8 @@ echo '<tbody>';
 										echo '</tr>';
 
 										////
-										echo '</div>';
-										echo '</div>';
+										//echo '</div>';
+										//echo '</div>';
 										////
 
 										///////
