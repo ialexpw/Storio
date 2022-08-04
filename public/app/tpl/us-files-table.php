@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * us-files.php
+	 * us-files-table.php
 	 *
-	 * The file management page for users
+	 * The file management page for users (table view)
 	 *
 	 * @package    Storio
 	 * @author     Alex White
@@ -40,7 +40,7 @@
 
 			// Viewing an invalid folder
 			if(!is_dir($usrDir . $getBrowse)) {
-				header("Location: ?page=us-files");
+				header("Location: ?page=us-files-table");
 			}
 		}else{
 			$getBrowse = '';
@@ -80,9 +80,9 @@
 
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files&browse=' . $_GET['browse']);
+						header('Location: ?page=us-files-table&browse=' . $_GET['browse']);
 					}else{
-						header('Location: ?page=us-files');
+						header('Location: ?page=us-files-table');
 					}
 				}
 			}
@@ -115,9 +115,9 @@
 
 					// Reload
 					if(!empty($_GET['browse'])) {
-						header('Location: ?page=us-files&browse=' . $_GET['browse']);
+						header('Location: ?page=us-files-table&browse=' . $_GET['browse']);
 					}else{
-						header('Location: ?page=us-files');
+						header('Location: ?page=us-files-table');
 					}
 				}
 			}
@@ -179,7 +179,7 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="true" href="?page=us-files">
+								<a class="nav-link active" aria-current="true" href="?page=us-files-table">
 									<i class="bi bi-folder" style="font-size: 2rem;"></i>
 									<br />Files
 								</a>
@@ -246,7 +246,7 @@
 								// Show the back button if needed
 								if(!empty($_GET['browse'])) {
 									echo '<div class="col-md-12 left-indent" style="margin-bottom:8px;">';
-									echo '<a href="?page=us-files' . Storio::GoBack($_GET['browse']) . '"><i class="bi bi-arrow-left"></i></a>';
+									echo '<a href="?page=us-files-table' . Storio::GoBack($_GET['browse']) . '"><i class="bi bi-arrow-left"></i></a>';
 									echo '</div>';
 								}
 
@@ -295,11 +295,11 @@ echo '<tbody>';
 										//echo '<td class="text-center"><input type="checkbox" name="checkBox" value="" disabled /></td>';
 										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value=""></td>';
 
-										echo '<td><img src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
+										echo '<td><img src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
 
 										echo '<td class="text-center">n/a</td>';
 
-										echo '<td class="text-center"><a style="color:indianred;" href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></td>';
+										echo '<td class="text-center"><a style="color:indianred;" href="?page=us-files-table&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></td>';
 
 										echo '</tr>';
 
@@ -453,9 +453,9 @@ echo '<tbody>';
 
 										// When deleting a file, ensure we are redirected back
 										if(!empty($_GET['browse'])) {
-											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files&browse=' . $_GET['browse'] . '&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
+											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files-table&browse=' . $_GET['browse'] . '&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
 										}else{
-											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
+											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files-table&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
 										}
 										
 										echo '</ul>';
@@ -603,7 +603,7 @@ echo '</div>';
 					</div>
 					<div class="modal-body">
 						<!-- Form for moving files -->
-						<form action="?page=us-files" method="post">
+						<form action="?page=us-files-table" method="post">
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Moving file</label>
 								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s]){2,}" maxlength="26" />
@@ -648,7 +648,7 @@ echo '</div>';
 						</p>
 
 						<!-- Form for creating a new folder -->
-						<form action="?page=us-files<?php echo $post; ?>" method="post">
+						<form action="?page=us-files-table<?php echo $post; ?>" method="post">
 							<div class="mb-3">
 								<label for="inpFolder" class="form-label">Folder name</label>
 								<input type="text" class="form-control" id="inpFolder" name="inpFolder" required pattern="([A-z0-9À-ž\s.]){2,}" maxlength="26" />
