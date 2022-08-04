@@ -235,7 +235,7 @@
 
 								// End the row
 								echo '</div>';
-								echo '<hr>';
+								//echo '<hr>';
 
 								echo '<div class="row">';
 
@@ -249,6 +249,8 @@
 									echo '<h2><i style="margin-right:10px;" class="bi bi-card-text"></i> <a class="noLink" href="?page=us-files-table"><i class="bi bi-card-list"></i></a></h2>';
 									echo '</div>';
 								}
+
+								echo '<hr>';
 
 								// Check & sort
 								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
