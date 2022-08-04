@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * us-files-table.php
+	 * us-files-block.php
 	 *
-	 * The file management page for users (table view)
+	 * The file management page for users (block view)
 	 *
 	 * @package    Storio
 	 * @author     Alex White
@@ -239,18 +239,6 @@
 									echo '</div>';
 								}
 
-								echo '<div class="table-responsive">';
-								echo '<table class="table align-middle">';
-								echo '<thead>';
-								echo '<tr>';
-								echo '<th scope="col" style="width:5%"></th>';
-								echo '<th scope="col" style="width:70%"></th>';
-								echo '<th scope="col" style="width:5%"></th>';
-								echo '<th scope="col" style="width:20%"></th>';
-								echo '</tr>';
-								echo '</thead>';
-								echo '<tbody>';
-
 								// Check & sort
 								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['folders'])) {
 									// Sort folders
@@ -272,6 +260,10 @@
 										$folder = file_get_contents('../users/configs/_thumbs/folder.png');
 										$fold_img = 'data:image/png;base64,' . base64_encode($folder);
 
+										echo '<div class="col-md-3">';
+										echo '<img width="50" height="50" src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a>';
+										echo '</div>';
+/*
 										echo '<tr>';
 
 										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value=""></td>';
@@ -283,6 +275,7 @@
 										echo '<td class="text-center"><a style="color:indianred;" href="?page=us-files-table&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></td>';
 
 										echo '</tr>';
+*/
 									}
 								}
 
@@ -396,10 +389,6 @@
 										$fc++;
 									}
 								}
-
-								echo '</tbody>';
-								echo '</table>';
-								echo '</div>';
 
 								// Empty dir
 								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
