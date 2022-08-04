@@ -283,11 +283,6 @@ echo '<tbody>';
 										$folder = file_get_contents('../users/configs/_thumbs/folder.png');
 										$fold_img = 'data:image/png;base64,' . base64_encode($folder);
 
-										// Folder icon
-										$fol_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
-											<path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
-											</svg>';
-
 										//////
 
 										echo '<tr>';
@@ -295,7 +290,7 @@ echo '<tbody>';
 										//echo '<td class="text-center"><input type="checkbox" name="checkBox" value="" disabled /></td>';
 										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value=""></td>';
 
-										echo '<td><img src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
+										echo '<td><img width="50" height="50" src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
 
 										echo '<td class="text-center">n/a</td>';
 
@@ -423,11 +418,11 @@ echo '<tbody>';
 										//echo '<td><img src="https://placeimg.com/25/25" class="img-thumbnail" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
 										// Lightbox use
 										if(strpos($mimeType, 'image') !== false) {
-											echo '<td><img src="' . $img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
+											echo '<td><img width="50" height="50" src="' . $img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
 										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
-											echo '<td><img src="https://placeimg.com/25/25" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
+											echo '<td><img width="50" height="50" src="https://placeimg.com/25/25" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
 										}else{
-											echo '<td><img src="https://placeimg.com/25/25" class="rounded" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
+											echo '<td><img width="50" height="50" src="https://placeimg.com/25/25" class="rounded" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
 										}
 
 										echo '<td class="text-center">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';

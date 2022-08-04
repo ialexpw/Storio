@@ -147,7 +147,7 @@
 
 						// Only create thumbs for png/jpg/gif
 						if($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif') {
-							Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 50, 50);
+							Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 250, 250);
 						}
 					}
 				}else{
