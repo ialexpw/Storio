@@ -239,12 +239,9 @@
 									echo '</div>';
 								}else{
 									echo '<div class="col-md-12 left-indent" style="margin-bottom:8px; text-align:right;">';
-									echo '<h2><i style="margin-right:20px;" class="bi bi-card-text"></i> <i class="bi bi-card-list"></i></h2>';
-									//echo '<a href="?page=us-files-table' . Storio::GoBack($_GET['browse']) . '"><i class="bi bi-arrow-left"></i></a>';
+									echo '<h2><a class="noLink" href="?page=us-files"><i style="margin-right:10px;" class="bi bi-card-text"></i></a> <i class="bi bi-card-list"></i></h2>';
 									echo '</div>';
 								}
-
-								
 
 								echo '<div class="table-responsive">';
 								echo '<table class="table align-middle">';
