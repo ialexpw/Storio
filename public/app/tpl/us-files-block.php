@@ -409,7 +409,7 @@
 									}
 								}
 
-								echo '<br /><hr>';
+								echo '<p></p><hr>';
 
 								// Empty dir
 								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
