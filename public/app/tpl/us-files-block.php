@@ -261,7 +261,7 @@
 										$fold_img = 'data:image/png;base64,' . base64_encode($folder);
 
 										echo '<div class="col-md-3" style="text-align:center;">';
-										echo '<a style="text-align:center;" href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '"><img style="text-align:center;" width="200" height="200" src="' . $fold_img . '" class="rounded" alt="..." style=""><p style="text-algin:center;">' . $dir . '</p></a>';
+										echo '<a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '"><img width="200" height="200" src="' . $fold_img . '" class="rounded" alt="..."><p>' . $dir . '</p></a>';
 										echo '</div>';
 /*
 										echo '<tr>';
