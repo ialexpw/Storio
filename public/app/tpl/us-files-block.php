@@ -339,6 +339,25 @@
 											$img = 'https://placeimg.com/25/25';
 										}
 
+										echo '<div class="col-md-3" style="text-align:center;">';
+										
+										// Thumbnail & name
+										if(strpos($mimeType, 'image') !== false) {
+											echo '<a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'"><img width="150" height="150" src="' . $img . '" class="rounded" alt="..."><br />' . $file . '</a>';
+											//echo '<td><img width="50" height="50" src="' . $img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
+										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
+											echo '<td><img width="50" height="50" src="https://placeimg.com/150/150" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
+										}else{
+											echo '<td><img width="50" height="50" src="https://placeimg.com/150/150" class="rounded" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
+										}
+										
+										//echo '<a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '"><img width="150" height="150" src="' . $fold_img . '" class="rounded" alt="..."><br />' . $dir . '</a>';
+										echo '</div>';
+
+										
+
+
+/*
 										echo '<tr id="' . $encMultiShare . '-hide">';
 
 										echo '<td class="text-center"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
@@ -385,7 +404,7 @@
 										echo '</td>';
 
 										echo '</tr>';
-
+*/
 										$fc++;
 									}
 								}
