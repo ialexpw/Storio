@@ -233,10 +233,6 @@
 								// Start the row
 								echo '<div class="row">';
 
-								echo '<div class="col-8 col-md-8 left-indent"><b>File name</b></div>';
-								echo '<div class="col-md-2 d-none d-sm-block"><b>Size</b></div>';
-								echo '<div class="col-4 col-md-2" style="text-align:center;"><b>Actions</b></div>';
-
 								// End the row
 								echo '</div>';
 								echo '<hr>';
@@ -278,28 +274,6 @@
 
 										// No size shown for directories
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">n/a</div>';
-
-										// Dropdown selection
-/*
-										echo '<div class="btn-group">';
-										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
-										echo 'Options..';
-										echo '</a>';
-										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">';
-
-										// Whether to have the direct download or the download page
-										if($siteCfg['downloadPage']) {
-											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?id=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
-										}else{
-											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
-										}
-
-										// When deleting a file, ensure we are redirected back
-										echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files&del=' . $encFile . '&type=folder" data-confirm="Are you sure you would like to delete this folder?">Delete File</a></li>';
-										
-										echo '</ul>';
-										echo '</div>';
-*/
 
 										// Delete folder option
 										echo '<div class="col-4 col-md-2" style="text-align:center;" style="margin-bottom:2px;"><a style="color:indianred;" href="?page=us-files&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></div>';
@@ -366,10 +340,6 @@
 										}else{
 											echo $fileIco . ' ' . $file . '</div>';
 										}
-
-										//if(file_exists('../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file)) {
-										//	echo '<img src="../users/thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file . '" class="img-thumbnail" alt="...">';
-										//}
 
 										// Show file size
 										echo '<div class="col-md-2 d-none d-sm-block" style="margin-bottom:2px;">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</div>';
