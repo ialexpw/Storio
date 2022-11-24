@@ -160,9 +160,9 @@
 
 			.blockBox {
 				border: 1px solid #ccc;
-				border-radius: 8px;
-				width: 80%;
-				height: 80%;
+				border-radius: 6px;
+				width: 90%;
+				height: 90%;
 			}
 		</style>
 	</head>
