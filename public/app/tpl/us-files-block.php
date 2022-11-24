@@ -162,7 +162,7 @@
 				border: 1px solid #ccc;
 				border-radius: 6px;
 				width: 90%;
-				height: 90%;
+				height: 100%;
 			}
 		</style>
 	</head>
