@@ -344,10 +344,10 @@
 												$thumb = file_get_contents($thumb);
 												$img = 'data:image/' . $type . ';base64,' . base64_encode($thumb);
 											}else{
-												$img = Storio::ShowIcon($file); //'https://placeimg.com/25/25';
+												$img = StoIco::ShowIcon($file); //'https://placeimg.com/25/25';
 											}
 										}else{
-											$img = Storio::ShowIcon($file); //$img = 'https://placeimg.com/25/25';
+											$img = StoIco::ShowIcon($file); //$img = 'https://placeimg.com/25/25';
 										}
 
 										echo '<tr id="' . $encMultiShare . '-hide">';
