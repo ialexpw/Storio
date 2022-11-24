@@ -161,8 +161,8 @@
 			.blockBox {
 				border: 1px solid #ccc;
 				border-radius: 8px;
-				padding-left: -10px;
-				padding-right: -10px;
+				width: 80%;
+				height: 80%;
 			}
 		</style>
 	</head>
@@ -267,8 +267,10 @@
 										$folder = file_get_contents('../users/configs/_thumbs/folder.png');
 										$fold_img = 'data:image/png;base64,' . base64_encode($folder);
 
-										echo '<div class="col-md-3 blockBox" style="text-align:center;">';
+										echo '<div class="col-md-3" style="text-align:center;">';
+										echo '<div class="blockBox">';
 										echo '<a href="?page=us-files-block&browse=' . ltrim($subLink, '/') . '"><img width="150" height="150" src="' . $fold_img . '" class="rounded" alt="..."><br />' . $dir . '</a>';
+										echo '</div>';
 										echo '</div>';
 /*
 										echo '<tr>';
