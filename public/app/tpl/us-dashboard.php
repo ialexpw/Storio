@@ -65,7 +65,7 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="?page=us-files">
+								<a class="nav-link" href="?page=us-files-table">
 									<i class="bi bi-folder" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Files
 								</a>
