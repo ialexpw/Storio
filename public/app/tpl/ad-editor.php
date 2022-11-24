@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * ad-dashboard.php
+	 * ad-editor.php
 	 *
-	 * The admin dashboard
+	 * The admin editor
 	 *
 	 * @package    Storio
 	 * @author     Alex White
@@ -30,7 +30,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Storio - Dashboard</title>
+		<title>Storio - Editor</title>
 
 		<link rel="canonical" href="">
 
@@ -59,8 +59,8 @@
 					<div class="card-header text-center">
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="true" href="?page=ad-dashboard">
-									<i class="bi bi-house" style="font-size: 2rem;"></i>
+								<a class="nav-link" aria-current="true" href="?page=ad-dashboard">
+									<i class="bi bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Home
 								</a>
 							</li>
@@ -71,8 +71,8 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="?page=ad-editor">
-									<i class="bi bi-pen" style="font-size: 2rem; color: cornflowerblue;"></i>
+								<a class="nav-link active" href="?page=ad-editor">
+									<i class="bi bi-pen" style="font-size: 2rem;"></i>
 									<br />Editor
 								</a>
 							</li>
@@ -91,18 +91,10 @@
 						</ul>
 					</div>
 					<div class="card-body">
-						<!-- Intro to the dashboard -->
+						<!-- Editor info -->
 						<br />
-						<h4 class="card-title">Welcome to your Dashboard</h4>
+						<h4 class="card-title">Editor</h4>
 						
-						<p class="card-text">Welcome to the Admin Dashboard for Storio! Manage your website easily with the built-in controls on this panel and monitor the activity and usage of your users through the different tabs.</p>
-						
-						<h5 class="card-title">Users</h5>
-						<p class="card-text" style="margin-top:15px;">Create new and edit existing users directly from your dashboard. Limit the actions they can do while logged in and the storage size they have available to them. Update permissions at any time.</p>
-
-						<h5 class="card-title">Settings</h5>
-						<p class="card-text" style="margin-top:15px;">Edit information such as the site name shown in the top banner, whether registrations are enabled and options such as direct downloads or via a download page. Limit the max upload size for files and the default storage for new users.</p>
-
 						<p class="card-text"></p>
 					</div>
 				</div>
