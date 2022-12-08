@@ -373,7 +373,7 @@
 										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
 										echo 'Options..';
 										echo '</a>';
-										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start position-static">';
+										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">';
 										echo '<li><a class="dropdown-item" href="?dl=' . $shareId . '">Direct Download</a></li>';
 
 										// Whether to have the direct download or the download page
@@ -612,6 +612,33 @@
 		</div>
 
 		<script>
+			const dropdowns = document.querySelectorAll('.dropdown-toggle');
+    dropdowns.forEach(dropdown => {
+
+        new bootstrap.Dropdown(dropdown, {
+            popperConfig: {
+                
+                // To not flipping up
+                // modifiers: [{
+                //     name: 'flip',
+                //     enabled: false
+                // }]
+
+            }
+        })
+
+
+        dropdown.addEventListener('show.bs.dropdown', function () {
+           const dropdownParent = dropdown.closest('.btn-group');
+           dropdownParent.classList.add('position-static')
+        })
+
+        dropdown.addEventListener('hide.bs.dropdown', function () {
+           const dropdownParent = dropdown.closest('.btn-group');
+           dropdownParent.classList.remove('position-static')
+        })
+
+})
 			function showAlert(){
 				$('.toast').toast('show');
 			}
