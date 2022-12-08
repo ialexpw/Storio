@@ -41,7 +41,9 @@
 			// Store the location with file name
 			$file_loc = $file_info[0] . '/' . $file;
 
+			// Check if the file exists
 			if(file_exists($file_loc)) {
+				// Remove it
 				unlink($file_loc);
 
 				// Remove the share link entry - Generate string for the share link

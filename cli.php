@@ -69,6 +69,11 @@
 					exit('User not found');
 				}
 			}
+
+			// Create video thumbnails FFMPEG required
+			if(strtolower($argv[1]) == 'video-thumbs') {
+				exit();
+			}
 		}else{
 			exit('No params');
 		}
