@@ -68,6 +68,11 @@ html.with-featherlight {
 	white-space: nowrap;
 }
 
+.img-icon {
+	width: 50px;
+	height: 50px;
+}
+
 @media only screen and (max-width: 768px) {
 	.nav-item {
 		width: 24%;
@@ -83,5 +88,10 @@ html.with-featherlight {
 
 	.mobileCenter {
 		text-align:center;
+	}
+
+	.img-icon {
+		width: 16px;
+		height: 16px;
 	}
 }
