@@ -415,7 +415,6 @@
 								echo '</div>';
 							?>
 
-							<hr>
 
 							<div class="dropdown">
 								<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -426,7 +425,6 @@
 									<li><a class="dropdown-item" id="multiSelectDelete" href="javascript:;" style="color:indianred;">Delete Selected</a></li>
 								</ul>
 							</div>
-
 						</p>
 					</div>
 				</div>
