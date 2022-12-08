@@ -163,7 +163,6 @@
 				border-radius: 6px;
 				width: 90%;
 				height: 100%;
-				margin-bottom:10px;
 			}
 		</style>
 	</head>
@@ -365,7 +364,7 @@
 											$img = StoIco::ShowIcon($file); //$img = 'https://placeimg.com/25/25';
 										}
 
-										echo '<div class="col-md-3" style="text-align:center;">';
+										echo '<div class="col-md-3" style="text-align:center; margin-bottom:10px;">';
 										echo '<div class="blockBox">';
 										echo '<a href="?page=us-files-block&browse=' . ltrim($subLink, '/') . '"><img width="150" height="150" src="' . $img . '" class="rounded" alt=".."><br />' . $file . '</a>';
 										echo '</div>';
