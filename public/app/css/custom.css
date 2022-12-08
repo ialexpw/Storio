@@ -71,6 +71,7 @@ html.with-featherlight {
 .img-icon {
 	width: 50px;
 	height: 50px;
+	margin-right: 25px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -93,5 +94,6 @@ html.with-featherlight {
 	.img-icon {
 		width: 16px;
 		height: 16px;
+		margin-right: 8px;
 	}
 }
