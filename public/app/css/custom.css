@@ -101,7 +101,7 @@ html.with-featherlight {
 		margin-right: 8px;
 	}
 
-	.table-responsive .dropdown-menu {
-        position: static !important;
+	.table-responsive {
+        overflow: scroll;
     }
 }
