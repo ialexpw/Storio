@@ -370,7 +370,7 @@
 										// Options
 										echo '<td class="text-center">';
 										echo '<div class="btn-group">';
-										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
+										echo '<a class="dropdown-toggle" type="button" data-bs-boundary="body" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
 										echo 'Options..';
 										echo '</a>';
 										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">';
@@ -612,33 +612,6 @@
 		</div>
 
 		<script>
-			const dropdowns = document.querySelectorAll('.dropdown-toggle');
-    dropdowns.forEach(dropdown => {
-
-        new bootstrap.Dropdown(dropdown, {
-            popperConfig: {
-                
-                // To not flipping up
-                // modifiers: [{
-                //     name: 'flip',
-                //     enabled: false
-                // }]
-
-            }
-        })
-
-
-        dropdown.addEventListener('show.bs.dropdown', function () {
-           const dropdownParent = dropdown.closest('.btn-group');
-           dropdownParent.classList.add('position-static')
-        })
-
-        dropdown.addEventListener('hide.bs.dropdown', function () {
-           const dropdownParent = dropdown.closest('.btn-group');
-           dropdownParent.classList.remove('position-static')
-        })
-
-})
 			function showAlert(){
 				$('.toast').toast('show');
 			}
