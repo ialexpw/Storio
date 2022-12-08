@@ -74,6 +74,10 @@ html.with-featherlight {
 	margin-right: 25px;
 }
 
+.table-responsive {
+	overflow: inherit;
+}
+
 @media only screen and (max-width: 768px) {
 	.nav-item {
 		width: 24%;
