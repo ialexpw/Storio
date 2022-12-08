@@ -280,7 +280,7 @@
 
 										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value="" disabled></td>';
 
-										echo '<td><img width="50" height="50" src="' . $fold_img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
+										echo '<td><img src="' . $fold_img . '" class="rounded img-icon" alt="..."> <a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
 
 										echo '<td class="text-center">n/a</td>';
 
