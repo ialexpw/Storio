@@ -100,4 +100,8 @@ html.with-featherlight {
 		height: 16px;
 		margin-right: 8px;
 	}
+
+	.table-responsive .dropdown-menu {
+        position: static !important;
+    }
 }
