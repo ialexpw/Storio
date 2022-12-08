@@ -276,6 +276,8 @@
 										$folder = file_get_contents('../users/configs/_thumbs/folder.png');
 										$fold_img = 'data:image/png;base64,' . base64_encode($folder);
 
+										$fold_img = StoIco::ShowIcon("folder");
+
 										echo '<tr>';
 
 										echo '<td class="text-center"><input type="checkbox" id="" class="multiSelect" name="checkBox" value="" disabled></td>';
