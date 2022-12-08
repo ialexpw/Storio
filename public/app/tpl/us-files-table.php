@@ -369,7 +369,7 @@
 
 										// Options
 										echo '<td class="text-center">';
-										echo '<div class="btn-group">';
+										echo '<div class="btn-group position-static">';
 										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
 										echo 'Options..';
 										echo '</a>';
