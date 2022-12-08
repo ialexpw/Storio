@@ -335,6 +335,7 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										// If an image, check for a thumbnail
+										/*
 										if(strpos($mimeType, 'image') !== false) {
 											if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file)) {
 												$type = pathinfo($path, PATHINFO_EXTENSION);
@@ -346,6 +347,21 @@
 											}
 										}else{
 											$img = 'https://placeimg.com/25/25';
+										}
+										*/
+
+										// If an image, check for a thumbnail
+										if(strpos($mimeType, 'image') !== false) {
+											if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file)) {
+												$type = pathinfo($path, PATHINFO_EXTENSION);
+												$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file;
+												$thumb = file_get_contents($thumb);
+												$img = 'data:image/' . $type . ';base64,' . base64_encode($thumb);
+											}else{
+												$img = StoIco::ShowIcon($file); //'https://placeimg.com/25/25';
+											}
+										}else{
+											$img = StoIco::ShowIcon($file); //$img = 'https://placeimg.com/25/25';
 										}
 
 										echo '<div class="col-md-3" style="text-align:center;">';
