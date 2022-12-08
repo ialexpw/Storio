@@ -17,6 +17,11 @@ Storio is a self-hosted file manager with multi-user capabilities. It includes p
 * Installer with storage folder selection
 * CLI interface (WIP)
 
+## Demo
+
+A demo installation can be seen at https://satapod.com
+Usage will get reset regularly.
+
 ## Installation
 
 Installation is simply done via a git clone
