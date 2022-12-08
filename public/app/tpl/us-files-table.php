@@ -167,7 +167,7 @@
 			</div>
 		</nav>
 
-		<main class="container">
+		<main class="container-fluid">
 			<div class="starter-template py-5 px-3">
 				<div class="card">
 					<div class="card-header text-center">
