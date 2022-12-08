@@ -269,7 +269,7 @@
 
 										echo '<div class="col-md-3" style="text-align:center;">';
 										echo '<div class="blockBox">';
-										echo '<a href="?page=us-files-block&browse=' . ltrim($subLink, '/') . '"><img width="150" height="150" src="' . $fold_img . '" class="rounded" alt="..."><br />' . $dir . '</a>';
+										echo '<a href="?page=us-files-block&browse=' . ltrim($subLink, '/') . '"><img width="150" height="150" src="' . $fold_img . '" class="rounded" alt=".."><br />' . $dir . '</a>';
 										echo '</div>';
 										echo '</div>';
 /*
