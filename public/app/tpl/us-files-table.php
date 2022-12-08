@@ -243,7 +243,7 @@
 									echo '</div>';
 								}*/
 
-								echo '<div class="">';
+								echo '<div class="table-responsive">';
 								echo '<table class="table align-middle">';
 								echo '<thead>';
 								echo '<tr>';
