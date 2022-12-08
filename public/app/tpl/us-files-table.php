@@ -369,11 +369,11 @@
 
 										// Options
 										echo '<td class="text-center">';
-										echo '<div class="btn-group position-static">';
+										echo '<div class="btn-group">';
 										echo '<a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">';
 										echo 'Options..';
 										echo '</a>';
-										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">';
+										echo '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start position-static">';
 										echo '<li><a class="dropdown-item" href="?dl=' . $shareId . '">Direct Download</a></li>';
 
 										// Whether to have the direct download or the download page
