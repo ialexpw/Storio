@@ -163,6 +163,7 @@
 				border-radius: 6px;
 				width: 90%;
 				height: 100%;
+				margin-bottom:10px;
 			}
 		</style>
 	</head>
