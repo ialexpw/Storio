@@ -109,3 +109,7 @@ html.with-featherlight {
 		display: none;
 	}
 }
+
+@media(max-width: 320px) {
+	font-size: 50px;
+}
