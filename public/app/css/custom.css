@@ -111,5 +111,33 @@ html.with-featherlight {
 }
 
 @media(max-width: 320px) {
-	font-size: 50px;
+	.nav-item {
+		width: 24%;
+	}
+
+	.nav-link {
+		font-size: 0.7rem;
+	}
+
+	.left-indent {
+		padding-left:0.6rem;
+	}
+
+	.mobileCenter {
+		text-align:center;
+	}
+
+	.img-icon {
+		width: 16px;
+		height: 16px;
+		margin-right: 8px;
+	}
+
+	.table-responsive {
+        overflow: scroll;
+    }
+
+	.fileSize {
+		display: none;
+	}
 }
