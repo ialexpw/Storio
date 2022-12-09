@@ -54,7 +54,7 @@ Dashboard
 ![image](https://user-images.githubusercontent.com/7994724/174809823-737e9067-8356-49bc-95a5-1ac278535cee.png)
 
 File listing
-![image](https://user-images.githubusercontent.com/7994724/206472363-715cfea3-f420-490d-add2-317d92bb7b0e.png)
+![image](https://user-images.githubusercontent.com/7994724/206696498-bb3b8fac-1173-4d08-9369-a2ef8730a1a6.png)
 
 User settings
 ![image](https://user-images.githubusercontent.com/7994724/174810028-7acb7140-5ca7-4a05-a76b-a47b733fc2b1.png)
