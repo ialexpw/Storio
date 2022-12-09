@@ -62,8 +62,8 @@
 
 					// Work out the icon to use
 					if(is_dir($res)) {
-						$ico = 'far fa-folder';
-						echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class="' . $ico . '"></i> ' . $fileName . '</div>';
+						$ico = StoIco::ShowIcon("folder");
+						echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class=""></i> ' . $ico . $fileName . '</div>';
 					}else{
 						$ico = StoIco::ShowIcon($fileName);
 						echo '<div class="col-8 left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:12px;" class=""></i> ' . $ico . $fileName . '</div>';
