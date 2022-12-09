@@ -372,7 +372,7 @@
 										}else{
 											echo '<td>' . $img . $file . '</td>';
 										}
-										
+
 										// Size
 										echo '<td class="text-center fileSize">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
 
@@ -419,7 +419,7 @@
 
 								// Empty dir
 								if(empty($fldArr['dirview'][$usrDir.$getBrowse]['folders']) && empty($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
-									echo '<div class="col-md-12" style="text-align:center;">Seems this directory is empty!</div>';
+									echo '<div class="col-md-12" style="text-align:center;">Seems this directory is empty!</div><hr>';
 								}
 
 								// End the row
