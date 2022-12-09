@@ -364,7 +364,7 @@
 
 										echo '<td class="text-center"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
 
-										// If thumbnail
+										// Check for a thumbnail then display
 										if($got_thumb) {
 											echo '<td><img src="' . $img . '" class="rounded img-icon"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
 										}else if(strpos($mimeType, 'video/mp4')) {
@@ -372,17 +372,7 @@
 										}else{
 											echo '<td>' . $img . $file . '</td>';
 										}
-/*
-										// Thumbnail & name
-										if(strpos($mimeType, 'image') !== false) {
-											echo '<td><img width="50" height="50" src="' . $img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
-										}else if(strpos($mimeType, 'video/mp4') !== false || $ext == 'mp4') {
-											echo '<td><img width="50" height="50" src="https://placeimg.com/50/50" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
-										}else{
-											//echo '<td><img width="50" height="50" src="https://placeimg.com/50/50" class="rounded" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
-											echo '<td>' . $img . $file . '</td>';
-										}
-*/
+										
 										// Size
 										echo '<td class="text-center fileSize">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
 
