@@ -30,10 +30,10 @@
 
 			// Set up the default settings
 			$siteCfg = array(
-				"siteName" => "Storio File Management",
+				"siteName" => "Storio",
 				"allowRegistration" => false,
-				"defaultAllowance" => 5000,				// in MB
-				"uploadMaxMB" => 500,					// in MB
+				"defaultAllowance" => 1000,				// in MB
+				"uploadMaxMB" => 100,					// in MB
 				"uploadFolder" => "$dataPath",
 				"downloadPage" => true
 			);
@@ -72,7 +72,7 @@
 			);
 
 			// Add the admin user
-			if(!Storio::AddUser('admin', $usrPass, 0, $usrAr, "admin@sbx.sx")) {
+			if(!Storio::AddUser('admin', $usrPass, 0, $usrAr, "admin@storio")) {
 				exit('Error creating admin user.');
 			}
 
