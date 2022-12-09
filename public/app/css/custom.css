@@ -104,4 +104,8 @@ html.with-featherlight {
 	.table-responsive {
         overflow: scroll;
     }
+
+	.fileSize {
+		display: none;
+	}
 }
