@@ -95,7 +95,7 @@
 						<br />
 						<h4 class="card-title">Editor</h4>
 						
-						<p class="card-text"></p>
+						<p class="card-text">Feature coming soon.</p>
 					</div>
 				</div>
 				<p class="text-center" style="margin-top:5px;">Powered by <a href="https://github.com/ialexpw/Storio">Storio</a></p>
