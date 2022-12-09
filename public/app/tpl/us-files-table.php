@@ -289,6 +289,9 @@
 								// Create a counter for file loop
 								$fc = 0;
 
+								// Mark for thumb
+								$got_thumb = 0;
+
 								// Check & sort
 								if(isset($fldArr['dirview'][$usrDir.$getBrowse]['files'])) {
 									// Sort files
@@ -339,17 +342,37 @@
 												$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file;
 												$thumb = file_get_contents($thumb);
 												$img = 'data:image/' . $type . ';base64,' . base64_encode($thumb);
+												
+												// Mark for a thumb
+												$got_thumb = 1;
 											}else{
-												$img = StoIco::ShowIcon($file); //'https://placeimg.com/25/25';
+												// Image without thumb?
+												$img = StoIco::ShowIcon($file);
+
+												// Mark for a thumb
+												$got_thumb = 0;
 											}
 										}else{
-											$img = StoIco::ShowIcon($file); //$img = 'https://placeimg.com/25/25';
+											// Not an image
+											$img = StoIco::ShowIcon($file);
+
+											// Mark for a thumb
+											$got_thumb = 0;
 										}
 
 										echo '<tr id="' . $encMultiShare . '-hide">';
 
 										echo '<td class="text-center"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
 
+										// If thumbnail
+										if($got_thumb) {
+											echo '<td><img src="' . $img . '" class="rounded img-icon"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
+										}else if(strpos($mimeType, 'video/mp4')) {
+											echo '<td>' . $img . ' <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
+										}else{
+											echo '<td>' . $img . $file . '</td>';
+										}
+/*
 										// Thumbnail & name
 										if(strpos($mimeType, 'image') !== false) {
 											echo '<td><img width="50" height="50" src="' . $img . '" class="rounded" alt="..." style="margin-right: 25px;"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
@@ -359,7 +382,7 @@
 											//echo '<td><img width="50" height="50" src="https://placeimg.com/50/50" class="rounded" alt="..." style="margin-right: 25px;"> ' . $file . '</td>';
 											echo '<td>' . $img . $file . '</td>';
 										}
-
+*/
 										// Size
 										echo '<td class="text-center fileSize">' . Storio::ReadableSize(filesize($usrDir . $getBrowse. '/' . $file)) . '</td>';
 
