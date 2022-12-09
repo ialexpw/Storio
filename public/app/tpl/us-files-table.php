@@ -269,6 +269,7 @@
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
 
+										// Get folder icon
 										$fold_img = StoIco::ShowIcon("folder");
 
 										echo '<tr>';
