@@ -280,7 +280,7 @@
 
 										echo '<td>' . $fold_img . ' <a href="?page=us-files-table&browse=' . ltrim($subLink, '/') . '">' . $dir . '</a></td>';
 
-										echo '<td class="text-center">n/a</td>';
+										echo '<td class="text-center fileSize">n/a</td>';
 
 										echo '<td class="text-center"><a style="color:indianred;" href="?page=us-files-table&del=' . $encFile . '&type=folder" class="delete" data-confirm="Are you sure you would like to delete this folder?">Delete</a></td>';
 
