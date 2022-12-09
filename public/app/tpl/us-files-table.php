@@ -269,9 +269,6 @@
 										// Encrypt file name
 										$encFile = Storio::SimpleCrypt($usrDir . $getBrowse. '/' . $dir);
 
-										$folder = file_get_contents('../users/configs/_thumbs/folder.png');
-										$fold_img = 'data:image/png;base64,' . base64_encode($folder);
-
 										$fold_img = StoIco::ShowIcon("folder");
 
 										echo '<tr>';
