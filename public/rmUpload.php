@@ -17,9 +17,9 @@
 	include 'app/storio.app.php';
 
 	// Include if available
-	//if(file_exists('../vendor/autoload.php')) {
+	if(file_exists('../vendor/autoload.php')) {
 		include '../vendor/autoload.php';
-	//}
+	}
 	
 	// POSTing check
 	if($_SERVER['REQUEST_METHOD'] != 'POST') {
@@ -160,7 +160,7 @@
 						}
 					}
 
-					if($ext == 'mp4') {
+					if($ext == 'mp4' && is_dir('../vendor')) {
 						// Swap out the extension for the thumb
 						$rep_ext = str_replace('.mp4', '.png', $_FILES["file"]["name"][$index]);
 						$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $rep_ext;
