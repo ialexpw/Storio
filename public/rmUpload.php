@@ -175,7 +175,7 @@
 
 						// Specify paths
 						$video = $ffmpeg->open($dirUpl . '/' . $_FILES["file"]["name"][$index]);
-						$frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(10));
+						$frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(1));
 						$frame->save($thumb);
 					}
 				}else{
