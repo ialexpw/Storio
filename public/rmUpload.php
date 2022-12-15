@@ -10,10 +10,6 @@
 	 * @link       https://github.com/ialexpw/Storio
 	 */
 
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-
 	include 'app/storio.app.php';
 
 	// Include if available
@@ -160,6 +156,7 @@
 						}
 					}
 
+					// Only convert videos to thumbs if the addon is available
 					if($ext == 'mp4' && is_dir('../vendor')) {
 						// Swap out the extension for the thumb
 						$rep_ext = str_replace('.mp4', '.png', $_FILES["file"]["name"][$index]);
