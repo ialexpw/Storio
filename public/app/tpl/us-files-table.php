@@ -336,7 +336,13 @@
 										$webPath = $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST'] . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 										// If an image, check for a thumbnail
-										if(strpos($mimeType, 'image') !== false) {
+										if(strpos($mimeType, 'image') !== false || $ext == 'mp4') {
+											// Check if there is a video thumb
+											if($ext == 'mp4') {
+												$file = str_replace('.mp4', '.png', $file);
+											}
+											
+											// Check for the file
 											if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file)) {
 												$type = pathinfo($path, PATHINFO_EXTENSION);
 												$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file;
