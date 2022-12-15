@@ -166,7 +166,12 @@
 						$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $rep_ext;
 
 						// Create the thumb
-						$ffmpeg = FFMpeg\FFMpeg::create();
+						$ffmpeg = FFMpeg\FFMpeg::create(array(
+							'ffmpeg.binaries'  => '/usr/bin/ffmpeg',
+							'ffprobe.binaries' => '/usr/bin/ffprobe',
+							'timeout'          => 3600, // The timeout for the underlying process
+							'ffmpeg.threads'   => 12,   // The number of threads that FFMpeg should use
+						), $logger);
 						$video = $ffmpeg->open($dirUpl . '/' . $_FILES["file"]["name"][$index]);
 						$frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(10));
 						$frame->save($thumb);
