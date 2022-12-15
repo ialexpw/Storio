@@ -379,7 +379,7 @@
 										echo '<td class="text-center"><input type="checkbox" id="' . $encMultiShare . '" class="multiSelect" name="checkBox" value="' . $shareId . '"></td>';
 
 										// Check for a thumbnail then display
-										if($got_thumb) {
+										if($got_thumb && $ext != 'mp4') {
 											echo '<td><img src="' . $img . '" class="rounded img-icon"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
 										}else if(strpos($mimeType, 'video/mp4') || $ext == 'mp4') {
 											echo '<td>' . $img . ' <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
