@@ -382,7 +382,12 @@
 										if($got_thumb && $ext != 'mp4') {
 											echo '<td><img src="' . $img . '" class="rounded img-icon"> <a class="noLink" href="#" data-featherlight="viewSource.php?u=' . $_SESSION['Username'] .'&p=' . $encFile .'">' . $file . '</a></td>';
 										}else if(strpos($mimeType, 'video/mp4') || $ext == 'mp4') {
-											echo '<td>' . $img . ' <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
+											// MP4 thumbs
+											if($got_thumb) {
+												echo '<td><img src="' . $img . '" class="rounded img-icon"> <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
+											}else{
+												echo '<td>' . $img . ' <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
+											}
 										}else{
 											echo '<td>' . $img . $file . '</td>';
 										}
