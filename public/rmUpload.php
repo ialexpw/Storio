@@ -13,9 +13,9 @@
 	include 'app/storio.app.php';
 
 	// Include if available
-	if(file_exists('../vendor/autoload.php')) {
+	//if(file_exists('../vendor/autoload.php')) {
 		include '../vendor/autoload.php';
-	}
+	//}
 	
 	// POSTing check
 	if($_SERVER['REQUEST_METHOD'] != 'POST') {
