@@ -153,7 +153,7 @@
 						// Only create thumbs for png/jpg/gif
 						if($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif') {
 							Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $_FILES["file"]["name"][$index], 320, 320);
-						}else if($ext == 'mp4' && is_dir('vendor')) {
+						}else if($ext == 'mp4') {
 							// Swap out the extension for the thumb
 							$rep_ext = str_replace('.mp4', '.png', $_FILES["file"]["name"][$index]);
 							$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $rep_ext;
