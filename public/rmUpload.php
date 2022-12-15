@@ -144,12 +144,12 @@
 					// Grab the mime type
 					$mimeType = mime_content_type($dirUpl . '/' . $_FILES["file"]["name"][$index]);
 
+					// Get the extension
+					$path = $_FILES["file"]["name"][$index];
+					$ext = pathinfo($path, PATHINFO_EXTENSION);
+
 					// If it is an image, create a thumbnail
 					if(strpos($mimeType, 'image') !== false) {
-						// Get the extension
-						$path = $_FILES["file"]["name"][$index];
-						$ext = pathinfo($path, PATHINFO_EXTENSION);
-
 						// Only create thumbs for png/jpg/gif
 						if($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif') {
 							Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $_FILES["file"]["name"][$index], 320, 320);
