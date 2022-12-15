@@ -171,7 +171,9 @@
 							'ffprobe.binaries' => '/usr/bin/ffprobe',
 							'timeout'          => 3600, // The timeout for the underlying process
 							'ffmpeg.threads'   => 12,   // The number of threads that FFMpeg should use
-						), $logger);
+						));
+
+						// Specify paths
 						$video = $ffmpeg->open($dirUpl . '/' . $_FILES["file"]["name"][$index]);
 						$frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(10));
 						$frame->save($thumb);
