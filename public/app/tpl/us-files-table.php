@@ -351,10 +351,7 @@
 													// Mark for a thumb
 													$got_thumb = 1;
 												}
-											}
-											
-											// Check for the file
-											if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file)) {
+											}else if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file)) {
 												$type = pathinfo($path, PATHINFO_EXTENSION);
 												$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file;
 												$thumb = file_get_contents($thumb);
