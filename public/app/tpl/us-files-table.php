@@ -339,7 +339,18 @@
 										if(strpos($mimeType, 'image') !== false || $ext == 'mp4') {
 											// Check if there is a video thumb
 											if($ext == 'mp4') {
-												$file = str_replace('.mp4', '.png', $file);
+												$file_mp4 = str_replace('.mp4', '.png', $file);
+
+												// Check for video thumb
+												if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file_mp4)) {
+													$type = pathinfo($path, PATHINFO_EXTENSION);
+													$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file_mp4;
+													$thumb = file_get_contents($thumb);
+													$img = 'data:image/' . $type . ';base64,' . base64_encode($thumb);
+													
+													// Mark for a thumb
+													$got_thumb = 1;
+												}
 											}
 											
 											// Check for the file
