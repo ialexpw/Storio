@@ -500,7 +500,6 @@
 		 * @param $file
 		 * @param $user
 		 * @param int $len
-		 * @return void
 		 */
 		public static function AddShareLink($path, $file, $user) {
 			// Build the path
@@ -529,6 +528,8 @@
 				// Encode and resave the config
 				$shareCfgEncode = json_encode($shareCfg);
 				file_put_contents('../users/configs/share-links.json', $shareCfgEncode);
+
+				return $shareId;
 			}
 		}
 

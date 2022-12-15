@@ -11,6 +11,11 @@
 	 */
 
 	include 'app/storio.app.php';
+
+	// Include if available
+	if(file_exists('vendor/autoload.php')) {
+		include 'vendor/autoload.php';
+	}
 	
 	// POSTing check
 	if($_SERVER['REQUEST_METHOD'] != 'POST') {
@@ -134,7 +139,7 @@
 				// Move the file
 				if(move_uploaded_file($tmpName, $dirUpl . '/' . $_FILES["file"]["name"][$index])) {
 					// Add a share link
-					Storio::AddShareLink($dirUpl, $_FILES["file"]["name"][$index], $_SESSION['Username']);
+					$shareId = Storio::AddShareLink($dirUpl, $_FILES["file"]["name"][$index], $_SESSION['Username']);
 
 					// Grab the mime type
 					$mimeType = mime_content_type($dirUpl . '/' . $_FILES["file"]["name"][$index]);
@@ -147,7 +152,17 @@
 
 						// Only create thumbs for png/jpg/gif
 						if($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif') {
-							Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $_FILES["file"]["name"][$index], 320, 320);
+							Storio::CreateThumb($dirUpl . '/' . $_FILES["file"]["name"][$index], '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $_FILES["file"]["name"][$index], 320, 320);
+						}else if($ext == 'mp4' && is_dir('vendor')) {
+							// Swap out the extension for the thumb
+							$rep_ext = str_replace('.mp4', '.png', $_FILES["file"]["name"][$index]);
+							$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $rep_ext;
+
+							// Create the thumb
+							$ffmpeg = FFMpeg\FFMpeg::create();
+							$video = $ffmpeg->open($dirUpl . '/' . $_FILES["file"]["name"][$index]);
+							$frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(10));
+							$frame->save($thumb);
 						}
 					}
 				}else{

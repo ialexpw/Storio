@@ -337,9 +337,9 @@
 
 										// If an image, check for a thumbnail
 										if(strpos($mimeType, 'image') !== false) {
-											if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file)) {
+											if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file)) {
 												$type = pathinfo($path, PATHINFO_EXTENSION);
-												$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $file;
+												$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file;
 												$thumb = file_get_contents($thumb);
 												$img = 'data:image/' . $type . ';base64,' . base64_encode($thumb);
 												
