@@ -18,10 +18,6 @@ Storio is a self-hosted file manager with multi-user capabilities. It includes p
 * Thumbnails for both image and video files (composer/ffmpeg required for video thumbnails)
 * CLI interface (WIP)
 
-## Demo
-
-A demo installation can be seen at https://satapod.com
-
 ## Installation
 
 Installation is simply done via a git clone
