@@ -114,12 +114,14 @@
 									<br />Users
 								</a>
 							</li>
+							<!--
 							<li class="nav-item">
 								<a class="nav-link" href="?page=ad-editor">
 									<i class="bi bi-pen" style="font-size: 2rem; color: cornflowerblue;"></i>
 									<br />Editor
 								</a>
 							</li>
+							-->
 							<li class="nav-item">
 								<a class="nav-link" href="?page=ad-settings">
 									<i class="bi bi-gear" style="font-size: 2rem; color: cornflowerblue;"></i>

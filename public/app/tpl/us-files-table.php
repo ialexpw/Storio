@@ -577,7 +577,7 @@
 						<form method="post" id="upload" enctype="multipart/form-data" style="margin:0px; padding:0px; display:inline;">
 							<div class="custom-file" ondragover="allowDrop(event)" ondragleave="leaveDrop(event)" style="margin-top:10px;">
 								<div class="mb-3">
-									<label for="fileInput" id="custom-file-label" class="form-label">Select up to 25 files</label>
+									<label for="fileInput" id="custom-file-label" class="form-label">Use the form below to upload files into your account. You can select up to 25 files with each upload.</label>
 									<input class="form-control" type="file" name="file[]" id="fileInput" multiple>
 									<input type="hidden" id="uplFld" name="uplFld" value="<?php echo $getBrowse; ?>"/>
 									<input type="hidden" id="usrSes" name="usrSes" value="<?php echo USER; ?>"/>
@@ -597,7 +597,7 @@
 						<div id="filename" style="text-align:center; margin-top:5px;"></div>
 
 						<!-- Max size label -->
-						<p style="text-align:center; margin-top:15px;"><?php echo $siteCfg['uploadMaxMB'] . ' MB Max'; ?></p>
+						<p style="text-align:center; margin-top:15px;">Maximum upload size of <?php echo $siteCfg['uploadMaxMB'] . ' MB'; ?></p>
 
 						<?php
 							// Disabled uploading
