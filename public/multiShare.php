@@ -18,7 +18,7 @@
 	}
 
 	// Check if we have ID's
-	if(isset($_GET['sid']) && !empty($_GET['sid'])) {
+	if(!empty($_GET['sid'])) {
 		// Explode the ID's
 		$file_ids = explode(",", $_GET['sid']);
 
@@ -58,4 +58,3 @@
 	}else{
 		echo "Select files to share.";
 	}
-?>

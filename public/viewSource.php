@@ -18,7 +18,7 @@
 	}
 	
 	// Grab the path and user
-	if(isset($_GET['p']) && !empty($_GET['p']) && isset($_GET['u']) && !empty($_GET['u'])) {
+	if(!empty($_GET['p']) && !empty($_GET['u'])) {
 		// Decrypt the string
 		$usrFile = Storio::SimpleCrypt($_GET['p'], 'd');
 
@@ -96,7 +96,6 @@
 				header("Content-Range: bytes $start-$end/$size");
 				header("Content-Length: ".$length);
 
-
 				$buffer = 1024 * 8;
 				while(!feof($fp) && ($p = ftell($fp)) <= $end) {
 
@@ -118,4 +117,3 @@
 	if(isset($_GET['vid']) && !empty($_GET['vid'])) {
 		echo '<iframe style="width:100%; height:650px;" src="viewSource.php?u=' . $_SESSION['Username'] . '&p=' . $_GET['vid'] . '"></iframe>';
 	}
-?>

@@ -30,7 +30,7 @@
 		exit();
 	}
 
-	// Check the logged in user with the hidden field
+	// Check the logged-in user with the hidden field
 	if($_POST['usrSes'] != $_SESSION['Username'] || empty($_POST['usrSes']) || empty($_SESSION['Username'])) {
 		$output = array(
 			"success" => false,
@@ -111,7 +111,7 @@
 			exit();
 		}
 
-		// Lastly check if we have enough space left for all of the files combined
+		// Lastly check if we have enough space left for all the files combined
 		$spaceLeft = ($usrCfg['maxStorage'] - $usrCfg['usedStorage']) * 1024 * 1024;
 
 		// If total size is more than the free space left

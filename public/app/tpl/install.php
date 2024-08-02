@@ -65,30 +65,40 @@
 								<h4 class="card-title">Storio Installer</h4><hr>
 
 								<?php
-									// Check for the install file
+									// Error latch
+									$err = 0;
+
+									// Check for the installation file
 									if(!file_exists('../users/configs/site-settings.json')) {
 										// Check the users dir permissions
 										if(!is_writable('../users')) {
-											$dirCheck .= '<p>Please ensure the <b>users</b> folder is writable</p>';
+											$dirCheck .= '<p style="color:red;">Please ensure the <b>users</b> folder is writable</p>';
+											$err = 1;
 										}else{
-											$dirCheck .= '<p>Permissions for the <b>users</b> folder are correct</p>';
+											$dirCheck .= '<p style="color:green;">Permissions for the <b>users</b> folder are correct</p>';
 										}
 
 										// Check the configs dir permissions
 										if(!is_writable('../users/configs')) {
-											$dirCheck .= '<p>Please ensure the <b>users/configs</b> folder is writable</p>';
+											$dirCheck .= '<p style="color:red;">Please ensure the <b>users/configs</b> folder is writable</p>';
+											$err = 1;
 										}else{
-											$dirCheck .= '<p>Permissions for the <b>users/configs</b> folder are correct</p>';
+											$dirCheck .= '<p style="color:green;">Permissions for the <b>users/configs</b> folder are correct</p>';
 										}
 
-										$dirCheck .= '<hr><form method="post" action="?page=install">';
-										$dirCheck .= '<div class="mb-3">';
-										$dirCheck .= '<label for="uploadPath" class="form-label">Upload path ({user} gets replaced by each user)</label>';
-										$dirCheck .= '<input type="text" class="form-control" id="uploadPath" name="uploadPath" value="../users/{user}">';
-										$dirCheck .= '</div>';
+										// If error
+										if($err) {
+											$dirCheck .= '<hr><a class="btn btn-outline-primary" href="index" role="button">Check again</a>';
+										}else{
+											$dirCheck .= '<hr><form method="post" action="?page=install">';
+											$dirCheck .= '<div class="mb-3">';
+											$dirCheck .= '<label for="uploadPath" class="form-label">Upload path ({user} gets replaced by each user)</label>';
+											$dirCheck .= '<input type="text" class="form-control" id="uploadPath" name="uploadPath" value="../users/{user}">';
+											$dirCheck .= '</div>';
 
-										$dirCheck .= '<button type="submit" class="btn btn-primary">Install</button>';
-										$dirCheck .= '</form>';
+											$dirCheck .= '<button type="submit" class="btn btn-outline-primary">Install</button>';
+											$dirCheck .= '</form>';
+										}
 									}else{
 										$dirCheck .= 'Storio has been installed! Trying <a href="/?page=login">logging in</a>.';
 									}

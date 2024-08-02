@@ -6,7 +6,7 @@
 	 *
 	 * @package    Storio
 	 * @author     Alex White
-	 * @copyright  2022 Storio
+	 * @copyright  2024 Storio
 	 * @link       https://github.com/ialexpw/Storio
 	 */
 
@@ -47,7 +47,7 @@
 		}
 
 		// Updating email
-		if(!empty($_POST['usrMail']) && !empty($_POST['usrMail'])) {
+		if(!empty($_POST['usrMail'])) {
 			// Store variables
 			$usrMail = $_POST['usrMail'];
 

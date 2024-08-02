@@ -6,7 +6,7 @@
 	 *
 	 * @package    Storio
 	 * @author     Alex White
-	 * @copyright  2022 Storio
+	 * @copyright  2024 Storio
 	 * @link       https://github.com/ialexpw/Storio
 	 */
 
@@ -343,7 +343,7 @@
 
 												// Check for video thumb
 												if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file_mp4)) {
-													$type = pathinfo($path, PATHINFO_EXTENSION);
+													$type = pathinfo($file_mp4, PATHINFO_EXTENSION);
 													$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file_mp4;
 													$thumb = file_get_contents($thumb);
 													$img = 'data:image/' . $type . ';base64,' . base64_encode($thumb);
@@ -352,7 +352,7 @@
 													$got_thumb = 1;
 												}
 											}else if(file_exists('../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file)) {
-												$type = pathinfo($path, PATHINFO_EXTENSION);
+												$type = pathinfo($file, PATHINFO_EXTENSION);
 												$thumb = '../users/configs/_thumbs/' . $_SESSION['Username'] . '/_thumb_' . $shareId . '_' . $file;
 												$thumb = file_get_contents($thumb);
 												$img = 'data:image/' . $type . ';base64,' . base64_encode($thumb);
@@ -384,7 +384,7 @@
 										}else if(strpos($mimeType, 'video/mp4') || $ext == 'mp4') {
 											// MP4 thumbs
 											if($got_thumb) {
-												echo '<td><img src="' . $img . '" class="rounded img-icon"> <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
+												echo '<td><img src="' . $img . '" class="rounded img-icon" alt=""> <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
 											}else{
 												echo '<td>' . $img . ' <a class="noLink reqBtn" name="' . USER . '+Sto+' . $encFile . '" href="javascript:;" data-bs-toggle="modal" data-bs-target="#reqModal">' . $file . '</a></td>';
 											}
@@ -408,18 +408,18 @@
 
 										// Whether to have the direct download or the download page
 										if($siteCfg['downloadPage']) {
-											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?id=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
+											echo '<li><a class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?id=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
 										}else{
-											echo '<li><a alt="Copy link" class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
+											echo '<li><a class="dropdown-item copyText" id="copyTxt" onClick="showAlert()" data-clipboard-text="' . $webPath . '?dl=' . $shareId . '" href="javascript:;">Copy Share Link</a></li>';
 										}
 										
 										echo '<li><a class="dropdown-item disabled" data-bs-toggle="modal" data-bs-target="#moveModal" href="#">Move File</a></li>';
 
 										// When deleting a file, ensure we are redirected back
 										if(!empty($_GET['browse'])) {
-											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files-table&browse=' . $_GET['browse'] . '&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
+											echo '<li><a style="color:indianred;" class="dropdown-item delete" href="?page=us-files-table&browse=' . $_GET['browse'] . '&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
 										}else{
-											echo '<li><a alt="Delete file" style="color:indianred;" class="dropdown-item delete" href="?page=us-files-table&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
+											echo '<li><a style="color:indianred;" class="dropdown-item delete" href="?page=us-files-table&del=' . $encFile . '&type=file" data-confirm="Are you sure you would like to delete this file?">Delete File</a></li>';
 										}
 										
 										echo '</ul>';

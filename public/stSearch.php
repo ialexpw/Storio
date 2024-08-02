@@ -25,7 +25,7 @@
 	$usrDir = str_replace("{user}", $_SESSION['Username'], $siteCfg['uploadFolder']);
 
 	// Check we are getting a search term
-	if(isset($_GET['sid']) && !empty($_GET['sid'])) {
+	if(!empty($_GET['sid'])) {
 		// Get the username
 		$stUser = $_SESSION['Username'];
 
@@ -76,15 +76,11 @@
 				echo '</div>';
 
 				// Add spacing before normal file listing
-				echo '<br />';
 			}else{
 				// No results found from the search
 				$ico = StoIco::ShowIcon("empty");
 				echo '<p class="left-indent" style="margin-bottom:2px;"><i style="font-size: 1.4rem; margin-right:6px;" class=""></i>' . $ico . ' No results have been found</p>';
-
-				// Add spacing before normal file listing
-				echo '<br />';
 			}
+			echo '<br />';
 		}
 	}
-?>

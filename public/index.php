@@ -13,13 +13,13 @@
 	include 'app/storio.app.php';
 	include 'app/icons.class.php';
 
-	define('INC_DATA', true);
+	const INC_DATA = true;
 
 	if(Storio::LoggedIn()) {
 		define('USER', $_SESSION['Username']);
 	}
 	
-	// Check for the install file
+	// Check for the installation file
 	if(!file_exists('../users/configs/site-settings.json')) {
 		exit(Storio::LoadView('install'));
 	}
@@ -31,12 +31,12 @@
 	}
 
 	// Show the download page
-	if(isset($_GET['id']) && !empty($_GET['id'])) {
+	if(!empty($_GET['id'])) {
 		exit(Storio::LoadView('download'));
 	}
 
 	// Download a file
-	if(isset($_GET['dl']) && !empty($_GET['dl'])) {
+	if(!empty($_GET['dl'])) {
 		// Store the hash
 		$shareHash = $_GET['dl'];
 
@@ -44,7 +44,7 @@
 		$shareCfg = Storio::ShareLinks();
 
 		// Check if there is a hash
-		if(isset($_GET['hash']) && !empty($_GET['hash'])) {
+		if(!empty($_GET['hash'])) {
 			$dlFile = Storio::SimpleCrypt($_GET['hash'], 'd');
 		}else if(isset($shareCfg['ShareLinks'][$shareHash]['Path'])){
 			$dlFile = $shareCfg['ShareLinks'][$shareHash]['Path'];
@@ -69,9 +69,8 @@
 	}
 
 	// Simple templating
-	if(!isset($_GET['page']) || empty($_GET['page'])) {
+	if(empty($_GET['page'])) {
 		Storio::LoadView('login');
 	}else{
 		Storio::LoadView($_GET['page']);
 	}
-?>
