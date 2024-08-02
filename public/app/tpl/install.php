@@ -6,13 +6,13 @@
 	 *
 	 * @package    Storio
 	 * @author     Alex White
-	 * @copyright  2022 Storio
+	 * @copyright  2024 Storio
 	 * @link       https://github.com/ialexpw/Storio
 	 */
 
 	$dirCheck = '';
 
-	if(isset($_POST['uploadPath']) && !empty($_POST['uploadPath'])) {
+	if(!empty($_POST['uploadPath'])) {
 		// Remove the user tag while checking permissions
 		$tempUpload = str_replace("{user}", "", $_POST['uploadPath']);
 
@@ -73,7 +73,7 @@
 										// Check the users dir permissions
 										if(!is_writable('../users')) {
 											$dirCheck .= '<p style="color:red;">Please ensure the <b>users</b> folder is writable</p>';
-											//$err = 1;
+											$err = 1;
 										}else{
 											$dirCheck .= '<p style="color:green;">Permissions for the <b>users</b> folder are correct</p>';
 										}
@@ -81,7 +81,7 @@
 										// Check the configs dir permissions
 										if(!is_writable('../users/configs')) {
 											$dirCheck .= '<p style="color:red;">Please ensure the <b>users/configs</b> folder is writable</p>';
-											//$err = 1;
+											$err = 1;
 										}else{
 											$dirCheck .= '<p style="color:green;">Permissions for the <b>users/configs</b> folder are correct</p>';
 										}
@@ -92,7 +92,7 @@
 										}else{
 											$dirCheck .= '<hr><form method="post" action="?page=install">';
 											$dirCheck .= '<div class="mb-3">';
-											$dirCheck .= '<label for="uploadPath" class="form-label">Upload path ({user} gets replaced by each user)</label>';
+											$dirCheck .= '<label for="uploadPath" class="form-label">Upload path - {user} gets replaced by each username, please ensure the path contains this.</label>';
 											$dirCheck .= '<input type="text" class="form-control" id="uploadPath" name="uploadPath" value="../users/{user}">';
 											$dirCheck .= '</div>';
 
@@ -123,7 +123,6 @@
 		
 		<!-- Bootstrap JS -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-
 		<script type="text/javascript" src="app/js/session.js"></script>
 	</body>
 </html>
