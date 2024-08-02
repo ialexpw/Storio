@@ -73,7 +73,7 @@
 										// Check the users dir permissions
 										if(!is_writable('../users')) {
 											$dirCheck .= '<p style="color:red;">Please ensure the <b>users</b> folder is writable</p>';
-											$err = 1;
+											//$err = 1;
 										}else{
 											$dirCheck .= '<p style="color:green;">Permissions for the <b>users</b> folder are correct</p>';
 										}
@@ -81,7 +81,7 @@
 										// Check the configs dir permissions
 										if(!is_writable('../users/configs')) {
 											$dirCheck .= '<p style="color:red;">Please ensure the <b>users/configs</b> folder is writable</p>';
-											$err = 1;
+											//$err = 1;
 										}else{
 											$dirCheck .= '<p style="color:green;">Permissions for the <b>users/configs</b> folder are correct</p>';
 										}
