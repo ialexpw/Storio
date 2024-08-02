@@ -813,7 +813,7 @@
 
 		<!-- Toast notification for Share link -->
 		<div class="toast-container position-absolute p-3 bottom-0 end-0" id="toastPlacement">
-			<div class="toast align-items-center bg-info bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast align-items-center bg-primary bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
 				<div class="d-flex">
 					<div class="toast-body">
 						Share link has been copied to your clipboard.
