@@ -32,7 +32,7 @@
 		$strUpd = 0;
 
 		// Updating password
-		if(!empty($_POST['currPass']) && !empty($_POST['newPass'])) {
+		if(!empty($_POST['currPass']) && !empty($_POST['newPass']) && USER != 'demo') {
 			// Store variables
 			$usrPass = $_POST['currPass'];
 			$newPass = $_POST['newPass'];
