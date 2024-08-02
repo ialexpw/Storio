@@ -100,7 +100,9 @@
 											$dirCheck .= '</form>';
 										}
 									}else{
-										$dirCheck .= 'Storio has been installed! Trying <a href="/?page=login">logging in</a>.';
+										$dirCheck .= 'Storio has been installed! Try <a href="/?page=login">logging in</a>.<br /><br />';
+										$dirCheck .= 'Username: <b>Admin</b><br />';
+										$dirCheck .= 'Password: <b>AdminUser123</b>';
 									}
 
 									// If folders need changing, echo the messages
